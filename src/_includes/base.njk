@@ -8,7 +8,7 @@
 </head>
 <body>
   <header>
-    <h1>{{ siteName }}</h1>
+    <h1>{{ var.siteName }}</h1>
     <nav>
       <a href="/">Home</a>
       <a href="/about/">About</a>
@@ -21,7 +21,7 @@
   </main>
 
   <footer>
-    <p>&copy; {{ currentYear }} {{ siteName }}</p>
+    <p>&copy; {{ var.currentYear }} {{ var.siteName }}</p>
   </footer>
 
   <script src="/assets/js/main.js"></script>
