@@ -1,0 +1,18 @@
+[
+    {
+        "id": "oracle-ai-agent",
+        "title": "Oracle Fusion AI Agent Studio Foundations Associate",
+        "issuer": "Oracle",
+        "issuedDate": "Aug 2025",
+        "credentialId": "1Z0-1145-1",
+        "skills": ["Artificial Intelligence (AI)", "Oracle Enterprise Resource Planning (ERP) Cloud"]
+    },
+    {
+        "id": "oracle-oci-ai",
+        "title": "Oracle Cloud Infrastructure: AI Foundations",
+        "issuer": "Oracle",
+        "issuedDate": "TBD",
+        "credentialId": null,
+        "skills": ["Artificial Intelligence (AI)", "Oracle Enterprise Resource Planning (ERP) Cloud"]
+    }
+]

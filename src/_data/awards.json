@@ -1,0 +1,30 @@
+[
+    {
+        "id": "beta-gamma-sigma",
+        "title": "Beta Gamma Sigma",
+        "issuer": "Kennesaw State University",
+        "issuedDate": "Apr 2018",
+        "organization": "Kennesaw State University - Michael J. Coles College of Business"
+    },
+    {
+        "id": "phi-kappa-phi",
+        "title": "Phi Kappa Phi",
+        "issuer": "Kennesaw State University",
+        "issuedDate": "Apr 2018",
+        "organization": "Kennesaw State University - Michael J. Coles College of Business"
+    },
+    {
+        "id": "golden-key",
+        "title": "Golden Key Honor Society",
+        "issuer": "Kennesaw State University",
+        "issuedDate": "Nov 2017",
+        "organization": "Kennesaw State University - Michael J. Coles College of Business"
+    },
+    {
+        "id": "deans-list",
+        "title": "Dean's List",
+        "issuer": "DeVry University",
+        "issuedDate": "Feb 2008",
+        "organization": "DeVry University"
+    }
+]

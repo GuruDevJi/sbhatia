@@ -1,0 +1,271 @@
+---
+layout: base.njk
+title: Profile
+---
+
+<div class="profile-container">
+  <!-- Sticky Sidebar Navigation -->
+  <aside class="sidebar-nav">
+    <nav class="sidebar-menu">
+      <a href="#journey" class="sidebar-link active" data-section="journey">My Journey</a>
+      <a href="#experience" class="sidebar-link" data-section="experience">Experience</a>
+      <a href="#education" class="sidebar-link" data-section="education">Education</a>
+      <a href="#licenses" class="sidebar-link" data-section="licenses">Licenses & Certifications</a>
+      <a href="#volunteering" class="sidebar-link" data-section="volunteering">Volunteering</a>
+      <a href="#awards" class="sidebar-link" data-section="awards">Honors & Awards</a>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="profile-content">
+
+    <!-- My Journey (map + summary) -->
+    <section id="journey" class="profile-section">
+      <h2>My Journey</h2>
+      <div id="map-section">
+        <div id="map" style="width:100%;height:360px;border-radius:8px;"></div>
+        <div id="journey-summary" style="margin-top:1rem;display:flex;gap:2rem;flex-wrap:wrap;">
+          <div style="flex:1;min-width:260px;">
+            <p>I travel for work and have contributed to projects across these locations. The map above shows pin drops for each company's primary location; click a pin for details.</p>
+          </div>
+          <div style="flex:1;min-width:220px;">
+            <p><strong>Locations (fallback list)</strong></p>
+            <ul id="journey-list" style="margin:0;padding-left:1.25rem;color:#ccc;"></ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Leaflet CSS/JS and map initialization -->
+      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+      <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+      <script>
+        (function(){
+          // Initialize map centered on USA
+          const map = L.map('map').setView([39.8283, -98.5795], 4);
+          L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap',
+            maxZoom: 19
+          }).addTo(map);
+
+          // Companies data from journey.json
+          const companies = [
+            {% for c in journey %}
+            {
+              id: "{{ c.id | default('') | replace('"', '\\"') }}",
+              company: "{{ c.company | default('') | replace('"', '\\"') }}",
+              location: "{{ c.location | default('') | replace('"', '\\"') }}",
+              lat: {{ c.lat | default('null') }},
+              lon: {{ c.lon | default('null') }}
+            }{% if not loop.last %},{% endif %}
+            {% endfor %}
+          ];
+
+          // Schools data from education.json
+          const schools = [
+            {% for edu in education %}
+            {
+              id: "{{ edu.id | default('') | replace('"', '\\"') }}",
+              name: "{{ edu.school | default('') | replace('"', '\\"') }}",
+              location: "{{ edu.location | default('') | replace('"', '\\"') }}",
+              degree: "{{ edu.degree | default('') | replace('"', '\\"') }}",
+              lat: {{ edu.lat | default('null') }},
+              lon: {{ edu.lon | default('null') }}
+            }{% if not loop.last %},{% endif %}
+            {% endfor %}
+          ];
+
+          // Red marker icon for schools
+          const redIcon = L.icon({
+            iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png',
+            shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
+            iconSize: [25, 41],
+            iconAnchor: [12, 41],
+            popupAnchor: [1, -34],
+            shadowSize: [41, 41]
+          });
+
+          // Blue marker icon (default)
+          const blueIcon = L.icon({
+            iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-blue.png',
+            shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
+            iconSize: [25, 41],
+            iconAnchor: [12, 41],
+            popupAnchor: [1, -34],
+            shadowSize: [41, 41]
+          });
+
+          // Add company markers (blue)
+          for (const c of companies) {
+            if (c.lat && c.lon) {
+              const lat = parseFloat(c.lat);
+              const lon = parseFloat(c.lon);
+              if (!isNaN(lat) && !isNaN(lon)) {
+                const marker = L.marker([lat, lon], { icon: blueIcon }).addTo(map);
+                marker.bindPopup('<strong>' + c.company + '</strong><br/>' + (c.location || ''));
+                continue;
+              }
+            }
+            // Fallback: add to list if coordinates missing
+            const li = document.createElement('li');
+            li.textContent = c.company + ' — ' + (c.location || 'Unknown');
+            document.getElementById('journey-list').appendChild(li);
+          }
+
+          // Add school markers (red)
+          for (const s of schools) {
+            if (s.lat && s.lon) {
+              const lat = parseFloat(s.lat);
+              const lon = parseFloat(s.lon);
+              if (!isNaN(lat) && !isNaN(lon)) {
+                const marker = L.marker([lat, lon], { icon: redIcon }).addTo(map);
+                marker.bindPopup('<strong>' + s.name + '</strong><br/>' + (s.degree || ''));
+                continue;
+              }
+            }
+            // Fallback: add to list if coordinates missing
+            const li = document.createElement('li');
+            li.textContent = s.name + ' — ' + (s.location || 'Unknown');
+            document.getElementById('journey-list').appendChild(li);
+          }
+        })();
+      </script>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="profile-section">
+      <h2>Experience</h2>
+      <div class="experience-items">
+        {% for company in experience %}
+        <div class="company-container">
+          <div class="company-header">
+            <h3 class="company-name">{{ company.company }}</h3>
+            <p class="company-dates">{{ company.dates }}</p>
+            <p class="exp-location">📍 {{ company.location if company.location else '' }}</p>
+            <div class="exp-meta">
+              <span class="exp-type">{{ company.type }}</span>
+            </div>
+          </div>
+
+          <div class="exp-item-container">
+            {% if company.image %}
+            <div class="company-logo">
+              <img src="{{ company.image }}" alt="{{ company.company }} logo" />
+            </div>
+            {% endif %}
+
+            <div class="company-info">
+              <!-- Roles within company -->
+              {% for role in company.roles %}
+              <div class="company-role">
+                <h4 class="role-title">{{ role.title }}</h4>
+                <p class="role-dates">{{ role.dates }} · {{ role.duration }}</p>
+                {% if role.location %}
+                <p class="role-location">📍 {{ role.location }}</p>
+                {% endif %}
+                <p class="role-description">{{ role.description }}</p>
+                {% if role.achievements.length > 0 %}
+                <div class="role-achievements">
+                  <p class="achievements-title">Notable Achievements:</p>
+                  <ul>
+                    {% for achievement in role.achievements %}
+                    <li>{{ achievement }}</li>
+                    {% endfor %}
+                  </ul>
+                </div>
+                {% endif %}
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="profile-section">
+      <h2>Education</h2>
+      <div class="education-items">
+        {% for edu in education %}
+        <div class="education-item">
+          <div class="edu-header">
+            <h3 class="edu-degree">{{ edu.degree }}</h3>
+            <p class="edu-field">{{ edu.field }}</p>
+          </div>
+          <p class="edu-school">{{ edu.school }}</p>
+          <p class="edu-dates">{{ edu.dates }}</p>
+          {% if edu.activities.length > 0 %}
+          <div class="edu-activities">
+            <p class="activities-label">Activities and societies:</p>
+            <div class="activities-list">
+              {% for activity in edu.activities %}
+              <span class="activity-badge">{{ activity }}</span>
+              {% endfor %}
+            </div>
+          </div>
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+
+    <!-- Licenses & Certifications Section -->
+    <section id="licenses" class="profile-section">
+      <h2>Licenses & Certifications</h2>
+      <div class="licenses-items">
+        {% for cert in licenses %}
+        <div class="license-item">
+          <h3 class="cert-title">{{ cert.title }}</h3>
+          <p class="cert-issuer">{{ cert.issuer }}</p>
+          <p class="cert-date">Issued {{ cert.issuedDate }}</p>
+          {% if cert.credentialId %}
+          <p class="cert-id">Credential ID: {{ cert.credentialId }}</p>
+          {% endif %}
+          <div class="cert-skills">
+            {% for skill in cert.skills %}
+            <span class="skill-tag">{{ skill }}</span>
+            {% endfor %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+
+    <!-- Volunteering Section -->
+    <section id="volunteering" class="profile-section">
+      <h2>Volunteering</h2>
+      <div class="volunteering-items">
+        {% for vol in volunteering %}
+        <div class="volunteer-item">
+          <div class="vol-header">
+            <h3 class="vol-title">{{ vol.title }}</h3>
+            <p class="vol-organization">{{ vol.organization }}</p>
+          </div>
+          <p class="vol-category">{{ vol.category }}</p>
+          <p class="vol-dates">{{ vol.startDate }} - {{ vol.endDate }} · {{ vol.duration }}</p>
+          {% if vol.responsibilities.length > 0 %}
+          <ul class="vol-responsibilities">
+            {% for responsibility in vol.responsibilities %}
+            <li>{{ responsibility }}</li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+
+    <!-- Honors & Awards Section -->
+    <section id="awards" class="profile-section">
+      <h2>Honors & Awards</h2>
+      <div class="awards-items">
+        {% for award in awards %}
+        <div class="award-item">
+          <h3 class="award-title">{{ award.title }}</h3>
+          <p class="award-issuer">Issued by {{ award.issuer }} · {{ award.issuedDate }}</p>
+          <p class="award-organization">{{ award.organization }}</p>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+  </main>
+</div>
