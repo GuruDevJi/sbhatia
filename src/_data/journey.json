@@ -1,0 +1,65 @@
+[
+  {
+    "id": "blue-owl",
+    "company": "Blue Owl Capital",
+    "location": "New York, NY, United States",
+    "lat": "40.7128",
+    "lon": "-74.0060"
+  },
+  {
+    "id": "hcsc",
+    "company": "Blue Cross and Blue Shield of Illinois, Montana, New Mexico, Oklahoma & Texas",
+    "location": "Chicago, IL, United States",
+    "lat": "41.8832",
+    "lon": "-87.6324"
+  },
+  {
+    "id": "synchrony",
+    "company": "Synchrony Financial",
+    "location": "Alpharetta, GA, United States",
+    "lat": "34.0192",
+    "lon": "-84.2707"
+  },
+  {
+    "id": "cgg",
+    "company": "CGG",
+    "location": "Houston, TX, United States",
+    "lat": "29.7604",
+    "lon": "-95.3698"
+  },
+  {
+    "id": "symantec",
+    "company": "Infosys (Symantec)",
+    "location": "Sunnyvale, CA, United States",
+    "lat": "37.3719",
+    "lon": "-122.0380"
+  },
+  {
+    "id": "titan",
+    "company": "Infosys (Titan International)",
+    "location": "St. Charles, IL, United States",
+    "lat": "41.8832",
+    "lon": "-87.6324"
+  },
+  {
+    "id": "johnson",
+    "company": "Infosys (Johnson Controls, Inc)",
+    "location": "Richardson, TX, United States",
+    "lat": "32.9487",
+    "lon": "-96.7250"
+  },
+  {
+    "id": "johnson2",
+    "company": "Infosys (Johnson Controls, Inc)",
+    "location": "Boca Raton, FL, United States",
+    "lat": "26.3683",
+    "lon": "-80.1373"
+  },
+  {
+    "id": "newhaven",
+    "company": "Newhaven Display International",
+    "location": "Elgin, IL, United States",
+    "lat": "41.8832",
+    "lon": "-87.6324"
+  }
+]

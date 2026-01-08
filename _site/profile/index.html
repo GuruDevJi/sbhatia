@@ -1,0 +1,648 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Profile</title>
+  <link rel="stylesheet" href="/assets/css/main.css" />
+</head>
+<body>
+  <header>
+    <h1>Saurabh Bhatia</h1>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/about/">About</a>
+      <a href="/profile/">Profile</a>
+      <a href="/contact/">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    
+<div class="profile-container">
+  <!-- Sticky Sidebar Navigation -->
+  <aside class="sidebar-nav">
+    <nav class="sidebar-menu">
+      <a href="#journey" class="sidebar-link active" data-section="journey">My Journey</a>
+      <a href="#experience" class="sidebar-link" data-section="experience">Experience</a>
+      <a href="#education" class="sidebar-link" data-section="education">Education</a>
+      <a href="#licenses" class="sidebar-link" data-section="licenses">Licenses & Certifications</a>
+      <a href="#volunteering" class="sidebar-link" data-section="volunteering">Volunteering</a>
+      <a href="#awards" class="sidebar-link" data-section="awards">Honors & Awards</a>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="profile-content">
+
+    <!-- My Journey (map + summary) -->
+    <section id="journey" class="profile-section">
+      <h2>My Journey</h2>
+      <div id="map-section">
+        <div id="map" style="width:100%;height:360px;border-radius:8px;"></div>
+        <div id="journey-summary" style="margin-top:1rem;display:flex;gap:2rem;flex-wrap:wrap;">
+          <div style="flex:1;min-width:260px;">
+            <p>I travel for work and have contributed to projects across these locations. The map above shows pin drops for each company's primary location; click a pin for details.</p>
+          </div>
+          <div style="flex:1;min-width:220px;">
+            <p><strong>Locations (fallback list)</strong></p>
+            <ul id="journey-list" style="margin:0;padding-left:1.25rem;color:#ccc;"></ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Leaflet CSS/JS and map initialization -->
+      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+      <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+      <script>
+        (function(){
+          // Initialize map centered on USA
+          const map = L.map('map').setView([39.8283, -98.5795], 4);
+          L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap',
+            maxZoom: 19
+          }).addTo(map);
+
+          // Companies data from journey.json
+          const companies = [
+            
+            {
+              id: "blue-owl",
+              company: "Blue Owl Capital",
+              location: "New York, NY, United States",
+              lat: 40.7128,
+              lon: -74.0060
+            },
+            
+            {
+              id: "hcsc",
+              company: "Blue Cross and Blue Shield of Illinois, Montana, New Mexico, Oklahoma &amp; Texas",
+              location: "Chicago, IL, United States",
+              lat: 41.8832,
+              lon: -87.6324
+            },
+            
+            {
+              id: "synchrony",
+              company: "Synchrony Financial",
+              location: "Alpharetta, GA, United States",
+              lat: 34.0192,
+              lon: -84.2707
+            },
+            
+            {
+              id: "cgg",
+              company: "CGG",
+              location: "Houston, TX, United States",
+              lat: 29.7604,
+              lon: -95.3698
+            },
+            
+            {
+              id: "symantec",
+              company: "Infosys (Symantec)",
+              location: "Sunnyvale, CA, United States",
+              lat: 37.3719,
+              lon: -122.0380
+            },
+            
+            {
+              id: "titan",
+              company: "Infosys (Titan International)",
+              location: "St. Charles, IL, United States",
+              lat: 41.8832,
+              lon: -87.6324
+            },
+            
+            {
+              id: "johnson",
+              company: "Infosys (Johnson Controls, Inc)",
+              location: "Richardson, TX, United States",
+              lat: 32.9487,
+              lon: -96.7250
+            },
+            
+            {
+              id: "johnson2",
+              company: "Infosys (Johnson Controls, Inc)",
+              location: "Boca Raton, FL, United States",
+              lat: 26.3683,
+              lon: -80.1373
+            },
+            
+            {
+              id: "newhaven",
+              company: "Newhaven Display International",
+              location: "Elgin, IL, United States",
+              lat: 41.8832,
+              lon: -87.6324
+            }
+            
+          ];
+
+          // Schools data from education.json
+          const schools = [
+            
+            {
+              id: "ksu-mba",
+              name: "Kennesaw State University - Michael J. Coles College of Business",
+              location: "Kennesaw, GA, United States",
+              degree: "Master of Business Administration - MBA",
+              lat: 34.0237,
+              lon: -84.6151
+            },
+            
+            {
+              id: "devry-bachelor",
+              name: "DeVry University",
+              location: "Addison, IL, United States",
+              degree: "Bachelor&#39;s degree",
+              lat: 41.9320,
+              lon: -88.0005
+            }
+            
+          ];
+
+          // Red marker icon for schools
+          const redIcon = L.icon({
+            iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png',
+            shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
+            iconSize: [25, 41],
+            iconAnchor: [12, 41],
+            popupAnchor: [1, -34],
+            shadowSize: [41, 41]
+          });
+
+          // Blue marker icon (default)
+          const blueIcon = L.icon({
+            iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-blue.png',
+            shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
+            iconSize: [25, 41],
+            iconAnchor: [12, 41],
+            popupAnchor: [1, -34],
+            shadowSize: [41, 41]
+          });
+
+          // Add company markers (blue)
+          for (const c of companies) {
+            if (c.lat && c.lon) {
+              const lat = parseFloat(c.lat);
+              const lon = parseFloat(c.lon);
+              if (!isNaN(lat) && !isNaN(lon)) {
+                const marker = L.marker([lat, lon], { icon: blueIcon }).addTo(map);
+                marker.bindPopup('<strong>' + c.company + '</strong><br/>' + (c.location || ''));
+                continue;
+              }
+            }
+            // Fallback: add to list if coordinates missing
+            const li = document.createElement('li');
+            li.textContent = c.company + ' — ' + (c.location || 'Unknown');
+            document.getElementById('journey-list').appendChild(li);
+          }
+
+          // Add school markers (red)
+          for (const s of schools) {
+            if (s.lat && s.lon) {
+              const lat = parseFloat(s.lat);
+              const lon = parseFloat(s.lon);
+              if (!isNaN(lat) && !isNaN(lon)) {
+                const marker = L.marker([lat, lon], { icon: redIcon }).addTo(map);
+                marker.bindPopup('<strong>' + s.name + '</strong><br/>' + (s.degree || ''));
+                continue;
+              }
+            }
+            // Fallback: add to list if coordinates missing
+            const li = document.createElement('li');
+            li.textContent = s.name + ' — ' + (s.location || 'Unknown');
+            document.getElementById('journey-list').appendChild(li);
+          }
+        })();
+      </script>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="profile-section">
+      <h2>Experience</h2>
+      <div class="experience-items">
+        
+        <div class="company-container">
+          <div class="company-header">
+            <h3 class="company-name">Blue Owl Capital</h3>
+            <p class="company-dates"></p>
+            <p class="exp-location">📍 </p>
+            <div class="exp-meta">
+              <span class="exp-type">Full-time</span>
+            </div>
+          </div>
+
+          <div class="exp-item-container">
+            
+            <div class="company-logo">
+              <img src="https://placehold.co/120x120/png?text=Blue+Owl" alt="Blue Owl Capital logo" />
+            </div>
+            
+
+            <div class="company-info">
+              <!-- Roles within company -->
+              
+              <div class="company-role">
+                <h4 class="role-title">Principal - Financial Applications</h4>
+                <p class="role-dates">Jan 2024 - Present · 2 yrs 1 mo</p>
+                
+                <p class="role-description">Leading strategic financial applications and enterprise systems transformation.</p>
+                
+              </div>
+              
+              <div class="company-role">
+                <h4 class="role-title">Vice President - Financial Applications Manager</h4>
+                <p class="role-dates">Jul 2021 - Dec 2023 · 2 yrs 6 mos</p>
+                
+                <p class="role-description">Managed financial applications portfolio and enterprise systems strategy.</p>
+                
+              </div>
+              
+            </div>
+          </div>
+        </div>
+        
+        <div class="company-container">
+          <div class="company-header">
+            <h3 class="company-name">Blue Cross and Blue Shield of Illinois, Montana, New Mexico, Oklahoma &amp; Texas</h3>
+            <p class="company-dates"></p>
+            <p class="exp-location">📍 </p>
+            <div class="exp-meta">
+              <span class="exp-type">Full-time</span>
+            </div>
+          </div>
+
+          <div class="exp-item-container">
+            
+            <div class="company-logo">
+              <img src="https://placehold.co/120x120/png?text=BCBS" alt="Blue Cross and Blue Shield of Illinois, Montana, New Mexico, Oklahoma &amp; Texas logo" />
+            </div>
+            
+
+            <div class="company-info">
+              <!-- Roles within company -->
+              
+              <div class="company-role">
+                <h4 class="role-title">Principal Consultant - Cloud Financial Systems</h4>
+                <p class="role-dates">Mar 2019 - Jul 2021 · 2 yrs 5 mos</p>
+                
+                <p class="role-description">Managed Oracle Cloud financial applications and served as primary liaison between business and technical teams. Consulted and participated in Cloud upgrade releases and new projects involving strategy, implementation and support. Provided assistance in key system processes and recommendations for adoption of new functionality. Administered enterprise applications including EPM (PBCS and PCMCS), Solix Data Warehouse, Vertex Tax Engine.</p>
+                
+                <div class="role-achievements">
+                  <p class="achievements-title">Notable Achievements:</p>
+                  <ul>
+                    
+                    <li>Led Oracle ERP Cloud Quarterly upgrade releases</li>
+                    
+                    <li>Developed KPIs for senior leadership highlighting performance and planning</li>
+                    
+                    <li>Fostered collaborative relationships with various teams and built trust with key customers</li>
+                    
+                    <li>Supported 30+ interfaces and provided guidance in designing new ones (Mulesoft, Talend)</li>
+                    
+                  </ul>
+                </div>
+                
+              </div>
+              
+            </div>
+          </div>
+        </div>
+        
+        <div class="company-container">
+          <div class="company-header">
+            <h3 class="company-name">Infosys</h3>
+            <p class="company-dates"></p>
+            <p class="exp-location">📍 </p>
+            <div class="exp-meta">
+              <span class="exp-type">Full-time</span>
+            </div>
+          </div>
+
+          <div class="exp-item-container">
+            
+            <div class="company-logo">
+              <img src="https://placehold.co/120x120/png?text=Infosys" alt="Infosys logo" />
+            </div>
+            
+
+            <div class="company-info">
+              <!-- Roles within company -->
+              
+              <div class="company-role">
+                <h4 class="role-title">Financial Applications Manager (Symantec)</h4>
+                <p class="role-dates">Aug 2018 - Feb 2019 · 7 mos</p>
+                
+                <p class="role-location">📍 Mountain View, California</p>
+                
+                <p class="role-description">Designed, built, and implemented Oracle Receivables system and bridged gap between requirements and final solution. Executed new implementations, functionality improvements, and application updates in collaboration with development teams. Resolved defects and integrated new localization in partnership with Oracle Support.</p>
+                
+                <div class="role-achievements">
+                  <p class="achievements-title">Notable Achievements:</p>
+                  <ul>
+                    
+                    <li>Migrated multiple countries into a common ERP BlueCoat system; executed successful go-lives and UAT</li>
+                    
+                    <li>Spearheaded new system functionalities and led new-user training</li>
+                    
+                  </ul>
+                </div>
+                
+              </div>
+              
+              <div class="company-role">
+                <h4 class="role-title">Lead Oracle Cloud Consultant (Titan International)</h4>
+                <p class="role-dates">Dec 2017 - Jul 2018 · 8 mos</p>
+                
+                <p class="role-location">📍 West Chicago, IL</p>
+                
+                <p class="role-description">Spearheaded communication efforts by elaborating key differences between client&#39;s legacy system and Oracle Cloud Financials. Performed demonstrations on Fusion Expenses and Fusion Payables functionality as key liaison between senior-level IT professionals and financial leadership team. Facilitated daily consultations with business, IT, and support teams.</p>
+                
+                <div class="role-achievements">
+                  <p class="achievements-title">Notable Achievements:</p>
+                  <ul>
+                    
+                    <li>Designed customized functional processes outside of Oracle Fusion Financials in collaboration with business teams</li>
+                    
+                    <li>Led on-site and off-shore technical teams executing analysis, customization, and personalization of cloud system</li>
+                    
+                    <li>Achieved certification as Payables Implementation Specialist for Oracle Financials Cloud</li>
+                    
+                  </ul>
+                </div>
+                
+              </div>
+              
+              <div class="company-role">
+                <h4 class="role-title">Lead Financial Functional Consultant (Johnson Controls, Inc)</h4>
+                <p class="role-dates">Oct 2017 - Dec 2017 · 3 mos</p>
+                
+                <p class="role-location">📍 Boca Raton, FL | Richardson, TX</p>
+                
+                <p class="role-description">Provided post-production support; analyzed system design and ERP configurations during UAT (user acceptance testing) phase of Oracle ERP upgrade and OS migration to UNIX. Designed and tested Accounts Receivable (AR) setups. Wrote test scripts; resolved defects prior to go-live.</p>
+                
+                <div class="role-achievements">
+                  <p class="achievements-title">Notable Achievements:</p>
+                  <ul>
+                    
+                    <li>Collaborated with first-time users and engaged with clients to assist in system assimilation and understanding</li>
+                    
+                    <li>Facilitated training in partnership with business teams for GL, AR, and month-end closing processes</li>
+                    
+                  </ul>
+                </div>
+                
+              </div>
+              
+            </div>
+          </div>
+        </div>
+        
+        <div class="company-container">
+          <div class="company-header">
+            <h3 class="company-name">Synchrony Financial</h3>
+            <p class="company-dates"></p>
+            <p class="exp-location">📍 </p>
+            <div class="exp-meta">
+              <span class="exp-type">Contract</span>
+            </div>
+          </div>
+
+          <div class="exp-item-container">
+            
+            <div class="company-logo">
+              <img src="https://placehold.co/120x120/png?text=Synchrony" alt="Synchrony Financial logo" />
+            </div>
+            
+
+            <div class="company-info">
+              <!-- Roles within company -->
+              
+              <div class="company-role">
+                <h4 class="role-title">Oracle Financial Functional Consultant</h4>
+                <p class="role-dates">Nov 2014 - Oct 2017 · 3 yrs</p>
+                
+                <p class="role-description">Oversaw end-to-end implementations and system upgrades following Synchrony&#39;s spin-off from GE. Obtained requirements, developed processes, and executed implementations across US, Canada, Europe, Asia, and Philippines. Managed team of 12 functional and technical consultants in integrating business processes and executing system automation.</p>
+                
+                <div class="role-achievements">
+                  <p class="achievements-title">Notable Achievements:</p>
+                  <ul>
+                    
+                    <li>Created budgets for various projects and aligned resources based on technical and functional needs</li>
+                    
+                    <li>Delivered solution to successfully integrate HR data between Workday and Oracle</li>
+                    
+                  </ul>
+                </div>
+                
+              </div>
+              
+            </div>
+          </div>
+        </div>
+        
+        <div class="company-container">
+          <div class="company-header">
+            <h3 class="company-name">CGG</h3>
+            <p class="company-dates"></p>
+            <p class="exp-location">📍 </p>
+            <div class="exp-meta">
+              <span class="exp-type">Full-time</span>
+            </div>
+          </div>
+
+          <div class="exp-item-container">
+            
+            <div class="company-logo">
+              <img src="https://placehold.co/120x120/png?text=CGG" alt="CGG logo" />
+            </div>
+            
+
+            <div class="company-info">
+              <!-- Roles within company -->
+              
+              <div class="company-role">
+                <h4 class="role-title">Oracle Financial Functional Support Analyst</h4>
+                <p class="role-dates">Nov 2012 - Oct 2014 · 2 yrs</p>
+                
+                <p class="role-description">Provided post-production on-call support and delivered system solutions across all financial models. Identified Root Cause, analyzed issues, and developed solutions to diminish issue recurrence. Worked closely with end users to understand intended processes; collaborated with Oracle support.</p>
+                
+                <div class="role-achievements">
+                  <p class="achievements-title">Notable Achievements:</p>
+                  <ul>
+                    
+                    <li>Wrote SQL queries across GL, XLA (SLA), ZX (Tax), FA, and AP tables to troubleshoot</li>
+                    
+                    <li>Drastically reduced GL and AP open issues</li>
+                    
+                  </ul>
+                </div>
+                
+              </div>
+              
+            </div>
+          </div>
+        </div>
+        
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="profile-section">
+      <h2>Education</h2>
+      <div class="education-items">
+        
+        <div class="education-item">
+          <div class="edu-header">
+            <h3 class="edu-degree">Master of Business Administration - MBA</h3>
+            <p class="edu-field">Business Strategy</p>
+          </div>
+          <p class="edu-school">Kennesaw State University - Michael J. Coles College of Business</p>
+          <p class="edu-dates">2016 - 2018</p>
+          
+          <div class="edu-activities">
+            <p class="activities-label">Activities and societies:</p>
+            <div class="activities-list">
+              
+              <span class="activity-badge">Beta Gamma Sigma</span>
+              
+              <span class="activity-badge">Phi Kappa Phi</span>
+              
+              <span class="activity-badge">Golden Key Honor Society</span>
+              
+            </div>
+          </div>
+          
+        </div>
+        
+        <div class="education-item">
+          <div class="edu-header">
+            <h3 class="edu-degree">Bachelor&#39;s degree</h3>
+            <p class="edu-field">Electronics Engineering</p>
+          </div>
+          <p class="edu-school">DeVry University</p>
+          <p class="edu-dates">2004 - 2008</p>
+          
+          <div class="edu-activities">
+            <p class="activities-label">Activities and societies:</p>
+            <div class="activities-list">
+              
+              <span class="activity-badge">Dean&#39;s List</span>
+              
+            </div>
+          </div>
+          
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- Licenses & Certifications Section -->
+    <section id="licenses" class="profile-section">
+      <h2>Licenses & Certifications</h2>
+      <div class="licenses-items">
+        
+        <div class="license-item">
+          <h3 class="cert-title">Oracle Fusion AI Agent Studio Foundations Associate</h3>
+          <p class="cert-issuer">Oracle</p>
+          <p class="cert-date">Issued Aug 2025</p>
+          
+          <p class="cert-id">Credential ID: 1Z0-1145-1</p>
+          
+          <div class="cert-skills">
+            
+            <span class="skill-tag">Artificial Intelligence (AI)</span>
+            
+            <span class="skill-tag">Oracle Enterprise Resource Planning (ERP) Cloud</span>
+            
+          </div>
+        </div>
+        
+        <div class="license-item">
+          <h3 class="cert-title">Oracle Cloud Infrastructure: AI Foundations</h3>
+          <p class="cert-issuer">Oracle</p>
+          <p class="cert-date">Issued TBD</p>
+          
+          <div class="cert-skills">
+            
+            <span class="skill-tag">Artificial Intelligence (AI)</span>
+            
+            <span class="skill-tag">Oracle Enterprise Resource Planning (ERP) Cloud</span>
+            
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- Volunteering Section -->
+    <section id="volunteering" class="profile-section">
+      <h2>Volunteering</h2>
+      <div class="volunteering-items">
+        
+        <div class="volunteer-item">
+          <div class="vol-header">
+            <h3 class="vol-title">Business Relationship Manager</h3>
+            <p class="vol-organization">Science of Spirituality</p>
+          </div>
+          <p class="vol-category">Social Services</p>
+          <p class="vol-dates">Jan 2011 - Present · 15 yrs 1 mo</p>
+          
+          <ul class="vol-responsibilities">
+            
+            <li>Lead NetSuite implementation for financial business applications</li>
+            
+            <li>Deliver IT solutions by liaising between business application vendors and business teams</li>
+            
+          </ul>
+          
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- Honors & Awards Section -->
+    <section id="awards" class="profile-section">
+      <h2>Honors & Awards</h2>
+      <div class="awards-items">
+        
+        <div class="award-item">
+          <h3 class="award-title">Beta Gamma Sigma</h3>
+          <p class="award-issuer">Issued by Kennesaw State University · Apr 2018</p>
+          <p class="award-organization">Kennesaw State University - Michael J. Coles College of Business</p>
+        </div>
+        
+        <div class="award-item">
+          <h3 class="award-title">Phi Kappa Phi</h3>
+          <p class="award-issuer">Issued by Kennesaw State University · Apr 2018</p>
+          <p class="award-organization">Kennesaw State University - Michael J. Coles College of Business</p>
+        </div>
+        
+        <div class="award-item">
+          <h3 class="award-title">Golden Key Honor Society</h3>
+          <p class="award-issuer">Issued by Kennesaw State University · Nov 2017</p>
+          <p class="award-organization">Kennesaw State University - Michael J. Coles College of Business</p>
+        </div>
+        
+        <div class="award-item">
+          <h3 class="award-title">Dean&#39;s List</h3>
+          <p class="award-issuer">Issued by DeVry University · Feb 2008</p>
+          <p class="award-organization">DeVry University</p>
+        </div>
+        
+      </div>
+    </section>
+  </main>
+</div>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Saurabh Bhatia</p>
+  </footer>
+
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>

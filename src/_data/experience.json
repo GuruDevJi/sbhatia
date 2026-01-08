@@ -1,0 +1,122 @@
+[
+    {
+        "id": "blue-owl",
+        "company": "Blue Owl Capital",
+        "type": "Full-time",
+        "image": "https://placehold.co/120x120/png?text=Blue+Owl",
+        "roles": [
+            {
+                "title": "Principal - Financial Applications",
+                "dates": "Jan 2024 - Present",
+                "duration": "2 yrs 1 mo",
+                "description": "Leading strategic financial applications and enterprise systems transformation.",
+                "achievements": []
+            },
+            {
+                "title": "Vice President - Financial Applications Manager",
+                "dates": "Jul 2021 - Dec 2023",
+                "duration": "2 yrs 6 mos",
+                "description": "Managed financial applications portfolio and enterprise systems strategy.",
+                "achievements": []
+            }
+        ]
+    },
+    {
+        "id": "hcsc",
+        "company": "Blue Cross and Blue Shield of Illinois, Montana, New Mexico, Oklahoma & Texas",
+        "type": "Full-time",
+        "image": "https://placehold.co/120x120/png?text=BCBS",
+        "roles": [
+            {
+                "title": "Principal Consultant - Cloud Financial Systems",
+                "dates": "Mar 2019 - Jul 2021",
+                "duration": "2 yrs 5 mos",
+                "description": "Managed Oracle Cloud financial applications and served as primary liaison between business and technical teams. Consulted and participated in Cloud upgrade releases and new projects involving strategy, implementation and support. Provided assistance in key system processes and recommendations for adoption of new functionality. Administered enterprise applications including EPM (PBCS and PCMCS), Solix Data Warehouse, Vertex Tax Engine.",
+                "achievements": [
+                    "Led Oracle ERP Cloud Quarterly upgrade releases",
+                    "Developed KPIs for senior leadership highlighting performance and planning",
+                    "Fostered collaborative relationships with various teams and built trust with key customers",
+                    "Supported 30+ interfaces and provided guidance in designing new ones (Mulesoft, Talend)"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "infosys",
+        "company": "Infosys",
+        "type": "Full-time",
+        "image": "https://placehold.co/120x120/png?text=Infosys",
+        "roles": [
+            {
+                "title": "Financial Applications Manager (Symantec)",
+                "location": "Mountain View, California",
+                "dates": "Aug 2018 - Feb 2019",
+                "duration": "7 mos",
+                "description": "Designed, built, and implemented Oracle Receivables system and bridged gap between requirements and final solution. Executed new implementations, functionality improvements, and application updates in collaboration with development teams. Resolved defects and integrated new localization in partnership with Oracle Support.",
+                "achievements": [
+                    "Migrated multiple countries into a common ERP BlueCoat system; executed successful go-lives and UAT",
+                    "Spearheaded new system functionalities and led new-user training"
+                ]
+            },
+            {
+                "title": "Lead Oracle Cloud Consultant (Titan International)",
+                "location": "West Chicago, IL",
+                "dates": "Dec 2017 - Jul 2018",
+                "duration": "8 mos",
+                "description": "Spearheaded communication efforts by elaborating key differences between client's legacy system and Oracle Cloud Financials. Performed demonstrations on Fusion Expenses and Fusion Payables functionality as key liaison between senior-level IT professionals and financial leadership team. Facilitated daily consultations with business, IT, and support teams.",
+                "achievements": [
+                    "Designed customized functional processes outside of Oracle Fusion Financials in collaboration with business teams",
+                    "Led on-site and off-shore technical teams executing analysis, customization, and personalization of cloud system",
+                    "Achieved certification as Payables Implementation Specialist for Oracle Financials Cloud"
+                ]
+            },
+            {
+                "title": "Lead Financial Functional Consultant (Johnson Controls, Inc)",
+                "location": "Boca Raton, FL | Richardson, TX",
+                "dates": "Oct 2017 - Dec 2017",
+                "duration": "3 mos",
+                "description": "Provided post-production support; analyzed system design and ERP configurations during UAT (user acceptance testing) phase of Oracle ERP upgrade and OS migration to UNIX. Designed and tested Accounts Receivable (AR) setups. Wrote test scripts; resolved defects prior to go-live.",
+                "achievements": [
+                    "Collaborated with first-time users and engaged with clients to assist in system assimilation and understanding",
+                    "Facilitated training in partnership with business teams for GL, AR, and month-end closing processes"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "synchrony",
+        "company": "Synchrony Financial",
+        "type": "Contract",
+        "image": "https://placehold.co/120x120/png?text=Synchrony",
+        "roles": [
+            {
+                "title": "Oracle Financial Functional Consultant",
+                "dates": "Nov 2014 - Oct 2017",
+                "duration": "3 yrs",
+                "description": "Oversaw end-to-end implementations and system upgrades following Synchrony's spin-off from GE. Obtained requirements, developed processes, and executed implementations across US, Canada, Europe, Asia, and Philippines. Managed team of 12 functional and technical consultants in integrating business processes and executing system automation.",
+                "achievements": [
+                    "Created budgets for various projects and aligned resources based on technical and functional needs",
+                    "Delivered solution to successfully integrate HR data between Workday and Oracle"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "cgg",
+        "company": "CGG",
+        "type": "Full-time",
+        "image": "https://placehold.co/120x120/png?text=CGG",
+        "roles": [
+            {
+                "title": "Oracle Financial Functional Support Analyst",
+                "dates": "Nov 2012 - Oct 2014",
+                "duration": "2 yrs",
+                "description": "Provided post-production on-call support and delivered system solutions across all financial models. Identified Root Cause, analyzed issues, and developed solutions to diminish issue recurrence. Worked closely with end users to understand intended processes; collaborated with Oracle support.",
+                "achievements": [
+                    "Wrote SQL queries across GL, XLA (SLA), ZX (Tax), FA, and AP tables to troubleshoot",
+                    "Drastically reduced GL and AP open issues"
+                ]
+            }
+        ]
+    }
+]

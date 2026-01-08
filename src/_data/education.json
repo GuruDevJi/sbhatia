@@ -1,0 +1,24 @@
+[
+    {
+        "id": "ksu-mba",
+        "school": "Kennesaw State University - Michael J. Coles College of Business",
+        "location": "Kennesaw, GA, United States",
+        "degree": "Master of Business Administration - MBA",
+        "field": "Business Strategy",
+        "dates": "2016 - 2018",
+        "lat": "34.0237",
+        "lon": "-84.6151",
+        "activities": ["Beta Gamma Sigma", "Phi Kappa Phi", "Golden Key Honor Society"]
+    },
+    {
+        "id": "devry-bachelor",
+        "school": "DeVry University",
+        "location": "Addison, IL, United States",
+        "degree": "Bachelor's degree",
+        "field": "Electronics Engineering",
+        "dates": "2004 - 2008",
+        "lat": "41.9320",
+        "lon": "-88.0005",
+        "activities": ["Dean's List"]
+    }
+]
