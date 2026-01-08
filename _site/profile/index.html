@@ -44,10 +44,7 @@
           <div style="flex:1;min-width:260px;">
             <p>I travel for work and have contributed to projects across these locations. The map above shows pin drops for each company's primary location; click a pin for details.</p>
           </div>
-          <div style="flex:1;min-width:220px;">
-            <p><strong>Locations (fallback list)</strong></p>
-            <ul id="journey-list" style="margin:0;padding-left:1.25rem;color:#ccc;"></ul>
-          </div>
+  
         </div>
       </div>
 
@@ -60,6 +57,7 @@
           const map = L.map('map').setView([39.8283, -98.5795], 4);
           L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; OpenStreetMap',
+            minZoom: 2,
             maxZoom: 19
           }).addTo(map);
 
@@ -110,8 +108,8 @@
               id: "titan",
               company: "Infosys (Titan International)",
               location: "St. Charles, IL, United States",
-              lat: 41.8832,
-              lon: -87.6324
+              lat: 41.9142,
+              lon: -88.3087
             },
             
             {
@@ -134,8 +132,8 @@
               id: "newhaven",
               company: "Newhaven Display International",
               location: "Elgin, IL, United States",
-              lat: 41.8832,
-              lon: -87.6324
+              lat: 42.0354,
+              lon: -88.2826
             }
             
           ];
@@ -238,7 +236,7 @@
           <div class="exp-item-container">
             
             <div class="company-logo">
-              <img src="https://placehold.co/120x120/png?text=Blue+Owl" alt="Blue Owl Capital logo" />
+              <img src="/assets/images/blueowl.png" alt="Blue Owl Capital logo" />
             </div>
             
 
@@ -278,7 +276,7 @@
           <div class="exp-item-container">
             
             <div class="company-logo">
-              <img src="https://placehold.co/120x120/png?text=BCBS" alt="Blue Cross and Blue Shield of Illinois, Montana, New Mexico, Oklahoma &amp; Texas logo" />
+              <img src="/assets/images/bcbs-logo.png" alt="Blue Cross and Blue Shield of Illinois, Montana, New Mexico, Oklahoma &amp; Texas logo" />
             </div>
             
 
@@ -325,7 +323,7 @@
           <div class="exp-item-container">
             
             <div class="company-logo">
-              <img src="https://placehold.co/120x120/png?text=Infosys" alt="Infosys logo" />
+              <img src="/assets/images/infosys-logo.png" alt="Infosys logo" />
             </div>
             
 
@@ -414,7 +412,7 @@
           <div class="exp-item-container">
             
             <div class="company-logo">
-              <img src="https://placehold.co/120x120/png?text=Synchrony" alt="Synchrony Financial logo" />
+              <img src="/assets/images/synchrony-logo.png" alt="Synchrony Financial logo" />
             </div>
             
 
@@ -457,7 +455,7 @@
           <div class="exp-item-container">
             
             <div class="company-logo">
-              <img src="https://placehold.co/120x120/png?text=CGG" alt="CGG logo" />
+              <img src="/assets/images/cgg1.jpg" alt="CGG logo" />
             </div>
             
 

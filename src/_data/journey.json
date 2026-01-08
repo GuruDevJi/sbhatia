@@ -38,8 +38,8 @@
     "id": "titan",
     "company": "Infosys (Titan International)",
     "location": "St. Charles, IL, United States",
-    "lat": "41.8832",
-    "lon": "-87.6324"
+    "lat": "41.9142",
+    "lon": "-88.3087"
   },
   {
     "id": "johnson",
@@ -59,7 +59,7 @@
     "id": "newhaven",
     "company": "Newhaven Display International",
     "location": "Elgin, IL, United States",
-    "lat": "41.8832",
-    "lon": "-87.6324"
+    "lat": "42.0354",
+    "lon": "-88.2826"
   }
 ]
