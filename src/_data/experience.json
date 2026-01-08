@@ -3,7 +3,7 @@
         "id": "blue-owl",
         "company": "Blue Owl Capital",
         "type": "Full-time",
-        "image": "https://placehold.co/120x120/png?text=Blue+Owl",
+        "image": "/assets/images/blueowl.png",
         "roles": [
             {
                 "title": "Principal - Financial Applications",
@@ -25,7 +25,7 @@
         "id": "hcsc",
         "company": "Blue Cross and Blue Shield of Illinois, Montana, New Mexico, Oklahoma & Texas",
         "type": "Full-time",
-        "image": "https://placehold.co/120x120/png?text=BCBS",
+        "image": "/assets/images/bcbs-logo.png",
         "roles": [
             {
                 "title": "Principal Consultant - Cloud Financial Systems",
@@ -45,7 +45,7 @@
         "id": "infosys",
         "company": "Infosys",
         "type": "Full-time",
-        "image": "https://placehold.co/120x120/png?text=Infosys",
+        "image": "/assets/images/infosys-logo.png",
         "roles": [
             {
                 "title": "Financial Applications Manager (Symantec)",
@@ -87,7 +87,7 @@
         "id": "synchrony",
         "company": "Synchrony Financial",
         "type": "Contract",
-        "image": "https://placehold.co/120x120/png?text=Synchrony",
+        "image": "/assets/images/synchrony-logo.png",
         "roles": [
             {
                 "title": "Oracle Financial Functional Consultant",
@@ -105,7 +105,7 @@
         "id": "cgg",
         "company": "CGG",
         "type": "Full-time",
-        "image": "https://placehold.co/120x120/png?text=CGG",
+        "image": "/assets/images/cgg1.jpg",
         "roles": [
             {
                 "title": "Oracle Financial Functional Support Analyst",
