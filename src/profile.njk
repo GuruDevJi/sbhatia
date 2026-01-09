@@ -145,7 +145,19 @@ title: Profile
           <div class="company-header">
             <h3 class="company-name">{{ company.company }}</h3>
             <p class="company-dates">{{ company.dates }}</p>
-            <p class="exp-location">📍 {{ company.location if company.location else '' }}</p>
+            {% if company.id == "blue-owl" %}
+              <p class="exp-location">📍 New York City, NY</p>
+            {% elif company.id == "hcsc" %}
+              <p class="exp-location">📍 Chicago, IL</p>
+            {% elif company.id == "infosys" %}
+              <p class="exp-location">📍 Richardson, TX</p>
+            {% elif company.id == "synchrony" %}
+              <p class="exp-location">📍 Alpharetta, GA</p>
+            {% elif company.id == "cgg" %}
+              <p class="exp-location">📍 Houston, TX</p>
+            {% else %}
+              <p class="exp-location">📍 {{ company.location if company.location else '' }}</p>
+            {% endif %}
             <div class="exp-meta">
               <span class="exp-type">{{ company.type }}</span>
             </div>
@@ -160,14 +172,11 @@ title: Profile
 
             <div class="company-info">
               {% if company.id == "blue-owl" %}
-                <!-- Show overall summary and achievements once -->
+                <!-- Show Blue Owl role titles above summary -->
                 <div class="company-summary">
+                  <h4 class="role-title">{{ company.roles[0].title }} <span style="font-weight:normal;">({{ company.roles[0].dates }}, {{ company.roles[0].duration }})</span></h4>
+                  <h4 class="role-title">{{ company.roles[1].title }} <span style="font-weight:normal;">({{ company.roles[1].dates }}, {{ company.roles[1].duration }})</span></h4>
                   <p class="role-description">{{ company.roles[0].description }}</p>
-                  <ul class="exp-roles">
-                    {% for role in company.roles %}
-                      <li><strong>{{ role.title }}</strong> <span>({{ role.dates }}, {{ role.duration }})</span></li>
-                    {% endfor %}
-                  </ul>
                   <div class="role-achievements">
                     <p class="achievements-title">Notable Achievements:</p>
                     <ul>

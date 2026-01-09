@@ -12,6 +12,7 @@
     <nav>
       <a href="/" class="nav-link nav-home">Home</a>
       <a href="/profile/" class="nav-link nav-profile">Profile</a>
+      <a href="/financial-applications/" class="nav-link nav-finapps">Financial Applications</a>
       <a href="/speaker-gallery/" class="nav-link nav-speaker">Speaker Gallery</a>
       <a href="/contact/" class="nav-link nav-contact">Contact</a>
     </nav>
@@ -19,26 +20,31 @@
 
   <main>
     
-<h2>Get in touch</h2>
-
-<form action="https://formspree.io/f/mkogaebe" method="POST" class="contact-form">
-  <div class="form-group">
-    <label for="email">Email (required)</label>
-    <input type="email" id="email" name="email" required />
+<div class="contact-container" style="display:flex;align-items:stretch;min-height:700px;max-width:1200px;margin:2rem auto;background:#23232a;border-radius:16px;box-shadow:0 2px 16px rgba(20,184,166,0.08);overflow:hidden;">
+  <!-- Left: Contact form and content -->
+  <div class="contact-left" style="flex:1;padding:2.5rem 2rem;display:flex;flex-direction:column;justify-content:center;">
+    <h2 style="color:#14b8a6;">Get in touch</h2>
+    <form action="https://formspree.io/f/mkogaebe" method="POST" class="contact-form">
+      <div class="form-group">
+        <label for="email">Email (required)</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+      <div class="form-group">
+        <label for="subject">Subject (required)</label>
+        <input type="text" id="subject" name="subject" required />
+      </div>
+      <div class="form-group">
+        <label for="message">Message (required)</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+      </div>
+      <button type="submit">Send Message</button>
+    </form>
   </div>
-
-  <div class="form-group">
-    <label for="subject">Subject (required)</label>
-    <input type="text" id="subject" name="subject" required />
+  <!-- Right: Avatar background -->
+  <div class="contact-right" style="flex:1;min-width:320px;background:#23232a url('/assets/images/sbavatarnbg.png') left/200% no-repeat;display:flex;align-items:center;justify-content:center;">
+    <!-- Optionally add overlay or content here -->
   </div>
-
-  <div class="form-group">
-    <label for="message">Message (required)</label>
-    <textarea id="message" name="message" rows="5" required></textarea>
-  </div>
-
-  <button type="submit">Send Message</button>
-</form>
+</div>
 
   </main>
 
