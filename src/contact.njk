@@ -3,9 +3,12 @@ layout: base.njk
 title: Contact
 ---
 <!-- Contact color bar -->
-<div class="contact-color-bar" style="height:16px;width:100%;background:#8b5cf6;margin-bottom:0.5rem;"></div>
 
-<div class="contact-container" style="display:flex;align-items:stretch;min-height:700px;max-width:1200px;margin:2rem auto;background:#23232a;border-radius:16px;box-shadow:0 2px 16px rgba(20,184,166,0.08);overflow:hidden;">
+<!-- Neural network particle background -->
+<div id="nn-particles-bg" style="position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:0;pointer-events:none;"></div>
+<div class="contact-color-bar" style="height:16px;width:100%;background:#8b5cf6;margin-bottom:0.5rem;position:relative;z-index:1;"></div>
+
+<div class="contact-container" style="display:flex;align-items:stretch;min-height:700px;max-width:1200px;margin:2rem auto;background:#23232a;border-radius:16px;box-shadow:0 2px 16px rgba(20,184,166,0.08);overflow:hidden;position:relative;z-index:1;">
   <!-- Left: Contact form and content -->
   <div class="contact-left" style="flex:1;padding:2.5rem 2rem;display:flex;flex-direction:column;justify-content:center;">
     <h2 style="color:#8b5cf6;">Get in touch</h2>
@@ -30,4 +33,86 @@ title: Contact
   <div class="contact-right" style="flex:1;min-width:320px;background:#23232a url('/assets/images/sbavatarnbg.png') left/200% no-repeat;display:flex;align-items:center;justify-content:center;">
     <!-- Optionally add overlay or content here -->
   </div>
+<!-- ...existing code... -->
 </div>
+
+<!-- Neural network particle effect script -->
+<script>
+  function nnParticles() {
+    const canvas = document.createElement('canvas');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    canvas.style.width = '100vw';
+    canvas.style.height = '100vh';
+    canvas.style.display = 'block';
+    canvas.style.position = 'absolute';
+    canvas.style.top = '0';
+    canvas.style.left = '0';
+    canvas.style.zIndex = '0';
+    canvas.style.pointerEvents = 'none';
+    document.getElementById('nn-particles-bg').appendChild(canvas);
+    const ctx = canvas.getContext('2d');
+
+    let nodes = [];
+    const N = 32;
+    for (let i = 0; i < N; i++) {
+      nodes.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        vx: (Math.random() - 0.5) * 0.7,
+        vy: (Math.random() - 0.5) * 0.7
+      });
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      // Draw connections
+      for (let i = 0; i < N; i++) {
+        for (let j = i + 1; j < N; j++) {
+          const dx = nodes[i].x - nodes[j].x;
+          const dy = nodes[i].y - nodes[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 180) {
+            ctx.strokeStyle = 'rgba(139, 92, 246, 0.18)'; // purple, faint
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(nodes[i].x, nodes[i].y);
+            ctx.lineTo(nodes[j].x, nodes[j].y);
+            ctx.stroke();
+          }
+        }
+      }
+      // Draw nodes
+      for (let i = 0; i < N; i++) {
+        ctx.beginPath();
+        ctx.arc(nodes[i].x, nodes[i].y, 4, 0, 2 * Math.PI);
+        ctx.fillStyle = '#8b5cf6'; // purple
+        ctx.globalAlpha = 0.7;
+        ctx.fill();
+        ctx.globalAlpha = 1.0;
+      }
+    }
+
+    function update() {
+      for (let i = 0; i < N; i++) {
+        nodes[i].x += nodes[i].vx;
+        nodes[i].y += nodes[i].vy;
+        if (nodes[i].x < 0 || nodes[i].x > canvas.width) nodes[i].vx *= -1;
+        if (nodes[i].y < 0 || nodes[i].y > canvas.height) nodes[i].vy *= -1;
+      }
+    }
+
+    function animate() {
+      update();
+      draw();
+      requestAnimationFrame(animate);
+    }
+    animate();
+
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+  }
+  document.addEventListener('DOMContentLoaded', nnParticles);
+</script>
