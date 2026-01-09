@@ -159,27 +159,47 @@ title: Profile
             {% endif %}
 
             <div class="company-info">
-              <!-- Roles within company -->
-              {% for role in company.roles %}
-              <div class="company-role">
-                <h4 class="role-title">{{ role.title }}</h4>
-                <p class="role-dates">{{ role.dates }} · {{ role.duration }}</p>
-                {% if role.location %}
-                <p class="role-location">📍 {{ role.location }}</p>
-                {% endif %}
-                <p class="role-description">{{ role.description }}</p>
-                {% if role.achievements.length > 0 %}
-                <div class="role-achievements">
-                  <p class="achievements-title">Notable Achievements:</p>
-                  <ul>
-                    {% for achievement in role.achievements %}
-                    <li>{{ achievement }}</li>
+              {% if company.id == "blue-owl" %}
+                <!-- Show overall summary and achievements once -->
+                <div class="company-summary">
+                  <p class="role-description">{{ company.roles[0].description }}</p>
+                  <ul class="exp-roles">
+                    {% for role in company.roles %}
+                      <li><strong>{{ role.title }}</strong> <span>({{ role.dates }}, {{ role.duration }})</span></li>
                     {% endfor %}
                   </ul>
+                  <div class="role-achievements">
+                    <p class="achievements-title">Notable Achievements:</p>
+                    <ul>
+                      {% for achievement in company.roles[0].achievements %}
+                        <li>{{ achievement }}</li>
+                      {% endfor %}
+                    </ul>
+                  </div>
                 </div>
-                {% endif %}
-              </div>
-              {% endfor %}
+              {% else %}
+                <!-- Default rendering for other companies -->
+                {% for role in company.roles %}
+                <div class="company-role">
+                  <h4 class="role-title">{{ role.title }}</h4>
+                  <p class="role-dates">{{ role.dates }} · {{ role.duration }}</p>
+                  {% if role.location %}
+                  <p class="role-location">📍 {{ role.location }}</p>
+                  {% endif %}
+                  <p class="role-description">{{ role.description }}</p>
+                  {% if role.achievements.length > 0 %}
+                  <div class="role-achievements">
+                    <p class="achievements-title">Notable Achievements:</p>
+                    <ul>
+                      {% for achievement in role.achievements %}
+                      <li>{{ achievement }}</li>
+                      {% endfor %}
+                    </ul>
+                  </div>
+                  {% endif %}
+                </div>
+                {% endfor %}
+              {% endif %}
             </div>
           </div>
         </div>
