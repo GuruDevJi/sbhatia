@@ -19,9 +19,64 @@
 
   <main>
     
-<section>
-  <h2>Hello from Eleventy</h2>
-  <p>This is my first page, now using a shared layout.</p>
+<section class="home-hero" style="display:flex;align-items:center;gap:2.5rem;margin-bottom:2.5rem;flex-wrap:wrap;">
+  <div style="flex:1;min-width:260px;">
+    <img src="/assets/images/sbavatar.png" alt="Saurabh Bhatia" style="width:300px;height:300px;object-fit:cover;border-radius:8px;" />
+  </div>
+  <div style="flex:3;min-width:260px;">
+    <h1 style="font-size:2.5rem;margin:0 0 0.5rem;color:#14b8a6;">Saurabh Bhatia</h1>
+    <h2 style="font-size:1.5rem;font-weight:400;margin:0 0 1.5rem;color:#eee;">Building creative, resilient, and inspiring financial systems</h2>
+    <p style="font-size:1.1rem;color:#ccc;max-width:600px;">Engineer, architect, and relentless problem solver. I design and deliver enterprise solutions that blend technology, business, and user experience—always with a spirit of curiosity and adventure.</p>
+    <div style="margin-top:1.5rem;display:flex;gap:1.5rem;flex-wrap:wrap;">
+      <a href="/profile/" class="home-btn" style="background:#14b8a6;color:#fff;padding:0.75rem 2rem;border-radius:4px;font-size:1.1rem;text-decoration:none;">View My Profile</a>
+      <a href="/contact/" class="home-btn" style="background:#3b82f6;color:#fff;padding:0.75rem 2rem;border-radius:4px;font-size:1.1rem;text-decoration:none;">Contact Me</a>
+    </div>
+    <div style="margin-top:1.5rem;display:flex;gap:1.25rem;align-items:center;">
+      <a href="#" title="LinkedIn" style="color:#0a66c2;font-size:2rem;"><i class="fab fa-linkedin"></i>LinkedIn</a>
+      <a href="#" title="GitHub" style="color:#fff;font-size:2rem;"><i class="fab fa-github"></i>GitHub</a>
+      <a href="#" title="Twitter" style="color:#1da1f2;font-size:2rem;"><i class="fab fa-twitter"></i>Twitter</a>
+    </div>
+  </div>
+</section>
+
+<section class="home-featured" style="margin-bottom:2.5rem;">
+  <h2 style="color:#3b82f6;margin-bottom:1.5rem;">Featured Projects</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:2rem;">
+    <div class="project-card" style="background:#181c24;padding:1.5rem;border-radius:8px;box-shadow:0 2px 12px #0001;">
+      <div id="touch-panel-card-media" style="width:100%;height:280px;margin:0 auto 1rem auto;position:relative;">
+        <img src="/assets/images/display.png" alt="Touch Panel Controller" style="width:100%;height:100%;object-fit:cover;border-radius:6px;display:block;cursor:pointer;position:absolute;top:0;left:0;right:0;bottom:0;margin:auto;z-index:2;" onclick="this.style.display='none';document.getElementById('touch-panel-card-video').style.display='block';document.getElementById('touch-panel-card-video').querySelector('iframe').src='https://www.youtube.com/embed/u5v1vZr6F9k?autoplay=1';" />
+        <div id="touch-panel-card-video" style="display:none;width:100%;height:100%;position:absolute;top:0;left:0;right:0;bottom:0;margin:auto;z-index:1;">
+          <iframe width="100%" height="100%" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius:6px;"></iframe>
+        </div>
+      </div>
+      <h3 style="color:#f43f5e;">Capacitive Touch Panel Controller</h3>
+      <p style="color:#ccc;">Designed and coded a custom firmware for a PIC18F microcontroller, enabling multi-touch gestures on a Newhaven TFT display. Pure hands-on engineering, from hardware to software.</p>
+    </div>
+    <div class="project-card" style="background:#181c24;padding:1.5rem;border-radius:8px;box-shadow:0 2px 12px #0001;">
+      <video src="/assets/images/nn.mp4" controls style="width:100%;max-width:260px;height:280px;object-fit:cover;border-radius:6px;margin-bottom:1rem;display:block;background:#000;margin-left:auto;margin-right:auto;" poster="/assets/images/nn.jpg"></video>
+      <h3 style="color:#f43f5e;">AI Portfolio & Tools</h3>
+      <p style="color:#ccc;">Educated in AI and machine learning, I build intelligent tools and web experiences—like this portfolio—using modern AI technologies, automation, and creative coding.</p>
+    </div>
+    <div class="project-card" style="background:#181c24;padding:1.5rem;border-radius:8px;box-shadow:0 2px 12px #0001;">
+      <img src="/assets/images/oraclelogo.png" alt="Financial Applications Visionary" style="width:100%;max-width:260px;height:280px;object-fit:cover;border-radius:6px;margin-bottom:1rem;display:block;margin-left:auto;margin-right:auto;" />
+      <h3 style="color:#14b8a6;">Financial Applications Visionary</h3>
+      <p style="color:#ccc;">Designs, integrates, and implements innovative financial systems—from bare-metal touch interfaces to AI-powered enterprise platforms—bridging hardware curiosity with enterprise-scale transformation.</p>
+    </div>
+  </div>
+</section>
+
+<section class="home-news" style="margin-bottom:2.5rem;">
+  <h2 style="color:#f59e0b;margin-bottom:1.5rem;">Latest Updates</h2>
+  <ul style="color:#ccc;font-size:1.05rem;line-height:1.7;">
+    <li>Launched this new portfolio site—developed vibe-coded using AI tools. Explore the <a href="/profile/" style="color:#14b8a6;">Profile</a> and <a href="/contact/" style="color:#3b82f6;">Contact</a> pages!</li>
+    <li>Published a deep dive on building custom touch panel controllers (see Profile & Projects)</li>
+    <li>Now consulting on cloud ERP and automation projects—open to new networking opportunities to build long term relationships and learn and develop together.</li>
+  </ul>
+</section>
+
+<section class="home-blog" style="margin-bottom:2.5rem;">
+  <h2 style="color:#8b5cf6;margin-bottom:1.5rem;">From the Blog</h2>
+  <div style="color:#ccc;">Coming soon: technical writeups, project stories, and lessons learned.</div>
 </section>
 
   </main>
