@@ -15,8 +15,10 @@ This is a personal portfolio website built with **Eleventy (11ty) v3.1.2**, a st
 ```
 src/                          # Source templates (input directory)
 ├── contact.njk              # Contact form page
-├── profile.njk             # Profile page with sticky sidebar showing Experience, Education, Licenses, Volunteering, and Honors & Awards
+├── profile.njk             # Profile page with modular sections: Experience, Education, Licenses, Volunteering, Honors & Awards
 ├── index.njk                # Homepage
+├── speaker-gallery.njk      # Speaker gallery page
+├── specializations.njk      # Specializations page
 ├── _includes/
 │   └── base.njk             # Master layout template
 ├── _data/
@@ -25,9 +27,11 @@ src/                          # Source templates (input directory)
 │   ├── licenses.json        # Array of certifications and licenses
 │   ├── volunteering.json    # Array of volunteer experiences
 │   ├── awards.json          # Array of honors and awards
+│   ├── journey.json         # Array of journey map data
 │   └── var.json             # Site-wide config variables
 └── assets/                  # Static files (CSS, JS) - passed through unchanged
-    ├── css/main.css
+    ├── css/main.css         # (currently empty)
+    ├── css/main.css.backup  # (backup of previous styles)
     └── js/main.js
 ```
 
@@ -69,39 +73,20 @@ The `title` is displayed in browser tab and referenced in base layout.
 `contact.njk` uses **Formspree** (https://formspree.io/) for form submission. Action URL: `https://formspree.io/f/mkogaebe`. No backend validation needed—Formspree handles it.
 
 ### Styling & Scripts
-- Single CSS file: `src/assets/css/main.css` (linked in base layout)
+- Single CSS file: `src/assets/css/main.css` (currently empty, linked in base layout)
 - Single JS file: `src/assets/js/main.js` (loaded at end of body in base layout)
 - Add styles/scripts here; they're served from `/assets/css/` and `/assets/js/` routes
-- **Experience page**: Uses sticky sidebar with scroll-triggered highlighting (see main.js for implementation)
 
 ## Profile Page Architecture
 
-The profile page (`profile.njk`) features a two-column layout with sticky sidebar navigation:
+The profile page (`profile.njk`) and the specializations page (`specializations.njk`) both feature a sticky sidebar navigation. The sidebar provides quick links to each major section and highlights the active section as the user scrolls. Main content is organized into modular sections (Journey, Experience, Education, Licenses, Volunteering, Honors & Awards for profile; domain expertise for specializations).
 
-### Layout Components
-- **Left Sidebar** (200px, sticky): Navigation menu with scroll-triggered active state. Links jump to sections with smooth scroll.
-- **Main Content**: Five profile sections (Experience, Education, Licenses, Volunteering, Honors & Awards), each populated from corresponding JSON data file
-
-### Sticky Sidebar Highlighting
-JavaScript in `main.js` implements `updateActiveLink()` that:
-1. Tracks scroll position and maps it to visible sections
-2. Automatically highlights the corresponding sidebar link
-3. On link click, smoothly scrolls to section and updates active state
-4. Uses 100px offset for more natural highlighting behavior
-
-### Section Styling
-Each section type has distinct visual styling:
-- **Experience**: Teal (14b8a6) left border, company name in accent color, achievements list
-- **Education**: Blue (3b82f6) left border, activity badges with semi-transparent backgrounds  
-- **Licenses**: Amber (f59e0b) left border, skill tags for technology domains
-- **Volunteering**: Purple (8b5cf6) left border, responsibilities as bullet list
-- **Honors & Awards**: Pink (ec4899) left border, grid layout for compact display
-
-### Responsive Design
-- Desktop (900px+): Two-column layout preserved
-- Tablet (768-900px): Reduced sidebar width (150px)
-- Mobile (<768px): Sidebar becomes horizontal tabs above content, links display as flex row with bottom border active indicator
-- Small screens (<480px): Single column, full-width badges, simplified spacing
+### Sticky Sidebar Implementation
+- Add a sidebar navigation `<nav>` element with anchor links to each major section (use section IDs for targets).
+- Use CSS `position: sticky` or `position: fixed` to keep the sidebar visible while scrolling.
+- Highlight the active section link using JavaScript in `main.js` (detect scroll position and update sidebar link classes).
+- Ensure sidebar is accessible and responsive: stack vertically on desktop, collapse or reposition on mobile.
+- Sidebar markup and logic should be included in both `profile.njk` and `specializations.njk`.
 
 ## Common Tasks
 
