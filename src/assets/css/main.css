@@ -1,8 +1,5 @@
 /* Speaker Gallery nav color */
-.nav-speaker {
-  color: #ec4899;
-}
-/* Navigation link styles */
+/* Navigation link styles - all white */
 .nav-link {
   font-size: 1.25rem;
   font-weight: 600;
@@ -11,10 +8,16 @@
   transition: color 0.2s;
 }
 .nav-home {
-  color: #3b82f6;
+  color: #14b8a6;
 }
 .nav-profile {
   color: #f59e0b;
+}
+.nav-finapps {
+  color: #3b82f6;
+}
+.nav-speaker {
+  color: #ec4899;
 }
 .nav-contact {
   color: #8b5cf6;
@@ -22,6 +25,7 @@
 .nav-link:hover, .nav-link:focus {
   text-decoration: underline;
   opacity: 0.85;
+  color: #fff;
 }
 body {
   margin: 0;
