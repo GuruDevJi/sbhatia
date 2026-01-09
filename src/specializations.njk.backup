@@ -1,0 +1,168 @@
+---
+# Backup of specializations.njk
+# Created on 2026-01-09
+---
+
+---
+layout: base.njk
+title: Specializations
+---
+
+<div class="specializations-container">
+	<!-- Sticky Sidebar Navigation with 7 panels -->
+	<aside class="sidebar-nav">
+		<nav class="sidebar-menu">
+			<a href="#financial-apps" class="sidebar-link nav-erp" data-section="financial-apps">Financial Applications</a>
+			<a href="#technical" class="sidebar-link nav-technical" data-section="technical">Technical</a>
+			<a href="#security" class="sidebar-link nav-security" data-section="security">Security & Compliance</a>
+			<a href="#business-process" class="sidebar-link nav-bizprocess" data-section="business-process">Business Process Expertise</a>
+			<a href="#project-management" class="sidebar-link nav-projectmgmt" data-section="project-management">Project & Program Management</a>
+			<a href="#change-management" class="sidebar-link nav-change" data-section="change-management">Change Management</a>
+			<a href="#leadership" class="sidebar-link nav-leadership" data-section="leadership">Leadership & Team Management</a>
+		</nav>
+	</aside>
+	<main class="specializations-content">
+		<!-- 1. Financial Applications -->
+		<section id="financial-apps" class="financial-apps" style="margin-bottom:2.5rem;">
+			<h1 style="color:#14b8a6;margin-bottom:1.5rem;">Financial Applications</h1>
+			<p style="color:#ccc;font-size:1.1rem;max-width:700px;">Expertise in designing, integrating, and implementing innovative financial systems, including enterprise platforms, automation, cloud ERP, and custom solutions bridging technology and business.</p>
+			<div class="finapps-grid">
+				<div class="finapps-panel">
+					<img src="/assets/images/oracle-erp.png" alt="Oracle Cloud ERP" class="finapps-icon" />
+					<h2>Oracle Cloud ERP</h2>
+					<ul>
+						<li>General Ledger (GL), AP, AR, FA, CE, Procurement</li>
+						<li>End-to-end implementation, integration, and support</li>
+					</ul>
+				</div>
+				<div class="finapps-panel">
+					<img src="/assets/images/oracle-epm.png" alt="Oracle Cloud EPM" class="finapps-icon" />
+					<h2>Oracle Cloud EPM</h2>
+					<ul>
+						<li>FCCS, EDM, ARCS</li>
+						<li>Financial close, consolidation, and data management</li>
+					</ul>
+				</div>
+				<div class="finapps-panel">
+					<img src="/assets/images/leasequery.png" alt="Lease Query" class="finapps-icon" />
+					<h2>Lease Query</h2>
+					<ul>
+						<li>Lease accounting automation and compliance</li>
+					</ul>
+				</div>
+				<div class="finapps-panel">
+					<img src="/assets/images/thomsonreuters.png" alt="Thomson Reuters" class="finapps-icon" />
+					<h2>Thomson Reuters</h2>
+					<ul>
+						<li>Ariba, One Source Tax, Legal Tracker</li>
+						<li>Tax, procurement, and legal spend management</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<!-- 2. Technical -->
+		<section id="technical" class="technical-section" style="margin-bottom:2.5rem;">
+			<h1 style="color:#8b5cf6;margin-bottom:1.5rem;">Technical</h1>
+			<p style="color:#ccc;font-size:1.1rem;max-width:700px;">Technical tools, platforms, and solutions supporting and extending financial and business systems.</p>
+			<div class="finapps-grid">
+				<div class="finapps-panel">
+					<img src="/assets/images/oci.png" alt="Oracle Cloud Infrastructure (OCI)" class="finapps-icon" />
+					<h2>Oracle Cloud Infrastructure (OCI)</h2>
+					<ul>
+						<li>Cloud hosting, integration, and automation</li>
+					</ul>
+				</div>
+				<div class="finapps-panel">
+					<img src="/assets/images/code.png" alt="Programming Languages" class="finapps-icon" />
+					<h2>Programming Languages</h2>
+					<ul>
+						<li>Python, JavaScript, SQL, VB.NET, Shell/Bash</li>
+						<li>Automation, scripting, analytics, and web development</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<!-- 3. Security & Compliance -->
+		<section id="security" class="security-section" style="margin-bottom:2.5rem;">
+			<h1 style="color:#ec4899;margin-bottom:1.5rem;">Security & Compliance</h1>
+			<p style="color:#ccc;font-size:1.1rem;max-width:700px;">Experience with security, audit, and compliance—ensuring systems are robust, compliant, and resilient.</p>
+			<div class="finapps-grid">
+				<div class="finapps-panel">
+					<img src="/assets/images/security.png" alt="Security & Compliance" class="finapps-icon" />
+					<h2>Domains</h2>
+					<ul>
+						<li>SOX Compliance, Data Privacy, Security Automation, Audit & Risk Management</li>
+						<li>Designed and implemented controls, privacy, and audit processes</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<!-- 4. Business Process Expertise -->
+		<section id="business-process" class="business-process-section" style="margin-bottom:2.5rem;">
+			<h1 style="color:#22d3ee;margin-bottom:1.5rem;">Business Process Expertise</h1>
+			<p style="color:#ccc;font-size:1.1rem;max-width:700px;">Mapping, optimizing, and automating end-to-end business processes to drive efficiency, compliance, and value.</p>
+			<div class="finapps-grid">
+				<div class="finapps-panel">
+					<img src="/assets/images/process.png" alt="Business Process" class="finapps-icon" />
+					<h2>Key Processes</h2>
+					<ul>
+						<li>Procure-to-Pay (P2P), Order-to-Cash (O2C), Record-to-Report (R2R), Hire-to-Retire (H2R), Plan-to-Produce</li>
+						<li>Streamlined, automated, and optimized business flows</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<!-- 5. Project & Program Management -->
+		<section id="project-management" class="project-management-section" style="margin-bottom:2.5rem;">
+			<h1 style="color:#f472b6;margin-bottom:1.5rem;">Project & Program Management</h1>
+			<p style="color:#ccc;font-size:1.1rem;max-width:700px;">Leading cross-functional teams and delivering complex projects using industry-standard methodologies and tools.</p>
+			<div class="finapps-grid">
+				<div class="finapps-panel">
+					<img src="/assets/images/project.png" alt="Project Management" class="finapps-icon" />
+					<h2>Skills</h2>
+					<ul>
+						<li>Agile & Waterfall, Stakeholder Management, Risk & Issue Management, Resource & Budget Management, Project Tools</li>
+						<li>Delivered ERP rollouts, upgrades, and transformation projects</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<!-- 6. Change Management -->
+		<section id="change-management" class="change-management-section" style="margin-bottom:2.5rem;">
+			<h1 style="color:#facc15;margin-bottom:1.5rem;">Change Management</h1>
+			<p style="color:#ccc;font-size:1.1rem;max-width:700px;">Driving user adoption, training, and organizational change for successful project outcomes and lasting transformation.</p>
+			<div class="finapps-grid">
+				<div class="finapps-panel">
+					<img src="/assets/images/change.png" alt="Change Management" class="finapps-icon" />
+					<h2>Focus Areas</h2>
+					<ul>
+						<li>User Training & Enablement, Communication Planning, Change Impact Assessment, Adoption Measurement</li>
+						<li>Increased adoption, engagement, and continuous improvement</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<!-- 7. Leadership & Team Management -->
+		<section id="leadership" class="leadership-section" style="margin-bottom:2.5rem;">
+			<h1 style="color:#f87171;margin-bottom:1.5rem;">Leadership & Team Management</h1>
+			<p style="color:#ccc;font-size:1.1rem;max-width:700px;">Leading, mentoring, and inspiring teams to deliver results, foster collaboration, and drive professional growth.</p>
+			<div class="finapps-grid">
+				<div class="finapps-panel">
+					<img src="/assets/images/leadership.png" alt="Leadership & Team Management" class="finapps-icon" />
+					<h2>Skills</h2>
+					<ul>
+						<li>Team Leadership, Mentoring & Coaching, Conflict Resolution, Diversity & Inclusion, Performance Management</li>
+						<li>Built high-performing, collaborative, and innovative teams</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+	</main>
+</div>
+

@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Sticky sidebar scroll highlighting
   const sidebarLinks = document.querySelectorAll(".sidebar-link");
-  const sections = document.querySelectorAll(".profile-section");
+  const sections = document.querySelectorAll(".profile-section, .specializations-section");
 
   function updateActiveLink() {
     // Get scroll position

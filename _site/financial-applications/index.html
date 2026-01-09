@@ -1,169 +1,161 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Financial Applications</title>
-  <link rel="stylesheet" href="/assets/css/main.css" />
-</head>
-<body>
-  <header>
-    <h1>Saurabh Bhatia</h1>
-    <nav>
-      <a href="/" class="nav-link nav-home">Home</a>
-      <a href="/profile/" class="nav-link nav-profile">Profile</a>
-      <a href="/financial-applications/" class="nav-link nav-finapps">Financial Applications</a>
-      <a href="/speaker-gallery/" class="nav-link nav-speaker">Speaker Gallery</a>
-      <a href="/contact/" class="nav-link nav-contact">Contact</a>
+
+layout: base.njk
+title: Specializations
+
+<div class="finapps-container">
+  <!-- Sticky Sidebar Navigation with 7 panels -->
+  <aside class="sidebar-nav">
+    <nav class="sidebar-menu">
+      <a href="#financial-apps" class="sidebar-link nav-erp" data-section="financial-apps">Financial Applications</a>
+      <a href="#technical" class="sidebar-link nav-technical" data-section="technical">Technical</a>
+      <a href="#security" class="sidebar-link nav-security" data-section="security">Security & Compliance</a>
+      <a href="#business-process" class="sidebar-link nav-bizprocess" data-section="business-process">Business Process Expertise</a>
+      <a href="#project-management" class="sidebar-link nav-projectmgmt" data-section="project-management">Project & Program Management</a>
+      <a href="#change-management" class="sidebar-link nav-change" data-section="change-management">Change Management</a>
+      <a href="#leadership" class="sidebar-link nav-leadership" data-section="leadership">Leadership & Team Management</a>
     </nav>
-  </header>
-
-  <main>
-    
-
-<section class="financial-apps" style="margin-bottom:2.5rem;">
-  <h1 style="color:#14b8a6;margin-bottom:1.5rem;">Financial Applications</h1>
-  <p style="color:#ccc;font-size:1.1rem;max-width:700px;">Explore my work and expertise in designing, integrating, and implementing innovative financial systems. This includes enterprise platforms, automation, cloud ERP, and custom solutions that bridge technology and business for transformative results.</p>
-</section>
-
-<!-- Oracle Cloud ERP -->
-<section style="margin-bottom:2.5rem;">
-  <div style="display:flex;align-items:center;gap:1.5rem;">
-    <img src="/assets/images/oracle-erp.png" alt="Oracle Cloud ERP" style="width:60px;height:60px;object-fit:contain;" />
-    <h2 style="color:#3b82f6;margin-bottom:0;">Oracle Cloud ERP</h2>
-  </div>
-  <div style="display:flex;gap:2.5rem;align-items:flex-start;margin-left:2.5rem;">
-    <div>
-      <h3 style="color:#f59e0b;">Modules</h3>
-      <div style="display:grid;grid-template-columns:220px 1fr 1fr;gap:1rem;align-items:start;">
-        <div style="color:#eee;font-weight:600;">Module</div>
-        <div style="color:#aaa;font-weight:600;">Description</div>
-        <div style="color:#14b8a6;font-weight:600;">Experience Summary</div>
-        <div style="color:#eee;">General Ledger (GL)</div>
-        <div style="color:#aaa;">Description for GL</div>
-        <div style="color:#14b8a6;">Experience summary for GL</div>
-        <div style="color:#eee;">Accounts Payable (AP)</div>
-        <div style="color:#aaa;">Description for AP</div>
-        <div style="color:#14b8a6;">Experience summary for AP</div>
-        <div style="color:#eee;">Accounts Receivable (AR)</div>
-        <div style="color:#aaa;">Description for AR</div>
-        <div style="color:#14b8a6;">Experience summary for AR</div>
-        <div style="color:#eee;">Fixed Assets (FA)</div>
-        <div style="color:#aaa;">Description for FA</div>
-        <div style="color:#14b8a6;">Experience summary for FA</div>
-        <div style="color:#eee;">Cash Management (CE)</div>
-        <div style="color:#aaa;">Description for CE</div>
-        <div style="color:#14b8a6;">Experience summary for CE</div>
-        <div style="color:#eee;">Procurement</div>
-        <div style="color:#aaa;">Description for Procurement</div>
-        <div style="color:#14b8a6;">Experience summary for Procurement</div>
+  </aside>
+  <main class="knowledge">
+    <!-- 1. Financial Applications -->
+    <section id="financial-apps" class="financial-apps" style="margin-bottom:2.5rem;">
+      <h1 style="color:#14b8a6;margin-bottom:1.5rem;">Financial Applications</h1>
+      <p style="color:#ccc;font-size:1.1rem;max-width:700px;">Expertise in designing, integrating, and implementing innovative financial systems, including enterprise platforms, automation, cloud ERP, and custom solutions bridging technology and business.</p>
+      <div class="finapps-grid">
+        <div class="finapps-panel">
+          <img src="/assets/images/oracle-erp.png" alt="Oracle Cloud ERP" class="finapps-icon" />
+          <h2>Oracle Cloud ERP</h2>
+          <ul>
+            <li>General Ledger (GL), AP, AR, FA, CE, Procurement</li>
+            <li>End-to-end implementation, integration, and support</li>
+          </ul>
+        </div>
+        <div class="finapps-panel">
+          <img src="/assets/images/oracle-epm.png" alt="Oracle Cloud EPM" class="finapps-icon" />
+          <h2>Oracle Cloud EPM</h2>
+          <ul>
+            <li>FCCS, EDM, ARCS</li>
+            <li>Financial close, consolidation, and data management</li>
+          </ul>
+        </div>
+        <div class="finapps-panel">
+          <img src="/assets/images/leasequery.png" alt="Lease Query" class="finapps-icon" />
+          <h2>Lease Query</h2>
+          <ul>
+            <li>Lease accounting automation and compliance</li>
+          </ul>
+        </div>
+        <div class="finapps-panel">
+          <img src="/assets/images/thomsonreuters.png" alt="Thomson Reuters" class="finapps-icon" />
+          <h2>Thomson Reuters</h2>
+          <ul>
+            <li>Ariba, One Source Tax, Legal Tracker</li>
+            <li>Tax, procurement, and legal spend management</li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- Oracle Cloud EPM -->
-<section style="margin-bottom:2.5rem;">
-  <div style="display:flex;align-items:center;gap:1.5rem;">
-    <img src="/assets/images/oracle-epm.png" alt="Oracle Cloud EPM" style="width:60px;height:60px;object-fit:contain;" />
-    <h2 style="color:#3b82f6;margin-bottom:0;">Oracle Cloud EPM</h2>
-  </div>
-  <div style="display:flex;gap:2.5rem;align-items:flex-start;margin-left:2.5rem;">
-    <div>
-      <h3 style="color:#f59e0b;">Modules</h3>
-      <div style="display:grid;grid-template-columns:220px 1fr 1fr;gap:1rem;align-items:start;">
-        <div style="color:#eee;font-weight:600;">Module</div>
-        <div style="color:#aaa;font-weight:600;">Description</div>
-        <div style="color:#14b8a6;font-weight:600;">Experience Summary</div>
-        <div style="color:#eee;">Financial Consolidation and Close (FCCS)</div>
-        <div style="color:#aaa;">Description for FCCS</div>
-        <div style="color:#14b8a6;">Experience summary for FCCS</div>
-        <div style="color:#eee;">Enterprise Data Management (EDM)</div>
-        <div style="color:#aaa;">Description for EDM</div>
-        <div style="color:#14b8a6;">Experience summary for EDM</div>
-        <div style="color:#eee;">Account Reconciliations (ARCS)</div>
-        <div style="color:#aaa;">Description for ARCS</div>
-        <div style="color:#14b8a6;">Experience summary for ARCS</div>
+    <!-- 2. Technical -->
+    <section id="technical" class="technical-section" style="margin-bottom:2.5rem;">
+      <h1 style="color:#8b5cf6;margin-bottom:1.5rem;">Technical</h1>
+      <p style="color:#ccc;font-size:1.1rem;max-width:700px;">Technical tools, platforms, and solutions supporting and extending financial and business systems.</p>
+      <div class="finapps-grid">
+        <div class="finapps-panel">
+          <img src="/assets/images/oci.png" alt="Oracle Cloud Infrastructure (OCI)" class="finapps-icon" />
+          <h2>Oracle Cloud Infrastructure (OCI)</h2>
+          <ul>
+            <li>Cloud hosting, integration, and automation</li>
+          </ul>
+        </div>
+        <div class="finapps-panel">
+          <img src="/assets/images/code.png" alt="Programming Languages" class="finapps-icon" />
+          <h2>Programming Languages</h2>
+          <ul>
+            <li>Python, JavaScript, SQL, VB.NET, Shell/Bash</li>
+            <li>Automation, scripting, analytics, and web development</li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- Lease Query (no modules) -->
-<section style="margin-bottom:2.5rem;">
-  <div style="display:flex;align-items:center;gap:1.5rem;">
-    <img src="/assets/images/leasequery.png" alt="Lease Query" style="width:60px;height:60px;object-fit:contain;" />
-    <h2 style="color:#3b82f6;margin-bottom:0;">Lease Query</h2>
-  </div>
-  <div style="display:flex;gap:2.5rem;align-items:flex-start;margin-left:2.5rem;">
-    <div>
-      <h3 style="color:#f59e0b;">Modules</h3>
-      <div style="display:grid;grid-template-columns:220px 1fr 1fr;gap:1rem;align-items:start;">
-        <div style="color:#eee;font-weight:600;">Module</div>
-        <div style="color:#aaa;font-weight:600;">Description</div>
-        <div style="color:#14b8a6;font-weight:600;">Experience Summary</div>
-        <div style="color:#eee;">Lease Query</div>
-        <div style="color:#aaa;">Description for Lease Query</div>
-        <div style="color:#14b8a6;">Experience summary for Lease Query</div>
+    <!-- 3. Security & Compliance -->
+    <section id="security" class="security-section" style="margin-bottom:2.5rem;">
+      <h1 style="color:#ec4899;margin-bottom:1.5rem;">Security & Compliance</h1>
+      <p style="color:#ccc;font-size:1.1rem;max-width:700px;">Experience with security, audit, and compliance—ensuring systems are robust, compliant, and resilient.</p>
+      <div class="finapps-grid">
+        <div class="finapps-panel">
+          <img src="/assets/images/security.png" alt="Security & Compliance" class="finapps-icon" />
+          <h2>Domains</h2>
+          <ul>
+            <li>SOX Compliance, Data Privacy, Security Automation, Audit & Risk Management</li>
+            <li>Designed and implemented controls, privacy, and audit processes</li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- Thomson Reuters -->
-<section style="margin-bottom:2.5rem;">
-  <div style="display:flex;align-items:center;gap:1.5rem;">
-    <img src="/assets/images/thomsonreuters.png" alt="Thomson Reuters" style="width:60px;height:60px;object-fit:contain;" />
-    <h2 style="color:#3b82f6;margin-bottom:0;">Thomson Reuters</h2>
-  </div>
-  <div style="display:flex;gap:2.5rem;align-items:flex-start;margin-left:2.5rem;">
-    <div>
-      <h3 style="color:#f59e0b;">Modules</h3>
-      <div style="display:grid;grid-template-columns:220px 1fr 1fr;gap:1rem;align-items:start;">
-        <div style="color:#eee;font-weight:600;">Module</div>
-        <div style="color:#aaa;font-weight:600;">Description</div>
-        <div style="color:#14b8a6;font-weight:600;">Experience Summary</div>
-        <div style="color:#eee;">Ariba</div>
-        <div style="color:#aaa;">Description for Ariba</div>
-        <div style="color:#14b8a6;">Experience summary for Ariba</div>
-        <div style="color:#eee;">One Source Tax</div>
-        <div style="color:#aaa;">Description for One Source Tax</div>
-        <div style="color:#14b8a6;">Experience summary for One Source Tax</div>
-        <div style="color:#eee;">Legal Tracker</div>
-        <div style="color:#aaa;">Description for Legal Tracker</div>
-        <div style="color:#14b8a6;">Experience summary for Legal Tracker</div>
+    <!-- 4. Business Process Expertise -->
+    <section id="business-process" class="business-process-section" style="margin-bottom:2.5rem;">
+      <h1 style="color:#22d3ee;margin-bottom:1.5rem;">Business Process Expertise</h1>
+      <p style="color:#ccc;font-size:1.1rem;max-width:700px;">Mapping, optimizing, and automating end-to-end business processes to drive efficiency, compliance, and value.</p>
+      <div class="finapps-grid">
+        <div class="finapps-panel">
+          <img src="/assets/images/process.png" alt="Business Process" class="finapps-icon" />
+          <h2>Key Processes</h2>
+          <ul>
+            <li>Procure-to-Pay (P2P), Order-to-Cash (O2C), Record-to-Report (R2R), Hire-to-Retire (H2R), Plan-to-Produce</li>
+            <li>Streamlined, automated, and optimized business flows</li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- Oracle Cloud Infrastructure (OCI) (no modules) -->
-<section style="margin-bottom:2.5rem;">
-  <div style="display:flex;align-items:center;gap:1.5rem;">
-    <img src="/assets/images/oci.png" alt="Oracle Cloud Infrastructure (OCI)" style="width:60px;height:60px;object-fit:contain;" />
-    <h2 style="color:#3b82f6;margin-bottom:0;">Oracle Cloud Infrastructure (OCI)</h2>
-  </div>
-  <div style="display:flex;gap:2.5rem;align-items:flex-start;margin-left:2.5rem;">
-    <div>
-      <h3 style="color:#f59e0b;">Modules</h3>
-      <div style="display:grid;grid-template-columns:220px 1fr 1fr;gap:1rem;align-items:start;">
-        <div style="color:#eee;font-weight:600;">Module</div>
-        <div style="color:#aaa;font-weight:600;">Description</div>
-        <div style="color:#14b8a6;font-weight:600;">Experience Summary</div>
-        <div style="color:#eee;">Oracle Cloud Infrastructure (OCI)</div>
-        <div style="color:#aaa;">Description for OCI</div>
-        <div style="color:#14b8a6;">Experience summary for OCI</div>
+    <!-- 5. Project & Program Management -->
+    <section id="project-management" class="project-management-section" style="margin-bottom:2.5rem;">
+      <h1 style="color:#f472b6;margin-bottom:1.5rem;">Project & Program Management</h1>
+      <p style="color:#ccc;font-size:1.1rem;max-width:700px;">Leading cross-functional teams and delivering complex projects using industry-standard methodologies and tools.</p>
+      <div class="finapps-grid">
+        <div class="finapps-panel">
+          <img src="/assets/images/project.png" alt="Project Management" class="finapps-icon" />
+          <h2>Skills</h2>
+          <ul>
+            <li>Agile & Waterfall, Stakeholder Management, Risk & Issue Management, Resource & Budget Management, Project Tools</li>
+            <li>Delivered ERP rollouts, upgrades, and transformation projects</li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
+    <!-- 6. Change Management -->
+    <section id="change-management" class="change-management-section" style="margin-bottom:2.5rem;">
+      <h1 style="color:#facc15;margin-bottom:1.5rem;">Change Management</h1>
+      <p style="color:#ccc;font-size:1.1rem;max-width:700px;">Driving user adoption, training, and organizational change for successful project outcomes and lasting transformation.</p>
+      <div class="finapps-grid">
+        <div class="finapps-panel">
+          <img src="/assets/images/change.png" alt="Change Management" class="finapps-icon" />
+          <h2>Focus Areas</h2>
+          <ul>
+            <li>User Training & Enablement, Communication Planning, Change Impact Assessment, Adoption Measurement</li>
+            <li>Increased adoption, engagement, and continuous improvement</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Leadership & Team Management -->
+    <section id="leadership" class="leadership-section" style="margin-bottom:2.5rem;">
+      <h1 style="color:#f87171;margin-bottom:1.5rem;">Leadership & Team Management</h1>
+      <p style="color:#ccc;font-size:1.1rem;max-width:700px;">Leading, mentoring, and inspiring teams to deliver results, foster collaboration, and drive professional growth.</p>
+      <div class="finapps-grid">
+        <div class="finapps-panel">
+          <img src="/assets/images/leadership.png" alt="Leadership & Team Management" class="finapps-icon" />
+          <h2>Skills</h2>
+          <ul>
+            <li>Team Leadership, Mentoring & Coaching, Conflict Resolution, Diversity & Inclusion, Performance Management</li>
+            <li>Built high-performing, collaborative, and innovative teams</li>
+          </ul>
+        </div>
+      </div>
+    </section>
   </main>
-
-  <footer>
-    <p>&copy; 2026 Saurabh Bhatia</p>
-  </footer>
-
-  <script src="/assets/js/main.js"></script>
-</body>
-</html>
+</div>
