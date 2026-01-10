@@ -1,0 +1,87 @@
+/* Specializations Page Styles - Clean BEM Naming */
+
+.specializations {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+.specializations__sidebar {
+  position: sticky;
+  top: 2rem;
+  min-width: 220px;
+  background: #101a26;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.specializations__menu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.specializations__link {
+  color: #38bdf8;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+.specializations__link.active,
+.specializations__link:hover {
+  background: #1e293b;
+}
+
+.specializations__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.specializations__section {
+  margin-bottom: 2rem;
+}
+
+.specializations__section-title {
+  font-size: 2rem;
+  color: #38bdf8;
+  margin-bottom: 0.5rem;
+}
+
+.specializations__card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.specializations__card {
+  background: #101a26;
+  border-radius: 0 8px 8px 0;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.10);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 1.25rem 1.5rem;
+  border-left: 3px solid #38bdf8;
+  width: 100%;
+  max-width: 100%;
+  transition: box-shadow 0.2s, transform 0.2s;
+  margin: 0.5rem 0;
+  color: #fff;
+}
+.specializations__card h4,
+.specializations__card ul,
+.specializations__card li {
+  color: #fff;
+}
+
+/* Section-specific accent colors */
+.specializations__section--technical .specializations__section-title {
+  color: #14b8a6;
+}
+.specializations__section--compliance .specializations__section-title {
+  color: #f59e42;
+}

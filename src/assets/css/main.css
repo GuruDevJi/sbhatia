@@ -678,7 +678,7 @@ button[type="submit"]:hover {
   font-size: 0.85rem;
 }
 
-.exp-type {
+.teal-badge {
   background: rgba(20, 184, 166, 0.15);
   color: #14b8a6;
   padding: 0.25rem 0.75rem;
@@ -1184,3 +1184,189 @@ button[type="submit"]:hover {
     height: 100px;
   }
 }
+
+/* --- Restored .finapps-card styles from main_local.css --- */
+.finapps-block .finapps-card {
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+}
+.erp-platforms-block .finapps-card {
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+}
+.specializations-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+.finapps-card {
+  background: #101a26;
+  border-radius: 0 8px 8px 0;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.10);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 1.25rem 1.5rem;
+  border-left: 3px solid #38bdf8;
+  width: 100%;
+  max-width: 100%;
+  transition: box-shadow 0.2s, transform 0.2s;
+  margin: 0.5rem 0;
+}
+/* --- technical-card teal left bar for Technical section --- */
+.technical-card {
+  background: #101a26;
+  border-radius: 0 8px 8px 0;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.10);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 1.25rem 1.5rem;
+  border-left: 3px solid #14b8a6;
+  width: 100%;
+  max-width: 100%;
+  transition: box-shadow 0.2s, transform 0.2s;
+  margin: 0.5rem 0;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.finapps-card:hover {
+  box-shadow: 0 6px 24px rgba(56,189,248,0.18);
+  transform: translateY(-2px) scale(1.02);
+}
+.sox-block .finapps-card {
+  background: #101a26;
+  border-radius: 0 8px 8px 0;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.10);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 1.25rem 1.5rem;
+  border-left: 3px solid #38bdf8;
+  width: 100%;
+  max-width: 100%;
+  transition: box-shadow 0.2s, transform 0.2s;
+  margin: 0.5rem 0;
+  color: #fff;
+}
+.sox-block .finapps-card h4,
+.sox-block .finapps-card ul,
+.sox-block .finapps-card li {
+  color: #fff;
+}
+.finapps-card h4 {
+  margin: 0 0 0.25rem 0;
+  color: #38bdf8;
+  font-size: 1.1rem;
+}
+.finapps-card p {
+  margin: 0;
+  color: #cbeafe;
+  font-size: 0.98rem;
+  line-height: 1.5;
+}
+@media (max-width: 600px) {
+  .specializations-grid {
+    grid-template-columns: 1fr;
+  }
+  .finapps-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* --- blue-badge formatting for Financial Applications theme --- */
+.blue-badge {
+  background: rgba(56, 189, 248, 0.15); /* blue background */
+  color: #38bdf8; /* blue text */
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+}
+/* --- End blue-badge formatting --- */
+
+/* --- Security & Compliance Block styles (amber theme) --- */
+.sox-block {
+  border: 2px solid #f59e42;
+  border-radius: 10px;
+  background: #172133;
+  box-shadow: 0 2px 12px rgba(245,158,66,0.10);
+  padding: 2rem 2rem 1.5rem 2rem;
+  margin-bottom: 2.5rem;
+}
+.sox-block .finapps-subsection-title {
+  color: #f59e42;
+  font-size: 1.35rem;
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+  letter-spacing: 0.01em;
+}
+.sox-block .specializations-grid {
+  margin-top: 1.5rem;
+  min-width: 0;
+}
+/* --- End Security & Compliance Block styles --- */
+
+/* --- Security & Compliance Card styles (amber theme) --- */
+.sox-card {
+  background: #101a26;
+  border-radius: 0 8px 8px 0;
+  box-shadow: 0 1px 6px rgba(245,158,66,0.10);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 1.25rem 1.5rem;
+  border-left: 3px solid #f59e42;
+  width: 100%;
+  max-width: 100%;
+  transition: box-shadow 0.2s, transform 0.2s;
+  margin: 0.5rem 0;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.sox-card h4 {
+  margin: 0 0 0.25rem 0;
+  color: #f59e42;
+  font-size: 1.1rem;
+}
+.sox-card p {
+  margin: 0;
+  color: #ffe6c7;
+  font-size: 0.98rem;
+  line-height: 1.5;
+}
+/* --- End Security & Compliance Card styles --- */
+
+/* --- Technical Platforms Block styles from main_local.css --- */
+.technical-platforms-block {
+  border: 2px solid #14b8a6;
+  border-radius: 10px;
+  background: #172133;
+  box-shadow: 0 2px 12px rgba(20,184,166,0.10);
+  padding: 2rem 2rem 1.5rem 2rem;
+  margin-bottom: 2.5rem;
+}
+.technical-platforms-block .finapps-subsection-title {
+  color: #14b8a6;
+  font-size: 1.35rem;
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+  letter-spacing: 0.01em;
+}
+.technical-platforms-block .specializations-grid {
+  margin-top: 1.5rem;
+  min-width: 0;
+}
+/* --- End Technical Platforms Block styles --- */
+/* --- Technical Card Title styles (from main_local.css) --- */
+.technical-card-title {
+  color: #14b8a6 !important;
+}
+.technical-card-title {
+  margin: 0 0 0.25rem 0;
+  color: #14b8a6;
+  font-size: 1.1rem;
+}
+/* --- End Technical Card Title styles --- */
