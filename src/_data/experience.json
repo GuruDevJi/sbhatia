@@ -55,12 +55,18 @@
                 "title": "Principal Consultant - Cloud Financial Systems",
                 "dates": "Mar 2019 - Jul 2021",
                 "duration": "2 yrs 5 mos",
-                "description": "Managed Oracle Cloud financial applications and served as primary liaison between business and technical teams. Consulted and participated in Cloud upgrade releases and new projects involving strategy, implementation and support. Provided assistance in key system processes and recommendations for adoption of new functionality. Administered enterprise applications including EPM (PBCS and PCMCS), Solix Data Warehouse, Vertex Tax Engine.",
+                "description": "Served as a finance thought partner in the Finance Systems Innovation organization at the largest customer-owned health insurer in the US, operating Blue Cross and Blue Shield® Plans across five states. Led functional support and transformation of Oracle Cloud financial applications (General Ledger, Allocations, Accounts Payable, Project Costing, Asset Management, Procurement). Acted as the primary liaison between business and technical teams, driving continuous improvement, operational efficiency, and best practices. Consulted on and led new projects involving strategy, implementation, and support. Administered and developed test cases for EPM (PBCS and PCMCS), Solix Data Warehouse, and Vertex Tax Engine. Provided leadership in quarterly cloud upgrade releases, process documentation, and change management.",
                 "achievements": [
-                    "Led Oracle ERP Cloud Quarterly upgrade releases",
-                    "Developed KPIs for senior leadership highlighting performance and planning",
-                    "Fostered collaborative relationships with various teams and built trust with key customers",
-                    "Supported 30+ interfaces and provided guidance in designing new ones (Mulesoft, Talend)"
+                    "Led Oracle ERP Cloud Quarterly upgrade releases, including impact analysis, testing, and adoption of new features.",
+                    "Developed and presented KPIs to senior leadership, highlighting team performance, support metrics, and project planning.",
+                    "Fostered collaborative relationships with cross-functional teams and built trust with key business stakeholders.",
+                    "Supported and enhanced 30+ integrations (Mulesoft, Talend) and provided guidance in designing new interfaces.",
+                    "Created and maintained documentation (configuration, test scripts, functional specs for reporting and integration).",
+                    "Provided assistance in key system processes (month-end, quarter-end, year-end close).",
+                    "Assisted with functional testing of monthly, quarterly, and emergency patches.",
+                    "Mentored colleagues and assisted in training support for new system features.",
+                    "Championed continuous process improvement and provided insights into industry best practices.",
+                    "Recognized for strong analytical, troubleshooting, and change management skills."
                 ]
             }
         ]
@@ -117,10 +123,21 @@
                 "title": "Oracle Financial Functional Consultant",
                 "dates": "Nov 2014 - Oct 2017",
                 "duration": "3 yrs",
-                "description": "Oversaw end-to-end implementations and system upgrades following Synchrony's spin-off from GE. Obtained requirements, developed processes, and executed implementations across US, Canada, Europe, Asia, and Philippines. Managed team of 12 functional and technical consultants in integrating business processes and executing system automation.",
+                "description": "Senior Oracle Financials Functional Analyst with 9+ years of experience across full life cycle implementations, upgrades, and post-production support of Oracle E-Business Suite (EBS) Financials (GL, AP, AR, FA, CE, PO, SLA, iExpense, iProcurement, Tax). Led a global team of 12, managed requirements definition, gap analysis, fit-gap analysis, system configuration, testing, user training, and support. Designed and implemented complex approval workflows using Oracle AME. Extensive experience with data migration, localization, and integration with HR and third-party systems. Facilitated business process reviews, user acceptance testing (UAT), Conference Room Pilot (CRP), and documentation for global rollouts across US, Canada, Europe, Asia, and the Philippines. Applied Oracle AIM methodology (RD20, BP80, BR30, BR100, MD50, CV40, TE40) and collaborated with all levels of business owners, users, and technical teams.",
                 "achievements": [
+                    "Led multi-phase implementation and upgrade: GL and FA from 11.5.10 to 12.2.3; P2P from R12.1.3 to 12.2.3; enhancements and post-production support",
+                    "Facilitated translation of business requirements into detailed functional requirements and best practice solutions, including fit-gap analysis and process review",
+                    "Designed and implemented approval workflows for purchase requisitions, AP invoices, supplier registration, and GL journals using Oracle AME; customized AME attributes, conditions, and rules",
+                    "Managed requirements gathering, gap analysis, and documentation (BR30, MD50, BR100, RD20, BP80, CV40, TE40) for global rollouts",
+                    "Created and maintained user manuals, held training sessions for large user groups, and led UAT and CRP testing phases",
+                    "Implemented FA and GL localizations for India and Philippines, including tax and asset controls, block of assets, and fiscal year calendars",
+                    "Developed SQL extracts, ad-hoc queries, and WebADI templates for data migration, mass upload, and reporting (using Toad/SQL Developer)",
+                    "Acted as liaison between business and IT, coordinated with vendors and offshore teams for timely deliverables and aggressive timelines",
                     "Created budgets for various projects and aligned resources based on technical and functional needs",
-                    "Delivered solution to successfully integrate HR data between Workday and Oracle"
+                    "Delivered solution to successfully integrate HR data between Workday and Oracle",
+                    "Conducted and evaluated process review and gap analysis to resolve requirements not addressed by Oracle apps, designing custom solutions within Oracle and with 3rd party applications",
+                    "Interacted with Oracle support using Metalink and Oracle Web Conference (OWC) to resolve application issues and bugs; maintained follow-up with Oracle Service Request (SR)",
+                    "Recognized for excellent verbal communication, presentation skills, and cross-functional collaboration"
                 ]
             }
         ]
@@ -135,10 +152,18 @@
                 "title": "Oracle Financial Functional Support Analyst",
                 "dates": "Nov 2012 - Oct 2014",
                 "duration": "2 yrs",
-                "description": "Provided post-production on-call support and delivered system solutions across all financial models. Identified Root Cause, analyzed issues, and developed solutions to diminish issue recurrence. Worked closely with end users to understand intended processes; collaborated with Oracle support.",
+                "description": "Financials Functional Support Analyst for Oracle EBS (AP, GL, EB-Tax, P2P) supporting global post-production operations and enhancements. Facilitated translation of business requirements into functional solutions, developed ad-hoc queries and reports, and provided training and support to finance end users. Led process improvements, system configuration, and integration with upstream/downstream applications. Conducted UAT, test planning, and documentation for enhancements, bug fixes, and upgrades. Collaborated with technical teams to develop BI reports and WebADI templates, and implemented approval rules using Oracle AME. Applied Oracle AIM methodology and participated in all phases of Conference Room Pilot (CRP1, CRP2, CRP3). Extensive use of SQL, PL/SQL, Toad, and Oracle tools for troubleshooting and reporting.",
                 "achievements": [
-                    "Wrote SQL queries across GL, XLA (SLA), ZX (Tax), FA, and AP tables to troubleshoot",
-                    "Drastically reduced GL and AP open issues"
+                    "Developed and executed test plans for functional changes, bug fixes, enhancements, patches, and upgrades, including UAT and CRP phases",
+                    "Configured, modified, and developed accounting rules, application configurations, and integrations within Oracle Financial modules (GL, AP, EB-Tax, P2P)",
+                    "Analyzed data and integration points for upstream/downstream applications, ensuring data integrity and process efficiency",
+                    "Provided solution direction for Procure to Pay (P2P) processes on a global Oracle footprint, including process mapping and risk/control identification",
+                    "Defined and improved approval rules using Oracle AME to enhance PO to AP alerts and workflow automation",
+                    "Wrote and optimized SQL/PLSQL queries across GL, XLA (SLA), ZX (Tax), FA, and AP tables for troubleshooting, reporting, and data migration",
+                    "Drastically reduced GL and AP open issues through root cause analysis, process improvements, and proactive support",
+                    "Developed and conducted UAT sessions, collaborated on BI/WebADI reporting solutions, and created user manuals and training materials",
+                    "Participated in all phases of Conference Room Pilot (CRP1, CRP2, CRP3) and Oracle AIM documentation (RD20, BP80, BR30, BR100, MD50, CV40, TE40)",
+                    "Recognized for strong analytical, troubleshooting, and cross-functional collaboration skills"
                 ]
             }
         ]

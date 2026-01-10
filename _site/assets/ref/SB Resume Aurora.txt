@@ -1,0 +1,72 @@
+  SAURABH BHATIA, MBA
+(630) 743-3340 | saurabh@sbhatia.com | Aurora, IL 60502 | www.linkedin.com/in/bhatiasaurabh 
+Senior Business Systems Manager
+System Design | Functional Analyst | Solution Delivery
+PROFESSIONAL PROFILE
+
+Accomplished senior-level Oracle Application Functional specialist with passion for designing creative solutions to critical technical projects. Adept in understanding business needs and collaborating with leadership to drive results that catalyze positive bottom-line impact. Excellent communication skills and inspiring team leader with ability to drive global success.
+* Recognized as industry expert in translating business requirements into system solutions by identifying global business needs, providing innovative functionality, and delivering solutions for complex projects.
+* Unique combination of highly technical proficiencies and finely tuned business acumen with a natural ability to engage with clients and review the RFP process, budgeting, and planning.
+* Certified Oracle Implementation Specialist with subject matter expertise in supporting customers in all financial business processes including Procure to Pay, Order to Cash, Acquire to Retire, and Record to Report.
+AREAS OF EXPERTISE
+System Configuration | Implementation | Testing | Post-Production Support | System Administration | Solution Delivery
+General Ledger and Subledger | Purchasing | Payables (AP) | Receivables (AR) | Collections | Fixed Assets
+EB-Tax | User Training | Business Requirements | Approval Management Engine | Agile and Waterfall
+Project Management | Gap Analysis | Defect Identification | AIM and OUM Documentation
+
+Technical Skills:
+ApplicationsOracle Versions 11i 11.5.8; R12.0.3 to 12.2.5; Fusion R13 Update 17DToolsData Loader, Toad/SQL Developer, Web ADI, OBIEE, Workflow Developer, Hyperion, ALMLanguagesSQL, PL/SQL, XML, HTML, Java, COperating SystemsMicrosoft Server, Sun Solaris, Linux/UnixTax EnginesSabrix, Vertex, EB-TaxPROFESSIONAL EXPERIENCE
+INFOSYS	2017 to Present
+SYMANTEC CORPORATION – Mountain View, CA | 2018 to Present
+BlueCoat 12.2.4 to Symantec 12.1.3 Migration Project | AR, OM, Sabrix				
+Design, build, and implement innovative Oracle Receivables system and bridge gap between requirements and final solution. Execute new implementations, functionality improvements, and application updated in collaboration with development teams. Resolve defects and integrate new localization in partnership with Oracle Support.  
+Notable Achievements: 
+* Migrated multiple countries into a common ERP BlueCoat system; executed successful go-lives and UAT. 
+* Spearhead new system functionalities and lead new-user training.
+TITAN INTERNATIONAL, INC. – West Chicago, IL | 2017 to 2018
+Oracle Financials Cloud Release 13 Update 17D | AP, Expenses	
+Spearheaded communication efforts by elaborating key difference between client’s legacy system and Oracle Cloud Financials. Performed demonstrations on Fusion Expenses and Fusion Payables functionality as key liaison between senior-level IT professionals and financial leadership team. Facilitated daily consultations with business, IT, and support teams on pending issues, daily activities, requirement gaps, and development timeframes.  
+Notable Achievements:
+* Designed customized functional processes outside of Oracle Fusion Financials in collaboration with business teams, based on unique needs.
+* Lead on-site and off-shore technical teams executing analysis, customization, and personalization of cloud system.
+* Achieved certification as Payables Implementation Specialist for Oracle Financials Cloud.
+JOHNSON CONTROLS INTERNATIONAL – Richardson, TX / Boca Raton, FL | 2017
+Upgrade from 12.1.4 to 12.2.5 and Post-Production Support | GL, AR, EB-Tax	
+Provided post-production support; analyzed system design and ERP configurations during UAT (user acceptance testing) phase of Oracle ERP upgrade and OS migration to UNIX. Designed and tested Accounts Receivable (AR) setups including System Options, Receipts, Lockbox, Quick Codes, and Taxes. Wrote test scripts; resolved defects prior to go-live.
+Notable Achievements:
+* Collaborated with first-time users and engaged with clients to assist in system assimilation and understanding.
+* Facilitated training in partnership with business teams for GL, AR, and month-end closing processes.
+SYNCHRONY FINANCIAL (FORMERLY GE CAPITAL) – Alpharetta, GA	2014 to 2017
+Financial Functional Lead Analyst
+Phase 1:  Implementation and Conversion GL and FA from 11.5.10 to 12.2.3
+Phase 2:  Implementation and Conversion P2P from R12.1.3 to R12.2.3
+Phase 3:  Enhancements, Upgrade to 12.2.5, and Post-Production Support
+Oversaw end-to-end implementations and system upgrades following Synchrony’s spin-off from GE. Obtained requirements, developed processes, and executed implementations across US, Canada, Europe, Asia, and Philippines. Managed team of 12 functional and technical consultants in integrating business processes, as well as executing system automation. Collaborate with developers for all coding and work with offshore team for daily workflow tasks. Established project timelines, budgets, benchmarks, and all modifications for both Phase 1 and Phase 2 implementations.  Led global team in providing on-call support for critical issues. 
+Notable Achievements:
+* Created budgets for various projects and aligned resources based on technical and functional needs.
+* Delivered solution to successfully integrate HR data between Workday and Oracle.
+ CGG VERITAS – Houston, TX	2012 to 2014
+Post Production Support, R12.1.3 | P2P, GL, FA, EB-Tax
+Provided post-production on-call support and delivered system solutions across all financial models. Identified Root Cause, analyzed issues, and developed solutions to diminish issue recurrence. Worked closely with end users to understand intended processes; collaborated with Oracle support to complete problematic ticket and deliver solution to client.
+Notable Achievements:
+* Wrote SQL queries across GL, XLA (SLA), ZX (Tax), FA, and AP tables to help troubleshoot.
+* Drastically reduced GL and AP open issues.
+
+ADDITIONAL EXPERIENCE
+Junior Oracle Financial Functional Support and Implementation Consultant | RJT COMPUQUEST
+* Identified requirement gaps; utilized customizations and various workarounds to map out.
+* Wrote RICEFW business requirements documents and developed end-user training material.
+Business Relationship Manager | SCIENCE OF SPIRITUALITY | Volunteer
+* Lead NetSuite implementation for General Ledger, Procurement, Purchasing, and Payables applications
+* Deliver IT solutions by liaising between business application vendors and business teams.
+EDUCATION AND CERTIFICATION
+MASTER OF BUSINESS ADMINISTRATION | KENNESAW STATE UNIVERSITY | KENNESAW, GA
+BETA GAMMA SIGMA | PHI KAPPA PHI | GOLDEN KEY HONOR SOCIETY | HONORS GRADUATE
+
+BACHELOR OF SCIENCE, ELECTRONICS ENGINEERING | DEVRY UNIVERSITY | ADDISON, IL
+
+FINANCIAL ACCOUNTING COURSE | UNIVERSITY OF PENNSYLVANIA | PHILADELPHIA, PA
+
+ORACLE FINANCIALS CLOUD: PAYABLES CERTIFIED IMPLEMENTATION SPECIALIST | ORACLE | 2017
+Saurabh Bhatia, MBA	Page 2	saurabh@sbhatia.com
+
