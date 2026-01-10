@@ -1,0 +1,77 @@
+Job ID: PK-1029430
+Description:
+ 
+ 
+SUMMARY:
+Health Care Service Corporation, a Mutual Legal Reserve Company (HCSC), and an 
+Independent Licensee of the Blue Cross and Blue Shield Association, is the largest customer-
+owned health insurer in the United States and fourth largest overall, operating through our Blue 
+Cross and Blue Shield® Plans in Illinois, Montana, New Mexico, Oklahoma and Texas. HCSC 
+affiliates and subsidiaries such as Dearborn National® and Medecision offer group life, disability 
+and dental solutions, as well as a range of other individual solutions.
+HCSC is transitioning to Oracle ERP Cloud platform and is looking for professionals who can be 
+a part of the Finance Systems Innovation organization.  The individual must have experience 
+with implementing or supporting Oracle ERP cloud or Oracle E-Business Suite.  The individual 
+will be responsible for providing functional support across several cloud modules such as; 
+General Ledger, Allocations, Accounts Payable, Project Costing, Asset Management and 
+Procurement and is expected to be the primary liaison between business and technical teams. 
+This leader will be a finance thought partner in FSD’s transformation efforts through continuous 
+improvement of business processes and focus on operational efficiencies. 
+BASIC FUNCTION:
+*	Responsible for providing functional support of Oracle Cloud financial applications and 
+serve as the primary liaison between business and technical teams
+*	Consult and participate in Cloud upgrade releases and new projects involving strategy, 
+implementation and support
+*	Assess impact of patches on training, interfaces, processes, documentation, etc. Make 
+recommendations for adoption of new or changed functionality
+*	Work directly with business stakeholders to resolve help desk issues and vendor service 
+requests
+*	Create and maintain existing documentation (Configuration, test scripts, functional specs 
+for reporting and integration)
+*	Assist with continuous process improvement and provide insights into best practices
+*	Provide assistance in key system processes (i.e. process of month-end, quarter-end and 
+year-end close processes)
+*	Assist with functional testing of monthly, quarterly and emergency patches
+*	Assist in training support
+ JOB REQUIREMENTS:
+*	Bachelor’s degree in Finance, Accounting, Business, or other related field from an 
+accredited college/university AND 6 years of experience in supporting functional 
+financial systems in finance, accounting industry.
+*	4 years of functional support of Oracle Cloud or E-Business Suite financial applications.
+*	Detailed understanding of financial business processes. Experience with supporting one 
+or more of the following processes: General Ledger, Procurement, Accounts Payable, 
+Project Costing, Fixed Assets, Planning and Budgeting, and Allocations.
+*	Experience with Cloud release upgrade process; Ability to perform and lead business 
+process impact analysis while working collaboratively with key business stakeholders
+*	Experience with monthly and quarterly patch testing/issue resolution, performing impact 
+analysis and testing.
+*	Demonstrated experience as a senior resource assisting in the definition of systems 
+strategy, gathering and documenting business requirements, leading fit-gap analysis, as-is 
+and to-be business process designs, prototype functional configuration, testing, user 
+training
+*	Strong oral and written communication skills, including presentation skills (MS Visio, 
+MS PowerPoint)
+*	Strong analytical skills with the ability to collect, organize, analyze, and disseminate 
+significant amounts of information with attention to detail and accuracy; Ability to solve 
+problems involving remote and elusive symptoms often spanning multiple business 
+areas/functions
+*	A solid understanding of how people go through a change and the change process
+*	Strong problem solving and troubleshooting skills with the ability to exercise mature 
+judgment
+*	Proven ability to build, manage and foster a team-oriented environment
+*	Applicants must be currently authorized to work in the United States without the need for 
+visa sponsorship now or in the future
+ PREFERRED JOB REQUIREMENTS:
+*	Consulting experience with top-tier consulting firm
+*	Experience leading an entire work stream of relevant Cloud applications
+*	Ability to work independently and manage multiple task assignments
+*	Eagerness to mentor work colleagues
+ 
+HCSC is committed to diversity in the workplace and to providing equal opportunity and 
+affirmative action to employees and applicants. We are an Equal Opportunity Employment / 
+Affirmative Action employer dedicated to workforce diversity and a drug-free and smoke-free 
+workplace. Drug screening and background investigation are required, as allowed by law. All 
+qualified applicants will receive consideration for employment without regard to race, color, 
+religion, sex, sexual orientation, gender identity, national origin, disability, or protected veteran 
+status. 
+

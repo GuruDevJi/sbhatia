@@ -1,0 +1,45 @@
+Saurabh Bhatia
+2765 Lehman Drive, West Chicago, IL
+630-743-3340 
+saurabh@sbhatia.com
+
+Objective 
+To attain a position as a firmware/hardware design engineer in the electrical engineering field with a company that will benefit from my knowledge, experience, and determination.   
+
+Education 
+DeVry University: Addison, IL                                                                                             February 2008
+Bachelor of Science in Electronics Engineering Technology
+
+• Senior Project: Music Jukebox System: Lead Development Programmer 
+Duties: Programmed and troubleshot a microprocessor in assembly/C; design appropriate    hardware to detect pennies, nickels, quarters, and dimes; establish communication with 
+development board and computer via serial port. 
+
+Skills and Activities
+• Technical Skills: Proficient with Microsoft Office, Access.  Programming:  C++/Assembly, Basic, Multisim, MATLAB, PLC, Website Design. Hardware: Intel, Microchip, Atmel.    
+	
+• Leadership Skills:  Experienced with providing customer support as a store manager;           Managing new project designs by defining customer requirements, effectively communication with departments internally as well as factories overseas to verify design specifications and hardware.  
+
+• Hobbies: Stock Market/Economy; Programming Microcontrollers; Photography; Computers Electronics   
+
+Work Experience 
+
+Newhaven Display: Elgin, IL                                                                                August 2008 to Present
+Applications Engineer
+* Collaborate with customers to establish display design requirements in the prototyping phase and follow through the project for periodic support until production stage.  
+* Use C/Basic/Assembly to program microcontrollers to interface with LCD display drivers and develop hardware to test functionality. 
+* Communicate effectively between customers, factories, and internally to ensure accuracy in terms of quality and functionality.  
+* Work with customers in various aspects of the display including application environment, hardware configuration, interface/mounting methods, and quoting.  
+* Created a Microsoft Access database for RMA’s to help log inbound test data and monitor returns and quality.  
+* Participate in online forums, emails, and phone calls for engineering support and sales.  
+* Program scripts in C++ to proficiently generate hex data from BMP images for output on displays. 
+* Travel to customer sites to demonstrate display features and functionality.  
+
+American Precision Electronics: Saint Charles, IL                                                 July 2006 to July 2008
+Electronics Technician Level I
+* Tested boards using various testing methods including LabView applications, Teradyne, and in-house testers or testers provided by customer.  
+* Built custom electronic testers to check for continuity on PC board and monitor electrical characteristics draw to ensure functionality of basic electronic components.  
+* Performed repairs on PC boards and revise procedures to approve with customer requirements.  
+* Read circuit schematic diagrams to assist with component-level repairs.  
+* Used digital multi-meter, oscilloscope, and spectrum analyzer to check for consistency
+* Communicated with managers and co-workers for revising and creating effective testing procedures.  
+* Maintained quality assurance to provide customer with quality and satisfaction.  
