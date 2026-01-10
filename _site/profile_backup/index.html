@@ -1,0 +1,752 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Profile</title>
+  <link rel="stylesheet" href="/assets/css/main.css" />
+</head>
+<body>
+  <header>
+    <h1>Saurabh Bhatia</h1>
+    <nav>
+      <a href="/" class="nav-link nav-home">Home</a>
+      <a href="/profile/" class="nav-link nav-profile">Profile</a>
+      <a href="/specializations/" class="nav-link nav-specializations">Specializations</a>
+      <a href="/speaker-gallery/" class="nav-link nav-speaker">Speaker Gallery</a>
+      <a href="/contact/" class="nav-link nav-contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Profile color bar -->
+<div class="profile-color-bar" style="height:16px;width:100%;background:#f59e0b;margin-bottom:0.5rem;"></div>
+
+<div class="profile-container">
+  <!-- Sticky Sidebar Navigation -->
+  <aside class="sidebar-nav">
+    <nav class="sidebar-menu">
+      <a href="#journey" class="sidebar-link active" data-section="journey">My Journey</a>
+      <a href="#experience" class="sidebar-link" data-section="experience">Experience</a>
+      <a href="#education" class="sidebar-link" data-section="education">Education</a>
+      <a href="#licenses" class="sidebar-link" data-section="licenses">Licenses & Certifications</a>
+      <a href="#volunteering" class="sidebar-link" data-section="volunteering">Volunteering</a>
+      <a href="#awards" class="sidebar-link" data-section="awards">Honors & Awards</a>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="profile-content">
+
+    <!-- My Journey (map + summary) -->
+    <section id="journey" class="profile-section">
+      <h2>My Journey</h2>
+      <div id="map-section">
+        <!-- CartoDB Dark Matter is now the only map style -->
+        <div id="map" style="width:100%;height:360px;border-radius:8px;"></div>
+        <div id="journey-summary" style="margin-top:1rem;display:flex;gap:2rem;flex-wrap:wrap;">
+          <div style="flex:1;min-width:260px;">
+            <p>Curiosity has driven my journey from the start. I grew up taking hardware and software apart just to see how they worked, which shaped me into a creative, systems-oriented problem solver with a relentless taste for experimentation.</p>
+            <p>One project felt like unlocking a cheat code in a video game: building a capacitive touch panel controller entirely from scratch. Using a PIC18F microcontroller, I wrote every line of firmware to drive the FocalTech FT5X06 chip, bringing multi-touch gestures to life on a 4.3" Newhaven TFT display. Watching my code respond instantly to finger swipes was pure exhilaration—like beating a boss level after weeks of grinding.</p>
+            <p>That same thrill carried me into enterprise systems, where I built VB.NET applications to track RMAs at a manufacturing firm in Elgin, IL, opening the door to financial platforms and business processes. Since then, I've mastered how data, workflows, and people intersect across complex organizations.</p>
+            <p>My focus has since expanded—bridging functional needs, technical architecture, and user experience with AI, machine learning, and intelligent automation. Today, I'm chasing that same video game rush: creating financial and operational systems that are efficient, intuitive, resilient, and genuinely inspiring to use.</p>
+          </div>
+  
+        </div>
+      </div>
+
+      <!-- Leaflet CSS/JS and map initialization -->
+      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+      <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+      <script>
+        (function(){
+          // Initialize map centered on USA
+          const map = L.map('map').setView([39.8283, -98.5795], 4);
+
+          // Default OpenStreetMap tile layer, restore previous zoom limits
+          L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap', minZoom: 2, maxZoom: 19
+          }).addTo(map);
+          map.setMinZoom(4);
+          map.setMaxZoom(8);
+
+          // Companies data from journey.json
+          const companies = [
+            
+            {
+              id: "blue-owl",
+              company: "Blue Owl Capital",
+              location: "New York, NY, United States",
+              lat: 40.7128,
+              lon: -74.0060
+            },
+            
+            {
+              id: "hcsc",
+              company: "Blue Cross and Blue Shield of Illinois, Montana, New Mexico, Oklahoma &amp; Texas",
+              location: "Chicago, IL, United States",
+              lat: 41.8832,
+              lon: -87.6324
+            },
+            
+            {
+              id: "synchrony",
+              company: "Synchrony Financial",
+              location: "Alpharetta, GA, United States",
+              lat: 34.0192,
+              lon: -84.2707
+            },
+            
+            {
+              id: "cgg",
+              company: "CGG",
+              location: "Houston, TX, United States",
+              lat: 29.7604,
+              lon: -95.3698
+            },
+            
+            {
+              id: "symantec",
+              company: "Infosys (Symantec)",
+              location: "Sunnyvale, CA, United States",
+              lat: 37.3719,
+              lon: -122.0380
+            },
+            
+            {
+              id: "titan",
+              company: "Infosys (Titan International)",
+              location: "St. Charles, IL, United States",
+              lat: 41.9142,
+              lon: -88.3087
+            },
+            
+            {
+              id: "johnson",
+              company: "Infosys (Johnson Controls, Inc)",
+              location: "Richardson, TX, United States",
+              lat: 32.9487,
+              lon: -96.7250
+            },
+            
+            {
+              id: "johnson2",
+              company: "Infosys (Johnson Controls, Inc)",
+              location: "Boca Raton, FL, United States",
+              lat: 26.3683,
+              lon: -80.1373
+            },
+            
+            {
+              id: "newhaven",
+              company: "Newhaven Display International",
+              location: "Elgin, IL, United States",
+              lat: 42.0354,
+              lon: -88.2826
+            }
+            
+          ];
+
+          // Schools data from education.json
+          const schools = [
+            
+            {
+              id: "ksu-mba",
+              name: "Kennesaw State University - Michael J. Coles College of Business",
+              location: "Kennesaw, GA, United States",
+              degree: "Master of Business Administration - MBA",
+              lat: 34.0237,
+              lon: -84.6151
+            },
+            
+            {
+              id: "devry-bachelor",
+              name: "DeVry University",
+              location: "Addison, IL, United States",
+              degree: "Bachelor&#39;s degree",
+              lat: 41.9320,
+              lon: -88.0005
+            }
+            
+          ];
+
+          // Red marker icon for schools
+          const redIcon = L.icon({
+            iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png',
+            shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
+            iconSize: [25, 41],
+            iconAnchor: [12, 41],
+            popupAnchor: [1, -34],
+            shadowSize: [41, 41]
+          });
+
+          // Blue marker icon (default)
+          const blueIcon = L.icon({
+            iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-blue.png',
+            shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
+            iconSize: [25, 41],
+            iconAnchor: [12, 41],
+            popupAnchor: [1, -34],
+            shadowSize: [41, 41]
+          });
+
+          // Add company markers (blue)
+          for (const c of companies) {
+            if (c.lat && c.lon) {
+              const lat = parseFloat(c.lat);
+              const lon = parseFloat(c.lon);
+              if (!isNaN(lat) && !isNaN(lon)) {
+                const marker = L.marker([lat, lon], { icon: blueIcon }).addTo(map);
+                marker.bindPopup('<strong>' + c.company + '</strong><br/>' + (c.location || ''));
+                continue;
+              }
+            }
+            // Fallback: add to list if coordinates missing
+            const li = document.createElement('li');
+            li.textContent = c.company + ' — ' + (c.location || 'Unknown');
+            document.getElementById('journey-list').appendChild(li);
+          }
+
+          // Add school markers (red)
+          for (const s of schools) {
+            if (s.lat && s.lon) {
+              const lat = parseFloat(s.lat);
+              const lon = parseFloat(s.lon);
+              if (!isNaN(lat) && !isNaN(lon)) {
+                const marker = L.marker([lat, lon], { icon: redIcon }).addTo(map);
+                marker.bindPopup('<strong>' + s.name + '</strong><br/>' + (s.degree || ''));
+                continue;
+              }
+            }
+            // Fallback: add to list if coordinates missing
+            const li = document.createElement('li');
+            li.textContent = s.name + ' — ' + (s.location || 'Unknown');
+            document.getElementById('journey-list').appendChild(li);
+          }
+        })();
+      </script>
+
+      <div style="margin-top:2rem;display:flex;justify-content:center;">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/u5v1vZr6F9k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius:12px;max-width:100%;"></iframe>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="profile-section">
+      <h2>Experience</h2>
+      <div class="experience-items">
+        <!-- Executive Summary block before Blue Owl Capital -->
+        <div id="executive-summary-block" class="journey-summary-block" style="margin-bottom:2rem;">
+          <span class="company-name">Executive Summary:</span>
+          <p class="journey-summary-text" style="margin-top:1rem;">
+            Accomplished technology and business leader with a proven track record of driving digital transformation, operational excellence, and strategic growth across Fortune 500 enterprises. Expert in Oracle Cloud and EBS financial systems, process reengineering, and large-scale program delivery. Adept at bridging business and technology, leading cross-functional teams, and building high-performance cultures. Recognized for innovative problem-solving, stakeholder engagement, and delivering measurable results in complex, regulated environments. Passionate about leveraging AI, automation, and data-driven insights to create resilient, future-ready organizations.
+          </p>
+        </div>
+        
+        <div class="company-container">
+          <div class="company-header">
+            <h3 class="company-name">Blue Owl Capital</h3>
+            <p class="company-dates"></p>
+            
+              <p class="exp-location">📍 New York City, NY</p>
+            
+            <div class="exp-meta">
+              <span class="exp-type">Full-time</span>
+            </div>
+          </div>
+
+          <div class="exp-item-container">
+            
+            <div class="company-logo">
+              <img src="/assets/images/blueowl.png" alt="Blue Owl Capital logo" />
+            </div>
+            
+
+            <div class="company-info">
+              
+                <!-- Show Blue Owl role titles above summary -->
+                <div class="company-summary">
+                  <h4 class="role-title">Principal - Financial Applications <span style="font-weight:normal;">(Jan 2024 - Present, 2 yrs 1 mo)</span></h4>
+                  <h4 class="role-title">Vice President - Financial Applications Manager <span style="font-weight:normal;">(Jul 2021 - Dec 2023, 2 yrs 6 mos)</span></h4>
+                  <p class="role-description">Visionary financial technology leader with a proven record of transforming and scaling enterprise financial systems, teams, and processes to support hypergrowth in public companies. As Head of Financial Applications, led the evolution from a single ERP platform to a multi-application landscape with over a dozen systems and ~50 integrations. Built foundational structures for support, team management, and process governance—where none existed—driving cross-functional alignment across onshore and offshore teams. Enabled company growth from $45B to $300B in AUM through innovation, compliance execution, and systems leadership aligned with strategic finance goals.</p>
+                  <div class="role-achievements">
+                    <p class="achievements-title">Notable Achievements:</p>
+                    <ul>
+                      
+                        <li>Enterprise Application Expansion: Scaled the financial applications environment from a single ERP system to a portfolio of over a dozen platforms supporting finance, legal, and operations.</li>
+                      
+                        <li>Integration Ecosystem Growth: Built ~50 business-critical integrations from the ground up, enabling seamless data flow across departments and systems.</li>
+                      
+                        <li>Organizational Structure &amp; Process Design: Established foundational structures for support ticketing, team operations, and KPI tracking across onshore and offshore teams where none previously existed.</li>
+                      
+                        <li>IPO Readiness &amp; SOX Compliance: Delivered audit-ready, SOX-compliant reporting within one year of IPO by designing secure, controlled, and transparent financial system processes.</li>
+                      
+                        <li>EPM Implementation Leadership: Led successful deployments of Oracle EPM modules including EDM, FCCS, and ARCS, supporting financial close, reconciliation, and planning activities.</li>
+                      
+                        <li>Team Building &amp; Leadership: Scaled the financial applications function from a solo role to a team of 15 high-performing professionals, each with ownership of key platforms.</li>
+                      
+                        <li>Change Management Governance: Created and now lead a structured change management process and weekly Change Advisory Board, reducing risk and improving audit posture.</li>
+                      
+                        <li>SDLC &amp; Release Management: Instituted a finance-specific SDLC model, improving delivery discipline, quality, and traceability.</li>
+                      
+                        <li>Monday.com Enterprise Adoption: Spearheaded enterprise-wide rollout of Monday.com for project management, task tracking, and change control.</li>
+                      
+                        <li>Vendor Management &amp; Contracts: Serve as the primary point of contact for all financial application vendor relationships, overseeing agreements, renewals, and strategic alignment.</li>
+                      
+                        <li>C-Suite &amp; Executive Partnership: Trusted advisor to executive leadership, including the Chief Accounting Officer, providing roadmap updates, risk overviews, and performance transparency.</li>
+                      
+                    </ul>
+                  </div>
+                </div>
+              
+            </div>
+          </div>
+        </div>
+        
+        <div class="company-container">
+          <div class="company-header">
+            <h3 class="company-name">Blue Cross and Blue Shield of Illinois, Montana, New Mexico, Oklahoma &amp; Texas</h3>
+            <p class="company-dates"></p>
+            
+              <p class="exp-location">📍 Chicago, IL</p>
+            
+            <div class="exp-meta">
+              <span class="exp-type">Full-time</span>
+            </div>
+          </div>
+
+          <div class="exp-item-container">
+            
+            <div class="company-logo">
+              <img src="/assets/images/bcbs-logo.png" alt="Blue Cross and Blue Shield of Illinois, Montana, New Mexico, Oklahoma &amp; Texas logo" />
+            </div>
+            
+
+            <div class="company-info">
+              
+                <!-- Default rendering for other companies -->
+                
+                <div class="company-role">
+                  <h4 class="role-title">Principal Consultant - Cloud Financial Systems</h4>
+                  <p class="role-dates">Mar 2019 - Jul 2021 · 2 yrs 5 mos</p>
+                  
+                  <p class="role-description">Served as a finance thought partner in the Finance Systems Innovation organization at the largest customer-owned health insurer in the US, operating Blue Cross and Blue Shield® Plans across five states. Led functional support and transformation of Oracle Cloud financial applications (General Ledger, Allocations, Accounts Payable, Project Costing, Asset Management, Procurement). Acted as the primary liaison between business and technical teams, driving continuous improvement, operational efficiency, and best practices. Consulted on and led new projects involving strategy, implementation, and support. Administered and developed test cases for EPM (PBCS and PCMCS), Solix Data Warehouse, and Vertex Tax Engine. Provided leadership in quarterly cloud upgrade releases, process documentation, and change management.</p>
+                  
+                  <div class="role-achievements">
+                    <p class="achievements-title">Notable Achievements:</p>
+                    <ul>
+                      
+                      <li>Led Oracle ERP Cloud Quarterly upgrade releases, including impact analysis, testing, and adoption of new features.</li>
+                      
+                      <li>Developed and presented KPIs to senior leadership, highlighting team performance, support metrics, and project planning.</li>
+                      
+                      <li>Fostered collaborative relationships with cross-functional teams and built trust with key business stakeholders.</li>
+                      
+                      <li>Supported and enhanced 30+ integrations (Mulesoft, Talend) and provided guidance in designing new interfaces.</li>
+                      
+                      <li>Created and maintained documentation (configuration, test scripts, functional specs for reporting and integration).</li>
+                      
+                      <li>Provided assistance in key system processes (month-end, quarter-end, year-end close).</li>
+                      
+                      <li>Assisted with functional testing of monthly, quarterly, and emergency patches.</li>
+                      
+                      <li>Mentored colleagues and assisted in training support for new system features.</li>
+                      
+                      <li>Championed continuous process improvement and provided insights into industry best practices.</li>
+                      
+                      <li>Recognized for strong analytical, troubleshooting, and change management skills.</li>
+                      
+                    </ul>
+                  </div>
+                  
+                </div>
+                
+              
+            </div>
+          </div>
+        </div>
+        
+        <div class="company-container">
+          <div class="company-header">
+            <h3 class="company-name">Infosys</h3>
+            <p class="company-dates"></p>
+            
+              <p class="exp-location">📍 Richardson, TX</p>
+            
+            <div class="exp-meta">
+              <span class="exp-type">Full-time</span>
+            </div>
+          </div>
+
+          <div class="exp-item-container">
+            
+            <div class="company-logo">
+              <img src="/assets/images/infosys-logo.png" alt="Infosys logo" />
+            </div>
+            
+
+            <div class="company-info">
+              
+                <!-- Default rendering for other companies -->
+                
+                <div class="company-role">
+                  <h4 class="role-title">Financial Applications Manager (Symantec)</h4>
+                  <p class="role-dates">Aug 2018 - Feb 2019 · 7 mos</p>
+                  
+                  <p class="role-location">📍 Mountain View, CA</p>
+                  
+                  <p class="role-description">Designed, built, and implemented Oracle Receivables system and bridged gap between requirements and final solution. Executed new implementations, functionality improvements, and application updates in collaboration with development teams. Resolved defects and integrated new localization in partnership with Oracle Support.</p>
+                  
+                  <div class="role-achievements">
+                    <p class="achievements-title">Notable Achievements:</p>
+                    <ul>
+                      
+                      <li>Migrated multiple countries into a common ERP BlueCoat system; executed successful go-lives and UAT</li>
+                      
+                      <li>Spearheaded new system functionalities and led new-user training</li>
+                      
+                    </ul>
+                  </div>
+                  
+                </div>
+                
+                <div class="company-role">
+                  <h4 class="role-title">Lead Oracle Cloud Consultant (Titan International)</h4>
+                  <p class="role-dates">Dec 2017 - Jul 2018 · 8 mos</p>
+                  
+                  <p class="role-location">📍 West Chicago, IL</p>
+                  
+                  <p class="role-description">Spearheaded communication efforts by elaborating key differences between client&#39;s legacy system and Oracle Cloud Financials. Performed demonstrations on Fusion Expenses and Fusion Payables functionality as key liaison between senior-level IT professionals and financial leadership team. Facilitated daily consultations with business, IT, and support teams.</p>
+                  
+                  <div class="role-achievements">
+                    <p class="achievements-title">Notable Achievements:</p>
+                    <ul>
+                      
+                      <li>Designed customized functional processes outside of Oracle Fusion Financials in collaboration with business teams</li>
+                      
+                      <li>Led on-site and off-shore technical teams executing analysis, customization, and personalization of cloud system</li>
+                      
+                      <li>Achieved certification as Payables Implementation Specialist for Oracle Financials Cloud</li>
+                      
+                    </ul>
+                  </div>
+                  
+                </div>
+                
+                <div class="company-role">
+                  <h4 class="role-title">Lead Financial Functional Consultant (Johnson Controls, Inc)</h4>
+                  <p class="role-dates">Oct 2017 - Dec 2017 · 3 mos</p>
+                  
+                  <p class="role-location">📍 Boca Raton, FL | Richardson, TX</p>
+                  
+                  <p class="role-description">Provided post-production support; analyzed system design and ERP configurations during UAT (user acceptance testing) phase of Oracle ERP upgrade and OS migration to UNIX. Designed and tested Accounts Receivable (AR) setups. Wrote test scripts; resolved defects prior to go-live.</p>
+                  
+                  <div class="role-achievements">
+                    <p class="achievements-title">Notable Achievements:</p>
+                    <ul>
+                      
+                      <li>Collaborated with first-time users and engaged with clients to assist in system assimilation and understanding</li>
+                      
+                      <li>Facilitated training in partnership with business teams for GL, AR, and month-end closing processes</li>
+                      
+                    </ul>
+                  </div>
+                  
+                </div>
+                
+              
+            </div>
+          </div>
+        </div>
+        
+        <div class="company-container">
+          <div class="company-header">
+            <h3 class="company-name">Synchrony Financial</h3>
+            <p class="company-dates"></p>
+            
+              <p class="exp-location">📍 Alpharetta, GA</p>
+            
+            <div class="exp-meta">
+              <span class="exp-type">Contract</span>
+            </div>
+          </div>
+
+          <div class="exp-item-container">
+            
+            <div class="company-logo">
+              <img src="/assets/images/synchrony-logo.png" alt="Synchrony Financial logo" />
+            </div>
+            
+
+            <div class="company-info">
+              
+                <!-- Default rendering for other companies -->
+                
+                <div class="company-role">
+                  <h4 class="role-title">Oracle Financial Functional Consultant</h4>
+                  <p class="role-dates">Nov 2014 - Oct 2017 · 3 yrs</p>
+                  
+                  <p class="role-description">Senior Oracle Financials Functional Analyst with 9+ years of experience across full life cycle implementations, upgrades, and post-production support of Oracle E-Business Suite (EBS) Financials (GL, AP, AR, FA, CE, PO, SLA, iExpense, iProcurement, Tax). Led a global team of 12, managed requirements definition, gap analysis, fit-gap analysis, system configuration, testing, user training, and support. Designed and implemented complex approval workflows using Oracle AME. Extensive experience with data migration, localization, and integration with HR and third-party systems. Facilitated business process reviews, user acceptance testing (UAT), Conference Room Pilot (CRP), and documentation for global rollouts across US, Canada, Europe, Asia, and the Philippines. Applied Oracle AIM methodology (RD20, BP80, BR30, BR100, MD50, CV40, TE40) and collaborated with all levels of business owners, users, and technical teams.</p>
+                  
+                  <div class="role-achievements">
+                    <p class="achievements-title">Notable Achievements:</p>
+                    <ul>
+                      
+                      <li>Led multi-phase implementation and upgrade: GL and FA from 11.5.10 to 12.2.3; P2P from R12.1.3 to 12.2.3; enhancements and post-production support</li>
+                      
+                      <li>Facilitated translation of business requirements into detailed functional requirements and best practice solutions, including fit-gap analysis and process review</li>
+                      
+                      <li>Designed and implemented approval workflows for purchase requisitions, AP invoices, supplier registration, and GL journals using Oracle AME; customized AME attributes, conditions, and rules</li>
+                      
+                      <li>Managed requirements gathering, gap analysis, and documentation (BR30, MD50, BR100, RD20, BP80, CV40, TE40) for global rollouts</li>
+                      
+                      <li>Created and maintained user manuals, held training sessions for large user groups, and led UAT and CRP testing phases</li>
+                      
+                      <li>Implemented FA and GL localizations for India and Philippines, including tax and asset controls, block of assets, and fiscal year calendars</li>
+                      
+                      <li>Developed SQL extracts, ad-hoc queries, and WebADI templates for data migration, mass upload, and reporting (using Toad/SQL Developer)</li>
+                      
+                      <li>Acted as liaison between business and IT, coordinated with vendors and offshore teams for timely deliverables and aggressive timelines</li>
+                      
+                      <li>Created budgets for various projects and aligned resources based on technical and functional needs</li>
+                      
+                      <li>Delivered solution to successfully integrate HR data between Workday and Oracle</li>
+                      
+                      <li>Conducted and evaluated process review and gap analysis to resolve requirements not addressed by Oracle apps, designing custom solutions within Oracle and with 3rd party applications</li>
+                      
+                      <li>Interacted with Oracle support using Metalink and Oracle Web Conference (OWC) to resolve application issues and bugs; maintained follow-up with Oracle Service Request (SR)</li>
+                      
+                      <li>Recognized for excellent verbal communication, presentation skills, and cross-functional collaboration</li>
+                      
+                    </ul>
+                  </div>
+                  
+                </div>
+                
+              
+            </div>
+          </div>
+        </div>
+        
+        <div class="company-container">
+          <div class="company-header">
+            <h3 class="company-name">CGG</h3>
+            <p class="company-dates"></p>
+            
+              <p class="exp-location">📍 Houston, TX</p>
+            
+            <div class="exp-meta">
+              <span class="exp-type">Full-time</span>
+            </div>
+          </div>
+
+          <div class="exp-item-container">
+            
+            <div class="company-logo">
+              <img src="/assets/images/cgg1.jpg" alt="CGG logo" />
+            </div>
+            
+
+            <div class="company-info">
+              
+                <!-- Default rendering for other companies -->
+                
+                <div class="company-role">
+                  <h4 class="role-title">Oracle Financial Functional Support Analyst</h4>
+                  <p class="role-dates">Nov 2012 - Oct 2014 · 2 yrs</p>
+                  
+                  <p class="role-description">Financials Functional Support Analyst for Oracle EBS (AP, GL, EB-Tax, P2P) supporting global post-production operations and enhancements. Facilitated translation of business requirements into functional solutions, developed ad-hoc queries and reports, and provided training and support to finance end users. Led process improvements, system configuration, and integration with upstream/downstream applications. Conducted UAT, test planning, and documentation for enhancements, bug fixes, and upgrades. Collaborated with technical teams to develop BI reports and WebADI templates, and implemented approval rules using Oracle AME. Applied Oracle AIM methodology and participated in all phases of Conference Room Pilot (CRP1, CRP2, CRP3). Extensive use of SQL, PL/SQL, Toad, and Oracle tools for troubleshooting and reporting.</p>
+                  
+                  <div class="role-achievements">
+                    <p class="achievements-title">Notable Achievements:</p>
+                    <ul>
+                      
+                      <li>Developed and executed test plans for functional changes, bug fixes, enhancements, patches, and upgrades, including UAT and CRP phases</li>
+                      
+                      <li>Configured, modified, and developed accounting rules, application configurations, and integrations within Oracle Financial modules (GL, AP, EB-Tax, P2P)</li>
+                      
+                      <li>Analyzed data and integration points for upstream/downstream applications, ensuring data integrity and process efficiency</li>
+                      
+                      <li>Provided solution direction for Procure to Pay (P2P) processes on a global Oracle footprint, including process mapping and risk/control identification</li>
+                      
+                      <li>Defined and improved approval rules using Oracle AME to enhance PO to AP alerts and workflow automation</li>
+                      
+                      <li>Wrote and optimized SQL/PLSQL queries across GL, XLA (SLA), ZX (Tax), FA, and AP tables for troubleshooting, reporting, and data migration</li>
+                      
+                      <li>Drastically reduced GL and AP open issues through root cause analysis, process improvements, and proactive support</li>
+                      
+                      <li>Developed and conducted UAT sessions, collaborated on BI/WebADI reporting solutions, and created user manuals and training materials</li>
+                      
+                      <li>Participated in all phases of Conference Room Pilot (CRP1, CRP2, CRP3) and Oracle AIM documentation (RD20, BP80, BR30, BR100, MD50, CV40, TE40)</li>
+                      
+                      <li>Recognized for strong analytical, troubleshooting, and cross-functional collaboration skills</li>
+                      
+                    </ul>
+                  </div>
+                  
+                </div>
+                
+              
+            </div>
+          </div>
+        </div>
+        
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="profile-section">
+      <h2>Education</h2>
+      <div class="education-items">
+        
+        <div class="education-item">
+          <div class="edu-header">
+            <h3 class="edu-degree">Master of Business Administration - MBA</h3>
+            <p class="edu-field">Business Strategy</p>
+          </div>
+          <p class="edu-school">Kennesaw State University - Michael J. Coles College of Business</p>
+          <p class="edu-dates">2016 - 2018</p>
+          
+          <div class="edu-activities">
+            <p class="activities-label">Activities and societies:</p>
+            <div class="activities-list">
+              
+              <span class="activity-badge">Beta Gamma Sigma</span>
+              
+              <span class="activity-badge">Phi Kappa Phi</span>
+              
+              <span class="activity-badge">Golden Key Honor Society</span>
+              
+            </div>
+          </div>
+          
+        </div>
+        
+        <div class="education-item">
+          <div class="edu-header">
+            <h3 class="edu-degree">Bachelor&#39;s degree</h3>
+            <p class="edu-field">Electronics Engineering</p>
+          </div>
+          <p class="edu-school">DeVry University</p>
+          <p class="edu-dates">2004 - 2008</p>
+          
+          <div class="edu-activities">
+            <p class="activities-label">Activities and societies:</p>
+            <div class="activities-list">
+              
+              <span class="activity-badge">Dean&#39;s List</span>
+              
+            </div>
+          </div>
+          
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- Licenses & Certifications Section -->
+    <section id="licenses" class="profile-section">
+      <h2>Licenses & Certifications</h2>
+      <div class="licenses-items">
+        
+        <div class="license-item">
+          <h3 class="cert-title">Oracle Fusion AI Agent Studio Foundations Associate</h3>
+          <p class="cert-issuer">Oracle</p>
+          <p class="cert-date">Issued Aug 2025</p>
+          
+          <p class="cert-id">Credential ID: 1Z0-1145-1</p>
+          
+          <div class="cert-skills">
+            
+            <span class="skill-tag">Artificial Intelligence (AI)</span>
+            
+            <span class="skill-tag">Oracle Enterprise Resource Planning (ERP) Cloud</span>
+            
+          </div>
+        </div>
+        
+        <div class="license-item">
+          <h3 class="cert-title">Oracle Cloud Infrastructure: AI Foundations</h3>
+          <p class="cert-issuer">Oracle</p>
+          <p class="cert-date">Issued TBD</p>
+          
+          <div class="cert-skills">
+            
+            <span class="skill-tag">Artificial Intelligence (AI)</span>
+            
+            <span class="skill-tag">Oracle Enterprise Resource Planning (ERP) Cloud</span>
+            
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- Volunteering Section -->
+    <section id="volunteering" class="profile-section">
+      <h2>Volunteering</h2>
+      <div class="volunteering-items">
+        
+        <div class="volunteer-item">
+          <div class="vol-header">
+            <h3 class="vol-title">Business Relationship Manager</h3>
+            <p class="vol-organization">Science of Spirituality</p>
+          </div>
+          <p class="vol-category">Social Services</p>
+          <p class="vol-dates">Jan 2011 - Present · 15 yrs 1 mo</p>
+          
+          <ul class="vol-responsibilities">
+            
+            <li>Lead NetSuite implementation for financial business applications</li>
+            
+            <li>Deliver IT solutions by liaising between business application vendors and business teams</li>
+            
+          </ul>
+          
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- Honors & Awards Section -->
+    <section id="awards" class="profile-section">
+      <h2>Honors & Awards</h2>
+      <div class="awards-items">
+        
+        <div class="award-item">
+          <h3 class="award-title">Beta Gamma Sigma</h3>
+          <p class="award-issuer">Issued by Kennesaw State University · Apr 2018</p>
+          <p class="award-organization">Kennesaw State University - Michael J. Coles College of Business</p>
+        </div>
+        
+        <div class="award-item">
+          <h3 class="award-title">Phi Kappa Phi</h3>
+          <p class="award-issuer">Issued by Kennesaw State University · Apr 2018</p>
+          <p class="award-organization">Kennesaw State University - Michael J. Coles College of Business</p>
+        </div>
+        
+        <div class="award-item">
+          <h3 class="award-title">Golden Key Honor Society</h3>
+          <p class="award-issuer">Issued by Kennesaw State University · Nov 2017</p>
+          <p class="award-organization">Kennesaw State University - Michael J. Coles College of Business</p>
+        </div>
+        
+        <div class="award-item">
+          <h3 class="award-title">Dean&#39;s List</h3>
+          <p class="award-issuer">Issued by DeVry University · Feb 2008</p>
+          <p class="award-organization">DeVry University</p>
+        </div>
+        
+      </div>
+    </section>
+  </main>
+</div>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Saurabh Bhatia</p>
+  </footer>
+
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>
