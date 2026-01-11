@@ -1,63 +1,110 @@
-/* Specializations Page Styles - Clean BEM Naming */
-
-.specializations {
-  display: flex;
-  flex-direction: row;
-  gap: 2rem;
-}
-
-.specializations__sidebar {
-  position: sticky;
-  top: 2rem;
-  min-width: 220px;
+/* Box styling for Other Applications cards, matching .finapps-card */
+/* Set Other Applications cards to 200x200px */
+.finapps-other-card {
   background: #101a26;
-  border-radius: 8px;
-  padding: 1rem;
-}
-
-.specializations__menu {
+  border-radius: 0 8px 8px 0;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.10);
   display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 1.2rem 1.2rem;
+  border-left: 3px solid #38bdf8;
+  width: 200px;
+  height: 200px;
+  max-width: 100%;
+  transition: box-shadow 0.2s, transform 0.2s;
+  margin: 0.5rem 0;
+  color: #fff;
+  box-sizing: border-box;
+  overflow-wrap: break-word;
 }
 
-.specializations__link {
+.finapps-other-card:hover {
+  box-shadow: 0 6px 24px rgba(56,189,248,0.18);
+  transform: translateY(-2px) scale(1.02);
+}
+
+.finapps-other-card h4 {
+  margin: 0 0 0.25rem 0;
   color: #38bdf8;
-  text-decoration: none;
-  font-weight: 500;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  transition: background 0.2s;
-}
-.specializations__link.active,
-.specializations__link:hover {
-  background: #1e293b;
+  font-size: 1.1rem;
 }
 
-.specializations__content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+.finapps-other-card p {
+  margin: 0;
+  color: #cbeafe;
+  font-size: 0.98rem;
+  line-height: 1.5;
 }
-
-.specializations__section {
-  margin-bottom: 2rem;
-}
-
-.specializations__section-title {
-  font-size: 2rem;
-  color: #38bdf8;
-  margin-bottom: 0.5rem;
-}
-
-.specializations__card-grid {
+/* Match .finapps-other-card color coding and formatting to .finapps-card */
+/* Layout for Other Applications cards: row with wrapping */
+/* Center Other Applications cards in the grid */
+.otherfin-platforms-block .specializations-grid {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+  justify-content: center;
+  align-items: stretch;
 }
 
-.specializations__card {
+
+@media (max-width: 900px) {
+  .otherfin-platforms-block .specializations-grid {
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  .finapps-other-card {
+    flex-basis: 45vw;
+    width: 45vw;
+    height: 45vw;
+    min-width: 140px;
+    min-height: 140px;
+    max-width: 240px;
+    max-height: 240px;
+  }
+}
+
+@media (max-width: 600px) {
+  .otherfin-platforms-block .specializations-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .finapps-other-card {
+    flex-basis: 90vw;
+    width: 90vw;
+    height: 90vw;
+    min-width: 120px;
+    min-height: 120px;
+    max-width: 98vw;
+    max-height: 98vw;
+  }
+}
+
+/* Responsive: stack cards and adjust size on small screens */
+@media (max-width: 900px) {
+  .finapps-other-card {
+    width: 45vw;
+    height: 45vw;
+    min-width: 140px;
+    min-height: 140px;
+    max-width: 240px;
+    max-height: 240px;
+  }
+}
+
+@media (max-width: 600px) {
+  .finapps-other-card {
+    width: 90vw;
+    height: 90vw;
+    min-width: 120px;
+    min-height: 120px;
+    max-width: 98vw;
+    max-height: 98vw;
+  }
+}
+/* --- finapps-others-card styles for specializations page --- */
+.finapps-others-card {
   background: #101a26;
   border-radius: 0 8px 8px 0;
   box-shadow: 0 1px 6px rgba(0,0,0,0.10);
@@ -70,18 +117,75 @@
   max-width: 100%;
   transition: box-shadow 0.2s, transform 0.2s;
   margin: 0.5rem 0;
-  color: #fff;
 }
-.specializations__card h4,
-.specializations__card ul,
-.specializations__card li {
-  color: #fff;
+.finapps-others-card:hover {
+  box-shadow: 0 6px 24px rgba(56,189,248,0.18);
+  transform: translateY(-2px) scale(1.02);
 }
-
-/* Section-specific accent colors */
-.specializations__section--technical .specializations__section-title {
-  color: #14b8a6;
+.finapps-others-card h4 {
+  margin: 0 0 0.25rem 0;
+  color: #38bdf8;
+  font-size: 1.1rem;
 }
-.specializations__section--compliance .specializations__section-title {
-  color: #f59e42;
+.finapps-others-card p {
+  margin: 0;
+  color: #cbeafe;
+  font-size: 0.98rem;
+  line-height: 1.5;
+}
+@media (max-width: 600px) {
+  .finapps-others-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+/* --- Other Applications card styles --- */
+.otherfin-platforms-block .specializations-grid {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+.otherfin-platforms-block .finapps-card {
+  background: #fff;
+  border-radius: 1.2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  width: 220px;
+  height: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 1.5rem;
+  border-left: none;
+  margin: 0;
+  transition: box-shadow 0.2s;
+}
+.otherfin-platforms-block .finapps-card:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.13);
+}
+/* Other Applications Section */
+.other-applications {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: flex-start;
+  margin-top: 2.5rem;
+}
+.other-app-card {
+  background: #fff;
+  border-radius: 1.2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  width: 220px;
+  height: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 1.5rem;
+  transition: box-shadow 0.2s;
+}
+.other-app-card:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.13);
 }
