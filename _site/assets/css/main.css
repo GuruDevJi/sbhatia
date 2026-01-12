@@ -1309,3 +1309,65 @@ button[type="submit"]:hover {
 }
 
 /* --- End Technical Card Title styles --- */
+
+/* Trusted Marquee Styling */
+.trusted-marquee {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #111;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid #333;
+}
+
+.trusted-marquee p {
+  text-align: center;
+  color: #666;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin: 0 0 1rem 0;
+}
+
+.marquee-track {
+  display: flex;
+  gap: 4rem;
+  width: max-content;
+  animation: scroll 45s linear infinite;
+}
+
+.marquee-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 150px;
+}
+
+.marquee-item img {
+  height: 50px;
+  width: auto;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  filter: none;
+}
+
+.marquee-item:hover img {
+  opacity: 1;
+  filter: grayscale(0%);
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(calc(-50% - 2rem));
+    /* Adjust based on content width */
+  }
+}
+
+/* Pause animation on hover */
+.trusted-marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
