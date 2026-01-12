@@ -1,0 +1,359 @@
+/* Profile Page Styles - Premium Theme */
+/* ================================== */
+
+/* Sidebar Navigation */
+.sidebar-nav {
+    position: sticky;
+    top: 6rem;
+    /* Account for sticky header */
+    height: fit-content;
+    border-right: 1px solid var(--glass-border);
+    padding-right: 2rem;
+}
+
+.sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.sidebar-link {
+    display: block;
+    padding: 0.875rem 1.25rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 0.95rem;
+    font-weight: 500;
+    border: 1px solid transparent;
+}
+
+.sidebar-link:hover {
+    color: var(--text-primary);
+    background: var(--glass-bg);
+}
+
+.sidebar-link.active {
+    background: var(--glass-bg);
+    border-color: var(--glass-border);
+    box-shadow: var(--shadow-premium);
+}
+
+/* Sidebar Color Overrides */
+.sidebar-link[data-section="experience"]:hover,
+.sidebar-link.active[data-section="experience"] {
+    color: var(--accent-teal);
+    border-left: 3px solid var(--accent-teal);
+}
+
+.sidebar-link[data-section="education"]:hover,
+.sidebar-link.active[data-section="education"] {
+    color: var(--accent-blue);
+    border-left: 3px solid var(--accent-blue);
+}
+
+.sidebar-link[data-section="licenses"]:hover,
+.sidebar-link.active[data-section="licenses"] {
+    color: var(--accent-amber);
+    border-left: 3px solid var(--accent-amber);
+}
+
+.sidebar-link[data-section="volunteering"]:hover,
+.sidebar-link.active[data-section="volunteering"] {
+    color: var(--accent-purple);
+    border-left: 3px solid var(--accent-purple);
+}
+
+.sidebar-link[data-section="awards"]:hover,
+.sidebar-link.active[data-section="awards"] {
+    color: var(--accent-pink);
+    border-left: 3px solid var(--accent-pink);
+}
+
+.sidebar-link[data-section="journey"]:hover,
+.sidebar-link.active[data-section="journey"] {
+    color: var(--accent-rose);
+    border-left: 3px solid var(--accent-rose);
+}
+
+/* Layout */
+.profile-container {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 4rem;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.profile-section {
+    margin-bottom: 5rem;
+    scroll-margin-top: 8rem;
+}
+
+/* Headers */
+.profile-section h2 {
+    font-size: 2.25rem;
+    margin-top: 0;
+    margin-bottom: 2rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--glass-border);
+    font-family: var(--font-heading);
+}
+
+.profile-section#experience h2 {
+    color: var(--accent-teal);
+}
+
+.profile-section#education h2 {
+    color: var(--accent-blue);
+}
+
+.profile-section#licenses h2 {
+    color: var(--accent-amber);
+}
+
+.profile-section#volunteering h2 {
+    color: var(--accent-purple);
+}
+
+.profile-section#awards h2 {
+    color: var(--accent-pink);
+}
+
+.profile-section#journey h2 {
+    color: var(--accent-rose);
+}
+
+/* Experience Items (Glass Cards) */
+.experience-items {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.experience-item {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: var(--shadow-premium);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.experience-item:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent-teal);
+}
+
+.exp-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.exp-company {
+    font-size: 1.5rem;
+    color: var(--accent-teal);
+    font-weight: 700;
+    margin: 0;
+}
+
+.exp-location {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+}
+
+.exp-type {
+    background: rgba(45, 212, 191, 0.1);
+    color: var(--accent-teal);
+    padding: 0.25rem 0.75rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.role-title {
+    font-size: 1.25rem;
+    color: var(--text-primary);
+    margin: 0 0 0.5rem;
+    font-family: var(--font-heading);
+}
+
+.role-dates {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.role-description {
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+.role-achievements ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.role-achievements li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-secondary);
+}
+
+.role-achievements li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--accent-teal);
+}
+
+.company-logo {
+    width: 100px;
+    height: 100px;
+    border-radius: 12px;
+}
+
+/* Education, Licenses, etc - Same Glass Theme */
+.education-item {
+    border-left: none;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: var(--shadow-premium);
+    transition: transform 0.3s ease;
+}
+
+.education-item:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent-blue);
+}
+
+.edu-field {
+    color: var(--accent-blue);
+    font-weight: 600;
+}
+
+.activity-badge {
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--accent-blue);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.license-item {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: var(--shadow-premium);
+    transition: transform 0.3s ease;
+}
+
+.license-item:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent-amber);
+}
+
+.cert-issuer {
+    color: var(--accent-amber);
+}
+
+.skill-tag {
+    background: rgba(245, 158, 11, 0.1);
+    color: var(--accent-amber);
+    border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+.volunteer-item {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: var(--shadow-premium);
+    transition: transform 0.3s ease;
+}
+
+.volunteer-item:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent-purple);
+}
+
+.vol-organization {
+    color: var(--accent-purple);
+}
+
+.award-item {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: var(--shadow-premium);
+    transition: transform 0.3s ease;
+}
+
+.award-item:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent-pink);
+}
+
+.award-issuer {
+    color: var(--accent-pink);
+}
+
+/* Journey & Map */
+#map {
+    height: 450px;
+    border-radius: 16px;
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow-premium);
+}
+
+.journey-summary-text {
+    font-size: 1.15rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .profile-container {
+        grid-template-columns: 200px 1fr;
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .profile-container {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar-nav {
+        position: relative;
+        top: 0;
+        border-right: none;
+        border-bottom: 1px solid var(--glass-border);
+        padding: 0 0 2rem;
+        margin-bottom: 3rem;
+    }
+
+    .sidebar-menu {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .sidebar-link {
+        border-left: none !important;
+        border-bottom: 2px solid transparent;
+    }
+}

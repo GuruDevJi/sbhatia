@@ -1,0 +1,100 @@
+/* Home Page Styles */
+/* ========================================= */
+
+/* 
+ * Note: Many home page styles appear to be inline in index.njk 
+ * or were missing from the previous main stylesheet context.
+ * This file is ready for extracting those inline styles in the future.
+ */
+
+.home-color-bar {
+    /* Placeholder for home color bar styles if moved from inline */
+}
+
+.home-hero {
+    /* Placeholder for hero styles */
+}
+
+/* Trusted By Marquee */
+.trusted-marquee {
+    overflow: hidden;
+    background: #111;
+    padding: 2rem 0;
+    margin: 2rem 0;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+}
+
+.trusted-marquee p {
+    text-align: center;
+    color: #14b8a6;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0 0 1.5rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.marquee-track {
+    display: flex;
+    gap: 3rem;
+    animation: marquee-scroll 36s linear infinite;
+    width: max-content;
+    padding: 1rem 0;
+}
+
+.marquee-item {
+    flex-shrink: 0;
+    width: 180px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.marquee-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 16px rgba(20, 184, 166, 0.2);
+}
+
+/* Dark variant for white/light logos */
+.marquee-item.dark {
+    background: #222;
+    border: 1px solid #444;
+}
+
+.marquee-item img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    filter: grayscale(0);
+    opacity: 1;
+}
+
+/* Make Blue Owl logo larger */
+/* Make Blue Owl logo larger */
+.marquee-item img[alt="Blue Owl Capital"] {
+    width: 200px;
+    max-width: none;
+    filter: invert(12%) sepia(90%) saturate(1200%) hue-rotate(185deg) brightness(25%) contrast(100%);
+}
+
+@keyframes marquee-scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Pause animation on hover */
+.trusted-marquee:hover .marquee-track {
+    animation-play-state: paused;
+}
