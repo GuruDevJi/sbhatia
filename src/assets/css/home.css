@@ -1,0 +1,117 @@
+/* Home Page Styles - Premium Theme */
+/* =============================== */
+
+.home-hero {
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.home-hero h2 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, var(--accent-teal) 0%, var(--accent-blue) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.home-hero p {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    max-width: 800px;
+    margin: 0 auto 2rem;
+}
+
+/* Trusted By Marquee */
+.trusted-marquee {
+    overflow: hidden;
+    background: rgba(15, 23, 42, 0.4);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    padding: 1.5rem 0;
+    margin: 2rem 0;
+    border-top: 1px solid var(--glass-border);
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.trusted-marquee p {
+    text-align: center;
+    color: var(--accent-teal);
+    font-size: 0.875rem;
+    font-weight: 700;
+    margin: 0 0 1rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-family: var(--font-heading);
+}
+
+.marquee-track {
+    display: flex;
+    gap: 4rem;
+    animation: marquee-scroll 40s linear infinite;
+    width: max-content;
+    padding: 0.5rem 0;
+}
+
+.marquee-item {
+    flex-shrink: 0;
+    width: 200px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--glass-bg);
+    border: none;
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border-radius: 12px;
+    padding: 1.25rem;
+    box-shadow: var(--shadow-premium);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.marquee-item:hover {
+    transform: translateY(-8px) scale(1.05);
+}
+
+.marquee-item img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 0;
+    filter: brightness(0) invert(1);
+    opacity: 0.9;
+    transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+.marquee-item:hover img {
+    opacity: 1;
+    filter: none;
+}
+
+/* Specific adjustment for Blue Owl logo which needs special sizing */
+.marquee-item img[alt="Blue Owl Capital"] {
+    width: 160px;
+    max-width: none;
+}
+
+@keyframes marquee-scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.trusted-marquee:hover .marquee-track {
+    animation-play-state: paused;
+}
+
+/* Responsive Overrides */
+@media (max-width: 768px) {
+    .home-hero h2 {
+        font-size: 2.5rem;
+    }
+}
