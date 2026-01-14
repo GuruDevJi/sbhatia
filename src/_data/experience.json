@@ -47,7 +47,7 @@
     },
     {
         "id": "hcsc",
-        "company": "Blue Cross and Blue Shield of Illinois, Montana, New Mexico, Oklahoma & Texas",
+        "company": "Blue Cross and Blue Shield",
         "type": "Full-time",
         "image": "/assets/images/bcbs-logo.png",
         "roles": [
@@ -149,7 +149,7 @@
         "id": "cgg",
         "company": "CGG",
         "type": "Full-time",
-        "image": "/assets/images/cgg1.jpg",
+        "image": "/assets/images/cgg.png",
         "roles": [
             {
                 "title": "Oracle Financial Functional Support Analyst",

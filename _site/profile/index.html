@@ -53,8 +53,8 @@
         <div id="journey-summary" style="margin-top:1rem;display:flex;gap:2rem;flex-wrap:wrap;">
           <div style="flex:1;min-width:260px;">
             <p class="journey-summary-text" style="margin-top:1rem;">Curiosity has driven my journey from the start. I grew up taking hardware and software apart just to see how they worked, which shaped me into a creative, systems-oriented problem solver with a relentless taste for experimentation.</p>
-            <p class="journey-summary-text">One project felt like unlocking a cheat code in a video game: building a capacitive touch panel controller entirely from scratch. Using a PIC18F microcontroller, I wrote every line of firmware to drive the FocalTech FT5X06 chip, bringing multi-touch gestures to life on a 4.3&quot; Newhaven TFT display. Watching my code respond instantly to finger swipes was pure exhilaration—like beating a boss level after weeks of grinding.</p>
-            <p class="journey-summary-text">That same thrill carried me into enterprise systems, where I built VB.NET applications to track RMAs at a manufacturing firm in Elgin, IL, opening the door to financial platforms and business processes. Since then, I've mastered how data, workflows, and people intersect across complex organizations.</p>
+            <p class="journey-summary-text">One project felt like unlocking a portal to a new world: building a capacitive touch panel controller entirely from scratch. Using a PIC18F microcontroller, I wrote every line of firmware to drive the FocalTech FT5X06 chip, bringing multi-touch gestures to life on a 4.3&quot; Newhaven TFT display. Watching my code respond instantly to finger swipes was pure exhilaration—like stepping into a new realm of possibility.</p>
+            <p class="journey-summary-text">That same thrill carried me into enterprise systems, where I built VB.NET applications to track RMAs at a manufacturing firm in Elgin, IL, opening the door to financial platforms and business processes. Since then, I've mastered how systems, workflows, and people intersect across complex organizations.</p>
             <p class="journey-summary-text">My focus has since expanded—bridging functional needs, technical architecture, and user experience with AI, machine learning, and intelligent automation. Today, I'm chasing that same video game rush: creating financial and operational systems that are efficient, intuitive, resilient, and genuinely inspiring to use.</p>
           </div>
   
@@ -176,7 +176,9 @@
             
           ];
 
-          // Red marker icon for schools
+
+
+          // Red marker icon for experience (companies)
           const redIcon = L.icon({
             iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png',
             shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
@@ -186,7 +188,7 @@
             shadowSize: [41, 41]
           });
 
-          // Blue marker icon (default)
+          // Blue marker icon for education (schools)
           const blueIcon = L.icon({
             iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-blue.png',
             shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
@@ -196,13 +198,14 @@
             shadowSize: [41, 41]
           });
 
-          // Add company markers (blue)
+
+          // Add company markers (red)
           for (const c of companies) {
             if (c.lat && c.lon) {
               const lat = parseFloat(c.lat);
               const lon = parseFloat(c.lon);
               if (!isNaN(lat) && !isNaN(lon)) {
-                const marker = L.marker([lat, lon], { icon: blueIcon }).addTo(map);
+                const marker = L.marker([lat, lon], { icon: redIcon }).addTo(map);
                 marker.bindPopup('<strong>' + c.company + '</strong><br/>' + (c.location || ''));
                 continue;
               }
@@ -213,13 +216,13 @@
             document.getElementById('journey-list').appendChild(li);
           }
 
-          // Add school markers (red)
+          // Add school markers (blue)
           for (const s of schools) {
             if (s.lat && s.lon) {
               const lat = parseFloat(s.lat);
               const lon = parseFloat(s.lon);
               if (!isNaN(lat) && !isNaN(lon)) {
-                const marker = L.marker([lat, lon], { icon: redIcon }).addTo(map);
+                const marker = L.marker([lat, lon], { icon: blueIcon }).addTo(map);
                 marker.bindPopup('<strong>' + s.name + '</strong><br/>' + (s.degree || ''));
                 continue;
               }
@@ -243,31 +246,31 @@
       <div class="experience-items">
         <!-- Executive Summary block before Blue Owl Capital -->
         <div id="executive-summary-block" class="journey-summary-block" style="margin-bottom:2rem;">
-          <span class="company-name">Executive Summary:</span>
+          <span class="company-name" style="font-size:1.5em;">Executive Summary:</span>
           <p class="journey-summary-text" style="margin-top:1rem;">
             Accomplished technology and business leader with a proven track record of driving digital transformation, operational excellence, and strategic growth across Fortune 500 enterprises. Expert in Oracle Cloud and EBS financial systems, process reengineering, and large-scale program delivery. Adept at bridging business and technology, leading cross-functional teams, and building high-performance cultures. Recognized for innovative problem-solving, stakeholder engagement, and delivering measurable results in complex, regulated environments. Passionate about leveraging AI, automation, and data-driven insights to create resilient, future-ready organizations.
           </p>
         </div>
         
+        
         <div class="company-container">
-          <div class="company-header">
-            <h3 class="company-name">Blue Owl Capital</h3>
-            <p class="company-dates"></p>
+          <div class="company-flex-row">
             
-              <p class="exp-location">📍 New York City, NY</p>
-            
-            <div class="exp-meta">
-              <span class="teal-badge">Full-time</span>
-            </div>
-          </div>
-
-          <div class="exp-item-container">
-            
-            <div class="company-logo">
+            <div class="company-logo-fixed">
               <img src="/assets/images/blueowl.png" alt="Blue Owl Capital logo" />
             </div>
             
-
+            <div class="company-header-flex">
+              <h3 class="company-name" style="font-size:1.75em;">Blue Owl Capital</h3>
+              
+                <p class="exp-location">📍 New York City, NY</p>
+              
+              <div class="exp-meta">
+                <span class="teal-badge">Full-time</span>
+              </div>
+            </div>
+          </div>
+          <div class="exp-item-container">
             <div class="company-info">
               
                 <!-- Show Blue Owl role titles above summary -->
@@ -307,338 +310,367 @@
               
             </div>
           </div>
+          
+          <hr class="company-divider teal-divider" />
+          
         </div>
         
+        
         <div class="company-container">
-          <div class="company-header">
-            <h3 class="company-name">Blue Cross and Blue Shield of Illinois, Montana, New Mexico, Oklahoma &amp; Texas</h3>
-            <p class="company-dates"></p>
+          <div class="company-flex-row">
             
-              <p class="exp-location">📍 Chicago, IL</p>
+            <div class="company-logo-fixed">
+              <img src="/assets/images/bcbs-logo.png" alt="Blue Cross and Blue Shield logo" />
+            </div>
             
-            <div class="exp-meta">
-              <span class="teal-badge">Full-time</span>
+            <div class="company-header-flex">
+              <h3 class="company-name" style="font-size:1.75em;">Blue Cross and Blue Shield</h3>
+              
+                <p class="exp-location">📍 Chicago, IL</p>
+              
+              <div class="exp-meta">
+                <span class="teal-badge">Full-time</span>
+              </div>
             </div>
           </div>
-
           <div class="exp-item-container">
-            
-            <div class="company-logo">
-              <img src="/assets/images/bcbs-logo.png" alt="Blue Cross and Blue Shield of Illinois, Montana, New Mexico, Oklahoma &amp; Texas logo" />
-            </div>
-            
-
             <div class="company-info">
               
                 <!-- Default rendering for other companies -->
                 
-                <div class="company-role">
-                  <div class="role-header-container">
-                    
-                    <div class="role-header-info">
-                      <h4 class="role-title">Principal Consultant - Cloud Financial Systems</h4>
-                      <p class="role-dates">Mar 2019 - Jul 2021 · 2 yrs 5 mos</p>
+                  
+                  <div class="company-role">
+                    <div class="role-header-container">
                       
+                      <div class="role-header-info">
+                        <h4 class="role-title">Principal Consultant - Cloud Financial Systems</h4>
+                        <p class="role-dates">Mar 2019 - Jul 2021 · 2 yrs 5 mos</p>
+                        
+                      </div>
                     </div>
+                    <p class="role-description">Served as a finance thought partner in the Finance Systems Innovation organization at the largest customer-owned health insurer in the US, operating Blue Cross and Blue Shield® Plans across five states. Led functional support and transformation of Oracle Cloud financial applications (General Ledger, Allocations, Accounts Payable, Project Costing, Asset Management, Procurement). Acted as the primary liaison between business and technical teams, driving continuous improvement, operational efficiency, and best practices. Consulted on and led new projects involving strategy, implementation, and support. Administered and developed test cases for EPM (PBCS and PCMCS), Solix Data Warehouse, and Vertex Tax Engine. Provided leadership in quarterly cloud upgrade releases, process documentation, and change management.</p>
+                    
+                    <div class="role-achievements">
+                      <p class="achievements-title">Notable Achievements:</p>
+                      <ul>
+                        
+                        <li>Led Oracle ERP Cloud Quarterly upgrade releases, including impact analysis, testing, and adoption of new features.</li>
+                        
+                        <li>Developed and presented KPIs to senior leadership, highlighting team performance, support metrics, and project planning.</li>
+                        
+                        <li>Fostered collaborative relationships with cross-functional teams and built trust with key business stakeholders.</li>
+                        
+                        <li>Supported and enhanced 30+ integrations (Mulesoft, Talend) and provided guidance in designing new interfaces.</li>
+                        
+                        <li>Created and maintained documentation (configuration, test scripts, functional specs for reporting and integration).</li>
+                        
+                        <li>Provided assistance in key system processes (month-end, quarter-end, year-end close).</li>
+                        
+                        <li>Assisted with functional testing of monthly, quarterly, and emergency patches.</li>
+                        
+                        <li>Mentored colleagues and assisted in training support for new system features.</li>
+                        
+                        <li>Championed continuous process improvement and provided insights into industry best practices.</li>
+                        
+                        <li>Recognized for strong analytical, troubleshooting, and change management skills.</li>
+                        
+                      </ul>
+                    </div>
+                    
                   </div>
-                  <p class="role-description">Served as a finance thought partner in the Finance Systems Innovation organization at the largest customer-owned health insurer in the US, operating Blue Cross and Blue Shield® Plans across five states. Led functional support and transformation of Oracle Cloud financial applications (General Ledger, Allocations, Accounts Payable, Project Costing, Asset Management, Procurement). Acted as the primary liaison between business and technical teams, driving continuous improvement, operational efficiency, and best practices. Consulted on and led new projects involving strategy, implementation, and support. Administered and developed test cases for EPM (PBCS and PCMCS), Solix Data Warehouse, and Vertex Tax Engine. Provided leadership in quarterly cloud upgrade releases, process documentation, and change management.</p>
                   
-                  <div class="role-achievements">
-                    <p class="achievements-title">Notable Achievements:</p>
-                    <ul>
-                      
-                      <li>Led Oracle ERP Cloud Quarterly upgrade releases, including impact analysis, testing, and adoption of new features.</li>
-                      
-                      <li>Developed and presented KPIs to senior leadership, highlighting team performance, support metrics, and project planning.</li>
-                      
-                      <li>Fostered collaborative relationships with cross-functional teams and built trust with key business stakeholders.</li>
-                      
-                      <li>Supported and enhanced 30+ integrations (Mulesoft, Talend) and provided guidance in designing new interfaces.</li>
-                      
-                      <li>Created and maintained documentation (configuration, test scripts, functional specs for reporting and integration).</li>
-                      
-                      <li>Provided assistance in key system processes (month-end, quarter-end, year-end close).</li>
-                      
-                      <li>Assisted with functional testing of monthly, quarterly, and emergency patches.</li>
-                      
-                      <li>Mentored colleagues and assisted in training support for new system features.</li>
-                      
-                      <li>Championed continuous process improvement and provided insights into industry best practices.</li>
-                      
-                      <li>Recognized for strong analytical, troubleshooting, and change management skills.</li>
-                      
-                    </ul>
-                  </div>
-                  
-                </div>
                 
               
             </div>
           </div>
+          
+          <hr class="company-divider teal-divider" />
+          
         </div>
         
+        
         <div class="company-container">
-          <div class="company-header">
-            <h3 class="company-name">Infosys</h3>
-            <p class="company-dates"></p>
+          <div class="company-flex-row">
             
-              <p class="exp-location">📍 Richardson, TX</p>
-            
-            <div class="exp-meta">
-              <span class="teal-badge">Full-time</span>
-            </div>
-          </div>
-
-          <div class="exp-item-container">
-            
-            <div class="company-logo">
+            <div class="company-logo-fixed">
               <img src="/assets/images/infosys-logo.png" alt="Infosys logo" />
             </div>
             
-
+            <div class="company-header-flex">
+              <h3 class="company-name" style="font-size:1.75em;">Infosys</h3>
+              
+                <p class="exp-location">📍 Richardson, TX</p>
+              
+              <div class="exp-meta">
+                <span class="teal-badge">Full-time</span>
+              </div>
+            </div>
+          </div>
+          <div class="exp-item-container">
             <div class="company-info">
               
                 <!-- Default rendering for other companies -->
                 
-                <div class="company-role">
-                  <div class="role-header-container">
+                  
+                  <div class="company-role">
+                    <div class="role-header-container">
+                      
+                      <div class="role-logo">
+                        <img src="/assets/images/logos/symantec.png" alt="Financial Applications Manager (Symantec) logo" />
+                      </div>
+                      
+                      <div class="role-header-info">
+                        <h4 class="role-title">Financial Applications Manager (Symantec)</h4>
+                        <p class="role-dates">Aug 2018 - Feb 2019 · 7 mos</p>
+                        
+                        <p class="role-location">📍 Mountain View, CA</p>
+                        
+                      </div>
+                    </div>
+                    <p class="role-description">Designed, built, and implemented Oracle Receivables system and bridged gap between requirements and final solution. Executed new implementations, functionality improvements, and application updates in collaboration with development teams. Resolved defects and integrated new localization in partnership with Oracle Support.</p>
                     
-                    <div class="role-logo">
-                      <img src="/assets/images/logos/symantec.png" alt="Financial Applications Manager (Symantec) logo" />
+                    <div class="role-achievements">
+                      <p class="achievements-title">Notable Achievements:</p>
+                      <ul>
+                        
+                        <li>Migrated multiple countries into a common ERP BlueCoat system; executed successful go-lives and UAT</li>
+                        
+                        <li>Spearheaded new system functionalities and led new-user training</li>
+                        
+                      </ul>
                     </div>
                     
-                    <div class="role-header-info">
-                      <h4 class="role-title">Financial Applications Manager (Symantec)</h4>
-                      <p class="role-dates">Aug 2018 - Feb 2019 · 7 mos</p>
+                  </div>
+                  
+                  <hr class="infosys-role-divider" />
+                  
+                  
+                  <div class="company-role">
+                    <div class="role-header-container">
                       
-                      <p class="role-location">📍 Mountain View, CA</p>
+                      <div class="role-logo">
+                        <img src="/assets/images/logos/titan.png" alt="Lead Oracle Cloud Consultant (Titan International) logo" />
+                      </div>
                       
+                      <div class="role-header-info">
+                        <h4 class="role-title">Lead Oracle Cloud Consultant (Titan International)</h4>
+                        <p class="role-dates">Dec 2017 - Jul 2018 · 8 mos</p>
+                        
+                        <p class="role-location">📍 West Chicago, IL</p>
+                        
+                      </div>
                     </div>
-                  </div>
-                  <p class="role-description">Designed, built, and implemented Oracle Receivables system and bridged gap between requirements and final solution. Executed new implementations, functionality improvements, and application updates in collaboration with development teams. Resolved defects and integrated new localization in partnership with Oracle Support.</p>
-                  
-                  <div class="role-achievements">
-                    <p class="achievements-title">Notable Achievements:</p>
-                    <ul>
-                      
-                      <li>Migrated multiple countries into a common ERP BlueCoat system; executed successful go-lives and UAT</li>
-                      
-                      <li>Spearheaded new system functionalities and led new-user training</li>
-                      
-                    </ul>
-                  </div>
-                  
-                </div>
-                
-                <div class="company-role">
-                  <div class="role-header-container">
+                    <p class="role-description">Spearheaded communication efforts by elaborating key differences between client&#39;s legacy system and Oracle Cloud Financials. Performed demonstrations on Fusion Expenses and Fusion Payables functionality as key liaison between senior-level IT professionals and financial leadership team. Facilitated daily consultations with business, IT, and support teams.</p>
                     
-                    <div class="role-logo">
-                      <img src="/assets/images/logos/titan.png" alt="Lead Oracle Cloud Consultant (Titan International) logo" />
-                    </div>
-                    
-                    <div class="role-header-info">
-                      <h4 class="role-title">Lead Oracle Cloud Consultant (Titan International)</h4>
-                      <p class="role-dates">Dec 2017 - Jul 2018 · 8 mos</p>
-                      
-                      <p class="role-location">📍 West Chicago, IL</p>
-                      
-                    </div>
-                  </div>
-                  <p class="role-description">Spearheaded communication efforts by elaborating key differences between client&#39;s legacy system and Oracle Cloud Financials. Performed demonstrations on Fusion Expenses and Fusion Payables functionality as key liaison between senior-level IT professionals and financial leadership team. Facilitated daily consultations with business, IT, and support teams.</p>
-                  
-                  <div class="role-achievements">
-                    <p class="achievements-title">Notable Achievements:</p>
-                    <ul>
-                      
-                      <li>Designed customized functional processes outside of Oracle Fusion Financials in collaboration with business teams</li>
-                      
-                      <li>Led on-site and off-shore technical teams executing analysis, customization, and personalization of cloud system</li>
-                      
-                      <li>Achieved certification as Payables Implementation Specialist for Oracle Financials Cloud</li>
-                      
-                    </ul>
-                  </div>
-                  
-                </div>
-                
-                <div class="company-role">
-                  <div class="role-header-container">
-                    
-                    <div class="role-logo">
-                      <img src="/assets/images/logos/jci.png" alt="Lead Financial Functional Consultant (Johnson Controls, Inc) logo" />
+                    <div class="role-achievements">
+                      <p class="achievements-title">Notable Achievements:</p>
+                      <ul>
+                        
+                        <li>Designed customized functional processes outside of Oracle Fusion Financials in collaboration with business teams</li>
+                        
+                        <li>Led on-site and off-shore technical teams executing analysis, customization, and personalization of cloud system</li>
+                        
+                        <li>Achieved certification as Payables Implementation Specialist for Oracle Financials Cloud</li>
+                        
+                      </ul>
                     </div>
                     
-                    <div class="role-header-info">
-                      <h4 class="role-title">Lead Financial Functional Consultant (Johnson Controls, Inc)</h4>
-                      <p class="role-dates">Oct 2017 - Dec 2017 · 3 mos</p>
+                  </div>
+                  
+                  <hr class="infosys-role-divider" />
+                  
+                  
+                  <div class="company-role">
+                    <div class="role-header-container">
                       
-                      <p class="role-location">📍 Boca Raton, FL | Richardson, TX</p>
+                      <div class="role-logo">
+                        <img src="/assets/images/logos/jci.png" alt="Lead Financial Functional Consultant (Johnson Controls, Inc) logo" />
+                      </div>
                       
+                      <div class="role-header-info">
+                        <h4 class="role-title">Lead Financial Functional Consultant (Johnson Controls, Inc)</h4>
+                        <p class="role-dates">Oct 2017 - Dec 2017 · 3 mos</p>
+                        
+                        <p class="role-location">📍 Boca Raton, FL | Richardson, TX</p>
+                        
+                      </div>
                     </div>
+                    <p class="role-description">Provided post-production support; analyzed system design and ERP configurations during UAT (user acceptance testing) phase of Oracle ERP upgrade and OS migration to UNIX. Designed and tested Accounts Receivable (AR) setups. Wrote test scripts; resolved defects prior to go-live.</p>
+                    
+                    <div class="role-achievements">
+                      <p class="achievements-title">Notable Achievements:</p>
+                      <ul>
+                        
+                        <li>Collaborated with first-time users and engaged with clients to assist in system assimilation and understanding</li>
+                        
+                        <li>Facilitated training in partnership with business teams for GL, AR, and month-end closing processes</li>
+                        
+                      </ul>
+                    </div>
+                    
                   </div>
-                  <p class="role-description">Provided post-production support; analyzed system design and ERP configurations during UAT (user acceptance testing) phase of Oracle ERP upgrade and OS migration to UNIX. Designed and tested Accounts Receivable (AR) setups. Wrote test scripts; resolved defects prior to go-live.</p>
                   
-                  <div class="role-achievements">
-                    <p class="achievements-title">Notable Achievements:</p>
-                    <ul>
-                      
-                      <li>Collaborated with first-time users and engaged with clients to assist in system assimilation and understanding</li>
-                      
-                      <li>Facilitated training in partnership with business teams for GL, AR, and month-end closing processes</li>
-                      
-                    </ul>
-                  </div>
                   
-                </div>
                 
               
             </div>
           </div>
+          
+          <hr class="company-divider teal-divider" />
+          
         </div>
         
+        
         <div class="company-container">
-          <div class="company-header">
-            <h3 class="company-name">Synchrony Financial</h3>
-            <p class="company-dates"></p>
+          <div class="company-flex-row">
             
-              <p class="exp-location">📍 Alpharetta, GA</p>
-            
-            <div class="exp-meta">
-              <span class="teal-badge">Contract</span>
-            </div>
-          </div>
-
-          <div class="exp-item-container">
-            
-            <div class="company-logo">
+            <div class="company-logo-fixed">
               <img src="/assets/images/synchrony-logo.png" alt="Synchrony Financial logo" />
             </div>
             
-
+            <div class="company-header-flex">
+              <h3 class="company-name" style="font-size:1.75em;">Synchrony Financial</h3>
+              
+                <p class="exp-location">📍 Alpharetta, GA</p>
+              
+              <div class="exp-meta">
+                <span class="teal-badge">Contract</span>
+              </div>
+            </div>
+          </div>
+          <div class="exp-item-container">
             <div class="company-info">
               
                 <!-- Default rendering for other companies -->
                 
-                <div class="company-role">
-                  <div class="role-header-container">
-                    
-                    <div class="role-header-info">
-                      <h4 class="role-title">Oracle Financial Functional Consultant</h4>
-                      <p class="role-dates">Nov 2014 - Oct 2017 · 3 yrs</p>
+                  
+                  <div class="company-role">
+                    <div class="role-header-container">
                       
+                      <div class="role-header-info">
+                        <h4 class="role-title">Oracle Financial Functional Consultant</h4>
+                        <p class="role-dates">Nov 2014 - Oct 2017 · 3 yrs</p>
+                        
+                      </div>
                     </div>
+                    <p class="role-description">Senior Oracle Financials Functional Analyst with experience across full life cycle implementations, upgrades, and post-production support of Oracle E-Business Suite (EBS) Financials (GL, AP, AR, FA, CE, PO, SLA, iExpense, iProcurement, Tax). Led a global team of 12, managed requirements definition, gap analysis, fit-gap analysis, system configuration, testing, user training, and support. Designed and implemented complex approval workflows using Oracle AME. Extensive experience with data migration, localization, and integration with HR and third-party systems. Facilitated business process reviews, user acceptance testing (UAT), Conference Room Pilot (CRP), and documentation for global rollouts across US, Canada, Europe, Asia, and the Philippines. Applied Oracle AIM methodology (RD20, BP80, BR30, BR100, MD50, CV40, TE40) and collaborated with all levels of business owners, users, and technical teams.</p>
+                    
+                    <div class="role-achievements">
+                      <p class="achievements-title">Notable Achievements:</p>
+                      <ul>
+                        
+                        <li>Led multi-phase implementation and upgrade: GL and FA from 11.5.10 to 12.2.3; P2P from R12.1.3 to 12.2.3; enhancements and post-production support</li>
+                        
+                        <li>Facilitated translation of business requirements into detailed functional requirements and best practice solutions, including fit-gap analysis and process review</li>
+                        
+                        <li>Designed and implemented approval workflows for purchase requisitions, AP invoices, supplier registration, and GL journals using Oracle AME; customized AME attributes, conditions, and rules</li>
+                        
+                        <li>Managed requirements gathering, gap analysis, and documentation (BR30, MD50, BR100, RD20, BP80, CV40, TE40) for global rollouts</li>
+                        
+                        <li>Created and maintained user manuals, held training sessions for large user groups, and led UAT and CRP testing phases</li>
+                        
+                        <li>Implemented FA and GL localizations for India and Philippines, including tax and asset controls, block of assets, and fiscal year calendars</li>
+                        
+                        <li>Developed SQL extracts, ad-hoc queries, and WebADI templates for data migration, mass upload, and reporting (using Toad/SQL Developer)</li>
+                        
+                        <li>Acted as liaison between business and IT, coordinated with vendors and offshore teams for timely deliverables and aggressive timelines</li>
+                        
+                        <li>Created budgets for various projects and aligned resources based on technical and functional needs</li>
+                        
+                        <li>Delivered solution to successfully integrate HR data between Workday and Oracle</li>
+                        
+                        <li>Conducted and evaluated process review and gap analysis to resolve requirements not addressed by Oracle apps, designing custom solutions within Oracle and with 3rd party applications</li>
+                        
+                        <li>Interacted with Oracle support using Metalink and Oracle Web Conference (OWC) to resolve application issues and bugs; maintained follow-up with Oracle Service Request (SR)</li>
+                        
+                        <li>Recognized for excellent verbal communication, presentation skills, and cross-functional collaboration</li>
+                        
+                      </ul>
+                    </div>
+                    
                   </div>
-                  <p class="role-description">Senior Oracle Financials Functional Analyst with experience across full life cycle implementations, upgrades, and post-production support of Oracle E-Business Suite (EBS) Financials (GL, AP, AR, FA, CE, PO, SLA, iExpense, iProcurement, Tax). Led a global team of 12, managed requirements definition, gap analysis, fit-gap analysis, system configuration, testing, user training, and support. Designed and implemented complex approval workflows using Oracle AME. Extensive experience with data migration, localization, and integration with HR and third-party systems. Facilitated business process reviews, user acceptance testing (UAT), Conference Room Pilot (CRP), and documentation for global rollouts across US, Canada, Europe, Asia, and the Philippines. Applied Oracle AIM methodology (RD20, BP80, BR30, BR100, MD50, CV40, TE40) and collaborated with all levels of business owners, users, and technical teams.</p>
                   
-                  <div class="role-achievements">
-                    <p class="achievements-title">Notable Achievements:</p>
-                    <ul>
-                      
-                      <li>Led multi-phase implementation and upgrade: GL and FA from 11.5.10 to 12.2.3; P2P from R12.1.3 to 12.2.3; enhancements and post-production support</li>
-                      
-                      <li>Facilitated translation of business requirements into detailed functional requirements and best practice solutions, including fit-gap analysis and process review</li>
-                      
-                      <li>Designed and implemented approval workflows for purchase requisitions, AP invoices, supplier registration, and GL journals using Oracle AME; customized AME attributes, conditions, and rules</li>
-                      
-                      <li>Managed requirements gathering, gap analysis, and documentation (BR30, MD50, BR100, RD20, BP80, CV40, TE40) for global rollouts</li>
-                      
-                      <li>Created and maintained user manuals, held training sessions for large user groups, and led UAT and CRP testing phases</li>
-                      
-                      <li>Implemented FA and GL localizations for India and Philippines, including tax and asset controls, block of assets, and fiscal year calendars</li>
-                      
-                      <li>Developed SQL extracts, ad-hoc queries, and WebADI templates for data migration, mass upload, and reporting (using Toad/SQL Developer)</li>
-                      
-                      <li>Acted as liaison between business and IT, coordinated with vendors and offshore teams for timely deliverables and aggressive timelines</li>
-                      
-                      <li>Created budgets for various projects and aligned resources based on technical and functional needs</li>
-                      
-                      <li>Delivered solution to successfully integrate HR data between Workday and Oracle</li>
-                      
-                      <li>Conducted and evaluated process review and gap analysis to resolve requirements not addressed by Oracle apps, designing custom solutions within Oracle and with 3rd party applications</li>
-                      
-                      <li>Interacted with Oracle support using Metalink and Oracle Web Conference (OWC) to resolve application issues and bugs; maintained follow-up with Oracle Service Request (SR)</li>
-                      
-                      <li>Recognized for excellent verbal communication, presentation skills, and cross-functional collaboration</li>
-                      
-                    </ul>
-                  </div>
-                  
-                </div>
                 
               
             </div>
           </div>
+          
+          <hr class="company-divider teal-divider" />
+          
         </div>
+        
         
         <div class="company-container">
-          <div class="company-header">
-            <h3 class="company-name">CGG</h3>
-            <p class="company-dates"></p>
+          <div class="company-flex-row">
             
-              <p class="exp-location">📍 Houston, TX</p>
+            <div class="company-logo-fixed">
+              <img src="/assets/images/cgg.png" alt="CGG logo" />
+            </div>
             
-            <div class="exp-meta">
-              <span class="teal-badge">Full-time</span>
+            <div class="company-header-flex">
+              <h3 class="company-name" style="font-size:1.75em;">CGG</h3>
+              
+                <p class="exp-location">📍 Houston, TX</p>
+              
+              <div class="exp-meta">
+                <span class="teal-badge">Full-time</span>
+              </div>
             </div>
           </div>
-
           <div class="exp-item-container">
-            
-            <div class="company-logo">
-              <img src="/assets/images/cgg1.jpg" alt="CGG logo" />
-            </div>
-            
-
             <div class="company-info">
               
                 <!-- Default rendering for other companies -->
                 
-                <div class="company-role">
-                  <div class="role-header-container">
-                    
-                    <div class="role-header-info">
-                      <h4 class="role-title">Oracle Financial Functional Support Analyst</h4>
-                      <p class="role-dates">Nov 2012 - Oct 2014 · 2 yrs</p>
+                  
+                  <div class="company-role">
+                    <div class="role-header-container">
                       
+                      <div class="role-header-info">
+                        <h4 class="role-title">Oracle Financial Functional Support Analyst</h4>
+                        <p class="role-dates">Nov 2012 - Oct 2014 · 2 yrs</p>
+                        
+                      </div>
                     </div>
+                    <p class="role-description">Financials Functional Support Analyst for Oracle EBS (AP, GL, EB-Tax, P2P) supporting global post-production operations and enhancements. Facilitated translation of business requirements into functional solutions, developed ad-hoc queries and reports, and provided training and support to finance end users. Led process improvements, system configuration, and integration with upstream/downstream applications. Conducted UAT, test planning, and documentation for enhancements, bug fixes, and upgrades. Collaborated with technical teams to develop BI reports and WebADI templates, and implemented approval rules using Oracle AME. Applied Oracle AIM methodology and participated in all phases of Conference Room Pilot (CRP1, CRP2, CRP3). Extensive use of SQL, PL/SQL, Toad, and Oracle tools for troubleshooting and reporting.</p>
+                    
+                    <div class="role-achievements">
+                      <p class="achievements-title">Notable Achievements:</p>
+                      <ul>
+                        
+                        <li>Developed and executed test plans for functional changes, bug fixes, enhancements, patches, and upgrades, including UAT and CRP phases</li>
+                        
+                        <li>Configured, modified, and developed accounting rules, application configurations, and integrations within Oracle Financial modules (GL, AP, EB-Tax, P2P)</li>
+                        
+                        <li>Analyzed data and integration points for upstream/downstream applications, ensuring data integrity and process efficiency</li>
+                        
+                        <li>Provided solution direction for Procure to Pay (P2P) processes on a global Oracle footprint, including process mapping and risk/control identification</li>
+                        
+                        <li>Defined and improved approval rules using Oracle AME to enhance PO to AP alerts and workflow automation</li>
+                        
+                        <li>Wrote and optimized SQL/PLSQL queries across GL, XLA (SLA), ZX (Tax), FA, and AP tables for troubleshooting, reporting, and data migration</li>
+                        
+                        <li>Drastically reduced GL and AP open issues through root cause analysis, process improvements, and proactive support</li>
+                        
+                        <li>Developed and conducted UAT sessions, collaborated on BI/WebADI reporting solutions, and created user manuals and training materials</li>
+                        
+                        <li>Participated in all phases of Conference Room Pilot (CRP1, CRP2, CRP3) and Oracle AIM documentation (RD20, BP80, BR30, BR100, MD50, CV40, TE40)</li>
+                        
+                        <li>Recognized for strong analytical, troubleshooting, and cross-functional collaboration skills</li>
+                        
+                      </ul>
+                    </div>
+                    
                   </div>
-                  <p class="role-description">Financials Functional Support Analyst for Oracle EBS (AP, GL, EB-Tax, P2P) supporting global post-production operations and enhancements. Facilitated translation of business requirements into functional solutions, developed ad-hoc queries and reports, and provided training and support to finance end users. Led process improvements, system configuration, and integration with upstream/downstream applications. Conducted UAT, test planning, and documentation for enhancements, bug fixes, and upgrades. Collaborated with technical teams to develop BI reports and WebADI templates, and implemented approval rules using Oracle AME. Applied Oracle AIM methodology and participated in all phases of Conference Room Pilot (CRP1, CRP2, CRP3). Extensive use of SQL, PL/SQL, Toad, and Oracle tools for troubleshooting and reporting.</p>
                   
-                  <div class="role-achievements">
-                    <p class="achievements-title">Notable Achievements:</p>
-                    <ul>
-                      
-                      <li>Developed and executed test plans for functional changes, bug fixes, enhancements, patches, and upgrades, including UAT and CRP phases</li>
-                      
-                      <li>Configured, modified, and developed accounting rules, application configurations, and integrations within Oracle Financial modules (GL, AP, EB-Tax, P2P)</li>
-                      
-                      <li>Analyzed data and integration points for upstream/downstream applications, ensuring data integrity and process efficiency</li>
-                      
-                      <li>Provided solution direction for Procure to Pay (P2P) processes on a global Oracle footprint, including process mapping and risk/control identification</li>
-                      
-                      <li>Defined and improved approval rules using Oracle AME to enhance PO to AP alerts and workflow automation</li>
-                      
-                      <li>Wrote and optimized SQL/PLSQL queries across GL, XLA (SLA), ZX (Tax), FA, and AP tables for troubleshooting, reporting, and data migration</li>
-                      
-                      <li>Drastically reduced GL and AP open issues through root cause analysis, process improvements, and proactive support</li>
-                      
-                      <li>Developed and conducted UAT sessions, collaborated on BI/WebADI reporting solutions, and created user manuals and training materials</li>
-                      
-                      <li>Participated in all phases of Conference Room Pilot (CRP1, CRP2, CRP3) and Oracle AIM documentation (RD20, BP80, BR30, BR100, MD50, CV40, TE40)</li>
-                      
-                      <li>Recognized for strong analytical, troubleshooting, and cross-functional collaboration skills</li>
-                      
-                    </ul>
-                  </div>
-                  
-                </div>
                 
               
             </div>
           </div>
+          
         </div>
         
+        <hr class="company-divider teal-divider" />
     </section>
 
     <!-- Education Section -->
