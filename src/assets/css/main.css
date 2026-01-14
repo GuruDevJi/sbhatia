@@ -1,3 +1,43 @@
+.teal-divider {
+  border: none;
+  border-top: 2px solid #009999;
+  margin: 2.5rem 0;
+}
+/* Company Experience Flex Layout */
+.company-flex-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 4rem;
+  margin-bottom: 1.25rem;
+}
+.company-header-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 0.25rem;
+  height: 100%;
+}
+.company-logo-fixed {
+  flex: 0 0 150px;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.company-logo-fixed img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  display: block;
+}
+.company-header-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.25rem;
+}
 body.home header {
   border-bottom: 2px solid var(--accent-teal);
 }
@@ -153,7 +193,7 @@ nav {
 }
 
 main {
-  padding: 2.5rem 1.5rem;
+  padding: 0;
   max-width: 1400px;
   margin: 0 auto;
 }

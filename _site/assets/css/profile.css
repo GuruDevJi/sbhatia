@@ -1,3 +1,25 @@
+/* Custom divider for Infosys roles only */
+.infosys-role-divider {
+    border: none;
+    border-top: 1px solid var(--accent-teal);
+    width: 40%;
+    margin: 2rem auto;
+    border-radius: 1px;
+    opacity: 0.5;
+    display: block;
+}
+/* Subtle divider between experience items */
+.company-divider {
+    border: none;
+    border-top: 1px solid var(--accent-teal);
+    opacity: 0.18;
+    margin: 1.5rem 0;
+}
+/* Remove all margin and padding from company names */
+.company-name {
+    margin: 0 !important;
+    padding: 0 !important;
+}
 /* Profile Page Styles - Premium Theme */
 /* ================================== */
 
@@ -41,7 +63,7 @@
 .sidebar-link.active {
     background: var(--glass-bg);
     border: none;
-    box-shadow: var(--shadow-premium);
+    /* box-shadow: var(--shadow-premium); */
 }
 
 /* Sidebar Color Overrides */
@@ -117,7 +139,7 @@
     position: sticky;
     top: 5rem;
     z-index: 100;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); */
     width: fit-content;
 }
 
@@ -166,7 +188,7 @@
     border: none;
     padding: 2.5rem;
     border-radius: 16px;
-    box-shadow: var(--shadow-premium);
+    /* box-shadow: var(--shadow-premium); */
     transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
@@ -232,21 +254,9 @@
 }
 
 .company-role+.company-role {
-    margin-top: 3rem;
-    padding-top: 3rem;
-    border-top: 2px solid var(--accent-teal);
-    position: relative;
-}
-
-.company-role+.company-role::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 1rem;
-    background: linear-gradient(to bottom, rgba(45, 212, 191, 0.05), transparent);
-    pointer-events: none;
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
 }
 
 .role-header-container {
@@ -267,7 +277,7 @@
     justify-content: center;
     padding: 6px;
     border: 1px solid var(--glass-border);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); */
 }
 
 .role-logo img {
@@ -312,8 +322,9 @@
     border: none;
     border-radius: 16px;
     padding: 2rem;
-    box-shadow: var(--shadow-premium);
+    /* box-shadow: var(--shadow-premium); */
     transition: transform 0.3s ease;
+    margin-bottom: 2rem;
 }
 
 .education-item:hover {
@@ -342,8 +353,9 @@
     border: none;
     border-radius: 16px;
     padding: 2rem;
-    box-shadow: var(--shadow-premium);
+    /* box-shadow: var(--shadow-premium); */
     transition: transform 0.3s ease;
+    margin-bottom: 2rem;
 }
 
 .license-item:hover {
@@ -371,8 +383,9 @@
     border: none;
     border-radius: 16px;
     padding: 2rem;
-    box-shadow: var(--shadow-premium);
+    /* box-shadow: var(--shadow-premium); */
     transition: transform 0.3s ease;
+    margin-bottom: 2rem;
 }
 
 .volunteer-item:hover {
@@ -389,8 +402,9 @@
     border: none;
     border-radius: 16px;
     padding: 2rem;
-    box-shadow: var(--shadow-premium);
+    /* box-shadow: var(--shadow-premium); */
     transition: transform 0.3s ease;
+    margin-bottom: 2rem;
 }
 
 .award-item:hover {
@@ -406,7 +420,7 @@
 #map {
     height: 450px;
     border-radius: 16px;
-    box-shadow: var(--shadow-premium);
+    /* box-shadow: var(--shadow-premium); */
     position: relative;
     z-index: 1;
 }
