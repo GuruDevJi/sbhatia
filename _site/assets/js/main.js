@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function updateActiveLink() {
     // Get scroll position
-    let scrollPosition = window.scrollY + 100;
+    let scrollPosition = window.scrollY + 150;
 
     // Remove active class from all links
     sidebarLinks.forEach(link => link.classList.remove("active"));

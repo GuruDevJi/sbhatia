@@ -82,6 +82,7 @@
                 "location": "Mountain View, CA",
                 "dates": "Aug 2018 - Feb 2019",
                 "duration": "7 mos",
+                "image": "/assets/images/logos/symantec.png",
                 "description": "Designed, built, and implemented Oracle Receivables system and bridged gap between requirements and final solution. Executed new implementations, functionality improvements, and application updates in collaboration with development teams. Resolved defects and integrated new localization in partnership with Oracle Support.",
                 "achievements": [
                     "Migrated multiple countries into a common ERP BlueCoat system; executed successful go-lives and UAT",
@@ -93,6 +94,7 @@
                 "location": "West Chicago, IL",
                 "dates": "Dec 2017 - Jul 2018",
                 "duration": "8 mos",
+                "image": "/assets/images/logos/titan.png",
                 "description": "Spearheaded communication efforts by elaborating key differences between client's legacy system and Oracle Cloud Financials. Performed demonstrations on Fusion Expenses and Fusion Payables functionality as key liaison between senior-level IT professionals and financial leadership team. Facilitated daily consultations with business, IT, and support teams.",
                 "achievements": [
                     "Designed customized functional processes outside of Oracle Fusion Financials in collaboration with business teams",
@@ -105,6 +107,7 @@
                 "location": "Boca Raton, FL | Richardson, TX",
                 "dates": "Oct 2017 - Dec 2017",
                 "duration": "3 mos",
+                "image": "/assets/images/logos/jci.png",
                 "description": "Provided post-production support; analyzed system design and ERP configurations during UAT (user acceptance testing) phase of Oracle ERP upgrade and OS migration to UNIX. Designed and tested Accounts Receivable (AR) setups. Wrote test scripts; resolved defects prior to go-live.",
                 "achievements": [
                     "Collaborated with first-time users and engaged with clients to assist in system assimilation and understanding",

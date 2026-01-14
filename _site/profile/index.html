@@ -4,20 +4,20 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Profile</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/main.css" />
   
   
     <link rel="stylesheet" href="/assets/css/profile.css" />
   
 </head>
-<body>
+<body
+  class="profile"
+  
+>
   <header>
-    <h1>Saurabh Bhatia</h1>
+    <h1><a href="/" style="color:inherit;text-decoration:none;">Saurabh Bhatia</a></h1>
     <nav>
-      <a href="/" class="nav-link nav-home">Home</a>
+      
       <a href="/profile/" class="nav-link nav-profile">Profile</a>
       <a href="/specializations/" class="nav-link nav-specializations">Specializations</a>
       <a href="/speaker-gallery/" class="nav-link nav-speaker">Speaker Gallery</a>
@@ -27,7 +27,6 @@
 
   <main>
     <!-- Profile color bar -->
-<div class="profile-color-bar" style="height:16px;width:100%;background:#f59e0b;margin-bottom:0.5rem;"></div>
 
 <div class="profile-container">
   <!-- Sticky Sidebar Navigation -->
@@ -53,10 +52,10 @@
         <div id="map" style="width:100%;height:360px;border-radius:8px;"></div>
         <div id="journey-summary" style="margin-top:1rem;display:flex;gap:2rem;flex-wrap:wrap;">
           <div style="flex:1;min-width:260px;">
-            <p>Curiosity has driven my journey from the start. I grew up taking hardware and software apart just to see how they worked, which shaped me into a creative, systems-oriented problem solver with a relentless taste for experimentation.</p>
-            <p>One project felt like unlocking a cheat code in a video game: building a capacitive touch panel controller entirely from scratch. Using a PIC18F microcontroller, I wrote every line of firmware to drive the FocalTech FT5X06 chip, bringing multi-touch gestures to life on a 4.3" Newhaven TFT display. Watching my code respond instantly to finger swipes was pure exhilaration—like beating a boss level after weeks of grinding.</p>
-            <p>That same thrill carried me into enterprise systems, where I built VB.NET applications to track RMAs at a manufacturing firm in Elgin, IL, opening the door to financial platforms and business processes. Since then, I've mastered how data, workflows, and people intersect across complex organizations.</p>
-            <p>My focus has since expanded—bridging functional needs, technical architecture, and user experience with AI, machine learning, and intelligent automation. Today, I'm chasing that same video game rush: creating financial and operational systems that are efficient, intuitive, resilient, and genuinely inspiring to use.</p>
+            <p class="journey-summary-text" style="margin-top:1rem;">Curiosity has driven my journey from the start. I grew up taking hardware and software apart just to see how they worked, which shaped me into a creative, systems-oriented problem solver with a relentless taste for experimentation.</p>
+            <p class="journey-summary-text">One project felt like unlocking a cheat code in a video game: building a capacitive touch panel controller entirely from scratch. Using a PIC18F microcontroller, I wrote every line of firmware to drive the FocalTech FT5X06 chip, bringing multi-touch gestures to life on a 4.3&quot; Newhaven TFT display. Watching my code respond instantly to finger swipes was pure exhilaration—like beating a boss level after weeks of grinding.</p>
+            <p class="journey-summary-text">That same thrill carried me into enterprise systems, where I built VB.NET applications to track RMAs at a manufacturing firm in Elgin, IL, opening the door to financial platforms and business processes. Since then, I've mastered how data, workflows, and people intersect across complex organizations.</p>
+            <p class="journey-summary-text">My focus has since expanded—bridging functional needs, technical architecture, and user experience with AI, machine learning, and intelligent automation. Today, I'm chasing that same video game rush: creating financial and operational systems that are efficient, intuitive, resilient, and genuinely inspiring to use.</p>
           </div>
   
         </div>
@@ -334,9 +333,14 @@
                 <!-- Default rendering for other companies -->
                 
                 <div class="company-role">
-                  <h4 class="role-title">Principal Consultant - Cloud Financial Systems</h4>
-                  <p class="role-dates">Mar 2019 - Jul 2021 · 2 yrs 5 mos</p>
-                  
+                  <div class="role-header-container">
+                    
+                    <div class="role-header-info">
+                      <h4 class="role-title">Principal Consultant - Cloud Financial Systems</h4>
+                      <p class="role-dates">Mar 2019 - Jul 2021 · 2 yrs 5 mos</p>
+                      
+                    </div>
+                  </div>
                   <p class="role-description">Served as a finance thought partner in the Finance Systems Innovation organization at the largest customer-owned health insurer in the US, operating Blue Cross and Blue Shield® Plans across five states. Led functional support and transformation of Oracle Cloud financial applications (General Ledger, Allocations, Accounts Payable, Project Costing, Asset Management, Procurement). Acted as the primary liaison between business and technical teams, driving continuous improvement, operational efficiency, and best practices. Consulted on and led new projects involving strategy, implementation, and support. Administered and developed test cases for EPM (PBCS and PCMCS), Solix Data Warehouse, and Vertex Tax Engine. Provided leadership in quarterly cloud upgrade releases, process documentation, and change management.</p>
                   
                   <div class="role-achievements">
@@ -397,11 +401,20 @@
                 <!-- Default rendering for other companies -->
                 
                 <div class="company-role">
-                  <h4 class="role-title">Financial Applications Manager (Symantec)</h4>
-                  <p class="role-dates">Aug 2018 - Feb 2019 · 7 mos</p>
-                  
-                  <p class="role-location">📍 Mountain View, CA</p>
-                  
+                  <div class="role-header-container">
+                    
+                    <div class="role-logo">
+                      <img src="/assets/images/logos/symantec.png" alt="Financial Applications Manager (Symantec) logo" />
+                    </div>
+                    
+                    <div class="role-header-info">
+                      <h4 class="role-title">Financial Applications Manager (Symantec)</h4>
+                      <p class="role-dates">Aug 2018 - Feb 2019 · 7 mos</p>
+                      
+                      <p class="role-location">📍 Mountain View, CA</p>
+                      
+                    </div>
+                  </div>
                   <p class="role-description">Designed, built, and implemented Oracle Receivables system and bridged gap between requirements and final solution. Executed new implementations, functionality improvements, and application updates in collaboration with development teams. Resolved defects and integrated new localization in partnership with Oracle Support.</p>
                   
                   <div class="role-achievements">
@@ -418,11 +431,20 @@
                 </div>
                 
                 <div class="company-role">
-                  <h4 class="role-title">Lead Oracle Cloud Consultant (Titan International)</h4>
-                  <p class="role-dates">Dec 2017 - Jul 2018 · 8 mos</p>
-                  
-                  <p class="role-location">📍 West Chicago, IL</p>
-                  
+                  <div class="role-header-container">
+                    
+                    <div class="role-logo">
+                      <img src="/assets/images/logos/titan.png" alt="Lead Oracle Cloud Consultant (Titan International) logo" />
+                    </div>
+                    
+                    <div class="role-header-info">
+                      <h4 class="role-title">Lead Oracle Cloud Consultant (Titan International)</h4>
+                      <p class="role-dates">Dec 2017 - Jul 2018 · 8 mos</p>
+                      
+                      <p class="role-location">📍 West Chicago, IL</p>
+                      
+                    </div>
+                  </div>
                   <p class="role-description">Spearheaded communication efforts by elaborating key differences between client&#39;s legacy system and Oracle Cloud Financials. Performed demonstrations on Fusion Expenses and Fusion Payables functionality as key liaison between senior-level IT professionals and financial leadership team. Facilitated daily consultations with business, IT, and support teams.</p>
                   
                   <div class="role-achievements">
@@ -441,11 +463,20 @@
                 </div>
                 
                 <div class="company-role">
-                  <h4 class="role-title">Lead Financial Functional Consultant (Johnson Controls, Inc)</h4>
-                  <p class="role-dates">Oct 2017 - Dec 2017 · 3 mos</p>
-                  
-                  <p class="role-location">📍 Boca Raton, FL | Richardson, TX</p>
-                  
+                  <div class="role-header-container">
+                    
+                    <div class="role-logo">
+                      <img src="/assets/images/logos/jci.png" alt="Lead Financial Functional Consultant (Johnson Controls, Inc) logo" />
+                    </div>
+                    
+                    <div class="role-header-info">
+                      <h4 class="role-title">Lead Financial Functional Consultant (Johnson Controls, Inc)</h4>
+                      <p class="role-dates">Oct 2017 - Dec 2017 · 3 mos</p>
+                      
+                      <p class="role-location">📍 Boca Raton, FL | Richardson, TX</p>
+                      
+                    </div>
+                  </div>
                   <p class="role-description">Provided post-production support; analyzed system design and ERP configurations during UAT (user acceptance testing) phase of Oracle ERP upgrade and OS migration to UNIX. Designed and tested Accounts Receivable (AR) setups. Wrote test scripts; resolved defects prior to go-live.</p>
                   
                   <div class="role-achievements">
@@ -490,9 +521,14 @@
                 <!-- Default rendering for other companies -->
                 
                 <div class="company-role">
-                  <h4 class="role-title">Oracle Financial Functional Consultant</h4>
-                  <p class="role-dates">Nov 2014 - Oct 2017 · 3 yrs</p>
-                  
+                  <div class="role-header-container">
+                    
+                    <div class="role-header-info">
+                      <h4 class="role-title">Oracle Financial Functional Consultant</h4>
+                      <p class="role-dates">Nov 2014 - Oct 2017 · 3 yrs</p>
+                      
+                    </div>
+                  </div>
                   <p class="role-description">Senior Oracle Financials Functional Analyst with experience across full life cycle implementations, upgrades, and post-production support of Oracle E-Business Suite (EBS) Financials (GL, AP, AR, FA, CE, PO, SLA, iExpense, iProcurement, Tax). Led a global team of 12, managed requirements definition, gap analysis, fit-gap analysis, system configuration, testing, user training, and support. Designed and implemented complex approval workflows using Oracle AME. Extensive experience with data migration, localization, and integration with HR and third-party systems. Facilitated business process reviews, user acceptance testing (UAT), Conference Room Pilot (CRP), and documentation for global rollouts across US, Canada, Europe, Asia, and the Philippines. Applied Oracle AIM methodology (RD20, BP80, BR30, BR100, MD50, CV40, TE40) and collaborated with all levels of business owners, users, and technical teams.</p>
                   
                   <div class="role-achievements">
@@ -559,9 +595,14 @@
                 <!-- Default rendering for other companies -->
                 
                 <div class="company-role">
-                  <h4 class="role-title">Oracle Financial Functional Support Analyst</h4>
-                  <p class="role-dates">Nov 2012 - Oct 2014 · 2 yrs</p>
-                  
+                  <div class="role-header-container">
+                    
+                    <div class="role-header-info">
+                      <h4 class="role-title">Oracle Financial Functional Support Analyst</h4>
+                      <p class="role-dates">Nov 2012 - Oct 2014 · 2 yrs</p>
+                      
+                    </div>
+                  </div>
                   <p class="role-description">Financials Functional Support Analyst for Oracle EBS (AP, GL, EB-Tax, P2P) supporting global post-production operations and enhancements. Facilitated translation of business requirements into functional solutions, developed ad-hoc queries and reports, and provided training and support to finance end users. Led process improvements, system configuration, and integration with upstream/downstream applications. Conducted UAT, test planning, and documentation for enhancements, bug fixes, and upgrades. Collaborated with technical teams to develop BI reports and WebADI templates, and implemented approval rules using Oracle AME. Applied Oracle AIM methodology and participated in all phases of Conference Room Pilot (CRP1, CRP2, CRP3). Extensive use of SQL, PL/SQL, Toad, and Oracle tools for troubleshooting and reporting.</p>
                   
                   <div class="role-achievements">

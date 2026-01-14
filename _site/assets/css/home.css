@@ -9,7 +9,7 @@
 .home-hero h2 {
     font-size: 3.5rem;
     margin-bottom: 1.5rem;
-    background: linear-gradient(135deg, var(--accent-teal) 0%, var(--accent-blue) 100%);
+    /*background: linear-gradient(135deg, var(--accent-teal) 0%, var(--accent-blue) 100%);*/
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -25,13 +25,13 @@
 /* Trusted By Marquee */
 .trusted-marquee {
     overflow: hidden;
-    background: rgba(15, 23, 42, 0.4);
+    /*background: rgba(15, 23, 42, 0.4);
     backdrop-filter: var(--glass-blur);
     -webkit-backdrop-filter: var(--glass-blur);
-    padding: 1.5rem 0;
-    margin: 2rem 0;
-    border-top: 1px solid var(--glass-border);
-    border-bottom: 1px solid var(--glass-border);
+    padding: 0.75rem 0 1.5rem 0;
+    margin: 0 0 2rem 0;
+    border-top: px solid var(--accent-teal);
+    border-bottom: 1px solid var(--accent-teal);*/
 }
 
 .trusted-marquee p {
@@ -65,13 +65,14 @@
     backdrop-filter: var(--glass-blur);
     -webkit-backdrop-filter: var(--glass-blur);
     border-radius: 12px;
-    padding: 1.25rem;
-    box-shadow: var(--shadow-premium);
+    padding: 1rem;
+    /*box-shadow: var(--shadow-premium);*/
     transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .marquee-item:hover {
     transform: translateY(-8px) scale(1.05);
+    background: rgba(255, 255, 255, 0.15) !important;
 }
 
 .marquee-item img {
