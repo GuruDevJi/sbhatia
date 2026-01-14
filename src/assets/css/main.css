@@ -1,3 +1,18 @@
+body.home header {
+  border-bottom: 2px solid var(--accent-teal);
+}
+body.profile header {
+  border-bottom: 2px solid var(--accent-amber);
+}
+body.specializations header {
+  border-bottom: 2px solid var(--accent-blue);
+}
+body.speaker-gallery header {
+  border-bottom: 2px solid var(--accent-pink);
+}
+body.contact header {
+  border-bottom: 2px solid var(--accent-purple);
+}
 /* Main Shared Styles - Premium Glassmorphism Theme */
 /* ================================================= */
 
@@ -18,7 +33,7 @@
   /* Gold */
   --accent-blue: #3b82f6;
   /* Royal Blue */
-  --accent-purple: #818cf8;
+  --accent-purple: #8b5cf6;
   /* Indigo */
   --accent-rose: #f43f5e;
   /* Rose */
@@ -164,8 +179,9 @@ footer {
 
 /* Forms */
 .contact-form {
-  max-width: 600px;
-  margin: 0 auto;
+  width: 100%;
+  max-width: none;
+  margin: 0;
 }
 
 .form-group {

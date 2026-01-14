@@ -1,12 +1,72 @@
+.other-apps-card {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: none;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s;
+    padding: 2rem;
+}
+
+.other-apps-card:hover {
+    background: rgba(20, 184, 166, 0.08);
+    transform: translateY(-4px) scale(1.03);
+    border-color: var(--accent-blue);
+}
+/* Unique vertical layout for Other Applications section only */
+.other-apps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.other-apps-card {
+    /* Add any unique card styling for Other Applications here */
+}
 /* Specializations Page Styles - Premium Theme */
 /* ========================================= */
 
+
 .specializations-container {
     display: grid;
-    grid-template-columns: 240px 1fr;
-    gap: 4rem;
+    grid-template-columns: 200px 1fr;
+    gap: 2rem;
     max-width: 100%;
     margin: 0 auto;
+}
+
+.specializations-content {
+    min-width: 0;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.specializations-section {
+    margin-top: 0;
+    padding-top: 0;
+    position: relative;
+    scroll-margin-top: 0rem;
+}
+
+.specializations-section h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 1rem;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    font-size: 1.25rem;
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    margin-left: auto;
+    margin-right: auto;
+    position: sticky;
+    top: 5rem;
+    z-index: 100;
 }
 
 .specializations-content {
@@ -14,12 +74,44 @@
 }
 
 /* Sidebar Specifics */
-.specializations-container .sidebar-nav {
+/* Sidebar Navigation - match profile.css */
+.sidebar-nav {
     position: sticky;
     top: 6rem;
     height: fit-content;
-    border-right: 1px solid var(--glass-border);
-    padding-right: 2rem;
+    padding-right: 1.5rem;
+}
+
+.sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.sidebar-link {
+    display: block;
+    padding: 0.875rem 1.25rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    border-radius: 0;
+    transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 0.8rem;
+    font-weight: 700;
+    border: 1px solid transparent;
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+}
+
+.sidebar-link:hover {
+    color: var(--text-primary);
+    background: var(--glass-bg);
+}
+
+.sidebar-link.active {
+    background: var(--glass-bg);
+    border: none;
+}
 }
 
 .specializations-container .sidebar-link:hover,
@@ -75,16 +167,32 @@
     scroll-margin-top: 8rem;
 }
 
+/* Match profile.css section header style */
 .specializations-section h2 {
-    font-size: 2.25rem;
-    margin-top: 0;
-    margin-bottom: 2rem;
-    padding-bottom: 0.75rem;
-    border-bottom: 1px solid var(--glass-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    padding: 1rem 1rem;
+    background: var(--bg-dark);
+    border: none;
+    border-radius: 4px;
+    font-size: 1.25rem;
     font-family: var(--font-heading);
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    margin-left: auto;
+    margin-right: auto;
+    position: sticky;
+    top: 5rem;
+    z-index: 100;
 }
 
-.specializations-section#financial-apps h2 {
+.specializations-section#financial-apps h2,
+.specializations-section#financial-apps h3,
+.specializations-section#financial-apps h4 {
     color: var(--accent-blue);
 }
 
@@ -120,13 +228,11 @@
 .otherfin-platforms-block,
 .technical-platforms-block {
     background: var(--glass-bg);
-    backdrop-filter: var(--glass-blur);
+    border: none;
     -webkit-backdrop-filter: var(--glass-blur);
     padding: 3rem;
-    border-radius: 20px;
+    border-radius: 8px;
     margin-bottom: 3rem;
-    border: 1px solid var(--glass-border);
-    box-shadow: var(--shadow-premium);
 }
 
 .finapps-subsection-title {
@@ -138,21 +244,14 @@
 }
 
 /* Specific Block Accents */
-.erp-platforms-block,
-.epm-platforms-block,
-.tax-platforms-block,
-.otherfin-platforms-block {
-    border-top: 4px solid var(--accent-blue);
-}
 
-.technical-platforms-block {
-    border-top: 4px solid var(--accent-teal);
-}
+
+
 
 /* Cards */
 .specializations-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    display: flex;
+    flex-direction: column;
     gap: 1.5rem;
 }
 
@@ -160,7 +259,7 @@
 .technical-card,
 .sox-card {
     background: rgba(255, 255, 255, 0.02);
-    border: 1px solid var(--glass-border);
+    border: none;
     border-radius: 12px;
     padding: 1.5rem;
     transition: all 0.3s ease;
@@ -169,13 +268,13 @@
     gap: 1rem;
 }
 
+
 .finapps-card:hover,
 .technical-card:hover,
 .sox-card:hover {
     background: rgba(255, 255, 255, 0.05);
     transform: translateY(-4px);
     border-color: var(--accent-blue);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .technical-card:hover {
@@ -219,15 +318,14 @@
 .erp-module-icon {
     width: 40px;
     height: 40px;
-    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+    filter: none;
 }
 
 /* SOX Highlight */
 .sox-block {
     background: rgba(245, 158, 11, 0.05);
     /* Very subtle amber tint */
-    border: 1px solid rgba(245, 158, 11, 0.2);
-    border-top: 4px solid var(--accent-amber);
+    border: none;
     padding: 2.5rem;
     border-radius: 20px;
     margin-bottom: 3rem;

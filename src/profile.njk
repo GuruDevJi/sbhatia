@@ -3,7 +3,6 @@ layout: base.njk
 title: Profile
 ---
 <!-- Profile color bar -->
-<div class="profile-color-bar" style="height:16px;width:100%;background:#f59e0b;margin-bottom:0.5rem;"></div>
 
 <div class="profile-container">
   <!-- Sticky Sidebar Navigation -->
@@ -29,10 +28,10 @@ title: Profile
         <div id="map" style="width:100%;height:360px;border-radius:8px;"></div>
         <div id="journey-summary" style="margin-top:1rem;display:flex;gap:2rem;flex-wrap:wrap;">
           <div style="flex:1;min-width:260px;">
-            <p>Curiosity has driven my journey from the start. I grew up taking hardware and software apart just to see how they worked, which shaped me into a creative, systems-oriented problem solver with a relentless taste for experimentation.</p>
-            <p>One project felt like unlocking a cheat code in a video game: building a capacitive touch panel controller entirely from scratch. Using a PIC18F microcontroller, I wrote every line of firmware to drive the FocalTech FT5X06 chip, bringing multi-touch gestures to life on a 4.3" Newhaven TFT display. Watching my code respond instantly to finger swipes was pure exhilaration—like beating a boss level after weeks of grinding.</p>
-            <p>That same thrill carried me into enterprise systems, where I built VB.NET applications to track RMAs at a manufacturing firm in Elgin, IL, opening the door to financial platforms and business processes. Since then, I've mastered how data, workflows, and people intersect across complex organizations.</p>
-            <p>My focus has since expanded—bridging functional needs, technical architecture, and user experience with AI, machine learning, and intelligent automation. Today, I'm chasing that same video game rush: creating financial and operational systems that are efficient, intuitive, resilient, and genuinely inspiring to use.</p>
+            <p class="journey-summary-text" style="margin-top:1rem;">Curiosity has driven my journey from the start. I grew up taking hardware and software apart just to see how they worked, which shaped me into a creative, systems-oriented problem solver with a relentless taste for experimentation.</p>
+            <p class="journey-summary-text">One project felt like unlocking a cheat code in a video game: building a capacitive touch panel controller entirely from scratch. Using a PIC18F microcontroller, I wrote every line of firmware to drive the FocalTech FT5X06 chip, bringing multi-touch gestures to life on a 4.3&quot; Newhaven TFT display. Watching my code respond instantly to finger swipes was pure exhilaration—like beating a boss level after weeks of grinding.</p>
+            <p class="journey-summary-text">That same thrill carried me into enterprise systems, where I built VB.NET applications to track RMAs at a manufacturing firm in Elgin, IL, opening the door to financial platforms and business processes. Since then, I've mastered how data, workflows, and people intersect across complex organizations.</p>
+            <p class="journey-summary-text">My focus has since expanded—bridging functional needs, technical architecture, and user experience with AI, machine learning, and intelligent automation. Today, I'm chasing that same video game rush: creating financial and operational systems that are efficient, intuitive, resilient, and genuinely inspiring to use.</p>
           </div>
   
         </div>
@@ -202,11 +201,20 @@ title: Profile
                 <!-- Default rendering for other companies -->
                 {% for role in company.roles %}
                 <div class="company-role">
-                  <h4 class="role-title">{{ role.title }}</h4>
-                  <p class="role-dates">{{ role.dates }} · {{ role.duration }}</p>
-                  {% if role.location %}
-                  <p class="role-location">📍 {{ role.location }}</p>
-                  {% endif %}
+                  <div class="role-header-container">
+                    {% if role.image %}
+                    <div class="role-logo">
+                      <img src="{{ role.image }}" alt="{{ role.title }} logo" />
+                    </div>
+                    {% endif %}
+                    <div class="role-header-info">
+                      <h4 class="role-title">{{ role.title }}</h4>
+                      <p class="role-dates">{{ role.dates }} · {{ role.duration }}</p>
+                      {% if role.location %}
+                      <p class="role-location">📍 {{ role.location }}</p>
+                      {% endif %}
+                    </div>
+                  </div>
                   <p class="role-description">{{ role.description }}</p>
                   {% if role.achievements.length > 0 %}
                   <div class="role-achievements">
