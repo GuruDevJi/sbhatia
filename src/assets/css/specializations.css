@@ -1,3 +1,19 @@
+/* Pill-shaped badge for blue-badge */
+.blue-badge {
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--accent-blue);
+    padding: 0.35rem 1.1rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+    border: none;
+    box-shadow: none;
+    vertical-align: middle;
+    transition: background 0.2s, color 0.2s;
+}
 .other-apps-card {
     background: var(--glass-bg);
     backdrop-filter: var(--glass-blur);
