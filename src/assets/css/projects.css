@@ -73,8 +73,6 @@ body.projects header { border-bottom-color: var(--accent-green, #43a047); }
 }
 .nav-link.nav-projects.active,
 body.projects .nav-link.nav-projects {
-  font-weight: bold;
-  text-decoration: underline;
   color: var(--accent-green, #388e3c);
 }
 

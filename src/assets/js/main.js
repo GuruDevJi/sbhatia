@@ -1,3 +1,50 @@
+  // Speaker Gallery mobile orientation fix
+  const presentationPosts = document.querySelectorAll('.presentation-post');
+  presentationPosts.forEach(post => {
+    let originalFlex = 'row';
+    if (post.getAttribute('style')) {
+      const style = post.getAttribute('style');
+      const match = style.match(/flex-direction:\s*(row-reverse|row)/);
+      if (match) {
+        originalFlex = match[1];
+      }
+    }
+    post.dataset.originalFlex = originalFlex;
+  });
+
+  function updateSpeakerGalleryOrientation() {
+    if (window.innerWidth < 900) {
+      presentationPosts.forEach(post => {
+        post.style.flexDirection = 'column';
+        post.style.alignItems = 'flex-start';
+        post.style.justifyContent = 'flex-start';
+        post.style.gap = '1.5rem';
+        // Center image in mobile view
+        const img = post.querySelector('img');
+        if (img) {
+          img.style.display = 'block';
+          img.style.marginLeft = 'auto';
+          img.style.marginRight = 'auto';
+        }
+      });
+    } else {
+      presentationPosts.forEach(post => {
+        post.style.flexDirection = post.dataset.originalFlex || 'row';
+        post.style.alignItems = '';
+        post.style.justifyContent = '';
+        post.style.gap = '';
+        // Restore image margin for desktop
+        const img = post.querySelector('img');
+        if (img) {
+          img.style.display = '';
+          img.style.marginLeft = '';
+          img.style.marginRight = '';
+        }
+      });
+    }
+  }
+  window.addEventListener('resize', updateSpeakerGalleryOrientation);
+  updateSpeakerGalleryOrientation();
 document.addEventListener("DOMContentLoaded", () => {
   console.log("Personal site loaded");
 
@@ -68,5 +115,30 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+
+  // Mobile menu logic
+  const menuToggle = document.querySelector('.menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  if (menuToggle && mobileMenu) {
+    menuToggle.addEventListener('click', () => {
+      const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+      menuToggle.setAttribute('aria-expanded', !expanded);
+      if (!expanded) {
+        mobileMenu.removeAttribute('hidden');
+        mobileMenu.setAttribute('aria-expanded', 'true');
+      } else {
+        mobileMenu.setAttribute('hidden', '');
+        mobileMenu.setAttribute('aria-expanded', 'false');
+      }
+    });
+    // Optional: close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!mobileMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+        mobileMenu.setAttribute('hidden', '');
+        mobileMenu.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
 });
 

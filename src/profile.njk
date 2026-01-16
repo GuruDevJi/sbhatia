@@ -282,7 +282,7 @@ title: Profile
       <h2>Education</h2>
       <div class="education-items">
         {% for edu in education %}
-        <div class="education-item">
+          <div class="education-item glass-card">
           <div class="edu-header">
             <h3 class="edu-degree">{{ edu.degree }}</h3>
             <p class="edu-field">{{ edu.field }}</p>
@@ -309,7 +309,7 @@ title: Profile
       <h2>Licenses & Certifications</h2>
       <div class="licenses-items">
         {% for cert in licenses %}
-        <div class="license-item">
+          <div class="license-item glass-card">
           <h3 class="cert-title">{{ cert.title }}</h3>
           <p class="cert-issuer">{{ cert.issuer }}</p>
           <p class="cert-date">Issued {{ cert.issuedDate }}</p>
@@ -331,7 +331,7 @@ title: Profile
       <h2>Volunteering</h2>
       <div class="volunteering-items">
         {% for vol in volunteering %}
-        <div class="volunteer-item">
+          <div class="volunteer-item glass-card">
           <div class="vol-header">
             <h3 class="vol-title">{{ vol.title }}</h3>
             <p class="vol-organization">{{ vol.organization }}</p>
@@ -355,7 +355,7 @@ title: Profile
       <h2>Honors & Awards</h2>
       <div class="awards-items">
         {% for award in awards %}
-        <div class="award-item">
+          <div class="award-item glass-card">
           <h3 class="award-title">{{ award.title }}</h3>
           <p class="award-issuer">Issued by {{ award.issuer }} · {{ award.issuedDate }}</p>
           <p class="award-organization">{{ award.organization }}</p>

@@ -129,7 +129,7 @@ nav {
 
 .nav-link {
   font-family: var(--font-body);
-  font-size: 0.95rem;
+  font-size: 1.2rem;
   font-weight: 500;
   text-decoration: none;
   color: var(--text-secondary);
@@ -184,8 +184,6 @@ nav {
 
 .nav-link.nav-projects.active,
 body.projects .nav-link.nav-projects {
-  font-weight: bold;
-  text-decoration: underline;
   color: var(--accent-green, #388e3c);
 }
 
@@ -282,4 +280,99 @@ img {
   max-width: 100%;
   height: auto;
   border-radius: 8px;
+}
+
+/* Mobile Menu Styles */
+.menu-toggle {
+  display: none;
+  position: absolute;
+  top: 0.5rem;
+  right: 2rem;
+  background: none;
+  border: none;
+  font-size: 2.2rem;
+  color: #fff;
+  cursor: pointer;
+  z-index: 1002;
+  align-items: center;
+  justify-content: center;
+  height: 3rem;
+  width: 3rem;
+  display: flex;
+}
+.menu-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.mobile-menu-panel {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  min-width: 180px;
+  max-width: 90vw;
+  height: auto;
+  background: #23272f;
+  box-shadow: -2px 0 16px rgba(0,0,0,0.25);
+  z-index: 1001;
+  padding: 2.5rem 1.5rem 1.5rem 1.5rem;
+  flex-direction: column;
+  gap: 2rem;
+  animation: slideInMenu 0.3s;
+}
+.mobile-menu-panel a {
+  display: block;
+  font-size: 1.2rem;
+  color: #e3f9e5;
+  margin-bottom: 1.5rem;
+  text-decoration: none;
+  font-weight: 600;
+}
+.mobile-menu-panel a.nav-profile {
+  color: var(--accent-amber);
+}
+.mobile-menu-panel a.nav-specializations {
+  color: var(--accent-blue);
+}
+.mobile-menu-panel a.nav-speaker {
+  color: var(--accent-pink);
+}
+.mobile-menu-panel a.nav-projects {
+  color: var(--accent-green);
+}
+.mobile-menu-panel a.nav-contact {
+  color: var(--accent-purple);
+}
+@keyframes slideInMenu {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+@media (max-width: 900px) {
+  .nav-links {
+    display: none;
+  }
+  .menu-toggle {
+    display: block;
+  }
+  .mobile-menu-panel[open],
+  .mobile-menu-panel[aria-expanded="true"],
+  .mobile-menu-panel:not([hidden]) {
+    display: flex;
+  }
+  main {
+    width: 100vw;
+    max-width: 100vw;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+}
+@media (min-width: 901px) {
+  .mobile-menu-panel,
+  .menu-toggle {
+    display: none !important;
+  }
 }

@@ -17,12 +17,23 @@
   <header>
     <h1><a href="/" style="color:inherit;text-decoration:none;">Saurabh Bhatia</a></h1>
     <nav>
-      
-      <a href="/profile/" class="nav-link nav-profile">Profile</a>
-      <a href="/specializations/" class="nav-link nav-specializations">Specializations</a>
-      <a href="/speaker-gallery/" class="nav-link nav-speaker">Speaker Gallery</a>
+      <button class="menu-toggle" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false">
+        <span class="menu-icon">&#9776;</span>
+      </button>
+      <div class="nav-links">
+          <a href="/profile/" class="nav-link nav-profile">&nbsp;&nbsp;Profile&nbsp;&nbsp;</a>
+          <a href="/specializations/" class="nav-link nav-specializations">&nbsp;&nbsp;Specializations&nbsp;&nbsp;</a>
+          <a href="/speaker-gallery/" class="nav-link nav-speaker">&nbsp;&nbsp;Speaker Gallery&nbsp;&nbsp;</a>
+          <a href="/projects/" class="nav-link nav-projects">&nbsp;&nbsp;Projects&nbsp;&nbsp;</a>
+          <a href="/contact/" class="nav-link nav-contact">&nbsp;&nbsp;Contact</a>
+      </div>
+      <div id="mobile-menu" class="mobile-menu-panel" hidden>
+        <a href="/profile/" class="nav-link nav-profile">Profile</a>
+        <a href="/specializations/" class="nav-link nav-specializations">Specializations</a>
+        <a href="/speaker-gallery/" class="nav-link nav-speaker">Speaker Gallery</a>
         <a href="/projects/" class="nav-link nav-projects">Projects</a>
         <a href="/contact/" class="nav-link nav-contact">Contact</a>
+      </div>
     </nav>
   </header>
 
@@ -679,7 +690,7 @@
       <h2>Education</h2>
       <div class="education-items">
         
-        <div class="education-item">
+          <div class="education-item glass-card">
           <div class="edu-header">
             <h3 class="edu-degree">Master of Business Administration - MBA</h3>
             <p class="edu-field">Business Strategy</p>
@@ -702,7 +713,7 @@
           
         </div>
         
-        <div class="education-item">
+          <div class="education-item glass-card">
           <div class="edu-header">
             <h3 class="edu-degree">Bachelor&#39;s degree</h3>
             <p class="edu-field">Electronics Engineering</p>
@@ -729,7 +740,7 @@
       <h2>Licenses & Certifications</h2>
       <div class="licenses-items">
         
-        <div class="license-item">
+          <div class="license-item glass-card">
           <h3 class="cert-title">Oracle Fusion AI Agent Studio Foundations Associate</h3>
           <p class="cert-issuer">Oracle</p>
           <p class="cert-date">Issued Aug 2025</p>
@@ -745,7 +756,7 @@
           </div>
         </div>
         
-        <div class="license-item">
+          <div class="license-item glass-card">
           <h3 class="cert-title">Oracle Cloud Infrastructure: AI Foundations</h3>
           <p class="cert-issuer">Oracle</p>
           <p class="cert-date">Issued TBD</p>
@@ -767,7 +778,7 @@
       <h2>Volunteering</h2>
       <div class="volunteering-items">
         
-        <div class="volunteer-item">
+          <div class="volunteer-item glass-card">
           <div class="vol-header">
             <h3 class="vol-title">Business Relationship Manager</h3>
             <p class="vol-organization">Science of Spirituality</p>
@@ -793,25 +804,25 @@
       <h2>Honors & Awards</h2>
       <div class="awards-items">
         
-        <div class="award-item">
+          <div class="award-item glass-card">
           <h3 class="award-title">Beta Gamma Sigma</h3>
           <p class="award-issuer">Issued by Kennesaw State University · Apr 2018</p>
           <p class="award-organization">Kennesaw State University - Michael J. Coles College of Business</p>
         </div>
         
-        <div class="award-item">
+          <div class="award-item glass-card">
           <h3 class="award-title">Phi Kappa Phi</h3>
           <p class="award-issuer">Issued by Kennesaw State University · Apr 2018</p>
           <p class="award-organization">Kennesaw State University - Michael J. Coles College of Business</p>
         </div>
         
-        <div class="award-item">
+          <div class="award-item glass-card">
           <h3 class="award-title">Golden Key Honor Society</h3>
           <p class="award-issuer">Issued by Kennesaw State University · Nov 2017</p>
           <p class="award-organization">Kennesaw State University - Michael J. Coles College of Business</p>
         </div>
         
-        <div class="award-item">
+          <div class="award-item glass-card">
           <h3 class="award-title">Dean&#39;s List</h3>
           <p class="award-issuer">Issued by DeVry University · Feb 2008</p>
           <p class="award-organization">DeVry University</p>
