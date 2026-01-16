@@ -1,0 +1,27 @@
+---
+layout: base.njk
+title: Projects
+---
+
+<h1>Projects</h1>
+<div class="projects-list">
+  {# Project list will be rendered here #}
+  {% for project in projects %}
+    <div class="project-item">
+      <button class="project-header" type="button" aria-expanded="false" aria-controls="project-details-{{ project.id }}">
+        <span class="project-title">{{ project.title }}</span>
+        <span class="project-arrow" aria-hidden="true">&#x25BC;</span>
+      </button>
+      <div class="project-brief">
+        {{ project.brief }}
+      </div>
+      <div class="project-details" id="project-details-{{ project.id }}" hidden>
+        {{ project.details | safe }}
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+<script>
+// Collapsible logic will be added in main.js
+</script>

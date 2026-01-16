@@ -9,7 +9,6 @@
 .home-hero h2 {
     font-size: 3.5rem;
     margin-bottom: 1.5rem;
-    /*background: linear-gradient(135deg, var(--accent-teal) 0%, var(--accent-blue) 100%);*/
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -25,13 +24,6 @@
 /* Trusted By Marquee */
 .trusted-marquee {
     overflow: hidden;
-    /*background: rgba(15, 23, 42, 0.4);
-    backdrop-filter: var(--glass-blur);
-    -webkit-backdrop-filter: var(--glass-blur);
-    padding: 0.75rem 0 1.5rem 0;
-    margin: 0 0 2rem 0;
-    border-top: px solid var(--accent-teal);
-    border-bottom: 1px solid var(--accent-teal);*/
 }
 
 .trusted-marquee p {
@@ -51,6 +43,7 @@
     animation: marquee-scroll 40s linear infinite;
     width: max-content;
     padding: 0.5rem 0;
+    will-change: transform;
 }
 
 .marquee-item {
@@ -66,7 +59,6 @@
     -webkit-backdrop-filter: var(--glass-blur);
     border-radius: 12px;
     padding: 1rem;
-    /*box-shadow: var(--shadow-premium);*/
     transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
@@ -91,7 +83,7 @@
 }
 
 /* Specific adjustment for Blue Owl logo which needs special sizing */
-.marquee-item img[alt="Blue Owl Capital"] {
+.marquee-item .blue-owl-logo {
     width: 160px;
     max-width: none;
 }

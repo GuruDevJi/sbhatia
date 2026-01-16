@@ -49,5 +49,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Initial check on page load
   updateActiveLink();
+
+  // Collapsible project list logic
+  const projectHeaders = document.querySelectorAll('.project-header');
+  projectHeaders.forEach(header => {
+    header.addEventListener('click', () => {
+      const expanded = header.getAttribute('aria-expanded') === 'true';
+      header.setAttribute('aria-expanded', !expanded);
+      const detailsId = header.getAttribute('aria-controls');
+      const details = document.getElementById(detailsId);
+      if (details) {
+        details.hidden = expanded;
+      }
+      // Arrow icon toggle
+      const arrow = header.querySelector('.project-arrow');
+      if (arrow) {
+        arrow.innerHTML = expanded ? '&#x25BC;' : '&#x25B2;';
+      }
+    });
+  });
 });
 
