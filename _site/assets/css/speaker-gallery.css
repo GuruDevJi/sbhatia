@@ -1,0 +1,12 @@
+@media (min-width: 900px) {
+	.presentation-post {
+		align-items: flex-start;
+	}
+	.presentation-post img {
+		width: auto !important;
+		max-width: 480px !important;
+		height: auto !important;
+		object-fit: contain;
+		display: block;
+	}
+}
