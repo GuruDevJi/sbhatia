@@ -17,8 +17,8 @@
 }
 /* Remove all margin and padding from company names */
 .company-name {
-    margin: 0 !important;
-    padding: 0 !important;
+    margin: 0;
+    padding: 0;
 }
 /* Profile Page Styles - Premium Theme */
 /* ================================== */
@@ -174,7 +174,22 @@
 }
 
 
-/* Experience Items (Glass Cards) */
+/* Glass Card Base Class */
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: none;
+    border-radius: 16px;
+    padding: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.glass-card:hover {
+    transform: translateY(-4px);
+}
+
+/* Experience Items */
 .experience-items {
     display: flex;
     flex-direction: column;
@@ -182,18 +197,10 @@
 }
 
 .experience-item {
-    background: var(--glass-bg);
-    backdrop-filter: var(--glass-blur);
-    -webkit-backdrop-filter: var(--glass-blur);
-    border: none;
     padding: 2.5rem;
-    border-radius: 16px;
-    /* box-shadow: var(--shadow-premium); */
-    transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
 .experience-item:hover {
-    transform: translateY(-4px);
     border-color: var(--accent-teal);
 }
 
@@ -315,20 +322,12 @@
     border-radius: 12px;
 }
 
-/* Education, Licenses, etc - Same Glass Theme */
+/* Education Items */
 .education-item {
-    border-left: none;
-    background: var(--glass-bg);
-    border: none;
-    border-radius: 16px;
-    padding: 2rem;
-    /* box-shadow: var(--shadow-premium); */
-    transition: transform 0.3s ease;
     margin-bottom: 2rem;
 }
 
 .education-item:hover {
-    transform: translateY(-4px);
     border-color: var(--accent-blue);
 }
 
@@ -349,17 +348,10 @@
 }
 
 .license-item {
-    background: var(--glass-bg);
-    border: none;
-    border-radius: 16px;
-    padding: 2rem;
-    /* box-shadow: var(--shadow-premium); */
-    transition: transform 0.3s ease;
     margin-bottom: 2rem;
 }
 
 .license-item:hover {
-    transform: translateY(-4px);
     border-color: var(--accent-amber);
 }
 
@@ -379,17 +371,10 @@
 }
 
 .volunteer-item {
-    background: var(--glass-bg);
-    border: none;
-    border-radius: 16px;
-    padding: 2rem;
-    /* box-shadow: var(--shadow-premium); */
-    transition: transform 0.3s ease;
     margin-bottom: 2rem;
 }
 
 .volunteer-item:hover {
-    transform: translateY(-4px);
     border-color: var(--accent-purple);
 }
 
@@ -398,17 +383,10 @@
 }
 
 .award-item {
-    background: var(--glass-bg);
-    border: none;
-    border-radius: 16px;
-    padding: 2rem;
-    /* box-shadow: var(--shadow-premium); */
-    transition: transform 0.3s ease;
     margin-bottom: 2rem;
 }
 
 .award-item:hover {
-    transform: translateY(-4px);
     border-color: var(--accent-pink);
 }
 
@@ -460,8 +438,8 @@
         flex-wrap: wrap;
     }
 
-    .sidebar-link {
-        border-left: none !important;
+.sidebar-link {
+        border-left: none;
         border-bottom: 2px solid transparent;
     }
 }
