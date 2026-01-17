@@ -1,3 +1,85 @@
+
+/* Collapsible finapps-block styles for specializations page */
+.finapps-block.collapsible {
+    position: relative;
+    border: none;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    background: none;
+    transition: box-shadow 0.2s;
+    color: #222;
+}
+.finapps-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    padding: 0.5rem 1.2rem;
+    user-select: none;
+    position: relative;
+    background: none;
+    border-radius: 6px;
+    background: rgba(56, 189, 248, 0.08); /* subtle blue highlight */
+    transition: background 0.18s;
+}
+.finapps-header:focus {
+    outline: 2px solid #0078d4;
+    background: rgba(56, 189, 248, 0.18);
+}
+.finapps-header:hover {
+    background: rgba(56, 189, 248, 0.18);
+}
+.finapps-arrow {
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-left: 1rem;
+    transition: transform 0.2s;
+    background: none;
+    border: none;
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%) rotate(0deg);
+    pointer-events: none;
+}
+.finapps-block.collapsed .finapps-arrow {
+    transform: translateY(-50%) rotate(0deg);
+}
+.finapps-block.expanded .finapps-arrow {
+    transform: translateY(-50%) rotate(180deg);
+}
+.finapps-arrow::before {
+    content: '\25BC'; /* Down arrow */
+    font-size: 1.5rem;
+    color: #666;
+    display: block;
+}
+.finapps-block.expanded .finapps-arrow::before {
+    content: '\25B2'; /* Up arrow */
+}
+.finapps-content {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+    display: block;
+}
+.finapps-block.collapsed .finapps-content {
+    display: none;
+}
+/* Always show summary text, even when collapsed */
+.finapps-content > .erp-summary-text,
+.finapps-content > .epm-summary-text,
+.finapps-content > p:first-child {
+    display: block !important;
+    margin-bottom: 1rem;
+}
+.finapps-block.collapsed .finapps-content > .erp-summary-text,
+.finapps-block.collapsed .finapps-content > .epm-summary-text,
+.finapps-block.collapsed .finapps-content > p:first-child {
+    display: block !important;
+}
+.finapps-block.collapsed .finapps-content > *:not(.erp-summary-text):not(.epm-summary-text):not(p:first-child) {
+    display: none !important;
+}
 /* Security card formatting matches technical-card */
 .security-card {
     background: rgba(255, 255, 255, 0.02);
