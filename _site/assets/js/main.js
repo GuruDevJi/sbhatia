@@ -1,3 +1,31 @@
+  // Collapsible finapps-block logic for specializations page
+  function setupFinappsCollapsible() {
+    const blocks = document.querySelectorAll('.finapps-block.collapsible');
+    blocks.forEach(block => {
+      const header = block.querySelector('.finapps-header');
+      // Start collapsed by default
+      block.classList.add('collapsed');
+      block.classList.remove('expanded');
+      header.addEventListener('click', () => {
+        const isCollapsed = block.classList.contains('collapsed');
+        block.classList.toggle('collapsed', !isCollapsed);
+        block.classList.toggle('expanded', isCollapsed);
+      });
+      header.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          header.click();
+        }
+      });
+    });
+  }
+
+  // Run on DOMContentLoaded (after other DOMContentLoaded logic)
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupFinappsCollapsible);
+  } else {
+    setupFinappsCollapsible();
+  }
   // Speaker Gallery mobile orientation fix
   const presentationPosts = document.querySelectorAll('.presentation-post');
   presentationPosts.forEach(post => {
