@@ -87,6 +87,7 @@ body {
   font-family: var(--font-body);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
 }
 
 h1,
@@ -119,7 +120,8 @@ header h1 {
   margin: 0;
   background: linear-gradient(135deg, #fff 0%, #94a3b8 100%);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  /* -webkit-text-fill-color: transparent; */
+    background-clip: text;
 }
 
 nav {
@@ -177,6 +179,10 @@ nav {
   color: var(--accent-purple);
 }
 
+.nav-projects {
+  color: var(--accent-green);
+}
+/*
 .nav-link.nav-projects {
   color: var(--accent-green, #43a047);
   transition: color 0.2s;
@@ -186,6 +192,7 @@ nav {
 body.projects .nav-link.nav-projects {
   color: var(--accent-green, #388e3c);
 }
+*/
 
 main {
   padding: 0;
@@ -202,79 +209,7 @@ footer {
   margin-top: 4rem;
 }
 
-/* Common Components */
-.glass-panel {
-  background: var(--glass-bg);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
-  border: 1px solid var(--glass-border);
-  border-radius: 12px;
-  box-shadow: var(--shadow-premium);
-}
 
-/* Utility Classes */
-.divider {
-  border: none;
-  border-top: 2px solid var(--glass-border);
-  margin: 2.5rem 0;
-}
-.divider-accent {
-  border-top-color: var(--accent-teal);
-}
-
-/* Forms */
-.contact-form {
-  width: 100%;
-  max-width: none;
-  margin: 0;
-}
-
-.form-group {
-  margin-bottom: 1.5rem;
-}
-
-label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-weight: 600;
-  font-size: 0.875rem;
-  color: var(--text-secondary);
-}
-
-input,
-textarea {
-  width: 100%;
-  padding: 0.75rem 1rem;
-  border: 1px solid var(--glass-border);
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.05);
-  color: #fff;
-  font-family: var(--font-body);
-  transition: border-color 0.3s ease, background 0.3s ease;
-}
-
-input:focus,
-textarea:focus {
-  outline: none;
-  border-color: var(--accent-teal);
-  background: rgba(255, 255, 255, 0.08);
-}
-
-button[type="submit"] {
-  background: var(--accent-teal);
-  color: var(--bg-dark);
-  border: none;
-  padding: 0.75rem 2rem;
-  border-radius: 8px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: transform 0.2s ease, filter 0.2s ease;
-}
-
-button[type="submit"]:hover {
-  transform: translateY(-2px);
-  filter: brightness(1.1);
-}
 
 img {
   max-width: 100%;
