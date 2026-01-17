@@ -176,7 +176,7 @@
 
 /* Glass Card Base Class */
 .glass-card {
-    background: var(--glass-bg);
+    background: var(--bg-card);
     backdrop-filter: var(--glass-blur);
     -webkit-backdrop-filter: var(--glass-blur);
     border: none;
