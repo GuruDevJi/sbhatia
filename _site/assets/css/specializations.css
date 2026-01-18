@@ -531,11 +531,17 @@
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     .specializations-container {
         grid-template-columns: 1fr;
     }
 
+    .sidebar-nav {
+        display: none !important;
+    }
+}
+
+@media (max-width: 768px) {
     .specializations-container .sidebar-nav {
         position: relative;
         top: 0;
@@ -553,11 +559,5 @@
     .sidebar-link {
         border-left: none !important;
         border-bottom: 2px solid transparent;
-    }
-}
-
-@media (max-width: 900px) {
-    .sidebar-nav {
-        display: none !important;
     }
 }
