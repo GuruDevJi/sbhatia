@@ -21,7 +21,7 @@
     margin-top: 2rem;
     border: 1px solid var(--glass-border);
     border-radius: 12px;
-    padding: 1.5rem;
+    padding: 0;
     background: rgba(255, 255, 255, 0.01);
     min-height: 600px;
     /* Ensure sufficient height */
