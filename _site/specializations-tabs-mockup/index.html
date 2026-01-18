@@ -3,15 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Specializations</title>
+  <title>Specializations (Tabs Mockup)</title>
   <link rel="stylesheet" href="/assets/css/main.css" />
   
   
-    <link rel="stylesheet" href="/assets/css/specializations.css" />
-  
 </head>
 <body
-  class="specializations"
   
 >
   <header>
@@ -40,11 +37,111 @@
   <main>
     <!-- Specializations color bar -->
 
+<style>
+/* Tabbed Interface Styles for Mockup */
+.tabs-container {
+  margin-top: 2rem;
+  border: 1px solid var(--glass-border); /* Add border around the whole section */
+  border-radius: 12px;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.01); /* Very subtle background */
+}
+
+.tabs-header {
+  display: flex;
+  gap: 0.5rem;
+  border-bottom: 2px solid var(--glass-border);
+  margin-bottom: 2rem;
+  overflow-x: auto;
+  padding-bottom: 2px;
+  padding-left: 1rem; /* Move tabs a little to the right */
+}
+
+.tab-btn {
+  background: none;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease;
+  border-radius: 6px 6px 0 0;
+}
+
+.tab-btn:hover {
+  color: var(--text-primary);
+  background: rgba(56, 189, 248, 0.05);
+}
+
+.tab-btn.active {
+  color: var(--accent-blue);
+  background: rgba(56, 189, 248, 0.1);
+}
+
+.tab-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px; /* Align with border-bottom of container */
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--accent-blue);
+  border-radius: 3px 3px 0 0;
+}
+
+.tab-panel {
+  display: none;
+  animation: fadeIn 0.3s ease;
+  /* Ensure consistent spacing inside the border */
+  padding: 0 0.5rem;
+}
+
+.tab-panel.active {
+  display: block;
+}
+
+/* Adjustments for the content inside tabs */
+.tab-panel .finapps-block {
+  padding: 0; /* Remove internal padding as the container handles it */
+  border: none;
+  background: none;
+  margin-bottom: 0; /* Remove bottom margin to fit nicely in border */
+}
+
+/* Remove the old collapsible headers for this view */
+.tab-panel .finapps-header {
+  display: none;
+}
+
+/* Ensure summary text is visible and styled nicely */
+.tab-panel .erp-summary-text,
+.tab-panel .epm-summary-text,
+.tab-panel .finapps-summary-text {
+  display: block;
+  margin-bottom: 2rem;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--text-body);
+  max-width: none; /* Let it fill the tab */
+  padding: 0;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
+
 <div class="specializations-container">
-  <!-- Sticky Sidebar Navigation -->
+  <!-- Sticky Sidebar Navigation (kept for context) -->
   <aside class="sidebar-nav">
     <nav class="sidebar-menu">
-      <a href="#financial-apps" class="sidebar-link" data-section="financial-apps">Financial Applications</a>
+      <a href="#financial-apps" class="sidebar-link active" data-section="financial-apps">Financial Applications</a>
       <a href="#technical" class="sidebar-link" data-section="technical">Technical</a>
       <a href="#security" class="sidebar-link" data-section="security">Security + Compliance</a>
       <a href="#business-process" class="sidebar-link" data-section="business-process">Business Process</a>
@@ -72,7 +169,7 @@
           <!-- Tab Content Panels -->
           
           <!-- ERP Panel -->
-          <div id="tab-erp" class="tab-panel active" role="tabpanel" style="box-shadow: 0 2px 16px 0 rgba(59, 130, 246, 0.22); border-radius: 12px;">
+          <div id="tab-erp" class="tab-panel active" role="tabpanel">
             <p class="erp-summary-text">
               Directed the successful deployment, enhancement, and ongoing management of Oracle ERP applications, including Oracle Cloud ERP and E-Business Suite. Oversaw large-scale implementations and upgrades of core financial modules (GL, AP, AR, FA, Cash Management, Procurement), ensuring seamless operations and alignment with enterprise objectives. Championed system optimization initiatives, established governance frameworks, and drove user adoption across global teams. Consistently delivered improved financial controls, operational efficiency, and business value through strategic ERP stewardship.
             </p>
@@ -173,7 +270,7 @@
           </div>
 
           <!-- EPM Panel -->
-          <div id="tab-epm" class="tab-panel" role="tabpanel" style="box-shadow: 0 2px 16px 0 rgba(59, 130, 246, 0.22); border-radius: 12px;">
+          <div id="tab-epm" class="tab-panel" role="tabpanel">
             <p class="epm-summary-text">
               Extensive hands-on experience with Oracle EPM platforms, including EDM, FCCS, ARCS, and PBCS. Deep knowledge of EPM configuration, administration, and module functionality for financial close, consolidation, account reconciliation, and enterprise planning. Skilled in managing EPM upgrades, data integrations, security, and user support. Proficient in designing and maintaining EPM structures to support complex financial and operational requirements.
             </p>
@@ -244,7 +341,7 @@
           </div>
 
           <!-- Tax Panel -->
-          <div id="tab-tax" class="tab-panel" role="tabpanel" style="box-shadow: 0 2px 16px 0 rgba(59, 130, 246, 0.22); border-radius: 12px;">
+          <div id="tab-tax" class="tab-panel" role="tabpanel">
             <p class="finapps-summary-text">
                Tax technology and automation for compliance and reporting.
             </p>
@@ -289,7 +386,7 @@
           </div>
 
           <!-- Other Panel -->
-          <div id="tab-other" class="tab-panel" role="tabpanel" style="box-shadow: 0 2px 16px 0 rgba(59, 130, 246, 0.22); border-radius: 12px;">
+          <div id="tab-other" class="tab-panel" role="tabpanel">
             <p class="finapps-summary-text">
               Supported a broad spectrum of specialized financial and operational applications, contributing in varying capacities across administration, configuration, implementation, integration design, and ongoing management.
             </p>
@@ -334,13 +431,14 @@
           </div>
 
         </div>
-        
     </section>
+
+    <!-- Keeping other sections for full context -->
     <section id="technical" class="specializations-section">
-        <h2 style="color:var(--accent-green)">Technical</h2>
+        <h2 style="color:#14b8a6">Technical</h2>
       <p>Directed the design, implementation, and optimization of enterprise technology solutions spanning cloud, on-premises, and hybrid environments. Championed systems architecture, data integration, automation, and actively explored, learned, and implemented AI technologies to enhance reliability, scalability, and security. Collaborated with cross-functional teams to deliver robust technical platforms that support business growth, operational efficiency, and future innovation.</p>
       <section class="technical-platforms-block">
-        <h3 class="technical-subsection-title" style="color:var(--accent-green);">Technical Skills & Platforms</h3>
+        <h3 class="technical-subsection-title" style="color:#14b8a6;">Technical Skills & Platforms</h3>
         <div class="specializations-grid">
           <div class="technical-card">
             <div>
@@ -399,10 +497,11 @@
         </div>
       </section>
     </section>
+
+    <!-- Keeping Security section -->
     <section id="security" class="specializations-section">
         <h2>Security & Compliance</h2>
       <p>Developed and implemented processes to ensure compliance with SOX directives for enterprise financial systems. Updated support methodologies and managed teams to align with regulatory requirements, including capturing appropriate approvals and documentation. Collaborated with auditors and leadership to maintain robust internal controls and support audit readiness.</p>
-        <!-- SOX Modules Card Grid -->
         <section class="security-block">
           <h3 class="security-subsection-title" style="color:#f59e42;">SOX Compliance Modules</h3>
           <div class="specializations-grid">
@@ -459,29 +558,56 @@
           </div>
         </section>
     </section>
+    
+    <!-- Cut off rest for brevity in mockup unless desired? No, user might scroll past. Keeping placeholders. -->
     <section id="business-process" class="specializations-section">
         <h2>Business Process Expertise</h2>
       <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Sed posuere.</p>
       <p>Nulla vitae elit libero, a pharetra augue. Etiam porta sem malesuada magna.</p>
-      <p>Curabitur blandit tempus porttitor. Integer posuere erat a ante venenatis dapibus.</p>
-      
     </section>
+    
     <section id="project-management" class="specializations-section">
         <h2>Project & Program Management</h2>
       <p>Phasellus euismod, urna eu tincidunt consectetur, nisi nisl aliquam nunc, vitae.</p>
-      <p>Aliquam erat volutpat. Suspendisse potenti. Mauris nec velit nec nulla cursus.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur.</p>
-      
     </section>
-    <section id="leadership" class="specializations-section" style="min-height:600px;">
+    
+    <section id="leadership" class="specializations-section" style="min-height:300px;">
       <h2>Leadership</h2>
       <p>Nulla vitae elit libero, a pharetra augue. Etiam porta sem malesuada magna.</p>
-      <p>Curabitur blandit tempus porttitor. Integer posuere erat a ante venenatis dapibus.</p>
-      <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Sed posuere.</p>
-      
     </section>
   </main>
 </div>
+
+<script>
+function openTab(evt, tabName) {
+  var i, tabContent, tabLinks;
+  
+  // Get all elements with class="tab-panel" and hide them
+  tabContent = document.getElementsByClassName("tab-panel");
+  for (i = 0; i < tabContent.length; i++) {
+    tabContent[i].style.display = "none";
+    tabContent[i].classList.remove("active");
+  }
+  
+  // Get all elements with class="tab-btn" and remove the class "active"
+  tabLinks = document.getElementsByClassName("tab-btn");
+  for (i = 0; i < tabLinks.length; i++) {
+    tabLinks[i].className = tabLinks[i].className.replace(" active", "");
+    tabLinks[i].setAttribute("aria-selected", "false");
+  }
+  
+  // Show the current tab, and add an "active" class to the button that opened the tab
+  document.getElementById(tabName).style.display = "block";
+  // Add slight fading animation trigger if desired, typically handled by CSS class addition
+  setTimeout(() => {
+     document.getElementById(tabName).classList.add("active");
+  }, 10);
+
+  evt.currentTarget.className += " active";
+  evt.currentTarget.setAttribute("aria-selected", "true");
+}
+</script>
+
   </main>
 
   <footer>

@@ -1,30 +1,48 @@
-  // Collapsible finapps-block logic for specializations page
-  function setupFinappsCollapsible() {
-    const blocks = document.querySelectorAll('.finapps-block.collapsible');
-    blocks.forEach(block => {
-      const header = block.querySelector('.finapps-header');
-      // Start collapsed by default
-      block.classList.add('collapsed');
-      block.classList.remove('expanded');
-      header.addEventListener('click', () => {
-        const isCollapsed = block.classList.contains('collapsed');
-        block.classList.toggle('collapsed', !isCollapsed);
-        block.classList.toggle('expanded', isCollapsed);
-      });
-      header.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          header.click();
-        }
-      });
-    });
+  // Tabbed Interface Logic for Specializations Page
+  function setupTabs() {
+    // Check if we are on a page with tabs
+    const tabsContainer = document.querySelector('.tabs-container');
+    if (!tabsContainer) return;
+
+    window.openTab = function(evt, tabName) {
+      var i, tabContent, tabLinks;
+      
+      // Get all elements with class="tab-panel" and hide them
+      tabContent = document.getElementsByClassName("tab-panel");
+      for (i = 0; i < tabContent.length; i++) {
+        tabContent[i].style.display = "none";
+        tabContent[i].classList.remove("active");
+      }
+      
+      // Get all elements with class="tab-btn" and remove the class "active"
+      tabLinks = document.getElementsByClassName("tab-btn");
+      for (i = 0; i < tabLinks.length; i++) {
+        tabLinks[i].className = tabLinks[i].className.replace(" active", "");
+        tabLinks[i].setAttribute("aria-selected", "false");
+      }
+      
+      // Show the current tab, and add an "active" class to the button that opened the tab
+      const selectedTab = document.getElementById(tabName);
+      if (selectedTab) {
+        selectedTab.style.display = "block";
+        // Small delay to allow display:block to apply before adding opacity class for fade effect
+        setTimeout(() => {
+           selectedTab.classList.add("active");
+        }, 10);
+      }
+    
+      if (evt && evt.currentTarget) {
+          evt.currentTarget.className += " active";
+          evt.currentTarget.setAttribute("aria-selected", "true");
+      }
+    };
   }
 
   // Run on DOMContentLoaded (after other DOMContentLoaded logic)
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', setupFinappsCollapsible);
+    document.addEventListener('DOMContentLoaded', setupTabs);
   } else {
-    setupFinappsCollapsible();
+    setupTabs();
   }
   // Speaker Gallery mobile orientation fix
   const presentationPosts = document.querySelectorAll('.presentation-post');

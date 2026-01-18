@@ -1,12 +1,29 @@
-@media (min-width: 900px) {
-	.presentation-post {
-		align-items: flex-start;
-	}
-	.presentation-post img {
-		width: auto !important;
-		max-width: 480px !important;
-		height: auto !important;
-		object-fit: contain;
-		display: block;
-	}
+@media (max-width: 899px) {
+  .presentation-left,
+  .presentation-right {
+    flex-direction: column !important;
+    align-items: stretch;
+  }
+}
+.presentation-right {
+	flex-direction: row-reverse;
+}
+/* Split presentation-post into presentation-left and presentation-right for future layout control */
+.presentation-left, .presentation-right {
+	background: transparent;
+	border: none;
+	border-radius: 8px;
+	box-shadow: 0 0 16px 4px rgba(236,72,153,0.18), 0 0 48px 12px rgba(236,72,153,0.13), 0 3px 24px 0 rgba(236,72,153,0.10);
+	padding: 1.5rem;
+	margin: 2rem auto;
+	max-width: 1600px;
+	display: flex;
+	align-items: center;
+	gap: 2rem;
+	transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.presentation-left:hover, .presentation-right:hover {
+	border-color: #ec4899;
+	box-shadow: 0 0 24px 8px rgba(236,72,153,0.28), 0 0 64px 16px rgba(236,72,153,0.18), 0 4px 32px 0 rgba(236,72,153,0.15);
 }
