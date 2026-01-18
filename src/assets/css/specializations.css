@@ -1,101 +1,123 @@
-
 /* Collapsible finapps-block styles for specializations page */
-.finapps-block.collapsible {
-    position: relative;
-    border: none;
-    border-radius: 8px;
-    margin-bottom: 1.5rem;
-    background: none;
-    transition: box-shadow 0.2s;
-    color: #222;
+/* ============================= */
+/* X. TABBED INTERFACE           */
+/* ============================= */
+.tabs-container {
+    margin-top: 2rem;
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.01);
+    min-height: 600px;
+    /* Ensure sufficient height */
 }
-.finapps-header {
+
+.tabs-header {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    cursor: pointer;
-    padding: 0.5rem 1.2rem;
-    user-select: none;
-    position: relative;
-    background: none;
-    border-radius: 6px;
-    background: rgba(56, 189, 248, 0.08); /* subtle blue highlight */
-    transition: background 0.18s;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    border-bottom: 2px solid var(--glass-border);
+    margin-bottom: 0;
+    overflow-x: unset;
+    padding-bottom: 0;
+    padding-left: 2rem;
+    /* flex-wrap allows tab buttons to wrap to next line if needed */
 }
-.finapps-header:focus {
-    outline: 2px solid #0078d4;
-    background: rgba(56, 189, 248, 0.18);
-}
-.finapps-header:hover {
-    background: rgba(56, 189, 248, 0.18);
-}
-.finapps-arrow {
-    display: inline-block;
-    width: 1.5rem;
-    height: 1.5rem;
-    margin-left: 1rem;
-    transition: transform 0.2s;
+
+.tab-btn {
     background: none;
     border: none;
+    padding: 0.75rem 1.5rem;
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-secondary);
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s ease;
+    border-radius: 6px 6px 0 0;
+}
+
+.tab-btn:hover {
+    color: var(--text-primary);
+    background: rgba(56, 189, 248, 0.05);
+}
+
+.tab-btn.active {
+    color: var(--accent-blue);
+    background: rgba(56, 189, 248, 0.1);
+}
+
+.tab-btn.active::after {
+    content: '';
     position: absolute;
-    right: 1.5rem;
-    top: 50%;
-    transform: translateY(-50%) rotate(0deg);
-    pointer-events: none;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--accent-blue);
+    border-radius: 3px 3px 0 0;
 }
-.finapps-block.collapsed .finapps-arrow {
-    transform: translateY(-50%) rotate(0deg);
-}
-.finapps-block.expanded .finapps-arrow {
-    transform: translateY(-50%) rotate(180deg);
-}
-.finapps-arrow::before {
-    content: '\25BC'; /* Down arrow */
-    font-size: 1.5rem;
-    color: #666;
-    display: block;
-}
-.finapps-block.expanded .finapps-arrow::before {
-    content: '\25B2'; /* Up arrow */
-}
-.finapps-content {
-    padding: 0 1.5rem 1.5rem 1.5rem;
-    display: block;
-}
-.finapps-block.collapsed .finapps-content {
+
+.tab-panel {
     display: none;
+    animation: fadeIn 0.3s ease;
+    padding: 1.5rem 1.5rem 2rem 1.5rem;
+    background: rgba(56, 189, 248, 0.1); /* match .tabs-container background */
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
 }
-/* Always show summary text, even when collapsed */
-.finapps-content > .erp-summary-text,
-.finapps-content > .epm-summary-text,
-.finapps-content > p:first-child {
-    display: block !important;
-    margin-bottom: 1rem;
+
+.tab-panel.active {
+    display: block;
 }
-.finapps-block.collapsed .finapps-content > .erp-summary-text,
-.finapps-block.collapsed .finapps-content > .epm-summary-text,
-.finapps-block.collapsed .finapps-content > p:first-child {
-    display: block !important;
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
-.finapps-block.collapsed .finapps-content > *:not(.erp-summary-text):not(.epm-summary-text):not(p:first-child) {
-    display: none !important;
+
+/* Ensure summary text is visible in tabs */
+.tab-panel .erp-summary-text,
+.tab-panel .epm-summary-text,
+.tab-panel .finapps-summary-text {
+    display: block;
+    margin-bottom: 2rem;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--text-body);
+    max-width: none;
+    padding: 0;
 }
+
 /* Security card formatting matches technical-card */
 .security-card {
-    background: rgba(255, 255, 255, 0.02);
+    background: rgba(22, 19, 17, 0.93); /* dark amber background for Security cards */
     border: 2px solid transparent;
     border-radius: 12px;
     padding: 1.5rem;
     transition: all 0.3s ease;
     gap: 1rem;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    box-shadow: 0 2px 16px 0 rgba(245, 158, 11, 0.25); /* Amber shadow */
+    margin-bottom: 2rem;
 }
+
 .security-card:hover {
     background: rgba(255, 255, 255, 0.05);
     transform: translateY(-4px);
-    box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.10);
     border-color: var(--accent-amber);
 }
+
 /* Security card header color matches SOX Compliance Modules */
 .security-card h4 {
     color: var(--accent-amber);
@@ -154,21 +176,27 @@
 .specializations-section#financial-apps h4 {
     color: var(--accent-blue);
 }
+
 .specializations-section#technical h2 {
-    color: var(--accent-teal);
+    color: var(--accent-green);
 }
+
 .specializations-section#security h2 {
     color: var(--accent-amber);
 }
+
 .specializations-section#business-process h2 {
     color: var(--accent-purple);
 }
+
 .specializations-section#project-management h2 {
     color: var(--accent-pink);
 }
+
 .specializations-section#change-management h2 {
     color: var(--accent-rose);
 }
+
 .specializations-section#leadership h2 {
     color: var(--accent-blue);
 }
@@ -182,11 +210,13 @@
     height: fit-content;
     padding-right: 1.5rem;
 }
+
 .sidebar-menu {
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
 }
+
 .sidebar-link {
     display: block;
     padding: 0.875rem 1.25rem;
@@ -201,48 +231,58 @@
     text-transform: uppercase;
     letter-spacing: 0.3em;
 }
+
 .sidebar-link:hover {
     color: var(--text-primary);
     background: var(--glass-bg);
 }
+
 .sidebar-link.active {
     background: var(--glass-bg);
     border: none;
 }
+
 .specializations-container .sidebar-link:hover,
 .specializations-container .sidebar-link.active {
     background: var(--glass-bg);
 }
+
 .specializations-container .sidebar-link[data-section="financial-apps"]:hover,
 .specializations-container .sidebar-link.active[data-section="financial-apps"] {
     color: var(--accent-blue);
     border-left: 3px solid var(--accent-blue);
 }
+
 .specializations-container .sidebar-link[data-section="technical"]:hover,
 .specializations-container .sidebar-link.active[data-section="technical"] {
-    color: var(--accent-teal);
-    border-left: 3px solid var(--accent-teal);
+    color: var(--accent-green);
+    border-left: 3px solid var(--accent-green);
 }
+
 .specializations-container .sidebar-link[data-section="security"]:hover,
 .specializations-container .sidebar-link.active[data-section="security"] {
     color: var(--accent-amber);
     border-left: 3px solid var(--accent-amber);
 }
+
 .specializations-container .sidebar-link[data-section="business-process"]:hover,
 .specializations-container .sidebar-link.active[data-section="business-process"] {
     color: var(--accent-purple);
     border-left: 3px solid var(--accent-purple);
 }
+
 .specializations-container .sidebar-link[data-section="project-management"]:hover,
 .specializations-container .sidebar-link.active[data-section="project-management"] {
     color: var(--accent-pink);
     border-left: 3px solid var(--accent-pink);
 }
+
 .specializations-container .sidebar-link[data-section="change-management"]:hover,
 .specializations-container .sidebar-link.active[data-section="change-management"] {
     color: var(--accent-rose);
     border-left: 3px solid var(--accent-rose);
 }
+
 .specializations-container .sidebar-link[data-section="leadership"]:hover,
 .specializations-container .sidebar-link.active[data-section="leadership"] {
     color: var(--accent-blue);
@@ -253,86 +293,107 @@
 /* 3. CARDS                      */
 /* ============================= */
 
-.finapps-card,
-.other-apps-card,
-.technical-card,
-.sox-card {
-    background: rgba(255, 255, 255, 0.02);
-    border: none;
+/* Financial Applications card */
+.finapps-card {
+    background: rgba(10, 20, 30, 0.93); /* dark background for Financial Applications cards */
+    border: 2px solid transparent;
     border-radius: 12px;
     padding: 1.5rem;
     transition: all 0.3s ease;
     gap: 1rem;
+    box-shadow: 0 2px 16px 0 rgba(59, 130, 246, 0.22); /* Blue shadow */
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin-bottom: 2rem;
 }
-.finapps-card:hover,
-/* Grid layout for app cards */
-.app-cards-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 2rem;
-  margin: 2rem 0;
-
-}
-
-.app-card {
-  
-  border: none;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-  padding: 1.5rem 1.25rem;
-  transition: box-shadow 0.2s;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-.app-card:hover {
-  box-shadow: 0 4px 16px rgba(0,0,0,0.13);
-  
-}
-
-@media (max-width: 600px) {
-  .app-cards-grid {
-     grid-template-columns: 1fr;
-     gap: 1rem;
-  }
-}
-
-.technical-card:hover,
-.sox-card:hover {
-    background: rgba(255, 255, 255, 0.05);
-    transform: translateY(-4px);
-    border-color: var(--accent-blue);
-}
-.technical-card:hover {
-    border-color: var(--accent-teal);
-}
-.sox-card:hover {
-    border-color: var(--accent-amber);
-}
-.finapps-card h4,
-.technical-card-title,
-.sox-card h4 {
+.finapps-card h4 {
     font-size: 1.125rem;
     margin: 0;
     color: #14b8a6;
 }
-.finapps-card p,
-.technical-card p,
-.sox-card p {
+.finapps-card p {
     color: var(--text-secondary);
     font-size: 0.95rem;
     margin: 0;
     line-height: 1.6;
 }
-.finapps-card:hover,
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
-  transition: box-shadow 0.2s, transform 0.2s;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+.finapps-card:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.13);
+    transform: translateY(-4px);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--accent-blue);
 }
+
+/* === Consolidated technical-card styles === */
+/* Technical card */
+.technical-card {
+    background: rgba(10, 20, 30, 0.93); /* dark background for Technical cards */
+    border: 2px solid transparent;
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    gap: 1rem;
+    box-shadow: 0 2px 16px 0 rgba(16, 185, 129, 0.22); /* Green shadow */
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin-bottom: 2rem;
+}
+.technical-card h4 {
+    font-size: 1.125rem;
+    margin: 0;
+    color: var(--accent-green);
+}
+.technical-card p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin: 0;
+    line-height: 1.6;
+}
+.technical-card:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.13);
+    transform: translateY(-4px);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--accent-green);
+}
+
+
+/* Grid layout for app cards */
+.app-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+
+}
+
+/* App card (default: blue shadow, override in section if needed) */
+.app-card {
+    background: rgba(10, 20, 30, 0.93); /* dark background for Other Applications cards */
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 2px 16px 0 rgba(59, 130, 246, 0.18); /* Blue shadow */
+    padding: 1.5rem 1.25rem;
+    transition: box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.app-card:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.13);
+
+}
+
+@media (max-width: 600px) {
+    .app-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+
+
 
 
 
@@ -354,6 +415,7 @@
     vertical-align: middle;
     transition: background 0.2s, color 0.2s;
 }
+
 .erp-module-badges .exp-type {
     background: rgba(59, 130, 246, 0.1);
     color: var(--accent-blue);
@@ -365,6 +427,7 @@
     margin-bottom: 0.5rem;
     display: inline-block;
 }
+
 .erp-module-icon {
     width: 40px;
     height: 40px;
@@ -373,6 +436,22 @@
 
 /* ============================= */
 /* 5. BLOCKS & MISC              */
+/* Security Block */
+.security-block {
+    background: rgba(245, 158, 11, 0.10); /* lighter amber-tinted background */
+    border-radius: 14px;
+    padding: 2rem;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 2px 16px 0 rgba(245, 158, 11, 0.25); /* Amber shadow to match security-card */
+}
+/* Technical Platforms Block */
+.technical-platforms-block {
+    background: rgba(16, 185, 129, 0.10); /* lighter green-tinted background */
+    border-radius: 14px;
+    padding: 2rem;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 2px 16px 0 rgba(16, 185, 129, 0.22); /* Green shadow to match technical-card */
+}
 /* ============================= */
 .glass-block {
     background: var(--glass-bg);
@@ -382,6 +461,7 @@
     border-radius: 8px;
     margin-bottom: 3rem;
 }
+
 .finapps-subsection-title {
     font-size: 1.5rem;
     margin-top: 0;
@@ -389,6 +469,7 @@
     font-family: var(--font-heading);
     color: var(--text-primary);
 }
+
 .sox-block {
     background: rgba(245, 158, 11, 0.05);
     /* Very subtle amber tint */
@@ -397,11 +478,12 @@
     border-radius: 20px;
     margin-bottom: 3rem;
 }
+
 .finapps-block {
-  
-  border-radius: 14px;
-  padding: 2rem;
-  margin-bottom: 2.5rem;
+
+    border-radius: 14px;
+    padding: 2rem;
+    margin-bottom: 2.5rem;
 }
 
 /* ============================= */
@@ -413,10 +495,12 @@
         gap: 2rem;
     }
 }
+
 @media (max-width: 768px) {
     .specializations-container {
         grid-template-columns: 1fr;
     }
+
     .specializations-container .sidebar-nav {
         position: relative;
         top: 0;
@@ -425,15 +509,18 @@
         padding: 0 0 2rem;
         margin-bottom: 3rem;
     }
+
     .sidebar-menu {
         flex-direction: row;
         flex-wrap: wrap;
     }
+
     .sidebar-link {
         border-left: none !important;
         border-bottom: 2px solid transparent;
     }
 }
+
 @media (max-width: 900px) {
     .sidebar-nav {
         display: none !important;
