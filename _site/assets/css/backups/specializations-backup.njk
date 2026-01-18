@@ -1,44 +1,8 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Specializations</title>
-  <link rel="stylesheet" href="/assets/css/main.css" />
-  
-  
-    <link rel="stylesheet" href="/assets/css/specializations.css" />
-  
-</head>
-<body
-  class="specializations"
-  
->
-  <header>
-    <h1><a href="/" style="color:inherit;text-decoration:none;">Saurabh Bhatia</a></h1>
-    <nav>
-      <button class="menu-toggle" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false">
-        <span class="menu-icon">&#9776;</span>
-      </button>
-      <div class="nav-links">
-          <a href="/profile/" class="nav-link nav-profile">&nbsp;&nbsp;Profile&nbsp;&nbsp;</a>
-          <a href="/specializations/" class="nav-link nav-specializations">&nbsp;&nbsp;Specializations&nbsp;&nbsp;</a>
-          <a href="/speaker-gallery/" class="nav-link nav-speaker">&nbsp;&nbsp;Speaker Gallery&nbsp;&nbsp;</a>
-          <a href="/projects/" class="nav-link nav-projects">&nbsp;&nbsp;Projects&nbsp;&nbsp;</a>
-          <a href="/contact/" class="nav-link nav-contact">&nbsp;&nbsp;Contact</a>
-      </div>
-      <div id="mobile-menu" class="mobile-menu-panel" hidden>
-        <a href="/profile/" class="nav-link nav-profile">Profile</a>
-        <a href="/specializations/" class="nav-link nav-specializations">Specializations</a>
-        <a href="/speaker-gallery/" class="nav-link nav-speaker">Speaker Gallery</a>
-        <a href="/projects/" class="nav-link nav-projects">Projects</a>
-        <a href="/contact/" class="nav-link nav-contact">Contact</a>
-      </div>
-    </nav>
-  </header>
-
-  <main>
-    <!-- Specializations page rebuilt from scratch on 2026-01-18 -->
+---
+layout: base.njk
+title: Specializations
+---
+<!-- Specializations color bar -->
 
 <div class="specializations-container">
   <!-- Sticky Sidebar Navigation -->
@@ -54,8 +18,8 @@
   </aside>
 
   <!-- Main Content -->
+  <div class="specializations-main">
   <div class="specializations-content">
-    <!-- Add your sections here -->
     <section id="financial-apps" class="specializations-section" >
          <h2>Financial Applications</h2>
         <p>Extensive expertise in architecting, implementing, and optimizing financial systems for large enterprises. Proven track record across all layers of ERP and EPM platforms—including Oracle Cloud ERP and E-Business Suite—covering system configuration, advanced personalizations, security design, reporting solutions, and data integration. Skilled in delivering robust finance, procurement, and analytics solutions that align technology with business objectives.</p>
@@ -64,17 +28,10 @@
         <div class="tabs-container">
           <!-- Tab Buttons -->
           <div class="tabs-header" role="tablist">
-            <button class="tab-btn active" onclick="openTab(event, 'tab-erp')" role="tab" aria-selected="true"><span class="tab-label-full">ERP Platforms</span><span class="tab-label-short">ERP</span></button>
-            <button class="tab-btn" onclick="openTab(event, 'tab-epm')" role="tab" aria-selected="false"><span class="tab-label-full">EPM Platforms</span><span class="tab-label-short">EPM</span></button>
-            <button class="tab-btn" onclick="openTab(event, 'tab-tax')" role="tab" aria-selected="false"><span class="tab-label-full">Tax Apps</span><span class="tab-label-short">Tax</span></button>
-            <button class="tab-btn" onclick="openTab(event, 'tab-other')" role="tab" aria-selected="false"><span class="tab-label-full">Other Apps</span><span class="tab-label-short">Other</span></button>
-          <style>
-            .tab-label-short { display: none; }
-            @media (max-width: 900px) {
-              .tab-label-full { display: none; }
-              .tab-label-short { display: inline; }
-            }
-          </style>
+            <button class="tab-btn active" onclick="openTab(event, 'tab-erp')" role="tab" aria-selected="true">ERP Platforms</button>
+            <button class="tab-btn" onclick="openTab(event, 'tab-epm')" role="tab" aria-selected="false">EPM Platforms</button>
+            <button class="tab-btn" onclick="openTab(event, 'tab-tax')" role="tab" aria-selected="false">Tax Apps</button>
+            <button class="tab-btn" onclick="openTab(event, 'tab-other')" role="tab" aria-selected="false">Other Apps</button>
           </div>
 
           <!-- Tab Content Panels -->
@@ -241,109 +198,113 @@
                     <ul class="specializations-card-bullets">
                       <li>Implemented and administered Oracle PBCS and EPBCS for enterprise-wide planning, budgeting, and forecasting.</li>
                       <li>Configured planning models, forms, and business rules to support complex financial planning requirements.</li>
+                      <li>Managed user security, data integrations, and periodic upgrades for planning applications.</li>
+                      <li>Provided end-user training and support for planning and forecasting processes.</li>
                     </ul>
                     <div class="erp-module-badges">
-                      <span class="blue-badge">Blue Owl Capital</span>
+                      <span class="blue-badge">HCSC</span>
                     </div>
                 </div>
             </div>
           </div>
-          <!-- Additional tab panels (Tax Apps, Other Apps) can be restored as needed -->
-            <!-- Tax Panel -->
-            <div id="tab-tax" class="tab-panel" role="tabpanel" style="box-shadow: 0 2px 16px 0 rgba(59, 130, 246, 0.22); border-radius: 12px;">
-              <p class="finapps-summary-text">
-                 Tax technology and automation for compliance and reporting.
-              </p>
-              <div class="specializations-grid">
-                  <div class="finapps-card">
-                      <h4>Vertex</h4>
-                      <ul class="specializations-card-bullets">
-                        <li>Implemented and supported Vertex for automated indirect tax calculation and reporting.</li>
-                        <li>Integrated Vertex with Oracle ERP for seamless tax determination across transactions.</li>
-                        <li>Maintained tax rules, rates, and jurisdiction setups within Vertex.</li>
-                        <li>Provided user support, documentation, and training for Vertex processes.</li>
-                      </ul>
-                      <div class="erp-module-badges">
-                        <span class="blue-badge">Synchrony Financial</span>
-                      </div>
-                  </div>
-                  <div class="finapps-card">
-                      <h4>Oracle EB-Tax</h4>
-                      <ul class="specializations-card-bullets">
-                        <li>Configured and supported Oracle EB-Tax for global indirect tax management.</li>
-                        <li>Designed and maintained tax rules, rates, and reporting structures in EB-Tax.</li>
-                        <li>Integrated EB-Tax with upstream and downstream Oracle modules.</li>
-                      </ul>
-                      <div class="erp-module-badges">
-                        <span class="blue-badge">HCSC</span>
-                        <span class="blue-badge">CGG</span>
-                        <span class="blue-badge">Synchrony Financial</span>
-                      </div>
-                  </div>
-                  <div class="finapps-card">
-                      <h4>OneSource</h4>
-                      <ul class="specializations-card-bullets">
-                        <li>Supported direct tax and compliance processes through integration with OneSource.</li>
-                        <li>Coordinated data extraction and reporting for tax filings and audits using OneSource.</li>
-                      </ul>
-                      <div class="erp-module-badges">
-                        <span class="blue-badge">Blue Owl Capital</span>
-                        <span class="blue-badge">HCSC</span>
-                      </div>
-                  </div>
-              </div>
-            </div>
 
-            <!-- Other Panel -->
-            <div id="tab-other" class="tab-panel" role="tabpanel" style="box-shadow: 0 2px 16px 0 rgba(59, 130, 246, 0.22); border-radius: 12px;">
-              <p class="finapps-summary-text">
-                Supported a broad spectrum of specialized financial and operational applications, contributing in varying capacities across administration, configuration, implementation, integration design, and ongoing management.
-              </p>
-              <div class="app-cards-grid">
-                    <div class="app-card">
-                      <h4>Ariba</h4>
-                      <p>Vendor onboarding and verification for global organizations.</p>
+          <!-- Tax Panel -->
+          <div id="tab-tax" class="tab-panel" role="tabpanel" style="box-shadow: 0 2px 16px 0 rgba(59, 130, 246, 0.22); border-radius: 12px;">
+            <p class="finapps-summary-text">
+               Tax technology and automation for compliance and reporting.
+            </p>
+            <div class="specializations-grid">
+                <div class="finapps-card">
+                    <h4>Vertex</h4>
+                    <ul class="specializations-card-bullets">
+                      <li>Implemented and supported Vertex for automated indirect tax calculation and reporting.</li>
+                      <li>Integrated Vertex with Oracle ERP for seamless tax determination across transactions.</li>
+                      <li>Maintained tax rules, rates, and jurisdiction setups within Vertex.</li>
+                      <li>Provided user support, documentation, and training for Vertex processes.</li>
+                    </ul>
+                    <div class="erp-module-badges">
+                      <span class="blue-badge">Synchrony Financial</span>
                     </div>
-                    <div class="app-card">
-                      <h4>BlackLine</h4>
-                      <p>Financial close, account reconciliation, and automation platform.</p>
+                </div>
+                <div class="finapps-card">
+                    <h4>Oracle EB-Tax</h4>
+                    <ul class="specializations-card-bullets">
+                      <li>Configured and supported Oracle EB-Tax for global indirect tax management.</li>
+                      <li>Designed and maintained tax rules, rates, and reporting structures in EB-Tax.</li>
+                      <li>Integrated EB-Tax with upstream and downstream Oracle modules.</li>
+                    </ul>
+                    <div class="erp-module-badges">
+                      <span class="blue-badge">HCSC</span>
+                      <span class="blue-badge">CGG</span>
+                      <span class="blue-badge">Synchrony Financial</span>
                     </div>
-                    <div class="app-card">
-                      <h4>Concur</h4>
-                      <p>Travel and expense management automation for global organizations.</p>
+                </div>
+                <div class="finapps-card">
+                    <h4>OneSource</h4>
+                    <ul class="specializations-card-bullets">
+                      <li>Supported direct tax and compliance processes through integration with OneSource.</li>
+                      <li>Coordinated data extraction and reporting for tax filings and audits using OneSource.</li>
+                    </ul>
+                    <div class="erp-module-badges">
+                      <span class="blue-badge">Blue Owl Capital</span>
+                      <span class="blue-badge">HCSC</span>
                     </div>
-                    <div class="app-card">
-                      <h4>Expensify</h4>
-                      <p>Expense reporting and management for businesses of all sizes.</p>
-                    </div>
-                    <div class="app-card">
-                      <h4>GEMS</h4>
-                      <p>Computershare's Global Entity Management System for entity compliance, governance, and records management.</p>
-                    </div>
-                    <div class="app-card">
-                      <h4>Integri-data EAS</h4>
-                      <p>Integri-data Expense Allocation System</p>
-                    </div>
-                    <div class="app-card">
-                      <h4>LeaseQuery</h4>
-                      <p>Lease accounting and compliance for ASC 842, IFRS 16, and GASB 87.</p>
-                    </div>
-                    <div class="app-card">
-                      <h4>Legal Tracker</h4>
-                      <p>Legal spend management and matter tracking for corporate legal departments.</p>
-                    </div>
-                    <div class="app-card">
-                      <h4>Zip</h4>
-                      <p>Vendor onboarding and workflow management for global organizations.</p>
-                    </div>
-              </div>
+                </div>
             </div>
+          </div>
+
+          <!-- Other Panel -->
+          <div id="tab-other" class="tab-panel" role="tabpanel" style="box-shadow: 0 2px 16px 0 rgba(59, 130, 246, 0.22); border-radius: 12px;">
+            <p class="finapps-summary-text">
+              Supported a broad spectrum of specialized financial and operational applications, contributing in varying capacities across administration, configuration, implementation, integration design, and ongoing management.
+            </p>
+            <div class="app-cards-grid">
+                  <div class="app-card">
+                    <h4>Ariba</h4>
+                    <p>Vendor onboarding and verification for global organizations.</p>
+                  </div>
+                  <div class="app-card">
+                    <h4>BlackLine</h4>
+                    <p>Financial close, account reconciliation, and automation platform.</p>
+                  </div>
+                  <div class="app-card">
+                    <h4>Concur</h4>
+                    <p>Travel and expense management automation for global organizations.</p>
+                  </div>
+                  <div class="app-card">
+                    <h4>Expensify</h4>
+                    <p>Expense reporting and management for businesses of all sizes.</p>
+                  </div>
+                  <div class="app-card">
+                    <h4>GEMS</h4>
+                    <p>Computershare's Global Entity Management System for  entity compliance, governance, and records management.</p>
+                  </div>
+                  <div class="app-card">
+                    <h4>Integri-data EAS</h4>
+                    <p>Integri-data Expense Allocation System</p>
+                  </div>
+                  <div class="app-card">
+                    <h4>LeaseQuery</h4>
+                    <p>Lease accounting and compliance for ASC 842, IFRS 16, and GASB 87.</p>
+                  </div>
+                  <div class="app-card">
+                    <h4>Legal Tracker</h4>
+                    <p>Legal spend management and matter tracking for corporate legal departments.</p>
+                  </div>
+                  <div class="app-card">
+                    <h4>Zip</h4>
+                    <p>Vendor onboarding and workflow management for global organizations.</p>
+                  </div>
+            </div>
+          </div>
+
         </div>
-      </section>
+        
+    </section>
     <section id="technical" class="specializations-section">
-      <h2 style="color:var(--accent-green)">Technical</h2>
+        <h2 style="color:var(--accent-green)">Technical</h2>
       <p>Directed the design, implementation, and optimization of enterprise technology solutions spanning cloud, on-premises, and hybrid environments. Championed systems architecture, data integration, automation, and actively explored, learned, and implemented AI technologies to enhance reliability, scalability, and security. Collaborated with cross-functional teams to deliver robust technical platforms that support business growth, operational efficiency, and future innovation.</p>
-      <div class="technical-platforms-block">
+      <section class="technical-platforms-block">
         <h3 class="technical-subsection-title" style="color:var(--accent-green);">Technical Skills & Platforms</h3>
         <div class="specializations-grid">
           <!-- Technical Expertise Card -->
@@ -357,21 +318,25 @@
                 <li>Workflow automation and scripting</li>
                 <li>Database design, optimization, and troubleshooting</li>
                 <li>Performance tuning and system monitoring</li>
+
                 <li>Version control (Git, GitHub)</li>
                 <li>Develop UAT test scripts and test plans</li>
               </ul>
                 <div class="green-badge">SQL</div>
-                <div class="green-badge">PL/SQL</div>
-                <div class="green-badge">JavaScript</div>
-                <div class="green-badge">VB.NET</div>
-                <div class="green-badge">C</div>
-                <div class="green-badge">C++</div>
-                <div class="green-badge">HTML/CSS</div>
-                <div class="green-badge">Python</div>
-                <div class="green-badge">Bash</div>
-                <div class="green-badge">PowerShell</div>
+                  <div class="green-badge">SQL</div>
+                  <div class="green-badge">PL/SQL</div>
+                  <div class="green-badge">JavaScript</div>
+                  <div class="green-badge">VB.NET</div>
+                  <div class="green-badge">C</div>
+                  <div class="green-badge">C++</div>
+                  <div class="green-badge">HTML/CSS</div>
+                  <div class="green-badge">Python</div>
+                  <div class="green-badge">Bash</div>
+                  <div class="green-badge">PowerShell</div>
+                </div>
             </div>
           </div>
+          <!-- Other cards ... -->
           <!-- Reporting & Analytics Card -->
           <div class="technical-card">
             <div>
@@ -382,7 +347,7 @@
               </ul>
             </div>
           </div>
-          <!-- Integration Design Card -->
+               
           <div class="technical-card">
             <div>
               <h4 class="technical-card-title">Integration Design</h4>
@@ -408,7 +373,7 @@
               </ul>
             </div>
           </div>
-          <!-- SDLC & Release Management Card -->
+
           <div class="technical-card">
             <div>
               <h4 class="technical-card-title">SDLC & Release Management</h4>
@@ -418,7 +383,6 @@
               </ul>
             </div>
           </div>
-          <!-- Cloud Platforms Card -->
           <div class="technical-card">
             <div>
               <h4 class="technical-card-title">Cloud Platforms</h4>
@@ -428,7 +392,6 @@
               </ul>
             </div>
           </div>
-          <!-- Documentation & Training Card -->
           <div class="technical-card">
             <div>
               <h4 class="technical-card-title">Documentation & Training</h4>
@@ -438,7 +401,7 @@
               </ul>
             </div>
           </div>
-          <!-- Other Tools & Technologies Card -->
+          <!-- Other Tools & Technologies Card (moved to end) -->
           <div class="technical-card">
             <div>
               <h4 class="technical-card-title">Other Tools & Technologies</h4>
@@ -449,8 +412,9 @@
               </ul>
             </div>
           </div>
+          </div>
         </div>
-      </div>
+      </section>
     </section>
     <section id="security" class="specializations-section">
       <h2>Security & Compliance</h2>
@@ -535,12 +499,3 @@
     </section>
   </div>
 </div>
-  </main>
-
-  <footer>
-    <p>&copy; 2026 Saurabh Bhatia</p>
-  </footer>
-
-  <script src="/assets/js/main.js"></script>
-</body>
-</html>
