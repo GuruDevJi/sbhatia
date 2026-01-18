@@ -1,3 +1,18 @@
+.green-badge {
+    background: rgba(34, 197, 94, 0.13); /* light green background */
+    color: #199a4e; /* vibrant green text */
+    padding: 0.35rem 1.1rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+    border: none;
+    box-shadow: none;
+    vertical-align: middle;
+    transition: background 0.2s, color 0.2s;
+}
 /* Collapsible finapps-block styles for specializations page */
 /* ============================= */
 /* X. TABBED INTERFACE           */
@@ -132,6 +147,8 @@
     gap: 2rem;
     max-width: 100%;
     margin: 0 auto;
+    overflow: visible;
+    position: relative;
 }
 
 .specializations-content {
@@ -209,6 +226,8 @@
     top: 6rem;
     height: fit-content;
     padding-right: 1.5rem;
+    align-self: start;
+    z-index: 50;
 }
 
 .sidebar-menu {
@@ -400,6 +419,22 @@
 /* ============================= */
 /* 4. BADGES & ICONS             */
 /* ============================= */
+.badge {
+    background: #23272f;
+    color: #fff;
+    padding: 0.3em 0.8em;
+    border-radius: 1em;
+    font-size: 0.98em;
+    display: inline-block;
+    font-weight: 500;
+    margin-right: 0.3em;
+    margin-bottom: 0.3em;
+    letter-spacing: 0.01em;
+    vertical-align: middle;
+    border: none;
+    box-shadow: none;
+    transition: background 0.2s, color 0.2s;
+}
 .blue-badge {
     background: rgba(59, 130, 246, 0.1);
     color: var(--accent-blue);
