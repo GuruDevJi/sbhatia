@@ -1,0 +1,40 @@
+/* Business Process Block Styles (purple accent) */
+.business-process-block {
+    background: rgba(139, 92, 246, 0.10); /* lighter purple-tinted background */
+    border-radius: 14px;
+    padding: 2rem;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 2px 16px 0 rgba(139, 92, 246, 0.22); /* Purple shadow */
+}
+.business-process-subsection-title {
+    color: var(--accent-purple);
+    font-size: 1.25rem;
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    margin-left: auto;
+    margin-right: auto;
+    position: sticky;
+    top: 5rem;
+    z-index: 100;
+}
+.business-card {
+    background: rgba(139, 92, 246, 0.93); /* dark purple background for Business cards */
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 16px 0 rgba(139, 92, 246, 0.22); /* Purple shadow */
+    margin-bottom: 2rem;
+}
+.business-card h4 {
+    color: var(--accent-purple);
+    font-size: 1.125rem;
+    margin: 0;
+}
+.business-card ul.specializations-card-bullets {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin: 0;
+    line-height: 1.6;
+}
