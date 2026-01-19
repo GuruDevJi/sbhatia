@@ -6,31 +6,32 @@
 
     window.openTab = function(evt, tabName) {
       var i, tabContent, tabLinks;
-      
+      console.log('openTab called for:', tabName);
       // Get all elements with class="tab-panel" and hide them
       tabContent = document.getElementsByClassName("tab-panel");
       for (i = 0; i < tabContent.length; i++) {
         tabContent[i].style.display = "none";
         tabContent[i].classList.remove("active");
+        console.log('Hiding panel:', tabContent[i].id);
       }
-      
       // Get all elements with class="tab-btn" and remove the class "active"
       tabLinks = document.getElementsByClassName("tab-btn");
       for (i = 0; i < tabLinks.length; i++) {
         tabLinks[i].className = tabLinks[i].className.replace(" active", "");
         tabLinks[i].setAttribute("aria-selected", "false");
       }
-      
       // Show the current tab, and add an "active" class to the button that opened the tab
       const selectedTab = document.getElementById(tabName);
       if (selectedTab) {
         selectedTab.style.display = "block";
+        console.log('Showing panel:', tabName);
         // Small delay to allow display:block to apply before adding opacity class for fade effect
         setTimeout(() => {
            selectedTab.classList.add("active");
         }, 10);
+      } else {
+        console.warn('Panel not found:', tabName);
       }
-    
       if (evt && evt.currentTarget) {
           evt.currentTarget.className += " active";
           evt.currentTarget.setAttribute("aria-selected", "true");
