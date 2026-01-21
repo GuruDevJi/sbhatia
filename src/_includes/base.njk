@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="/assets/css/speaker-gallery.css" />
   {% elif title == "Projects" %}
     <link rel="stylesheet" href="/assets/css/projects.css" />
+  {% elif title == "Blog" %}
+    <link rel="stylesheet" href="/assets/css/blog.css" />
   {% endif %}
 </head>
 <body
@@ -24,7 +26,8 @@
   {% elif title == "Specializations" %}class="specializations"
   {% elif title == "Speaker Gallery" %}class="speaker-gallery"
   {% elif title == "Contact" %}class="contact"
-    {% elif title == "Projects" %}class="projects"
+  {% elif title == "Projects" %}class="projects"
+  {% elif title == "Blog" %}class="blog"
   {% endif %}
 >
   <header>
@@ -38,6 +41,7 @@
           <a href="/specializations/" class="nav-link nav-specializations">&nbsp;&nbsp;Specializations&nbsp;&nbsp;</a>
           <a href="/speaker-gallery/" class="nav-link nav-speaker">&nbsp;&nbsp;Speaker Gallery&nbsp;&nbsp;</a>
           <a href="/projects/" class="nav-link nav-projects">&nbsp;&nbsp;Projects&nbsp;&nbsp;</a>
+           <a href="/blog/" class="nav-link nav-blog">&nbsp;&nbsp;Blog&nbsp;&nbsp;</a>
           <a href="/contact/" class="nav-link nav-contact">&nbsp;&nbsp;Contact</a>
       </div>
       <div id="mobile-menu" class="mobile-menu-panel" hidden>
@@ -45,6 +49,7 @@
         <a href="/specializations/" class="nav-link nav-specializations">Specializations</a>
         <a href="/speaker-gallery/" class="nav-link nav-speaker">Speaker Gallery</a>
         <a href="/projects/" class="nav-link nav-projects">Projects</a>
+        <a href="/blog/" class="nav-link nav-blog">Blog</a>
         <a href="/contact/" class="nav-link nav-contact">Contact</a>
       </div>
     </nav>
