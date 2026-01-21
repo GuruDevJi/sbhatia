@@ -109,7 +109,7 @@
 /* ============================= */
 .tabs-container {
     margin-top: 2rem;
-    border: 1px solid var(--glass-border);
+        border: none; /* Removed border from tab container */
     border-radius: 12px;
     padding: 0;
     background: rgba(255, 255, 255, 0.01);
@@ -121,7 +121,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
-    border-bottom: 2px solid var(--glass-border);
+    
     margin-bottom: 0;
     overflow-x: unset;
     padding-bottom: 0;
@@ -478,7 +478,11 @@
 }
 
 .app-card:hover {
+
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.13);
+    transform: translateY(-4px);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--accent-blue);
 
 }
 

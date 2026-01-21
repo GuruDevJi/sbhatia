@@ -1,0 +1,24 @@
+---
+layout: base.njk
+title: Blog
+---
+
+
+
+
+
+<section class="blog-section">
+  <h2 style="color:rgb(255, 153, 0)">Latest Blogspot Posts</h2>
+  <div class="blog-grid">
+    {% for post in blog %}
+      <div class="blog-card">
+        <h3 class="blog-title"><a href="{{ post.link }}" target="_blank" rel="noopener">{{ post.title }}</a></h3>
+        <p class="blog-date">{{ post.pubDate | readableDate }}</p>
+        <p class="blog-excerpt">{{ post.description | striptags | truncate(160, true, '...') }}</p>
+        <a class="blog-readmore" href="{{ post.link }}" target="_blank" rel="noopener">Read more &rarr;</a>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+

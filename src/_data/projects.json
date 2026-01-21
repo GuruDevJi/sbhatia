@@ -1,4 +1,5 @@
 [
+
   {
     "id": "proj_property",
     "title": "Property Management Dashboard (Under Development)",
@@ -10,6 +11,12 @@
     "title": "Personal Portfolio Website (This Site)",
     "brief": "A custom-coded personal portfolio site built from scratch to showcase my work, experience, and contact info.",
     "details": "<strong>Tools Used:</strong> VS Code, Git, GitHub, Eleventy (11ty), Nunjucks, Formspree, custom CSS/JS.<br><br><strong>Architecture:</strong> Static site generated with Eleventy, modular Nunjucks templates, global JSON data for content, assets pipeline for CSS/JS/images, deployed via GitHub Pages.<br><br><strong>Content:</strong> Profile, Experience, Education, Licenses, Volunteering, Honors & Awards, Speaker Gallery, Specializations, Projects, Contact form.<br><br><strong>Features:</strong> Sticky sidebar navigation, collapsible panels, responsive design, dark theme, accessible markup, live reload dev server, automated builds.<br><br><strong>Why:</strong> I vibe-coded this site to have full control over design, content, and workflow, using modern tools and best practices for maintainability and speed."
+  },
+  {
+    "id": "proj_blog",
+    "title": "Blog: Oracle ERP/EPM SQL & Technical",
+    "brief": "A curated collection of Oracle ERP/EPM SQL queries, technical notes, and solutions. Visit the blog page for the full archive.",
+    "details": "<ul style='margin:0.5em 0 0.5em 1.5em;'><li>Step-by-step SQL query examples for Oracle Financials, EPM, and Cloud Apps</li><li>Technical deep-dives and troubleshooting guides</li><li>Best practices for reporting, integration, and automation</li><li>Tips for functional and technical consultants</li></ul><ul><a href='/blog/' style='display:inline-block;margin-top:1em;color:#2563eb;font-weight:600;'>See all blog posts &rarr;</a>"
   },
   {
     "id": "proj_touch",

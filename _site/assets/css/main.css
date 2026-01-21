@@ -1,3 +1,4 @@
+
 /* Company Experience Flex Layout */
 .company-flex-row {
   display: flex;
@@ -30,17 +31,19 @@
 }
 /* Page-specific header accent colors */
 body.home header { border-bottom-color: var(--accent-teal); }
-body.profile header { border-bottom-color: var(--accent-amber); }
+body.profile header { border-bottom-color: var(--accent-gold); }
 body.specializations header { border-bottom-color: var(--accent-blue); }
 body.speaker-gallery header { border-bottom-color: var(--accent-pink); }
 body.contact header { border-bottom-color: var(--accent-purple); }
 body.projects header { border-bottom-color: var(--accent-green, #43a047); }
+body.blog header { border-bottom-color: rgb(255, 153, 0); }
 
 /* Main Shared Styles - Premium Glassmorphism Theme */
 /* ================================================= */
 
 :root {
   /* Premium Color Palette */
+  --accent-gold: #facc15;
   --bg-dark: #0b0f1a;
   --bg-card: rgba(23, 33, 51, 0.7);
   --bg-sidebar: rgba(15, 23, 42, 0.9);
@@ -164,7 +167,7 @@ nav {
 }
 
 .nav-profile {
-  color: var(--accent-amber);
+  color: var(--accent-gold);
 }
 
 .nav-specializations {
@@ -177,6 +180,10 @@ nav {
 
 .nav-contact {
   color: var(--accent-purple);
+}
+
+.nav-blog {
+  color: rgb(255, 153, 0);
 }
 
 .nav-projects {
@@ -267,7 +274,7 @@ img {
   font-weight: 600;
 }
 .mobile-menu-panel a.nav-profile {
-  color: var(--accent-amber);
+  color: var(--accent-gold);
 }
 .mobile-menu-panel a.nav-specializations {
   color: var(--accent-blue);
