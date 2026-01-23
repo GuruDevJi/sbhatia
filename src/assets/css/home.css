@@ -108,3 +108,69 @@
         font-size: 2.5rem;
     }
 }
+
+/* Home Page Navigation Adjustments */
+/* Hide "Saurabh Bhatia" on home page for all devices */
+body.home header h1 {
+    display: none;
+}
+
+/* Option 1: Floating Glass Pill Navigation */
+body.home header {
+    background: transparent;
+    border-bottom: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    padding: 1.5rem 2rem;
+}
+
+@media (min-width: 901px) {
+    body.home header {
+        justify-content: center;
+    }
+
+    body.home .dock-nav {
+        background: rgba(23, 33, 51, 0.4);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 99px;
+        padding: 0.5rem 1.5rem;
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    }
+
+    body.home .dock-item {
+        width: auto;
+        min-width: 60px;
+        padding: 0 1rem;
+        gap: 12px;
+        transition: all 0.3s ease;
+    }
+
+    body.home .dock-item .dock-label {
+        opacity: 0.8;
+        max-width: 150px;
+        font-size: 1.1rem;
+    }
+
+    body.home .dock-item .dock-icon {
+        width: 24px;
+        height: 24px;
+        transform: scale(1);
+    }
+
+    /* Refined hover behavior for the pill design */
+    body.home .dock-item:hover {
+        transform: translateY(-2px);
+    }
+
+    body.home .dock-item:hover .dock-label,
+    body.home .dock-item.active .dock-label {
+        opacity: 1;
+        font-size: 1.1rem;
+    }
+
+    body.home .dock-item:hover .dock-icon {
+        transform: scale(1.15);
+    }
+}
