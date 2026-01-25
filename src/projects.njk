@@ -3,25 +3,59 @@ layout: base.njk
 title: Projects
 ---
 
-<h1>Projects</h1>
-<div class="projects-list">
-  {# Project list will be rendered here #}
-  {% for project in projects %}
-    <div class="project-item">
-      <button class="project-header" type="button" aria-expanded="false" aria-controls="project-details-{{ project.id }}">
-        <span class="project-title">{{ project.title }}</span>
-        <span class="project-arrow" aria-hidden="true">&#x25BC;</span>
+<div class="projects-container">
+  <div class="projects-header">
+    <h1>Featured Projects</h1>
+    <p class="projects-intro">A collection of my recent work, side projects, and technical experiments.</p>
+  </div>
+
+  <div class="projects-grid" id="projects-grid">
+    {% for project in projects %}
+      <article class="project-card" data-id="{{ project.id }}">
+        <div class="card-content">
+          <div class="project-header-row">
+            {% if project.status %}
+              <span class="project-status">{{ project.status }}</span>
+            {% endif %}
+            <h2 class="project-title">{{ project.title }}</h2>
+          </div>
+          
+          <div class="project-brief">
+            <p>{{ project.brief }}</p>
+          </div>
+        </div>
+
+        <div class="card-actions">
+          <button class="btn-details project-toggle" type="button" aria-expanded="false" aria-controls="details-{{ project.id }}">
+            <span>View Details</span>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+        </div>
+
+        {# Hidden details source #}
+        <div class="project-details-source" id="source-{{ project.id }}" hidden>
+           <div class="project-details-content">
+            {{ project.details | safe }}
+           </div>
+        </div>
+      </article>
+    {% endfor %}
+
+    {# Shared Details Drawer #}
+    <div class="details-drawer" id="details-drawer" aria-hidden="true">
+      <button class="drawer-close" aria-label="Close Details">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
       </button>
-      <div class="project-brief">
-        {{ project.brief }}
-      </div>
-      <div class="project-details" id="project-details-{{ project.id }}" hidden>
-        {{ project.details | safe }}
+      <div class="drawer-content" id="drawer-content">
+        <!-- Content injected via JS -->
       </div>
     </div>
-  {% endfor %}
+  </div>
 </div>
 
 <script>
-// Collapsible logic will be added in main.js
+  // Simple script in case main.js hasn't loaded yet or for specific page logic
+  // Real logic will be in main.js
 </script>

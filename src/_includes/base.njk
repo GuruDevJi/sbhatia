@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>{{ title }}</title>
   <link rel="stylesheet" href="/assets/css/main.css" />
+
+  <link rel="icon" type="image/png" href="/assets/images/sbavatarnbg.png" sizes="32x32">
   
   {% if title == "Home" %}
     <link rel="stylesheet" href="/assets/css/home.css" />
@@ -37,7 +39,7 @@
         <div class="brand-avatar">
           <img src="/assets/images/sbavatarnbg.png" alt="SB">
         </div>
-        <span class="brand-name full-name">{{ var.siteTitle }}</span>
+        <span class="brand-name full-name navbar-brand-text">{{ var.siteTitle }}</span>
         <span class="brand-name mobile-name">SB</span>
       </a>
     </div>
@@ -150,9 +152,21 @@
   </main>
 
   <footer>
-    <p>&copy; {{ var.currentYear }} {{ var.siteName }}</p>
+    
+  <!-- Leadership Quote of the Day (global) -->
+    {#
+    <div id="leadership-quote" class="quote-container-simple">
+      <div style="display:flex;align-items:center;gap:1rem;width:100%;margin-bottom:0.5rem;">
+        <blockquote id="quote-text" style="margin:0;padding:0;background:none;border:none;box-shadow:none;">
+          <span class="quote-loading">Fetching daily quote...</span>
+        </blockquote>
+      </div>
+    </div>
+    #}
+  <p style="font-size:0.95rem;font-style:italic;">&copy; {{ var.currentYear }} {{ var.siteName }}</p>
+  <footer>
+    
   </footer>
-
   <script src="/assets/js/main.js"></script>
 </body>
 </html>
