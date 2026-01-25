@@ -169,23 +169,146 @@ document.addEventListener("DOMContentLoaded", () => {
   // Initial check on page load
   updateActiveLink();
 
-  // Collapsible project list logic
-  const projectHeaders = document.querySelectorAll('.project-header');
-  projectHeaders.forEach(header => {
-    header.addEventListener('click', () => {
-      const expanded = header.getAttribute('aria-expanded') === 'true';
-      header.setAttribute('aria-expanded', !expanded);
-      const detailsId = header.getAttribute('aria-controls');
-      const details = document.getElementById(detailsId);
-      if (details) {
-        details.hidden = expanded;
+  // Detailed Drawer Logic (Row Expansion)
+  const projectGrid = document.getElementById('projects-grid');
+  const detailsDrawer = document.getElementById('details-drawer');
+  const drawerContent = document.getElementById('drawer-content');
+  const drawerCloseBtn = document.querySelector('.drawer-close');
+  const projectCards = Array.from(document.querySelectorAll('.project-card'));
+  const toggles = document.querySelectorAll('.project-toggle');
+
+  let currentActiveCard = null;
+
+  // Helper to find the last card in the same row as the reference card
+  function findRowEndCard(referenceCard) {
+    const refTop = referenceCard.offsetTop;
+    // Tolerance for sub-pixel rendering differences
+    const tolerance = 10;
+
+    // Start searching from the reference card index
+    const refIndex = projectCards.indexOf(referenceCard);
+
+    for (let i = refIndex + 1; i < projectCards.length; i++) {
+      const card = projectCards[i];
+      // If this card is significantly lower, the previous card was the last in the row
+      if (card.offsetTop > refTop + tolerance) {
+        return projectCards[i - 1];
       }
-      // Arrow icon toggle
-      const arrow = header.querySelector('.project-arrow');
-      if (arrow) {
-        arrow.innerHTML = expanded ? '&#x25BC;' : '&#x25B2;';
+    }
+
+    // If we reach here, the reference card is in the last row, so the very last card is the end
+    return projectCards[projectCards.length - 1];
+  }
+
+  function openDrawer(card) {
+    if (!detailsDrawer) return;
+
+    // 1. Get content
+    const cardId = card.getAttribute('data-id');
+    const source = document.getElementById(`source-${cardId}`);
+    if (source) {
+      drawerContent.innerHTML = source.innerHTML;
+    }
+
+    // 2. Position the drawer
+    const rowEndCard = findRowEndCard(card);
+
+    // Move drawer in DOM after the row-end card
+    // Check if it's already there to avoid unnecessary moves
+    if (detailsDrawer.previousElementSibling !== rowEndCard) {
+      rowEndCard.parentNode.insertBefore(detailsDrawer, rowEndCard.nextSibling);
+    }
+
+    // 3. Highlight active card
+    if (currentActiveCard) {
+      currentActiveCard.classList.remove('active-card');
+      const oldToggle = currentActiveCard.querySelector('.project-toggle');
+      if (oldToggle) {
+        oldToggle.setAttribute('aria-expanded', 'false');
+        oldToggle.querySelector('span').textContent = 'View Details';
+      }
+    }
+    card.classList.add('active-card');
+    currentActiveCard = card;
+
+    const newToggle = card.querySelector('.project-toggle');
+    if (newToggle) {
+      newToggle.setAttribute('aria-expanded', 'true');
+      newToggle.querySelector('span').textContent = 'Close Details';
+    }
+
+    // 4. Show drawer
+    detailsDrawer.removeAttribute('aria-hidden');
+    detailsDrawer.classList.add('open');
+    detailsDrawer.style.maxHeight = detailsDrawer.scrollHeight + "px";
+
+    // Scroll into view if needed (centering the card and drawer)
+    setTimeout(() => {
+      // Offset for sticky header (approx 80-100px) + some breathing room
+      const offset = card.offsetTop - 110;
+      window.scrollTo({ top: offset, behavior: 'smooth' });
+    }, 150);
+  }
+
+  function closeDrawer() {
+    if (!detailsDrawer) return;
+
+    detailsDrawer.classList.remove('open');
+    detailsDrawer.style.maxHeight = null;
+    detailsDrawer.setAttribute('aria-hidden', 'true');
+
+    if (currentActiveCard) {
+      currentActiveCard.classList.remove('active-card');
+      const toggle = currentActiveCard.querySelector('.project-toggle');
+      if (toggle) {
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.querySelector('span').textContent = 'View Details';
+      }
+      currentActiveCard = null;
+    }
+  }
+
+  // Event Listeners
+  toggles.forEach(toggle => {
+    toggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      const card = toggle.closest('.project-card');
+
+      // If clicking the already open card, close it
+      if (currentActiveCard === card) {
+        closeDrawer();
+      } else {
+        openDrawer(card);
       }
     });
+  });
+
+  if (drawerCloseBtn) {
+    drawerCloseBtn.addEventListener('click', closeDrawer);
+  }
+
+  // Handle Resize: Drawer might need to move if row layout changes
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      if (currentActiveCard && detailsDrawer.classList.contains('open')) {
+        // Re-calculate position
+        const rowEndCard = findRowEndCard(currentActiveCard);
+        if (detailsDrawer.previousElementSibling !== rowEndCard) {
+          // Move styling to hide jump?
+          detailsDrawer.style.transition = 'none';
+          rowEndCard.parentNode.insertBefore(detailsDrawer, rowEndCard.nextSibling);
+          // Force reflow
+          void detailsDrawer.offsetHeight;
+          detailsDrawer.style.transition = '';
+        }
+        // Re-adjust height if content wrapped
+        detailsDrawer.style.maxHeight = "none";
+        const newHeight = detailsDrawer.scrollHeight;
+        detailsDrawer.style.maxHeight = newHeight + "px";
+      }
+    }, 200);
   });
 
   // Mobile menu logic
@@ -211,6 +334,70 @@ document.addEventListener("DOMContentLoaded", () => {
         menuToggle.setAttribute('aria-expanded', 'false');
       }
     });
+  }
+});
+
+let currentDisplayedQuote = '';
+
+function showQuote(quote) {
+  const quoteText = document.getElementById('quote-text');
+  if (!quoteText) return;
+
+  const quoteToDisplay = (quote && quote !== 'No quote found.') ? quote : null;
+
+  // If no quote and no fallback is displayed yet, show fallback
+  if (!quoteToDisplay && !currentDisplayedQuote) {
+    const fallbackQuote = "Leadership is not about being in charge. It is about taking care of those in your charge.";
+    const fallbackAuthor = "Simon Sinek";
+    quoteText.innerHTML = '“' + fallbackQuote + '”' +
+      '<span class="quote-credit"> — <span>' + fallbackAuthor + '</span></span>';
+    quoteText.classList.add('loaded');
+    currentDisplayedQuote = fallbackQuote;
+    return;
+  }
+
+  // If quote hasn't changed, don't re-inject
+  if (quoteToDisplay === currentDisplayedQuote) return;
+
+  if (quoteToDisplay) {
+    quoteText.innerHTML = '“' + quoteToDisplay + '”' +
+      '<span class="quote-credit"> — <span>JQDb.org</span></span>';
+    quoteText.classList.add('loaded');
+    currentDisplayedQuote = quoteToDisplay;
+  }
+}
+
+function fetchLeadershipQuote() {
+  const cached = localStorage.getItem('leadershipQuote');
+
+  if (cached) {
+    showQuote(cached);
+  }
+
+  fetch('https://quote.sorob-bhatia.workers.dev/')
+    .then(response => {
+      if (!response.ok) throw new Error('Network response was not ok');
+      return response.text();
+    })
+    .then(text => {
+      const trimmedText = text?.trim();
+      if (trimmedText && trimmedText.length > 0) {
+        showQuote(trimmedText);
+        localStorage.setItem('leadershipQuote', trimmedText);
+      } else {
+        throw new Error('Empty response');
+      }
+    })
+    .catch(() => {
+      if (!currentDisplayedQuote) {
+        showQuote(null); // Triggers fallback
+      }
+    });
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  if (document.getElementById('leadership-quote')) {
+    fetchLeadershipQuote();
   }
 });
 

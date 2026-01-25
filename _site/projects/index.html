@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Projects</title>
   <link rel="stylesheet" href="/assets/css/main.css" />
+
+  <link rel="icon" type="image/png" href="/assets/images/sbavatarnbg.png" sizes="32x32">
   
   
     <link rel="stylesheet" href="/assets/css/projects.css" />
@@ -21,7 +23,7 @@
         <div class="brand-avatar">
           <img src="/assets/images/sbavatarnbg.png" alt="SB">
         </div>
-        <span class="brand-name full-name">Saurabh Bhatia</span>
+        <span class="brand-name full-name navbar-brand-text">Saurabh Bhatia</span>
         <span class="brand-name mobile-name">SB</span>
       </a>
     </div>
@@ -129,74 +131,187 @@
 
   <main>
     
-<h1>Projects</h1>
-<div class="projects-list">
-  
-  
-    <div class="project-item">
-      <button class="project-header" type="button" aria-expanded="false" aria-controls="project-details-proj_property">
-        <span class="project-title">Property Management Dashboard (Under Development)</span>
-        <span class="project-arrow" aria-hidden="true">&#x25BC;</span>
+<div class="projects-container">
+  <div class="projects-header">
+    <h1>Featured Projects</h1>
+    <p class="projects-intro">A collection of my recent work, side projects, and technical experiments.</p>
+  </div>
+
+  <div class="projects-grid" id="projects-grid">
+    
+      <article class="project-card" data-id="proj_n8n">
+        <div class="card-content">
+          <div class="project-header-row">
+            
+            <h2 class="project-title">Self-Hosted n8n Workflow Automation</h2>
+          </div>
+          
+          <div class="project-brief">
+            <p>A secure, self-hosted n8n instance for workflow automation, accessible remotely via Cloudflare Zero Trust Tunnels.</p>
+          </div>
+        </div>
+
+        <div class="card-actions">
+          <button class="btn-details project-toggle" type="button" aria-expanded="false" aria-controls="details-proj_n8n">
+            <span>View Details</span>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+        </div>
+
+        
+        <div class="project-details-source" id="source-proj_n8n" hidden>
+           <div class="project-details-content">
+            <strong>Overview:</strong> Deployed a self-hosted instance of n8n, a powerful workflow automation tool, to orchestrate custom automations and integrations without relying on third-party cloud limits.<br><br><strong>Key Components:</strong><br><ul style='margin:0.5em 0 0.5em 1.5em;'><li><strong>n8n Instance:</strong> Running in a Docker container for easy management and updates.</li><li><strong>Cloudflare Zero Trust:</strong> Implemented for secure remote access without exposing ports to the public internet.</li><li><strong>Cloudflare Tunnels (cloudflared):</strong> Used to create a secure outbound connection from the local server to the Cloudflare edge, bypassing complex firewall rules.</li><li><strong>DNS & CNAME:</strong> Configured updated namespaces and CNAME records in Cloudflare DNS to route traffic to the tunnel endpoint.</li></ul><br><strong>Why:</strong> To maintain full control over data privacy, reduce costs, and enable unlimited workflow executions while ensuring enterprise-grade security for remote access.
+           </div>
+        </div>
+      </article>
+    
+      <article class="project-card" data-id="proj_property">
+        <div class="card-content">
+          <div class="project-header-row">
+            
+            <h2 class="project-title">Property Management Dashboard (Under Development)</h2>
+          </div>
+          
+          <div class="project-brief">
+            <p>A modern dashboard for managing rental properties, tenants, and finances. Currently in development.</p>
+          </div>
+        </div>
+
+        <div class="card-actions">
+          <button class="btn-details project-toggle" type="button" aria-expanded="false" aria-controls="details-proj_property">
+            <span>View Details</span>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+        </div>
+
+        
+        <div class="project-details-source" id="source-proj_property" hidden>
+           <div class="project-details-content">
+            <strong>Status:</strong> Under active development.<br><br><strong>Purpose:</strong> Streamline property management tasks including lease tracking, rent collection, maintenance requests, and financial reporting.<br><br><strong>Planned Features:</strong> Multi-property support, tenant portal, automated reminders, analytics dashboard, secure document storage, and mobile-friendly design.<br><br><strong>Tech Stack:</strong> React, Node.js, MongoDB, REST API, authentication, cloud deployment.<br><br><strong>Why:</strong> To simplify and automate the day-to-day operations for property owners and managers, improving efficiency and transparency.
+           </div>
+        </div>
+      </article>
+    
+      <article class="project-card" data-id="proj0">
+        <div class="card-content">
+          <div class="project-header-row">
+            
+            <h2 class="project-title">Personal Portfolio Website (This Site)</h2>
+          </div>
+          
+          <div class="project-brief">
+            <p>A custom-coded personal portfolio site built from scratch to showcase my work, experience, and contact info.</p>
+          </div>
+        </div>
+
+        <div class="card-actions">
+          <button class="btn-details project-toggle" type="button" aria-expanded="false" aria-controls="details-proj0">
+            <span>View Details</span>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+        </div>
+
+        
+        <div class="project-details-source" id="source-proj0" hidden>
+           <div class="project-details-content">
+            <strong>Technology as an Enabler:</strong> My first personal portfolio website took several months to build and had a very basic, dated appearance, with limited features and little interactivity. In contrast, this current site was developed in just two days, thanks to modern tools and frameworks. Leveraging Eleventy, Nunjucks, and custom JavaScript, I was able to quickly implement a much more engaging and interactive experience.<br><br><strong>AI Vibe Coding:</strong> I used AI-powered vibe coding to develop this website, despite having minimal prior knowledge of JavaScript. This approach enabled rapid prototyping, troubleshooting, and feature implementation, making the development process highly efficient and accessible.<br><br><strong>Features:</strong> The site now includes a dynamic blog page, interactive map, embedded videos, a contact form powered by Formspree, and a responsive UI with sticky sidebar navigation and collapsible panels. These enhancements were made possible by the rapid evolution of web technologies, which have dramatically reduced development time and enabled richer user experiences.<br><br><strong>Tools Used:</strong> VS Code, Git, GitHub, Eleventy (11ty), Nunjucks, Formspree, custom CSS/JS.<br><br><strong>Architecture:</strong> Static site generated with Eleventy, modular Nunjucks templates, global JSON data for content, assets pipeline for CSS/JS/images, deployed via GitHub Pages.<br><br><strong>Why:</strong> I built this site to have full control over design, content, and workflow, using modern tools and best practices for maintainability and speed.<br><ul style='margin:0.5em 0 0.5em 1.5em;'><li>Set up a Cloudflare Worker as a serverless proxy to deliver leadership quotes to my website. Configured the Worker to include the Access-Control-Allow-Origin header in its responses, enabling secure cross-origin requests and fully resolving browser CORS issues for dynamic quote delivery.</li></ul>
+           </div>
+        </div>
+      </article>
+    
+      <article class="project-card" data-id="proj_blog">
+        <div class="card-content">
+          <div class="project-header-row">
+            
+            <h2 class="project-title">Blog: Oracle ERP/EPM SQL &amp; Technical</h2>
+          </div>
+          
+          <div class="project-brief">
+            <p>A curated collection of Oracle ERP/EPM SQL queries, technical notes, and solutions. Visit the blog page for the full archive.</p>
+          </div>
+        </div>
+
+        <div class="card-actions">
+          <button class="btn-details project-toggle" type="button" aria-expanded="false" aria-controls="details-proj_blog">
+            <span>View Details</span>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+        </div>
+
+        
+        <div class="project-details-source" id="source-proj_blog" hidden>
+           <div class="project-details-content">
+            <ul style='margin:0.5em 0 0.5em 1.5em;'><li>Step-by-step SQL query examples for Oracle Financials, EPM, and Cloud Apps</li><li>Technical deep-dives and troubleshooting guides</li><li>Best practices for reporting, integration, and automation</li><li>Tips for functional and technical consultants</li></ul><ul><a href='/blog/' style='display:inline-block;margin-top:1em;color:#2563eb;font-weight:600;'>See all blog posts &rarr;</a>
+           </div>
+        </div>
+      </article>
+    
+      <article class="project-card" data-id="proj_touch">
+        <div class="card-content">
+          <div class="project-header-row">
+            
+            <h2 class="project-title">Capacitive Touch Panel Project</h2>
+          </div>
+          
+          <div class="project-brief">
+            <p>A hardware and software project to design and prototype a custom capacitive touch interface.</p>
+          </div>
+        </div>
+
+        <div class="card-actions">
+          <button class="btn-details project-toggle" type="button" aria-expanded="false" aria-controls="details-proj_touch">
+            <span>View Details</span>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+        </div>
+
+        
+        <div class="project-details-source" id="source-proj_touch" hidden>
+           <div class="project-details-content">
+            <strong>Overview:</strong> Developed a multi-zone capacitive touch panel for interactive control surfaces.<br><br><strong>Tools & Technologies:</strong> Arduino, custom PCB design, capacitive sensing libraries, C/C++, 3D printing for enclosure, oscilloscope for signal analysis.<br><br><strong>Architecture:</strong> Hardware: custom PCB with multiple touch pads, microcontroller for signal processing, USB interface for PC connectivity.<br>Software: firmware for real-time touch detection, debounce logic, event mapping to user actions.<br><br><strong>Features:</strong> Multi-zone touch detection, adjustable sensitivity, plug-and-play USB interface, open-source firmware.<br><br><strong>Applications:</strong> Used for custom control panels, musical instruments, and interactive installations.
+           </div>
+        </div>
+      </article>
+    
+
+    
+    <div class="details-drawer" id="details-drawer" aria-hidden="true">
+      <button class="drawer-close" aria-label="Close Details">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
       </button>
-      <div class="project-brief">
-        A modern dashboard for managing rental properties, tenants, and finances. Currently in development.
-      </div>
-      <div class="project-details" id="project-details-proj_property" hidden>
-        <strong>Status:</strong> Under active development.<br><br><strong>Purpose:</strong> Streamline property management tasks including lease tracking, rent collection, maintenance requests, and financial reporting.<br><br><strong>Planned Features:</strong> Multi-property support, tenant portal, automated reminders, analytics dashboard, secure document storage, and mobile-friendly design.<br><br><strong>Tech Stack:</strong> React, Node.js, MongoDB, REST API, authentication, cloud deployment.<br><br><strong>Why:</strong> To simplify and automate the day-to-day operations for property owners and managers, improving efficiency and transparency.
+      <div class="drawer-content" id="drawer-content">
+        <!-- Content injected via JS -->
       </div>
     </div>
-  
-    <div class="project-item">
-      <button class="project-header" type="button" aria-expanded="false" aria-controls="project-details-proj0">
-        <span class="project-title">Personal Portfolio Website (This Site)</span>
-        <span class="project-arrow" aria-hidden="true">&#x25BC;</span>
-      </button>
-      <div class="project-brief">
-        A custom-coded personal portfolio site built from scratch to showcase my work, experience, and contact info.
-      </div>
-      <div class="project-details" id="project-details-proj0" hidden>
-        <strong>Technology as an Enabler:</strong> My first personal portfolio website took several months to build and had a very basic, dated appearance, with limited features and little interactivity. In contrast, this current site was developed in just two days, thanks to modern tools and frameworks. Leveraging Eleventy, Nunjucks, and custom JavaScript, I was able to quickly implement a much more engaging and interactive experience.<br><br><strong>AI Vibe Coding:</strong> I used AI-powered vibe coding to develop this website, despite having minimal prior knowledge of JavaScript. This approach enabled rapid prototyping, troubleshooting, and feature implementation, making the development process highly efficient and accessible.<br><br><strong>Features:</strong> The site now includes a dynamic blog page, interactive map, embedded videos, a contact form powered by Formspree, and a responsive UI with sticky sidebar navigation and collapsible panels. These enhancements were made possible by the rapid evolution of web technologies, which have dramatically reduced development time and enabled richer user experiences.<br><br><strong>Tools Used:</strong> VS Code, Git, GitHub, Eleventy (11ty), Nunjucks, Formspree, custom CSS/JS.<br><br><strong>Architecture:</strong> Static site generated with Eleventy, modular Nunjucks templates, global JSON data for content, assets pipeline for CSS/JS/images, deployed via GitHub Pages.<br><br><strong>Why:</strong> I built this site to have full control over design, content, and workflow, using modern tools and best practices for maintainability and speed.
-      </div>
-    </div>
-  
-    <div class="project-item">
-      <button class="project-header" type="button" aria-expanded="false" aria-controls="project-details-proj_blog">
-        <span class="project-title">Blog: Oracle ERP/EPM SQL &amp; Technical</span>
-        <span class="project-arrow" aria-hidden="true">&#x25BC;</span>
-      </button>
-      <div class="project-brief">
-        A curated collection of Oracle ERP/EPM SQL queries, technical notes, and solutions. Visit the blog page for the full archive.
-      </div>
-      <div class="project-details" id="project-details-proj_blog" hidden>
-        <ul style='margin:0.5em 0 0.5em 1.5em;'><li>Step-by-step SQL query examples for Oracle Financials, EPM, and Cloud Apps</li><li>Technical deep-dives and troubleshooting guides</li><li>Best practices for reporting, integration, and automation</li><li>Tips for functional and technical consultants</li></ul><ul><a href='/blog/' style='display:inline-block;margin-top:1em;color:#2563eb;font-weight:600;'>See all blog posts &rarr;</a>
-      </div>
-    </div>
-  
-    <div class="project-item">
-      <button class="project-header" type="button" aria-expanded="false" aria-controls="project-details-proj_touch">
-        <span class="project-title">Capacitive Touch Panel Project</span>
-        <span class="project-arrow" aria-hidden="true">&#x25BC;</span>
-      </button>
-      <div class="project-brief">
-        A hardware and software project to design and prototype a custom capacitive touch interface.
-      </div>
-      <div class="project-details" id="project-details-proj_touch" hidden>
-        <strong>Overview:</strong> Developed a multi-zone capacitive touch panel for interactive control surfaces.<br><br><strong>Tools & Technologies:</strong> Arduino, custom PCB design, capacitive sensing libraries, C/C++, 3D printing for enclosure, oscilloscope for signal analysis.<br><br><strong>Architecture:</strong> Hardware: custom PCB with multiple touch pads, microcontroller for signal processing, USB interface for PC connectivity.<br>Software: firmware for real-time touch detection, debounce logic, event mapping to user actions.<br><br><strong>Features:</strong> Multi-zone touch detection, adjustable sensitivity, plug-and-play USB interface, open-source firmware.<br><br><strong>Applications:</strong> Used for custom control panels, musical instruments, and interactive installations.
-      </div>
-    </div>
-  
+  </div>
 </div>
 
 <script>
-// Collapsible logic will be added in main.js
+  // Simple script in case main.js hasn't loaded yet or for specific page logic
+  // Real logic will be in main.js
 </script>
 
   </main>
 
   <footer>
-    <p>&copy; 2026 Saurabh Bhatia</p>
+    
+  <!-- Leadership Quote of the Day (global) -->
+    
+  <p style="font-size:0.95rem;font-style:italic;">&copy; 2026 Saurabh Bhatia</p>
+  <footer>
+    
   </footer>
-
   <script src="/assets/js/main.js"></script>
 </body>
 </html>

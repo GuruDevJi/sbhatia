@@ -1,3 +1,21 @@
+/* Navbar text glow and enlarge on hover */
+.navbar-brand-text {
+  display: inline-block;
+  transition: color 0.2s, text-shadow 0.2s, transform 0.2s;
+}
+
+.navbar-brand-text:hover {
+  color: #14b8a5ab;
+  text-shadow: 0 0 2px #00eaff6e, 0 0 4px #00eaff7b;
+  transform: scale(1.07);
+}
+/* Remove border and box-shadow from marquee icons on home page */
+.trusted-marquee .marquee-item img,
+.trusted-marquee .marquee-item svg {
+  border: none;
+  box-shadow: none ;
+  background: none;
+}
 /* Prevent active tab from expanding width on hover */
 .dock-item.active:hover {
   width: inherit !important;
@@ -184,8 +202,8 @@ header {
 }
 
 .brand-avatar {
-  width: 32px;
-  height: 32px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   overflow: hidden;
   background: var(--bg-dark);

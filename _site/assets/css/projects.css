@@ -1,78 +1,294 @@
 /* Projects Page Styles */
-.projects-list {
+
+/* Main Container */
+.projects-container {
   max-width: 1400px;
-  margin: 2rem auto;
-  padding: 0;
-}
-.project-item {
-  border-radius: 8px;
-  background: #23272f;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
-  margin-bottom: 1.5rem;
-  overflow: hidden;
-  transition: box-shadow 0.2s;
-}
-.project-item:focus-within,
-.project-item:hover {
-  box-shadow: 0 4px 16px rgba(0,0,0,0.32);
-}
-.project-header {
-  width: 100%;
-  text-align: left;
-  background: #144d26;
-  border: none;
-  font-size: 1.2rem;
-  font-weight: 600;
-  padding: 1rem 1.5rem;
-  cursor: pointer;
-  outline: none;
-  transition: background 0.2s;
-  color: #e3f9e5;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.project-title {
-  flex: 1;
-  text-align: left;
-}
-.project-arrow {
-  flex: 0 0 auto;
-  margin-left: 1rem;
-  font-size: 1.3em;
-  color: #e3f9e5;
-  transition: color 0.2s;
-}
-.project-header[aria-expanded="true"] {
-  background: #2e7d32;
-  color: #fff;
-}
-.project-brief {
-  padding: 0 1.5rem 1rem 1.5rem;
-  color: #b0b8c1;
-  font-size: 1rem;
-}
-.project-details {
-  padding: 1rem 1.5rem;
-  border-top: 1px solid #333a45;
-  background: #181a20;
-  color: #e3f9e5;
-  font-size: 0.98rem;
-  animation: fadeIn 0.3s;
-}
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
 }
 
-/* Projects nav link color */
-body.projects header { border-bottom-color: var(--accent-green, #43a047); }
+.projects-header {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.projects-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #43a047;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 20px rgba(67, 160, 71, 0.3);
+}
+
+.projects-intro {
+  color: #b0b8c1;
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Standard Grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  /* The bridge depends on this exact gap */
+  align-items: start;
+}
+
+/* Project Card */
+.project-card {
+  width: 100%;
+  background: #1e2026;
+  /* Solid background needed for seamless bridge, keeping it dark */
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(67, 160, 71, 0.2);
+  border-radius: 12px;
+  overflow: visible;
+  /* Needed for the bridge to stick out */
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  height: 100%;
+}
+
+/* Active Card State - Top part of the connection */
+.project-card.active-card {
+  border: 2px solid #43a047;
+  border-bottom: none;
+  /* Open bottom */
+  border-radius: 12px 12px 0 0;
+  /* Square bottom */
+  background: #1e2026;
+  box-shadow: none;
+  z-index: 10;
+  /* Above drawer */
+  transform: translateY(0) !important;
+  /* Prevent hover move */
+}
+
+/* The Bridge (Connecting Lines) */
+.project-card.active-card::after {
+  content: '';
+  position: absolute;
+  /* Position: right below the card */
+  bottom: -2rem;
+  /* Must match the grid gap */
+  left: -2px;
+  /* Compensate for 2px border */
+  right: -2px;
+  height: 2rem;
+  background: #1e2026;
+  /* Same as card */
+  border-left: 2px solid #43a047;
+  border-right: 2px solid #43a047;
+  z-index: 10;
+}
+
+/* Details Drawer - Bottom part of the connection */
+.details-drawer {
+  grid-column: 1 / -1;
+  background: #1e2026;
+  margin: 0;
+  /* Remove margin so it sits right at the grid line */
+  border-radius: 12px;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+  border: 2px solid #43a047;
+  position: relative;
+  /* To allow the bridge to cover the top border, we need standard z-index */
+  z-index: 5;
+}
+
+.details-drawer.open {
+  /* No margin top, so it touches the bottom of the grid row (gap space) */
+  margin-top: 0;
+  margin-bottom: 2rem;
+  opacity: 1;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.drawer-content {
+  padding: 2rem;
+}
+
+/* Close button in drawer */
+.drawer-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: #fff;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.drawer-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(67, 160, 71, 0.1);
+  border-color: rgba(67, 160, 71, 0.4);
+}
+
+/* Card Content */
+.card-content {
+  padding: 1rem 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-title {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 0.25rem;
+  line-height: 1.3;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.project-brief {
+  color: #a0aec0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+  flex-grow: 1;
+}
+
+/* Status Indicator */
+.project-status {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.75rem;
+  padding: 0.15rem 0.6rem;
+  border-radius: 9999px;
+  background: rgba(67, 160, 71, 0.1);
+  color: #66bb6a;
+  border: 1px solid rgba(67, 160, 71, 0.2);
+  margin-bottom: 0.25rem;
+}
+
+/* Card Actions */
+.card-actions {
+  padding: 0.5rem 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-details {
+  background: transparent;
+  color: #66bb6a;
+  border: 1px solid rgba(67, 160, 71, 0.3);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-details:hover {
+  background: rgba(67, 160, 71, 0.1);
+  border-color: #66bb6a;
+  color: #fff;
+}
+
+.btn-details svg {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.3s;
+}
+
+.btn-details[aria-expanded="true"] svg {
+  transform: rotate(180deg);
+}
+
+.btn-details[aria-expanded="true"] {
+  background: rgba(67, 160, 71, 0.15);
+  color: #fff;
+}
+
+/* Expanded Details Section */
+.project-details {
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out, opacity 0.3s;
+  background: rgba(20, 20, 20, 0.5);
+  border-top: 0px solid rgba(255, 255, 255, 0.05);
+  opacity: 0;
+}
+
+.project-details.expanded {
+  padding: 1.5rem;
+  border-top-width: 1px;
+  opacity: 1;
+  /* max-height is set via JS for smooth animation */
+}
+
+/* Proj Details Content Styling */
+.project-details-content {
+  color: #cbd5e0;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.project-details-content strong {
+  color: #e3f9e5;
+}
+
+.project-details-content ul {
+  padding-left: 1.25rem;
+  margin: 0.75rem 0;
+}
+
+.project-details-content li {
+  margin-bottom: 0.5rem;
+}
+
+/* Nav Link Active State (Shared) */
+body.projects header {
+  border-bottom-color: var(--accent-green, #43a047);
+}
+
 .nav-link.nav-projects {
   color: var(--accent-green, #43a047);
   transition: color 0.2s;
 }
+
 .nav-link.nav-projects.active,
 body.projects .nav-link.nav-projects {
   color: var(--accent-green, #388e3c);
 }
 
+/* Mobile Responsive */
+@media (max-width: 600px) {
+  .projects-header h1 {
+    font-size: 2rem;
+  }
+
+  /* On mobile, grid is naturally 1 column due to auto-fit minmax, 
+     but we can enforce it if needed. 
+     The expanded card logic works the same (1/-1 spans 1 column). */
+}
