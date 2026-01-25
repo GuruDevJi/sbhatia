@@ -9,13 +9,15 @@
   text-shadow: 0 0 2px #00eaff6e, 0 0 4px #00eaff7b;
   transform: scale(1.07);
 }
+
 /* Remove border and box-shadow from marquee icons on home page */
 .trusted-marquee .marquee-item img,
 .trusted-marquee .marquee-item svg {
   border: none;
-  box-shadow: none ;
+  box-shadow: none;
   background: none;
 }
+
 /* Prevent active tab from expanding width on hover */
 .dock-item.active:hover {
   width: inherit !important;
@@ -84,7 +86,7 @@ body.contact header {
   border-bottom-color: var(--accent-purple);
 }
 
-body.projects header {
+body.labs header {
   border-bottom-color: var(--accent-green, #43a047);
 }
 
@@ -163,7 +165,7 @@ header {
   backdrop-filter: var(--glass-blur);
   -webkit-backdrop-filter: var(--glass-blur);
   border-bottom: 1px solid var(--glass-border);
-  padding: 1rem 2rem;
+  padding: 0.6rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -260,7 +262,7 @@ nav {
   display: flex;
   align-items: center;
   gap: 0;
-  padding: 0.5rem;
+  padding: 0.35rem;
 }
 
 /* Sub-page Persistent Pill Styling */
@@ -281,8 +283,8 @@ nav {
   align-items: center;
   justify-content: center;
   padding: 0;
-  width: 68px;
-  height: 56px;
+  width: 60px;
+  height: 50px;
   border-radius: 14px;
   text-decoration: none;
   color: var(--text-secondary);
@@ -300,16 +302,16 @@ nav {
 /* Sub-page Icon-only state */
 @media (min-width: 901px) {
   body:not(.home) .dock-item {
-    width: 60px;
-    height: 48px;
+    width: 54px;
+    height: 43px;
     border-radius: 99px;
   }
 }
 
 .dock-icon {
-  width: 28px;
-  height: 28px;
-  min-width: 28px;
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
   flex-shrink: 0;
   stroke-width: 2;
   transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -319,7 +321,7 @@ nav {
 
 .dock-label {
   font-family: var(--font-body);
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 500;
   white-space: nowrap;
   opacity: 0;
@@ -351,7 +353,7 @@ nav {
   max-width: 170px;
   margin-left: 12px;
   text-shadow: 0 0 15px currentColor;
-  font-size: 1.375rem;
+  font-size: 1.2rem;
 }
 
 /* Active State - Always expanded with text */
@@ -416,9 +418,10 @@ nav {
   color: var(--accent-pink);
 }
 
-.dock-item[data-page="projects"] {
-  color: var(--accent-green);
+.dock-item[data-page="labs"] {
+  color: #43a047;
 }
+
 
 .dock-item[data-page="blog"] {
   color: rgb(255, 153, 0);
@@ -470,8 +473,9 @@ nav {
   color: rgb(255, 153, 0);
 }
 
-.nav-projects {
-  color: var(--accent-green);
+.nav-labs {
+  color: #43a047;
+  /* Explicit green to match Labs content */
 }
 
 /*
@@ -611,8 +615,8 @@ img {
   color: var(--accent-pink);
 }
 
-.mobile-menu-panel a.nav-projects {
-  color: var(--accent-green);
+.mobile-menu-panel a.nav-labs {
+  color: #43a047;
 }
 
 .mobile-menu-panel a.nav-blog {

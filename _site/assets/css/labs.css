@@ -1,3 +1,29 @@
+/* Matrix Background Styles */
+.matrix-bg-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+}
+#matrix-bg {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  background: #000;
+  opacity: 0.7;
+}
+
+.projects-container {
+  position: relative;
+  z-index: 1;
+}
 /* Projects Page Styles */
 
 /* Main Container */
@@ -37,11 +63,34 @@
 }
 
 /* Project Card */
+/* Green ribbon bar for active card */
+.card-ribbon {
+  width: 100%;
+  height: 30px;
+  background: linear-gradient(90deg, #43a047 0%, #66bb6a 100%);
+
+  margin: 0;
+  position: absolute;
+  left: 0;
+  bottom: -30px;
+  z-index: 12;
+  box-shadow: 0 2px 8px rgba(67,160,71,0.12);
+  display: none;
+}
+/* Project Card with Matrix Background */
 .project-card {
   width: 100%;
-  background: #1e2026;
-  /* Solid background needed for seamless bridge, keeping it dark */
-  backdrop-filter: blur(10px);
+  background-color: #0d1117;
+  /* Dark base */
+  /* Matrix Rain Effect using a subtle repeating gradient pattern */
+  background-image:
+    linear-gradient(rgba(13, 17, 23, 0.92), rgba(13, 17, 23, 0.98)),
+    /* Dark overlay */
+    url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='5' y='10' fill='%232e7d32' font-family='monospace' font-size='10' opacity='0.2'%3E1%3C/text%3E%3Ctext x='25' y='10' fill='%232e7d32' font-family='monospace' font-size='10' opacity='0.3'%3E0%3C/text%3E%3Ctext x='15' y='25' fill='%232e7d32' font-family='monospace' font-size='10' opacity='0.2'%3E0%3C/text%3E%3Ctext x='35' y='25' fill='%232e7d32' font-family='monospace' font-size='10' opacity='0.3'%3E1%3C/text%3E%3Ctext x='5' y='35' fill='%232e7d32' font-family='monospace' font-size='10' opacity='0.2'%3E1%3C/text%3E%3Ctext x='25' y='35' fill='%232e7d32' font-family='monospace' font-size='10' opacity='0.3'%3E0%3C/text%3E%3C/svg%3E");
+  background-size: cover, 120px 120px;
+  /* Resize the pattern */
+
+  backdrop-filter: blur(4px);
   border: 1px solid rgba(67, 160, 71, 0.2);
   border-radius: 12px;
   overflow: visible;
@@ -58,58 +107,59 @@
 .project-card.active-card {
   border: 2px solid #43a047;
   border-bottom: none;
-  /* Open bottom */
   border-radius: 12px 12px 0 0;
-  /* Square bottom */
   background: #1e2026;
-  box-shadow: none;
-  z-index: 10;
-  /* Above drawer */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+  z-index: 11;
   transform: translateY(0) !important;
-  /* Prevent hover move */
 }
 
 /* The Bridge (Connecting Lines) */
-.project-card.active-card::after {
-  content: '';
-  position: absolute;
-  /* Position: right below the card */
-  bottom: -2rem;
-  /* Must match the grid gap */
-  left: -2px;
-  /* Compensate for 2px border */
-  right: -2px;
-  height: 2rem;
-  background: #1e2026;
-  /* Same as card */
-  border-left: 2px solid #43a047;
-  border-right: 2px solid #43a047;
-  z-index: 10;
-}
+
 
 /* Details Drawer - Bottom part of the connection */
+/* Green ribbon bar for details drawer */
+.drawer-ribbon {
+  width: 100%;
+  height: 10px;
+  background: linear-gradient(90deg, #43a047 0%, #66bb6a 100%);
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  margin: 0;
+  position: absolute;
+  left: 0;
+  top: -10px;
+  z-index: 12;
+  box-shadow: 0 -2px 8px rgba(67,160,71,0.12);
+}
+
 .details-drawer {
   grid-column: 1 / -1;
   background: #1e2026;
   margin: 0;
-  /* Remove margin so it sits right at the grid line */
-  border-radius: 12px;
+  border-radius: 0 0 12px 12px;
   overflow: hidden;
   max-height: 0;
   opacity: 0;
-  transition: max-height 0.4s ease, opacity 0.3s ease;
+  transition: max-height 0.4s, opacity 0.3s, border-radius 0.3s;
   border: 2px solid #43a047;
+  border-top: 2px solid #43a047;
   position: relative;
-  /* To allow the bridge to cover the top border, we need standard z-index */
-  z-index: 5;
+  z-index: 10;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+  /* Remove gap between card and drawer */
+  top: -2px;
 }
 
 .details-drawer.open {
-  /* No margin top, so it touches the bottom of the grid row (gap space) */
   margin-top: 0;
   margin-bottom: 2rem;
   opacity: 1;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  max-height: 800px;
+  border-radius: 0 0 12px 12px;
+  background: #1e2026;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+  top: -2px;
 }
 
 .drawer-content {

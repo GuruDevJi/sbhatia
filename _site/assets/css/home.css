@@ -25,6 +25,8 @@
 .trusted-marquee {
     overflow: hidden;
     margin-bottom: 0.5rem;
+    border-bottom: 1px solid #14b8a591;
+    padding-bottom: 1rem;
 }
 
 .trusted-marquee p {
