@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Labs</title>
+  <link rel="stylesheet" href="/assets/css/main.css" />
+
+  <link rel="icon" type="image/png" href="/assets/images/sbavatarnbg.png" sizes="32x32">
+  
+  
+    <link rel="stylesheet" href="/assets/css/labs.css" />
+  
+</head>
+<body
+  class="labs"
+  
+>
+  <header>
+    
+    <div class="logo-pill">
+      <a href="/" class="brand-link">
+        <div class="brand-avatar">
+          <img src="/assets/images/sbavatarnbg.png" alt="SB">
+        </div>
+        <span class="brand-name full-name navbar-brand-text">Saurabh Bhatia</span>
+        <span class="brand-name mobile-name">SB</span>
+      </a>
+    </div>
+    
+    <nav>
+      <button class="menu-toggle" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false">
+        <span class="menu-icon">&#9776;</span>
+      </button>
+      <div class="dock-nav">
+          <a href="/profile/" class="dock-item" data-page="profile">
+            <svg class="dock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            <span class="dock-label">Profile</span>
+          </a>
+          <a href="/specializations/" class="dock-item" data-page="specializations">
+            <svg class="dock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+            </svg>
+            <span class="dock-label">Specializations</span>
+          </a>
+          <a href="/speaker-gallery/" class="dock-item" data-page="speaker-gallery">
+            <svg class="dock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path>
+              <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+              <line x1="12" y1="19" x2="12" y2="22"></line>
+            </svg>
+            <span class="dock-label">Speaker Gallery</span>
+          </a>
+          <a href="/labs/" class="dock-item nav-labs" data-page="labs" aria-label="Labs">
+        <svg class="dock-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2" />
+          <line x1="10" y1="2" x2="14" y2="2" />
+        </svg>
+        <span class="dock-label">Labs</span>
+      </a>
+          <a href="/blog/" class="dock-item" data-page="blog">
+            <svg class="dock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+              <polyline points="10 9 9 9 8 9"></polyline>
+            </svg>
+            <span class="dock-label">Blog</span>
+          </a>
+          <a href="/contact/" class="dock-item" data-page="contact">
+            <svg class="dock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            <span class="dock-label">Contact</span>
+          </a>
+      </div>
+      <div id="mobile-menu" class="mobile-menu-panel" hidden>
+        <a href="/profile/" class="nav-link nav-profile">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          <span>Profile</span>
+        </a>
+        <a href="/specializations/" class="nav-link nav-specializations">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+          </svg>
+          <span>Specializations</span>
+        </a>
+        <a href="/speaker-gallery/" class="nav-link nav-speaker">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path>
+            <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+            <line x1="12" y1="19" x2="12" y2="22"></line>
+          </svg>
+          <span>Speaker Gallery</span>
+        </a>
+        <a href="/labs/" class="nav-link nav-labs">
+          <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2" />
+            <line x1="10" y1="2" x2="14" y2="2" />
+          </svg>
+          <span>Labs</span>
+        </a>
+        <a href="/blog/" class="nav-link nav-blog">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+          </svg>
+          <span>Blog</span>
+        </a>
+        <a href="/contact/" class="nav-link nav-contact">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+          <span>Contact</span>
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    
+<div class="matrix-bg-container">
+  <canvas id="matrix-bg"></canvas>
+</div>
+<div class="projects-container">
+  <div class="projects-header">
+    <h1>Labs</h1>
+    <p class="projects-intro">A collection of my recent work, research, and technical experiments.</p>
+  </div>
+
+  <div class="projects-grid" id="labs-grid">
+    
+      <article class="project-card" data-id="proj_n8n">
+        <div class="card-content">
+          <div class="project-header-row">
+            
+            <h2 class="project-title">Self-Hosted n8n Workflow Automation</h2>
+          </div>
+          
+          <div class="project-brief">
+            <p>A secure, self-hosted n8n instance for workflow automation, accessible remotely via Cloudflare Zero Trust Tunnels.</p>
+          </div>
+        </div>
+
+          
+          <div class="card-ribbon" style="display:none;"></div>
+
+        <div class="card-actions">
+          <button class="btn-details project-toggle" type="button" aria-expanded="false" aria-controls="details-proj_n8n">
+            <span>View Details</span>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+        </div>
+
+        
+        <div class="project-details-source" id="source-proj_n8n" hidden>
+           <div class="project-details-content">
+            <strong>Overview:</strong> Deployed a self-hosted instance of n8n, a powerful workflow automation tool, to orchestrate custom automations and integrations without relying on third-party cloud limits.<br><br><strong>Key Components:</strong><br><ul style='margin:0.5em 0 0.5em 1.5em;'><li><strong>n8n Instance:</strong> Running in a Docker container for easy management and updates.</li><li><strong>Cloudflare Zero Trust:</strong> Implemented for secure remote access without exposing ports to the public internet.</li><li><strong>Cloudflare Tunnels (cloudflared):</strong> Used to create a secure outbound connection from the local server to the Cloudflare edge, bypassing complex firewall rules.</li><li><strong>DNS & CNAME:</strong> Configured updated namespaces and CNAME records in Cloudflare DNS to route traffic to the tunnel endpoint.</li></ul><br><strong>Why:</strong> To maintain full control over data privacy, reduce costs, and enable unlimited workflow executions while ensuring enterprise-grade security for remote access.
+           </div>
+        </div>
+      </article>
+    
+      <article class="project-card" data-id="proj_property">
+        <div class="card-content">
+          <div class="project-header-row">
+            
+            <h2 class="project-title">Property Management Dashboard (Under Development)</h2>
+          </div>
+          
+          <div class="project-brief">
+            <p>A modern dashboard for managing rental properties, tenants, and finances. Currently in development.</p>
+          </div>
+        </div>
+
+          
+          <div class="card-ribbon" style="display:none;"></div>
+
+        <div class="card-actions">
+          <button class="btn-details project-toggle" type="button" aria-expanded="false" aria-controls="details-proj_property">
+            <span>View Details</span>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+        </div>
+
+        
+        <div class="project-details-source" id="source-proj_property" hidden>
+           <div class="project-details-content">
+            <strong>Status:</strong> Under active development.<br><br><strong>Purpose:</strong> Streamline property management tasks including lease tracking, rent collection, maintenance requests, and financial reporting.<br><br><strong>Planned Features:</strong> Multi-property support, tenant portal, automated reminders, analytics dashboard, secure document storage, and mobile-friendly design.<br><br><strong>Tech Stack:</strong> React, Node.js, MongoDB, REST API, authentication, cloud deployment.<br><br><strong>Why:</strong> To simplify and automate the day-to-day operations for property owners and managers, improving efficiency and transparency.
+           </div>
+        </div>
+      </article>
+    
+      <article class="project-card" data-id="proj0">
+        <div class="card-content">
+          <div class="project-header-row">
+            
+            <h2 class="project-title">Personal Portfolio Website (This Site)</h2>
+          </div>
+          
+          <div class="project-brief">
+            <p>A custom-coded personal portfolio site built from scratch to showcase my work, experience, and contact info.</p>
+          </div>
+        </div>
+
+          
+          <div class="card-ribbon" style="display:none;"></div>
+
+        <div class="card-actions">
+          <button class="btn-details project-toggle" type="button" aria-expanded="false" aria-controls="details-proj0">
+            <span>View Details</span>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+        </div>
+
+        
+        <div class="project-details-source" id="source-proj0" hidden>
+           <div class="project-details-content">
+            <strong>Technology as an Enabler:</strong> My first personal portfolio website took several months to build and had a very basic, dated appearance, with limited features and little interactivity. In contrast, this current site was developed in just two days, thanks to modern tools and frameworks. Leveraging Eleventy, Nunjucks, and custom JavaScript, I was able to quickly implement a much more engaging and interactive experience.<br><br><strong>AI Vibe Coding:</strong> I used AI-powered vibe coding to develop this website, despite having minimal prior knowledge of JavaScript. This approach enabled rapid prototyping, troubleshooting, and feature implementation, making the development process highly efficient and accessible.<br><br><strong>Features:</strong> The site now includes a dynamic blog page, interactive map, embedded videos, a contact form powered by Formspree, and a responsive UI with sticky sidebar navigation and collapsible panels. These enhancements were made possible by the rapid evolution of web technologies, which have dramatically reduced development time and enabled richer user experiences.<br><br><strong>Tools Used:</strong> VS Code, Git, GitHub, Eleventy (11ty), Nunjucks, Formspree, custom CSS/JS.<br><br><strong>Architecture:</strong> Static site generated with Eleventy, modular Nunjucks templates, global JSON data for content, assets pipeline for CSS/JS/images, deployed via GitHub Pages.<br><br><strong>Why:</strong> I built this site to have full control over design, content, and workflow, using modern tools and best practices for maintainability and speed.<br><ul style='margin:0.5em 0 0.5em 1.5em;'><li>Set up a Cloudflare Worker as a serverless proxy to deliver leadership quotes to my website. Configured the Worker to include the Access-Control-Allow-Origin header in its responses, enabling secure cross-origin requests and fully resolving browser CORS issues for dynamic quote delivery.</li></ul>
+           </div>
+        </div>
+      </article>
+    
+      <article class="project-card" data-id="proj_blog">
+        <div class="card-content">
+          <div class="project-header-row">
+            
+            <h2 class="project-title">Blog: Oracle ERP/EPM SQL &amp; Technical</h2>
+          </div>
+          
+          <div class="project-brief">
+            <p>A curated collection of Oracle ERP/EPM SQL queries, technical notes, and solutions. Visit the blog page for the full archive.</p>
+          </div>
+        </div>
+
+          
+          <div class="card-ribbon" style="display:none;"></div>
+
+        <div class="card-actions">
+          <button class="btn-details project-toggle" type="button" aria-expanded="false" aria-controls="details-proj_blog">
+            <span>View Details</span>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+        </div>
+
+        
+        <div class="project-details-source" id="source-proj_blog" hidden>
+           <div class="project-details-content">
+            <ul style='margin:0.5em 0 0.5em 1.5em;'><li>Step-by-step SQL query examples for Oracle Financials, EPM, and Cloud Apps</li><li>Technical deep-dives and troubleshooting guides</li><li>Best practices for reporting, integration, and automation</li><li>Tips for functional and technical consultants</li></ul><ul><a href='/blog/' style='display:inline-block;margin-top:1em;color:#2563eb;font-weight:600;'>See all blog posts &rarr;</a>
+           </div>
+        </div>
+      </article>
+    
+      <article class="project-card" data-id="proj_touch">
+        <div class="card-content">
+          <div class="project-header-row">
+            
+            <h2 class="project-title">Capacitive Touch Panel Project</h2>
+          </div>
+          
+          <div class="project-brief">
+            <p>A hardware and software project to design and prototype a custom capacitive touch interface.</p>
+          </div>
+        </div>
+
+          
+          <div class="card-ribbon" style="display:none;"></div>
+
+        <div class="card-actions">
+          <button class="btn-details project-toggle" type="button" aria-expanded="false" aria-controls="details-proj_touch">
+            <span>View Details</span>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+        </div>
+
+        
+        <div class="project-details-source" id="source-proj_touch" hidden>
+           <div class="project-details-content">
+            <strong>Overview:</strong> Developed a multi-zone capacitive touch panel for interactive control surfaces.<br><br><strong>Tools & Technologies:</strong> Arduino, custom PCB design, capacitive sensing libraries, C/C++, 3D printing for enclosure, oscilloscope for signal analysis.<br><br><strong>Architecture:</strong> Hardware: custom PCB with multiple touch pads, microcontroller for signal processing, USB interface for PC connectivity.<br>Software: firmware for real-time touch detection, debounce logic, event mapping to user actions.<br><br><strong>Features:</strong> Multi-zone touch detection, adjustable sensitivity, plug-and-play USB interface, open-source firmware.<br><br><strong>Applications:</strong> Used for custom control panels, musical instruments, and interactive installations.
+           </div>
+        </div>
+      </article>
+    
+
+    
+    <div class="details-drawer" id="details-drawer" aria-hidden="true">
+        <div class="drawer-ribbon"></div>
+      <button class="drawer-close" aria-label="Close Details">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      <div class="drawer-content" id="drawer-content">
+        <!-- Content injected via JS -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Simple script in case main.js hasn't loaded yet or for specific page logic
+  // Real logic will be in main.js
+</script>
+
+  </main>
+
+  <footer>
+    
+  <!-- Leadership Quote of the Day (global) -->
+    
+  <p style="font-size:0.95rem;font-style:italic;">&copy; 2026 Saurabh Bhatia</p>
+  <footer>
+    
+  </footer>
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>

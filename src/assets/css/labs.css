@@ -1,0 +1,344 @@
+/* Matrix Background Styles */
+.matrix-bg-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+}
+#matrix-bg {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  background: #000;
+  opacity: 0.7;
+}
+
+.projects-container {
+  position: relative;
+  z-index: 1;
+}
+/* Projects Page Styles */
+
+/* Main Container */
+.projects-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.projects-header {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.projects-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #43a047;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 20px rgba(67, 160, 71, 0.3);
+}
+
+.projects-intro {
+  color: #b0b8c1;
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Standard Grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  /* The bridge depends on this exact gap */
+  align-items: start;
+}
+
+/* Project Card */
+/* Green ribbon bar for active card */
+.card-ribbon {
+  width: 100%;
+  height: 30px;
+  background: linear-gradient(90deg, #43a047 0%, #66bb6a 100%);
+
+  margin: 0;
+  position: absolute;
+  left: 0;
+  bottom: -30px;
+  z-index: 12;
+  box-shadow: 0 2px 8px rgba(67,160,71,0.12);
+  display: none;
+}
+/* Project Card with Matrix Background */
+.project-card {
+  width: 100%;
+  background-color: #0d1117;
+  /* Dark base */
+  /* Matrix Rain Effect using a subtle repeating gradient pattern */
+  background-image:
+    linear-gradient(rgba(13, 17, 23, 0.92), rgba(13, 17, 23, 0.98)),
+    /* Dark overlay */
+    url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='5' y='10' fill='%232e7d32' font-family='monospace' font-size='10' opacity='0.2'%3E1%3C/text%3E%3Ctext x='25' y='10' fill='%232e7d32' font-family='monospace' font-size='10' opacity='0.3'%3E0%3C/text%3E%3Ctext x='15' y='25' fill='%232e7d32' font-family='monospace' font-size='10' opacity='0.2'%3E0%3C/text%3E%3Ctext x='35' y='25' fill='%232e7d32' font-family='monospace' font-size='10' opacity='0.3'%3E1%3C/text%3E%3Ctext x='5' y='35' fill='%232e7d32' font-family='monospace' font-size='10' opacity='0.2'%3E1%3C/text%3E%3Ctext x='25' y='35' fill='%232e7d32' font-family='monospace' font-size='10' opacity='0.3'%3E0%3C/text%3E%3C/svg%3E");
+  background-size: cover, 120px 120px;
+  /* Resize the pattern */
+
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(67, 160, 71, 0.2);
+  border-radius: 12px;
+  overflow: visible;
+  /* Needed for the bridge to stick out */
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  height: 100%;
+}
+
+/* Active Card State - Top part of the connection */
+.project-card.active-card {
+  border: 2px solid #43a047;
+  border-bottom: none;
+  border-radius: 12px 12px 0 0;
+  background: #1e2026;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+  z-index: 11;
+  transform: translateY(0) !important;
+}
+
+/* The Bridge (Connecting Lines) */
+
+
+/* Details Drawer - Bottom part of the connection */
+/* Green ribbon bar for details drawer */
+.drawer-ribbon {
+  width: 100%;
+  height: 10px;
+  background: linear-gradient(90deg, #43a047 0%, #66bb6a 100%);
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  margin: 0;
+  position: absolute;
+  left: 0;
+  top: -10px;
+  z-index: 12;
+  box-shadow: 0 -2px 8px rgba(67,160,71,0.12);
+}
+
+.details-drawer {
+  grid-column: 1 / -1;
+  background: #1e2026;
+  margin: 0;
+  border-radius: 0 0 12px 12px;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.4s, opacity 0.3s, border-radius 0.3s;
+  border: 2px solid #43a047;
+  border-top: 2px solid #43a047;
+  position: relative;
+  z-index: 10;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+  /* Remove gap between card and drawer */
+  top: -2px;
+}
+
+.details-drawer.open {
+  margin-top: 0;
+  margin-bottom: 2rem;
+  opacity: 1;
+  max-height: 800px;
+  border-radius: 0 0 12px 12px;
+  background: #1e2026;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+  top: -2px;
+}
+
+.drawer-content {
+  padding: 2rem;
+}
+
+/* Close button in drawer */
+.drawer-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: #fff;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.drawer-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(67, 160, 71, 0.1);
+  border-color: rgba(67, 160, 71, 0.4);
+}
+
+/* Card Content */
+.card-content {
+  padding: 1rem 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-title {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 0.25rem;
+  line-height: 1.3;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.project-brief {
+  color: #a0aec0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+  flex-grow: 1;
+}
+
+/* Status Indicator */
+.project-status {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.75rem;
+  padding: 0.15rem 0.6rem;
+  border-radius: 9999px;
+  background: rgba(67, 160, 71, 0.1);
+  color: #66bb6a;
+  border: 1px solid rgba(67, 160, 71, 0.2);
+  margin-bottom: 0.25rem;
+}
+
+/* Card Actions */
+.card-actions {
+  padding: 0.5rem 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-details {
+  background: transparent;
+  color: #66bb6a;
+  border: 1px solid rgba(67, 160, 71, 0.3);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-details:hover {
+  background: rgba(67, 160, 71, 0.1);
+  border-color: #66bb6a;
+  color: #fff;
+}
+
+.btn-details svg {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.3s;
+}
+
+.btn-details[aria-expanded="true"] svg {
+  transform: rotate(180deg);
+}
+
+.btn-details[aria-expanded="true"] {
+  background: rgba(67, 160, 71, 0.15);
+  color: #fff;
+}
+
+/* Expanded Details Section */
+.project-details {
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out, opacity 0.3s;
+  background: rgba(20, 20, 20, 0.5);
+  border-top: 0px solid rgba(255, 255, 255, 0.05);
+  opacity: 0;
+}
+
+.project-details.expanded {
+  padding: 1.5rem;
+  border-top-width: 1px;
+  opacity: 1;
+  /* max-height is set via JS for smooth animation */
+}
+
+/* Proj Details Content Styling */
+.project-details-content {
+  color: #cbd5e0;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.project-details-content strong {
+  color: #e3f9e5;
+}
+
+.project-details-content ul {
+  padding-left: 1.25rem;
+  margin: 0.75rem 0;
+}
+
+.project-details-content li {
+  margin-bottom: 0.5rem;
+}
+
+/* Nav Link Active State (Shared) */
+body.projects header {
+  border-bottom-color: var(--accent-green, #43a047);
+}
+
+.nav-link.nav-projects {
+  color: var(--accent-green, #43a047);
+  transition: color 0.2s;
+}
+
+.nav-link.nav-projects.active,
+body.projects .nav-link.nav-projects {
+  color: var(--accent-green, #388e3c);
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+  .projects-header h1 {
+    font-size: 2rem;
+  }
+
+  /* On mobile, grid is naturally 1 column due to auto-fit minmax, 
+     but we can enforce it if needed. 
+     The expanded card logic works the same (1/-1 spans 1 column). */
+}

@@ -1,3 +1,46 @@
+// Matrix Background Animation for Labs Page
+function setupMatrixBackground() {
+  if (!document.body.classList.contains('labs')) return;
+  const canvas = document.getElementById('matrix-bg');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let width = window.innerWidth;
+  let height = window.innerHeight;
+  canvas.width = width;
+  canvas.height = height;
+  const fontSize = 14;
+  const columns = Math.floor(width / fontSize);
+  const drops = Array(columns).fill(1);
+  const chars = 'アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズヅブプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+
+  function draw() {
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.08)';
+    ctx.fillRect(0, 0, width, height);
+    ctx.font = fontSize + 'px monospace';
+    ctx.fillStyle = '#00FF41';
+    for (let i = 0; i < drops.length; i++) {
+      const text = chars[Math.floor(Math.random() * chars.length)];
+      ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+      if (drops[i] * fontSize > height && Math.random() > 0.975) {
+        drops[i] = 0;
+      }
+      drops[i]++;
+    }
+  }
+
+  function resize() {
+    width = window.innerWidth;
+    height = window.innerHeight;
+    canvas.width = width;
+    canvas.height = height;
+  }
+  window.addEventListener('resize', resize);
+  setInterval(draw, 40);
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  setupMatrixBackground();
+});
 // Tabbed Interface Logic for Specializations Page
 function setupTabs() {
   // Check if we are on a page with tabs
@@ -106,7 +149,7 @@ document.addEventListener("DOMContentLoaded", () => {
         (item.classList.contains('nav-profile') ? 'profile' :
           item.classList.contains('nav-specializations') ? 'specializations' :
             item.classList.contains('nav-speaker') ? 'speaker-gallery' :
-              item.classList.contains('nav-projects') ? 'projects' :
+              item.classList.contains('nav-labs') ? 'labs' :
                 item.classList.contains('nav-blog') ? 'blog' :
                   item.classList.contains('nav-contact') ? 'contact' : '');
 
@@ -237,6 +280,12 @@ document.addEventListener("DOMContentLoaded", () => {
       newToggle.querySelector('span').textContent = 'Close Details';
     }
 
+      // Show ribbon only on active card
+      document.querySelectorAll('.card-ribbon').forEach(ribbon => {
+        ribbon.style.display = 'none';
+      });
+      const ribbon = card.querySelector('.card-ribbon');
+      if (ribbon) ribbon.style.display = 'block';
     // 4. Show drawer
     detailsDrawer.removeAttribute('aria-hidden');
     detailsDrawer.classList.add('open');
@@ -266,6 +315,11 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       currentActiveCard = null;
     }
+
+      // Hide all ribbons
+      document.querySelectorAll('.card-ribbon').forEach(ribbon => {
+        ribbon.style.display = 'none';
+      });
   }
 
   // Event Listeners

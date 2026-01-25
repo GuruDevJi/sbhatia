@@ -1,16 +1,20 @@
 ---
 layout: base.njk
-title: Projects
+
+title: Labs
 ---
 
+<div class="matrix-bg-container">
+  <canvas id="matrix-bg"></canvas>
+</div>
 <div class="projects-container">
   <div class="projects-header">
-    <h1>Featured Projects</h1>
-    <p class="projects-intro">A collection of my recent work, side projects, and technical experiments.</p>
+    <h1>Labs</h1>
+    <p class="projects-intro">A collection of my recent work, research, and technical experiments.</p>
   </div>
 
-  <div class="projects-grid" id="projects-grid">
-    {% for project in projects %}
+  <div class="projects-grid" id="labs-grid">
+    {% for project in labs %}
       <article class="project-card" data-id="{{ project.id }}">
         <div class="card-content">
           <div class="project-header-row">
@@ -24,6 +28,9 @@ title: Projects
             <p>{{ project.brief }}</p>
           </div>
         </div>
+
+          {# Ribbon bar for active card, shown/hidden via JS #}
+          <div class="card-ribbon" style="display:none;"></div>
 
         <div class="card-actions">
           <button class="btn-details project-toggle" type="button" aria-expanded="false" aria-controls="details-{{ project.id }}">
@@ -45,6 +52,7 @@ title: Projects
 
     {# Shared Details Drawer #}
     <div class="details-drawer" id="details-drawer" aria-hidden="true">
+        <div class="drawer-ribbon"></div>
       <button class="drawer-close" aria-label="Close Details">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
       </button>
