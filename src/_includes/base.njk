@@ -153,21 +153,19 @@
     {{ content | safe }}
   </main>
 
+
   <footer>
-    
-  <!-- Leadership Quote of the Day (global) -->
-    {#
-    <div id="leadership-quote" class="quote-container-simple">
-      <div style="display:flex;align-items:center;gap:1rem;width:100%;margin-bottom:0.5rem;">
-        <blockquote id="quote-text" style="margin:0;padding:0;background:none;border:none;box-shadow:none;">
-          <span class="quote-loading">Fetching daily quote...</span>
-        </blockquote>
+    {% if title == "Home" %}
+    <!-- Leadership Quote of the Day (homepage only) -->
+      <div id="leadership-quote" class="quote-container-simple">
+        <div style="display:flex;align-items:center;gap:1rem;width:100%;margin-bottom:0.5rem;">
+          <blockquote id="quote-text" style="margin:0;padding:0;background:none;border:none;box-shadow:none;font-size:0.98em;font-style:italic;">
+            <span class="quote-loading">Fetching daily quote...</span>
+          </blockquote>
+        </div>
       </div>
-    </div>
-    #}
-  <p style="font-size:0.95rem;font-style:italic;">&copy; {{ var.currentYear }} {{ var.siteName }}</p>
-  <footer>
-    
+    {% endif %}
+    <p style="font-size:0.95rem;font-style:italic;">&copy; {{ var.currentYear }} {{ var.siteName }}</p>
   </footer>
   <script src="/assets/js/main.js"></script>
 </body>

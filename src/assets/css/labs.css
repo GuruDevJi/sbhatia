@@ -155,7 +155,7 @@
   margin-top: 0;
   margin-bottom: 2rem;
   opacity: 1;
-  max-height: 800px;
+  max-height: 2000px;
   border-radius: 0 0 12px 12px;
   background: #1e2026;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
@@ -186,6 +186,16 @@
 
 .drawer-close:hover {
   background: rgba(255, 255, 255, 0.2);
+  z-index: 20;
+}
+
+.drawer-content video {
+  pointer-events: all;
+  cursor: pointer;
+}
+
+.drawer-content video::-webkit-media-controls {
+  pointer-events: all;
 }
 
 .project-card:hover {
@@ -315,6 +325,21 @@
 
 .project-details-content li {
   margin-bottom: 0.5rem;
+}
+
+/* Ensure embedded videos in project details are fully visible and controls are accessible */
+.project-details-content video {
+  width: 100% !important;
+  max-width: 560px;
+  min-width: 280px;
+  display: block;
+  margin: 1.5em auto;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.12);
+  background: #000;
+}
+.project-details-content video::-webkit-media-controls-panel {
+  display: flex !important;
 }
 
 /* Nav Link Active State (Shared) */
