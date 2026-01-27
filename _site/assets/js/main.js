@@ -249,8 +249,20 @@ document.addEventListener("DOMContentLoaded", () => {
     // 1. Get content
     const cardId = card.getAttribute('data-id');
     const source = document.getElementById(`source-${cardId}`);
+
     if (source) {
       drawerContent.innerHTML = source.innerHTML;
+      // If there is a video, wait for it to load metadata and then adjust maxHeight
+      const video = drawerContent.querySelector('video');
+      if (video) {
+        video.addEventListener('loadedmetadata', function() {
+          detailsDrawer.style.maxHeight = detailsDrawer.scrollHeight + 'px';
+        });
+        // In case the video is cached and loaded instantly
+        if (video.readyState >= 1) {
+          detailsDrawer.style.maxHeight = detailsDrawer.scrollHeight + 'px';
+        }
+      }
     }
 
     // 2. Position the drawer
@@ -289,7 +301,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // 4. Show drawer
     detailsDrawer.removeAttribute('aria-hidden');
     detailsDrawer.classList.add('open');
-    detailsDrawer.style.maxHeight = detailsDrawer.scrollHeight + "px";
+    // Set a very large maxHeight to ensure full expansion for any content
+    detailsDrawer.style.maxHeight = '5000px';
 
     // Scroll into view if needed (centering the card and drawer)
     setTimeout(() => {
