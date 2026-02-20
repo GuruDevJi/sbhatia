@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 70" width="100" height="70">
+  <!--
+    Traditional YouTube shape: white rounded rectangle, transparent play triangle cutout
+    evenodd: rounded-rect=white, triangle=transparent
+  -->
+  <path fill="white" fill-rule="evenodd" d="
+    M 10,0 h 80 a 10,10,0,0,1,10,10 v 50 a 10,10,0,0,1,-10,10 h -80 a 10,10,0,0,1,-10,-10 v -50 a 10,10,0,0,1,10,-10 z
+
+    M 38,18 l 32,17 l -32,17 z
+  "/>
+</svg>
