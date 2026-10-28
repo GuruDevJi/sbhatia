@@ -7,6 +7,7 @@ sb1/
 ├── .gitignore                          Git ignore patterns
 ├── CNAME                               Custom domain or GitHub Pages configuration
 ├── fileStructure.md                    Description of the project file structure
+├── gettingStarted.md                   Setup, tools, and plugin installation guide
 ├── package.json                        NPM package configuration and scripts
 ├── package-lock.json                   NPM dependency lock file
 ├── scripts/                            Utility scripts
