@@ -16,6 +16,16 @@ title: Labs
   <div class="projects-grid" id="labs-grid">
     {% for project in labs %}
       <article class="project-card" data-id="{{ project.id }}">
+        <span class="hud-corner tl"></span>
+        <span class="hud-corner tr"></span>
+        <span class="hud-corner bl"></span>
+        <span class="hud-corner br"></span>
+
+        <div class="card-telemetry">
+          <span class="telemetry-status"><span class="led-dot"></span>SYS_ONLINE</span>
+          <span class="telemetry-id">[MOD_0{{ loop.index }} // {{ project.id | upper }}]</span>
+        </div>
+
         <div class="card-content">
           <div class="project-header-row">
             {% if project.status %}
@@ -29,12 +39,19 @@ title: Labs
           </div>
         </div>
 
-          {# Ribbon bar for active card, shown/hidden via JS #}
-          <div class="card-ribbon" style="display:none;"></div>
+          {# Ribbon cable connector for active card, shown/hidden via JS #}
+          <div class="card-ribbon" style="display:none;">
+            <div class="ribbon-clamp top"></div>
+            <div class="ribbon-stripes">
+              <div class="ribbon-pulse"></div>
+            </div>
+            <div class="ribbon-clamp bottom"></div>
+          </div>
 
         <div class="card-actions">
           <button class="btn-details project-toggle" type="button" aria-expanded="false" aria-controls="details-{{ project.id }}">
-            <span>View Details</span>
+            <span class="btn-led"></span>
+            <span class="btn-text">View Details</span>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
             </svg>
@@ -50,17 +67,48 @@ title: Labs
       </article>
     {% endfor %}
 
-    {# Shared Details Drawer #}
+    {# Shared Details Drawer (PCB Circuit Board) #}
     <div class="details-drawer" id="details-drawer" aria-hidden="true">
-        <div class="drawer-ribbon"></div>
+      <span class="pcb-pad tl"></span>
+      <span class="pcb-pad tr"></span>
+      <span class="pcb-pad bl"></span>
+      <span class="pcb-pad br"></span>
+
+      <div class="pcb-silkscreen top">
+        <span>PCB_REV_3.2 // MATRIX_CORE_BUS</span>
+        <span>J1_FPC_LINK // 64-BIT_IO</span>
+        <span class="pcb-silkscreen-right">VCC: +5.0V // GND</span>
+      </div>
+
       <button class="drawer-close" aria-label="Close Details">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
       </button>
       <div class="drawer-content" id="drawer-content">
         <!-- Content injected via JS -->
       </div>
+
+      <div class="pcb-silkscreen bottom">
+        <span>TRACE_IMPEDANCE: 50_OHM</span>
+        <span>SYS_DIAG: NOMINAL</span>
+      </div>
     </div>
   </div>
+</div>
+
+{# High-Res Image Lightbox Overlay #}
+<div class="lab-lightbox" id="lab-lightbox" aria-hidden="true">
+  <button class="lab-lightbox-close" id="lab-lightbox-close" type="button" aria-label="Close High-Res View">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+  </button>
+  <button class="lab-lightbox-nav prev" id="lab-lightbox-prev" type="button" aria-label="Previous Image">&#10094;</button>
+  <div class="lab-lightbox-stage">
+    <img class="lab-lightbox-img" id="lab-lightbox-img" src="" alt="">
+    <div class="lab-lightbox-meta">
+      <span class="lab-lightbox-caption" id="lab-lightbox-caption"></span>
+      <span class="lab-lightbox-counter" id="lab-lightbox-counter"></span>
+    </div>
+  </div>
+  <button class="lab-lightbox-nav next" id="lab-lightbox-next" type="button" aria-label="Next Image">&#10095;</button>
 </div>
 
 <script>

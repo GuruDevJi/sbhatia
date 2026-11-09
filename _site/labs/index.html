@@ -9,6 +9,9 @@
   <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico" sizes="32x32">
   
   
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Doto:wght@700;800;900&family=Share+Tech+Mono&family=VT323&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/labs.css" />
   
 </head>
@@ -145,6 +148,16 @@
   <div class="projects-grid" id="labs-grid">
     
       <article class="project-card" data-id="proj_n8n">
+        <span class="hud-corner tl"></span>
+        <span class="hud-corner tr"></span>
+        <span class="hud-corner bl"></span>
+        <span class="hud-corner br"></span>
+
+        <div class="card-telemetry">
+          <span class="telemetry-status"><span class="led-dot"></span>SYS_ONLINE</span>
+          <span class="telemetry-id">[MOD_01 // PROJ_N8N]</span>
+        </div>
+
         <div class="card-content">
           <div class="project-header-row">
             
@@ -157,11 +170,18 @@
         </div>
 
           
-          <div class="card-ribbon" style="display:none;"></div>
+          <div class="card-ribbon" style="display:none;">
+            <div class="ribbon-clamp top"></div>
+            <div class="ribbon-stripes">
+              <div class="ribbon-pulse"></div>
+            </div>
+            <div class="ribbon-clamp bottom"></div>
+          </div>
 
         <div class="card-actions">
           <button class="btn-details project-toggle" type="button" aria-expanded="false" aria-controls="details-proj_n8n">
-            <span>View Details</span>
+            <span class="btn-led"></span>
+            <span class="btn-text">View Details</span>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
             </svg>
@@ -177,6 +197,16 @@
       </article>
     
       <article class="project-card" data-id="proj_property">
+        <span class="hud-corner tl"></span>
+        <span class="hud-corner tr"></span>
+        <span class="hud-corner bl"></span>
+        <span class="hud-corner br"></span>
+
+        <div class="card-telemetry">
+          <span class="telemetry-status"><span class="led-dot"></span>SYS_ONLINE</span>
+          <span class="telemetry-id">[MOD_02 // PROJ_PROPERTY]</span>
+        </div>
+
         <div class="card-content">
           <div class="project-header-row">
             
@@ -189,11 +219,18 @@
         </div>
 
           
-          <div class="card-ribbon" style="display:none;"></div>
+          <div class="card-ribbon" style="display:none;">
+            <div class="ribbon-clamp top"></div>
+            <div class="ribbon-stripes">
+              <div class="ribbon-pulse"></div>
+            </div>
+            <div class="ribbon-clamp bottom"></div>
+          </div>
 
         <div class="card-actions">
           <button class="btn-details project-toggle" type="button" aria-expanded="false" aria-controls="details-proj_property">
-            <span>View Details</span>
+            <span class="btn-led"></span>
+            <span class="btn-text">View Details</span>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
             </svg>
@@ -203,12 +240,22 @@
         
         <div class="project-details-source" id="source-proj_property" hidden>
            <div class="project-details-content">
-            <div style='margin-bottom:1.5rem;text-align:center;'><img src='/assets/images/Screenshot%202026-11-07%20010115.png' alt='Property Management Database Dashboard Preview' style='max-width:100%;height:auto;border-radius:8px;border:1px solid rgba(255,255,255,0.15);box-shadow:0 6px 18px rgba(0,0,0,0.35);'></div><strong>Status:</strong> Under active development.<br><br><strong>Purpose:</strong> Streamline property management tasks including lease tracking, rent collection, maintenance requests, and financial reporting.<br><br><strong>Planned Features:</strong> Multi-property support, tenant portal, automated reminders, analytics dashboard, secure document storage, and mobile-friendly design.<br><br><strong>Tech Stack:</strong> React, Node.js, MongoDB, REST API, authentication, cloud deployment.<br><br><strong>Why:</strong> To simplify and automate the day-to-day operations for property owners and managers, improving efficiency and transparency.
+            <p style='margin-bottom:1.25rem;line-height:1.6;'><strong>propDb</strong> is a property management app for landlords. It’s a free hobby project you run on your own computer: a React web app backed by a database, with the code saved on GitHub. It tracks properties, tenants, leases and rent, money in and out, and repairs, for an owner and their team. Tenants get their own portal.</p><h4 style='color:#43a047;font-size:1.15rem;margin:1.5rem 0 0.5rem 0;'>Structure</h4><ul style='margin:0.5em 0 1.5em 1.5em;line-height:1.65;'><li><strong>User types:</strong><ul style='margin:0.25em 0 0.5em 1.25em;'><li><strong>Owner:</strong> sees and does everything.</li><li><strong>Property manager:</strong> day-to-day work, only on the properties assigned to them.</li><li><strong>Tenant:</strong> a separate portal with their own lease, rent and repair requests.</li></ul></li><li><strong>Properties:</strong> each with units, photos, a map, details (money details for the owner only), and providers (utilities, HOA, service pros). The list page is a sortable table whose rows open in place.</li><li><strong>Tenants:</strong> contact cards with search. Each tenant’s page shows their home, money, lease history and requests.</li><li><strong>Leases:</strong> link tenants to a unit. Rent is charged automatically and shown as monthly statements; payments pay off the oldest charges first.</li><li><strong>Transactions:</strong> every payment, other money in, and expense in one filterable list. Each one can be opened, edited or voided.</li><li><strong>Maintenance requests:</strong> reported by tenants or staff, with priority, status, an assigned person and a vendor.</li><li><strong>Reporting:</strong> a dashboard plus reports (income and expenses, property performance, rent roll), with CSV export.</li><li><strong>Team:</strong> the owner invites staff and assigns them properties.</li><li><strong>Settings:</strong> each person sets their color theme (14 choices), zoom and text size. An owner-only Account section is still empty.</li></ul><div class='lab-carousel' aria-label='propDb Screenshots Carousel'><div class='lab-carousel-slides'><div class='lab-carousel-slide active'><img src='/assets/images/Screenshots/Screenshot%202026-11-07%20010115.png' alt='propDb Screenshot 1' loading='lazy'></div><div class='lab-carousel-slide'><img src='/assets/images/Screenshots/Screenshot%202026-11-09%20145520.png' alt='propDb Screenshot 2' loading='lazy'></div><div class='lab-carousel-slide'><img src='/assets/images/Screenshots/Screenshot%202026-11-09%20145553.png' alt='propDb Screenshot 3' loading='lazy'></div><div class='lab-carousel-slide'><img src='/assets/images/Screenshots/Screenshot%202026-11-09%20145617.png' alt='propDb Screenshot 4' loading='lazy'></div><div class='lab-carousel-slide'><img src='/assets/images/Screenshots/Screenshot%202026-11-09%20145634.png' alt='propDb Screenshot 5' loading='lazy'></div><div class='lab-carousel-slide'><img src='/assets/images/Screenshots/Screenshot%202026-11-09%20145655.png' alt='propDb Screenshot 6' loading='lazy'></div><div class='lab-carousel-slide'><img src='/assets/images/Screenshots/Screenshot%202026-11-09%20145716.png' alt='propDb Screenshot 7' loading='lazy'></div><div class='lab-carousel-slide'><img src='/assets/images/Screenshots/Screenshot%202026-11-09%20145733.png' alt='propDb Screenshot 8' loading='lazy'></div><div class='lab-carousel-slide'><img src='/assets/images/Screenshots/Screenshot%202026-11-09%20145751.png' alt='propDb Screenshot 9' loading='lazy'></div><div class='lab-carousel-slide'><img src='/assets/images/Screenshots/Screenshot%202026-11-09%20145902.png' alt='propDb Screenshot 10' loading='lazy'></div><div class='lab-carousel-slide'><img src='/assets/images/Screenshots/Screenshot%202026-11-09%20145925.png' alt='propDb Screenshot 11' loading='lazy'></div><div class='lab-carousel-counter'>1 / 11</div><button type='button' class='lab-carousel-btn prev' aria-label='Previous slide'>&#10094;</button><button type='button' class='lab-carousel-btn next' aria-label='Next slide'>&#10095;</button></div><div class='lab-carousel-dots'><button type='button' class='lab-carousel-dot active' aria-label='Slide 1'></button><button type='button' class='lab-carousel-dot' aria-label='Slide 2'></button><button type='button' class='lab-carousel-dot' aria-label='Slide 3'></button><button type='button' class='lab-carousel-dot' aria-label='Slide 4'></button><button type='button' class='lab-carousel-dot' aria-label='Slide 5'></button><button type='button' class='lab-carousel-dot' aria-label='Slide 6'></button><button type='button' class='lab-carousel-dot' aria-label='Slide 7'></button><button type='button' class='lab-carousel-dot' aria-label='Slide 8'></button><button type='button' class='lab-carousel-dot' aria-label='Slide 9'></button><button type='button' class='lab-carousel-dot' aria-label='Slide 10'></button><button type='button' class='lab-carousel-dot' aria-label='Slide 11'></button></div></div>
            </div>
         </div>
       </article>
     
       <article class="project-card" data-id="proj0">
+        <span class="hud-corner tl"></span>
+        <span class="hud-corner tr"></span>
+        <span class="hud-corner bl"></span>
+        <span class="hud-corner br"></span>
+
+        <div class="card-telemetry">
+          <span class="telemetry-status"><span class="led-dot"></span>SYS_ONLINE</span>
+          <span class="telemetry-id">[MOD_03 // PROJ0]</span>
+        </div>
+
         <div class="card-content">
           <div class="project-header-row">
             
@@ -221,11 +268,18 @@
         </div>
 
           
-          <div class="card-ribbon" style="display:none;"></div>
+          <div class="card-ribbon" style="display:none;">
+            <div class="ribbon-clamp top"></div>
+            <div class="ribbon-stripes">
+              <div class="ribbon-pulse"></div>
+            </div>
+            <div class="ribbon-clamp bottom"></div>
+          </div>
 
         <div class="card-actions">
           <button class="btn-details project-toggle" type="button" aria-expanded="false" aria-controls="details-proj0">
-            <span>View Details</span>
+            <span class="btn-led"></span>
+            <span class="btn-text">View Details</span>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
             </svg>
@@ -235,12 +289,22 @@
         
         <div class="project-details-source" id="source-proj0" hidden>
            <div class="project-details-content">
-            <strong>Technology as an Enabler:</strong> My first personal portfolio website took several months to build and had a very basic, dated appearance, with limited features and little interactivity. In contrast, this current site was developed in just two days, thanks to modern tools and frameworks. Leveraging Eleventy, Nunjucks, and custom JavaScript, I was able to quickly implement a much more engaging and interactive experience.<br><br><strong>AI Vibe Coding:</strong> I used AI-powered vibe coding to develop this website, despite having minimal prior knowledge of JavaScript. This approach enabled rapid prototyping, troubleshooting, and feature implementation, making the development process highly efficient and accessible.<br><br><strong>Features & Technical Aspects:</strong> The site now includes a dynamic blog page, interactive map, embedded videos, a contact form powered by Formspree, and a responsive UI with sticky sidebar navigation and collapsible panels. These enhancements were made possible by the rapid evolution of web technologies, which have dramatically reduced development time and enabled richer user experiences.<br><br><strong>Unique Implementation Details (Most to Least Complex):</strong><ul style='margin:0.5em 0 0.5em 1.5em;'><li><strong>Cloudflare Worker Integration:</strong> Serverless proxy for fetching leadership quotes with CORS handling for secure cross-origin requests.</li><li><strong>Matrix Rain Background Animation:</strong> Canvas-based animated background using requestAnimationFrame for the Labs page with falling characters and opacity fade effects.</li><li><strong>Sticky Sidebar Navigation:</strong> Sidebar that remains fixed in viewport while scrolling, with automatic active link highlighting based on scroll position and JavaScript scroll event detection.</li><li><strong>Collapsible Details Drawer:</strong> Expandable project cards with smooth animations that dynamically reposition based on grid layout, using CSS transitions and JavaScript event handling.</li><li><strong>Dynamic Event Listeners:</strong> Vanilla JavaScript for menu toggling, tab switching, scroll detection, and DOM manipulation across multiple pages.</li><li><strong>JSON-Driven Content Architecture:</strong> All project, experience, education, and specialization data loaded from JSON files, enabling easy updates without template changes.</li><li><strong>Tabbed Interface:</strong> Multi-tab content panels with animated fade-in transitions, active state indicators, and keyboard-accessible tab management.</li><li><strong>Responsive Grid Layout:</strong> CSS Grid with auto-fit and minmax for flexible multi-column layouts that adapt to screen size.</li><li><strong>Form Integration:</strong> Formspree-powered contact form with client-side validation and server-side email delivery.</li><li><strong>Custom SVG Navigation Icons:</strong> Inline SVG icons for navigation links with drop-shadow filters and dynamic color coding per page section.</li><li><strong>Glowing Text Effects:</strong> Accent colors with text-shadow glow effects on hover (gold, blue, cyan, pink, orange, purple) for visual emphasis and feedback.</li></ul><br><strong>Tools Used:</strong> VS Code, Git, GitHub, Eleventy (11ty), Nunjucks, Formspree, Cloudflare Workers, custom CSS/JS.<br><br><strong>Architecture:</strong> Static site generated with Eleventy, modular Nunjucks templates, global JSON data for content, assets pipeline for CSS/JS/images, deployed via GitHub Pages.<br><br><strong>Why:</strong> I built this site to have full control over design, content, and workflow, using modern tools and best practices for maintainability and speed.
+            <strong>Technology as an Enabler:</strong> My first personal portfolio website took several months to build and had a very basic, dated appearance, with limited features and little interactivity. In contrast, this current site was developed in just two days, thanks to modern tools and frameworks. Leveraging Eleventy, Nunjucks, and custom JavaScript, I was able to quickly implement a much more engaging and interactive experience.<br><br><strong>AI Vibe Coding:</strong> I used AI-powered vibe coding to develop this website, despite having minimal prior knowledge of JavaScript. This approach enabled rapid prototyping, troubleshooting, and feature implementation, making the development process highly efficient and accessible.<br><br><strong>Features & Technical Aspects:</strong> The site now includes a dynamic blog page, interactive map, embedded videos, a contact form powered by Formspree, and a responsive UI with sticky sidebar navigation and collapsible panels. These enhancements were made possible by the rapid evolution of web technologies, which have dramatically reduced development time and enabled richer user experiences.<br><br><strong>Unique Implementation Details (Most to Least Complex):</strong><ul style='margin:0.5em 0 0.5em 1.5em;'><li><strong>Cloudflare Worker Integration:</strong> Serverless proxy for fetching leadership quotes with CORS handling for secure cross-origin requests.</li><li><strong>Matrix Rain Background Animation:</strong> Canvas-based animated background using requestAnimationFrame for the Labs page with falling characters and opacity fade effects.</li><li><strong>Sticky Sidebar Navigation:</strong> Sidebar that remains fixed in viewport while scrolling, with automatic active link highlighting based on scroll position and JavaScript scroll event detection.</li><li><strong>Collapsible Details Drawer:</strong> Expandable project cards with smooth animations that dynamically reposition based on grid layout, using CSS transitions and JavaScript event handling.</li><li><strong>Dynamic Event Listeners:</strong> Vanilla JavaScript for menu toggling, tab switching, scroll detection, and DOM manipulation across multiple pages.</li><li><strong>JSON-Driven Content Architecture:</strong> All project, experience, education, and specialization data loaded from JSON files, enabling easy updates without template changes.</li><li><strong>Tabbed Interface:</strong> Multi-tab content panels with animated fade-in transitions, active state indicators, and keyboard-accessible tab management.</li><li><strong>Responsive Grid Layout:</strong> CSS Grid with auto-fit and minmax for flexible multi-column layouts that adapt to screen size.</li><li><strong>Form Integration:</strong> Formspree-powered contact form with client-side validation and server-side email delivery.</li><li><strong>Custom SVG Navigation Icons:</strong> Inline SVG icons for navigation links with drop-shadow filters and dynamic color coding per page section.</li><li><strong>Glowing Text Effects:</strong> Accent colors with text-shadow glow effects on hover (gold, blue, cyan, pink, orange, purple) for visual emphasis and feedback.</li></ul><br><strong>Tools Used:</strong> VS Code, Git, GitHub, Eleventy (11ty), Nunjucks, Formspree, Cloudflare Workers, custom CSS/JS.<br><br><strong>Architecture:</strong> Static site generated with Eleventy, modular Nunjucks templates, global JSON data for content, assets pipeline for CSS/JS/images, deployed via GitHub Pages.<br><br><strong>Why:</strong> I built this site to have full control over design, content, and workflow, using modern tools and best practices for maintainability and speed.<div style='margin-top:2rem;text-align:center;'><div style='max-width:960px;margin:0 auto;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,0.12);box-shadow:0 10px 30px rgba(0,0,0,0.45);background:#0d0f12;'><img src='/assets/images/Screenshots/Screenshot%202026-11-09%20162149.png' alt='Personal Portfolio Website Preview' style='width:100%;height:auto;display:block;' loading='lazy'></div></div>
            </div>
         </div>
       </article>
     
       <article class="project-card" data-id="proj_blog">
+        <span class="hud-corner tl"></span>
+        <span class="hud-corner tr"></span>
+        <span class="hud-corner bl"></span>
+        <span class="hud-corner br"></span>
+
+        <div class="card-telemetry">
+          <span class="telemetry-status"><span class="led-dot"></span>SYS_ONLINE</span>
+          <span class="telemetry-id">[MOD_04 // PROJ_BLOG]</span>
+        </div>
+
         <div class="card-content">
           <div class="project-header-row">
             
@@ -253,11 +317,18 @@
         </div>
 
           
-          <div class="card-ribbon" style="display:none;"></div>
+          <div class="card-ribbon" style="display:none;">
+            <div class="ribbon-clamp top"></div>
+            <div class="ribbon-stripes">
+              <div class="ribbon-pulse"></div>
+            </div>
+            <div class="ribbon-clamp bottom"></div>
+          </div>
 
         <div class="card-actions">
           <button class="btn-details project-toggle" type="button" aria-expanded="false" aria-controls="details-proj_blog">
-            <span>View Details</span>
+            <span class="btn-led"></span>
+            <span class="btn-text">View Details</span>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
             </svg>
@@ -273,6 +344,16 @@
       </article>
     
       <article class="project-card" data-id="proj_touch">
+        <span class="hud-corner tl"></span>
+        <span class="hud-corner tr"></span>
+        <span class="hud-corner bl"></span>
+        <span class="hud-corner br"></span>
+
+        <div class="card-telemetry">
+          <span class="telemetry-status"><span class="led-dot"></span>SYS_ONLINE</span>
+          <span class="telemetry-id">[MOD_05 // PROJ_TOUCH]</span>
+        </div>
+
         <div class="card-content">
           <div class="project-header-row">
             
@@ -285,11 +366,18 @@
         </div>
 
           
-          <div class="card-ribbon" style="display:none;"></div>
+          <div class="card-ribbon" style="display:none;">
+            <div class="ribbon-clamp top"></div>
+            <div class="ribbon-stripes">
+              <div class="ribbon-pulse"></div>
+            </div>
+            <div class="ribbon-clamp bottom"></div>
+          </div>
 
         <div class="card-actions">
           <button class="btn-details project-toggle" type="button" aria-expanded="false" aria-controls="details-proj_touch">
-            <span>View Details</span>
+            <span class="btn-led"></span>
+            <span class="btn-text">View Details</span>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
             </svg>
@@ -307,15 +395,46 @@
 
     
     <div class="details-drawer" id="details-drawer" aria-hidden="true">
-        <div class="drawer-ribbon"></div>
+      <span class="pcb-pad tl"></span>
+      <span class="pcb-pad tr"></span>
+      <span class="pcb-pad bl"></span>
+      <span class="pcb-pad br"></span>
+
+      <div class="pcb-silkscreen top">
+        <span>PCB_REV_3.2 // MATRIX_CORE_BUS</span>
+        <span>J1_FPC_LINK // 64-BIT_IO</span>
+        <span class="pcb-silkscreen-right">VCC: +5.0V // GND</span>
+      </div>
+
       <button class="drawer-close" aria-label="Close Details">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
       </button>
       <div class="drawer-content" id="drawer-content">
         <!-- Content injected via JS -->
       </div>
+
+      <div class="pcb-silkscreen bottom">
+        <span>TRACE_IMPEDANCE: 50_OHM</span>
+        <span>SYS_DIAG: NOMINAL</span>
+      </div>
     </div>
   </div>
+</div>
+
+
+<div class="lab-lightbox" id="lab-lightbox" aria-hidden="true">
+  <button class="lab-lightbox-close" id="lab-lightbox-close" type="button" aria-label="Close High-Res View">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+  </button>
+  <button class="lab-lightbox-nav prev" id="lab-lightbox-prev" type="button" aria-label="Previous Image">&#10094;</button>
+  <div class="lab-lightbox-stage">
+    <img class="lab-lightbox-img" id="lab-lightbox-img" src="" alt="">
+    <div class="lab-lightbox-meta">
+      <span class="lab-lightbox-caption" id="lab-lightbox-caption"></span>
+      <span class="lab-lightbox-counter" id="lab-lightbox-counter"></span>
+    </div>
+  </div>
+  <button class="lab-lightbox-nav next" id="lab-lightbox-next" type="button" aria-label="Next Image">&#10095;</button>
 </div>
 
 <script>

@@ -1,23 +1,32 @@
-/* Matrix Background Styles */
+/* Circuit Board Background Styles (Document-Attached for Zero Scroll Lag) */
+body.labs {
+  position: relative;
+  background-color: #040906;
+  overflow-x: hidden;
+}
+
 .matrix-bg-container {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
   z-index: 0;
   pointer-events: none;
 }
+
 #matrix-bg {
   display: block;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
   position: absolute;
   top: 0;
   left: 0;
   z-index: 0;
-  background: #000;
-  opacity: 0.7;
+  background: #040906;
+  opacity: 0.75;
 }
 
 .projects-container {
@@ -39,18 +48,27 @@
 }
 
 .projects-header h1 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #43a047;
+  font-family: 'Doto', 'VT323', monospace;
+  font-size: 3rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #00ff41;
   margin-bottom: 0.5rem;
-  text-shadow: 0 0 20px rgba(67, 160, 71, 0.3);
+  text-shadow: 0 0 20px rgba(0, 255, 65, 0.45);
 }
 
 .projects-intro {
-  color: #b0b8c1;
-  font-size: 1.1rem;
-  max-width: 600px;
+  font-family: 'Share Tech Mono', Consolas, monospace;
+  color: rgba(167, 243, 208, 0.85);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  max-width: 780px;
   margin: 0 auto;
+  background: rgba(4, 12, 8, 0.2);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.95);
 }
 
 /* Standard Grid */
@@ -59,134 +77,331 @@
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2rem;
   /* The bridge depends on this exact gap */
-  align-items: start;
+  align-items: stretch;
 }
 
 /* Project Card */
-/* Green ribbon bar for active card */
-.card-ribbon {
-  width: 100%;
-  height: 30px;
-  background: linear-gradient(90deg, #43a047 0%, #66bb6a 100%);
-
-  margin: 0;
-  position: absolute;
-  left: 0;
-  bottom: -30px;
-  z-index: 12;
-  box-shadow: 0 2px 8px rgba(67,160,71,0.12);
-  display: none;
-}
-/* Project Card with Matrix Background */
+/* Project Card: Outer Hardware LCD Module Bezel Housing */
 .project-card {
   width: 100%;
-  background-color: #0d1117;
-  /* Dark base */
-  /* Matrix Rain Effect using a subtle repeating gradient pattern */
-  background-image:
-    linear-gradient(rgba(13, 17, 23, 0.92), rgba(13, 17, 23, 0.98)),
-    /* Dark overlay */
-    url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='5' y='10' fill='%232e7d32' font-family='monospace' font-size='10' opacity='0.2'%3E1%3C/text%3E%3Ctext x='25' y='10' fill='%232e7d32' font-family='monospace' font-size='10' opacity='0.3'%3E0%3C/text%3E%3Ctext x='15' y='25' fill='%232e7d32' font-family='monospace' font-size='10' opacity='0.2'%3E0%3C/text%3E%3Ctext x='35' y='25' fill='%232e7d32' font-family='monospace' font-size='10' opacity='0.3'%3E1%3C/text%3E%3Ctext x='5' y='35' fill='%232e7d32' font-family='monospace' font-size='10' opacity='0.2'%3E1%3C/text%3E%3Ctext x='25' y='35' fill='%232e7d32' font-family='monospace' font-size='10' opacity='0.3'%3E0%3C/text%3E%3C/svg%3E");
-  background-size: cover, 120px 120px;
-  /* Resize the pattern */
-
-  backdrop-filter: blur(4px);
-  border: 1px solid rgba(67, 160, 71, 0.2);
-  border-radius: 12px;
+  background: linear-gradient(145deg, #161b20 0%, #0b0e11 100%);
+  border: 2px solid #222930;
+  border-radius: 8px;
   overflow: visible;
-  /* Needed for the bridge to stick out */
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
   display: flex;
   flex-direction: column;
   position: relative;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  box-shadow:
+    0 12px 28px rgba(0, 0, 0, 0.75),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.8);
   height: 100%;
+  cursor: pointer;
 }
 
-/* Active Card State - Top part of the connection */
+/* HUD Corner Brackets on Cards */
+.hud-corner {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  pointer-events: none;
+  transition: width 0.25s, height 0.25s, border-color 0.25s, filter 0.25s;
+  z-index: 5;
+}
+
+.hud-corner.tl {
+  top: -2px;
+  left: -2px;
+  border-top: 2px solid rgba(0, 255, 65, 0.6);
+  border-left: 2px solid rgba(0, 255, 65, 0.6);
+  border-top-left-radius: 4px;
+}
+
+.hud-corner.tr {
+  top: -2px;
+  right: -2px;
+  border-top: 2px solid rgba(0, 255, 65, 0.6);
+  border-right: 2px solid rgba(0, 255, 65, 0.6);
+  border-top-right-radius: 4px;
+}
+
+.hud-corner.bl {
+  bottom: -2px;
+  left: -2px;
+  border-bottom: 2px solid rgba(0, 255, 65, 0.6);
+  border-left: 2px solid rgba(0, 255, 65, 0.6);
+  border-bottom-left-radius: 4px;
+}
+
+.hud-corner.br {
+  bottom: -2px;
+  right: -2px;
+  border-bottom: 2px solid rgba(0, 255, 65, 0.6);
+  border-right: 2px solid rgba(0, 255, 65, 0.6);
+  border-bottom-right-radius: 4px;
+}
+
+.project-card:hover .hud-corner,
+.project-card.active-card .hud-corner {
+  width: 18px;
+  height: 18px;
+  border-color: #00ff41;
+  filter: drop-shadow(0 0 6px rgba(0, 255, 65, 0.85));
+}
+
+/* Hardware Telemetry Top Bar (Bezel Engraving) */
+.card-telemetry {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.45rem 1rem 0.2rem 1rem;
+  font-family: 'Share Tech Mono', 'Courier New', Consolas, monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+}
+
+.telemetry-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: rgba(74, 222, 128, 0.35);
+  font-weight: 600;
+  transition: color 0.25s, text-shadow 0.25s;
+}
+
+.led-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: rgba(0, 255, 65, 0.22);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.6);
+  transition: background-color 0.25s, box-shadow 0.25s;
+}
+
+.project-card.active-card .telemetry-status {
+  color: #4ade80;
+  text-shadow: 0 0 8px rgba(0, 255, 65, 0.35);
+}
+
+.project-card.active-card .led-dot {
+  background-color: #00ff41;
+  box-shadow: 0 0 8px #00ff41;
+}
+
+.telemetry-id {
+  color: #64748b;
+}
+
+/* Active Display Screen (Connected to Motherboard) */
 .project-card.active-card {
-  border: 2px solid #43a047;
-  border-bottom: none;
-  border-radius: 12px 12px 0 0;
-  background: #1e2026;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
-  z-index: 11;
+  border-color: #2e4c38;
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.85),
+    0 0 20px rgba(0, 255, 65, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  z-index: 14;
   transform: translateY(0) !important;
 }
 
-/* The Bridge (Connecting Lines) */
-
-
-/* Details Drawer - Bottom part of the connection */
-/* Green ribbon bar for details drawer */
-.drawer-ribbon {
-  width: 100%;
-  height: 10px;
-  background: linear-gradient(90deg, #43a047 0%, #66bb6a 100%);
-  border-top-left-radius: 6px;
-  border-top-right-radius: 6px;
-  margin: 0;
-  position: absolute;
-  left: 0;
-  top: -10px;
-  z-index: 12;
-  box-shadow: 0 -2px 8px rgba(67,160,71,0.12);
+.project-card.active-card .card-content {
+  background-color: #092212;
+  box-shadow:
+    inset 0 3px 10px rgba(0, 0, 0, 0.95),
+    inset 0 0 28px rgba(0, 255, 65, 0.16),
+    0 1px 0 rgba(255, 255, 255, 0.07);
 }
 
+.project-card.active-card .project-title {
+  color: #00ff41;
+  text-shadow: 0 0 12px rgba(0, 255, 65, 0.55);
+}
+
+/* Matrix Green Data Bus Flex Ribbon Cable */
+.card-ribbon {
+  width: min(210px, 58%);
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -50px;
+  z-index: 15;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ribbon-clamp {
+  width: 100%;
+  height: 8px;
+  background: linear-gradient(180deg, #1a241e 0%, #0b110e 100%);
+  border: 1px solid #2e4c38;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.85);
+  position: relative;
+  z-index: 2;
+}
+
+.ribbon-clamp.top {
+  border-radius: 2px 2px 0 0;
+}
+
+.ribbon-clamp.bottom {
+  border-radius: 0 0 2px 2px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.9);
+}
+
+/* Glowing green/gold pin contacts along the clamp */
+.ribbon-clamp::after {
+  content: "";
+  position: absolute;
+  inset: 2px 8px;
+  background: repeating-linear-gradient(90deg, #00ff41 0px, #00ff41 3px, #07120a 3px, #07120a 7px);
+  opacity: 0.85;
+  box-shadow: 0 0 4px rgba(0, 255, 65, 0.4);
+}
+
+.ribbon-stripes {
+  width: 90%;
+  height: 34px;
+  /* Stealth carbon ribbon cable with Matrix green conductive traces */
+  background: 
+    repeating-linear-gradient(90deg,
+      #09130d 0px,
+      #09130d 4px,
+      #1b4328 4px,
+      #2e7d32 6px,
+      #00e676 7px,
+      #1b4328 8px,
+      #050a07 8px,
+      #050a07 10px
+    );
+  border-left: 1px solid rgba(0, 255, 65, 0.35);
+  border-right: 1px solid rgba(0, 255, 65, 0.35);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.8), 0 0 12px rgba(0, 255, 65, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animated Live Data Pulse streaming down the cable */
+.ribbon-pulse {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 12px;
+  background: linear-gradient(180deg, transparent 0%, rgba(0, 255, 65, 0.65) 50%, transparent 100%);
+  filter: blur(1px);
+  animation: dataStreamPulse 1.6s infinite linear;
+  pointer-events: none;
+}
+
+@keyframes dataStreamPulse {
+  0% { top: -14px; opacity: 0; }
+  30% { opacity: 1; }
+  70% { opacity: 1; }
+  100% { top: 36px; opacity: 0; }
+}
+
+/* Details Drawer - Frosted Glass Hardware Panel over Live Circuit Board */
 .details-drawer {
   grid-column: 1 / -1;
-  background: #1e2026;
+  background: rgba(6, 18, 11, 0.58);
+  backdrop-filter: blur(8px) saturate(130%);
+  -webkit-backdrop-filter: blur(8px) saturate(130%);
   margin: 0;
-  border-radius: 0 0 12px 12px;
+  border-radius: 8px;
   overflow: hidden;
   max-height: 0;
   opacity: 0;
-  transition: max-height 0.4s, opacity 0.3s, border-radius 0.3s;
-  border: 2px solid #43a047;
-  border-top: 2px solid #43a047;
+  transition: max-height 0.4s ease-out, opacity 0.3s ease-in;
+  border: 1px solid rgba(0, 255, 65, 0.24);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.07);
   position: relative;
   z-index: 10;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
-  /* Remove gap between card and drawer */
-  top: -2px;
 }
 
 .details-drawer.open {
-  margin-top: 0;
-  margin-bottom: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 2.5rem;
   opacity: 1;
-  max-height: 2000px;
-  border-radius: 0 0 12px 12px;
-  background: #1e2026;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
-  top: -2px;
+  max-height: 5000px;
+  border-color: rgba(0, 255, 65, 0.3);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.65), 0 0 20px rgba(0, 255, 65, 0.07), inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
+/* PCB Silkscreen Technical Markings */
+.pcb-silkscreen {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.45rem 2.5rem;
+  font-family: 'Courier New', Consolas, Monaco, monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  color: rgba(74, 222, 128, 0.5);
+  background: rgba(0, 18, 8, 0.25);
+  user-select: none;
+  position: relative;
+  z-index: 2;
+}
+
+.pcb-silkscreen.top {
+  border-bottom: 1px dashed rgba(0, 255, 65, 0.15);
+  padding-right: 4rem; /* Leave space for close button */
+}
+
+.pcb-silkscreen.bottom {
+  border-top: 1px dashed rgba(0, 255, 65, 0.15);
+}
+
+/* Authentic Gold-Ringed PCB Grounding / Mounting Pads in 4 Corners */
+.pcb-pad {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  /* Dark drill hole center surrounded by gold/copper annular ring */
+  background: radial-gradient(circle, #030705 0%, #030705 36%, #d4af37 38%, #aa820a 62%, #0c2916 66%, transparent 72%);
+  border: 1px dashed rgba(0, 255, 65, 0.4);
+  box-shadow: 0 0 6px rgba(0, 255, 65, 0.2);
+  z-index: 4;
+  pointer-events: none;
+}
+
+.pcb-pad.tl { top: 8px; left: 10px; }
+.pcb-pad.tr { top: 8px; right: 10px; }
+.pcb-pad.bl { bottom: 8px; left: 10px; }
+.pcb-pad.br { bottom: 8px; right: 10px; }
+
 .drawer-content {
-  padding: 2rem;
+  padding: 2rem 2.5rem;
+  position: relative;
+  z-index: 2;
 }
 
 /* Close button in drawer */
 .drawer-close {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: rgba(255, 255, 255, 0.1);
-  border: none;
-  color: #fff;
+  top: 2.2rem;
+  right: 1.25rem;
+  background: rgba(0, 25, 10, 0.7);
+  border: 1px solid rgba(0, 255, 65, 0.35);
+  color: #4ade80;
   width: 32px;
   height: 32px;
-  border-radius: 50%;
+  border-radius: 4px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.2s;
+  transition: all 0.2s;
+  z-index: 20;
 }
 
 .drawer-close:hover {
-  background: rgba(255, 255, 255, 0.2);
-  z-index: 20;
+  background: rgba(0, 255, 65, 0.2);
+  border-color: #00ff41;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(0, 255, 65, 0.4);
 }
 
 .drawer-content video {
@@ -198,85 +413,121 @@
   pointer-events: all;
 }
 
-.project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(67, 160, 71, 0.1);
-  border-color: rgba(67, 160, 71, 0.4);
-}
-
-/* Card Content */
+/* Recessed Backlit Hardware LCD Display Screen */
 .card-content {
-  padding: 1rem 1.5rem;
+  margin: 0.35rem 0.75rem 0.5rem 0.75rem;
+  padding: 1.15rem 1.25rem;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
+  position: relative;
+  /* Classic backlit green-on-dark LCD glass */
+  background-color: #06160b;
+  background-image:
+    /* Subtle diagonal LCD glass screen glare */
+    linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.01) 35%, transparent 35.1%, transparent 100%),
+    /* Authentic 3x3px unlit LCD dot-matrix pixel cell grid */
+    radial-gradient(rgba(0, 255, 65, 0.1) 1px, transparent 0);
+  background-size: 100% 100%, 3px 3px;
+  border: 2px solid #030805;
+  border-radius: 5px;
+  /* Physically sunken inset screen shadow */
+  box-shadow:
+    inset 0 3px 9px rgba(0, 0, 0, 0.92),
+    inset 0 0 18px rgba(0, 255, 65, 0.07),
+    0 1px 0 rgba(255, 255, 255, 0.06);
+  transition: background-color 0.3s, box-shadow 0.3s;
 }
 
+/* Dot-Matrix LCD Title Font */
 .project-title {
-  font-size: 1.35rem;
-  font-weight: 600;
-  color: #fff;
-  margin-bottom: 0.25rem;
-  line-height: 1.3;
+  font-family: 'Doto', 'VT323', 'Courier New', monospace;
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  color: #4ade80;
+  text-shadow: 0 0 8px rgba(74, 222, 128, 0.4), 1px 1px 0 rgba(0, 25, 8, 0.9);
+  margin-bottom: 0.55rem;
+  line-height: 1.35;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
 }
 
+/* Backlit LCD Secondary Readout Text */
 .project-brief {
-  color: #a0aec0;
-  font-size: 0.95rem;
-  line-height: 1.5;
-  margin-bottom: 0.5rem;
+  font-family: 'Share Tech Mono', Consolas, 'Courier New', monospace;
+  color: rgba(167, 243, 208, 0.82);
+  font-size: 0.92rem;
+  line-height: 1.55;
+  letter-spacing: 0.015em;
+  margin-bottom: 0.25rem;
   flex-grow: 1;
+  text-shadow: 0 0 4px rgba(0, 255, 65, 0.15);
 }
 
 /* Status Indicator */
 .project-status {
   display: inline-flex;
   align-items: center;
+  font-family: 'Share Tech Mono', monospace;
   font-size: 0.75rem;
   padding: 0.15rem 0.6rem;
-  border-radius: 9999px;
-  background: rgba(67, 160, 71, 0.1);
-  color: #66bb6a;
-  border: 1px solid rgba(67, 160, 71, 0.2);
-  margin-bottom: 0.25rem;
+  border-radius: 4px;
+  background: rgba(0, 255, 65, 0.1);
+  color: #4ade80;
+  border: 1px solid rgba(0, 255, 65, 0.25);
+  margin-bottom: 0.35rem;
 }
 
-/* Card Actions */
+/* Card Actions (Bottom Bezel Control Bar) */
 .card-actions {
-  padding: 0.5rem 1.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-  background: rgba(0, 0, 0, 0.2);
+  padding: 0.4rem 0.85rem 0.65rem 0.85rem;
   display: flex;
   justify-content: flex-end;
 }
 
 .btn-details {
-  background: transparent;
-  color: #66bb6a;
-  border: 1px solid rgba(67, 160, 71, 0.3);
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  font-size: 0.9rem;
-  font-weight: 500;
+  background: rgba(0, 25, 10, 0.6);
+  color: #4ade80;
+  border: 1px solid rgba(0, 255, 65, 0.3);
+  padding: 0.45rem 0.95rem;
+  border-radius: 4px;
+  font-family: 'Courier New', Consolas, Monaco, monospace;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.25s;
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
 
+.btn-led {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: rgba(0, 255, 65, 0.4);
+  transition: all 0.25s;
+}
+
 .btn-details:hover {
-  background: rgba(67, 160, 71, 0.1);
-  border-color: #66bb6a;
+  background: rgba(0, 255, 65, 0.15);
+  border-color: #00ff41;
   color: #fff;
+  box-shadow: 0 0 12px rgba(0, 255, 65, 0.25);
+}
+
+.btn-details:hover .btn-led {
+  background-color: #00ff41;
+  box-shadow: 0 0 8px #00ff41;
 }
 
 .btn-details svg {
-  width: 16px;
-  height: 16px;
+  width: 15px;
+  height: 15px;
   transition: transform 0.3s;
 }
 
@@ -285,8 +536,15 @@
 }
 
 .btn-details[aria-expanded="true"] {
-  background: rgba(67, 160, 71, 0.15);
+  background: rgba(0, 255, 65, 0.2);
+  border-color: #00ff41;
   color: #fff;
+  box-shadow: 0 0 14px rgba(0, 255, 65, 0.3);
+}
+
+.btn-details[aria-expanded="true"] .btn-led {
+  background-color: #00ff41;
+  box-shadow: 0 0 8px #00ff41;
 }
 
 /* Expanded Details Section */
@@ -309,13 +567,30 @@
 
 /* Proj Details Content Styling */
 .project-details-content {
-  color: #cbd5e0;
-  font-size: 0.95rem;
-  line-height: 1.7;
+  color: #e2e8f0;
+  font-size: 0.96rem;
+  line-height: 1.75;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
 }
 
 .project-details-content strong {
-  color: #e3f9e5;
+  color: #69f0ae;
+  text-shadow: 0 0 10px rgba(105, 240, 174, 0.25);
+}
+
+.project-details-content h4 {
+  color: #4ade80 !important;
+  text-shadow: 0 0 12px rgba(74, 222, 128, 0.3);
+}
+
+.project-details-content a {
+  color: #38bdf8 !important;
+  text-decoration: underline;
+}
+
+.project-details-content a:hover {
+  color: #7dd3fc !important;
+  text-shadow: 0 0 8px rgba(56, 189, 248, 0.4);
 }
 
 .project-details-content ul {
@@ -366,4 +641,263 @@ body.projects .nav-link.nav-projects {
   /* On mobile, grid is naturally 1 column due to auto-fit minmax, 
      but we can enforce it if needed. 
      The expanded card logic works the same (1/-1 spans 1 column). */
+}
+
+/* Lab Screenshots Carousel */
+.lab-carousel {
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  margin: 1.75rem auto 1rem auto;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #111317;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+}
+
+.lab-carousel-slides {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #0d0f12;
+  overflow: hidden;
+}
+
+.lab-carousel-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.lab-carousel-slide.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lab-carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.lab-carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 5;
+  transition: background 0.2s, transform 0.2s, border-color 0.2s;
+}
+
+.lab-carousel-btn:hover {
+  background: rgba(67, 160, 71, 0.85);
+  border-color: #66bb6a;
+  transform: translateY(-50%) scale(1.08);
+}
+
+.lab-carousel-btn.prev {
+  left: 12px;
+}
+
+.lab-carousel-btn.next {
+  right: 12px;
+}
+
+.lab-carousel-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 0;
+  background: #15171c;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.lab-carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.25s, transform 0.25s;
+}
+
+.lab-carousel-dot.active {
+  background: #43a047;
+  transform: scale(1.25);
+}
+
+.lab-carousel-counter {
+  position: absolute;
+  bottom: 50px;
+  right: 14px;
+  background: rgba(0, 0, 0, 0.65);
+  color: #e5e7eb;
+  padding: 3px 9px;
+  border-radius: 12px;
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  z-index: 4;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* Clickable Images inside Expanded Drawer */
+.drawer-content img {
+  cursor: zoom-in;
+  transition: filter 0.2s ease;
+}
+
+.drawer-content img:hover {
+  filter: brightness(1.06);
+}
+
+/* High-Res Image Lightbox Overlay */
+.lab-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(2, 8, 5, 0.92);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+  padding: 2rem;
+}
+
+.lab-lightbox.open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.lab-lightbox-stage {
+  max-width: 92vw;
+  max-height: 88vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.lab-lightbox-img {
+  max-width: 92vw;
+  max-height: 82vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 255, 65, 0.35);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.95), 0 0 25px rgba(0, 255, 65, 0.15);
+  background: #060b08;
+  cursor: default;
+}
+
+.lab-lightbox-meta {
+  margin-top: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  width: 100%;
+  padding: 0 0.25rem;
+  font-family: 'Share Tech Mono', Consolas, 'Courier New', monospace;
+  font-size: 0.9rem;
+  color: #a7f3d0;
+}
+
+.lab-lightbox-counter {
+  color: #4ade80;
+  background: rgba(0, 25, 10, 0.75);
+  border: 1px solid rgba(0, 255, 65, 0.3);
+  padding: 0.15rem 0.65rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+}
+
+.lab-lightbox-close {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.75rem;
+  width: 42px;
+  height: 42px;
+  border-radius: 6px;
+  background: rgba(0, 25, 10, 0.8);
+  border: 1px solid rgba(0, 255, 65, 0.4);
+  color: #4ade80;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10001;
+  transition: all 0.2s ease;
+}
+
+.lab-lightbox-close:hover {
+  background: rgba(0, 255, 65, 0.22);
+  border-color: #00ff41;
+  color: #ffffff;
+  box-shadow: 0 0 14px rgba(0, 255, 65, 0.45);
+}
+
+.lab-lightbox-nav {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(0, 25, 10, 0.8);
+  border: 1px solid rgba(0, 255, 65, 0.4);
+  color: #4ade80;
+  font-size: 1.35rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10001;
+  transition: all 0.2s ease;
+}
+
+.lab-lightbox-nav:hover {
+  background: rgba(0, 255, 65, 0.25);
+  border-color: #00ff41;
+  color: #ffffff;
+  box-shadow: 0 0 16px rgba(0, 255, 65, 0.45);
+  transform: translateY(-50%) scale(1.08);
+}
+
+.lab-lightbox-nav.prev {
+  left: 1.75rem;
+}
+
+.lab-lightbox-nav.next {
+  right: 1.75rem;
+}
+
+.lab-lightbox-nav[hidden],
+.lab-lightbox-counter[hidden] {
+  display: none !important;
 }
