@@ -147,7 +147,7 @@
 
   <div class="projects-grid" id="labs-grid">
     
-      <article class="project-card" data-id="proj_n8n">
+      <article class="project-card" data-id="proj_mobile_os">
         <span class="hud-corner tl"></span>
         <span class="hud-corner tr"></span>
         <span class="hud-corner bl"></span>
@@ -155,17 +155,17 @@
 
         <div class="card-telemetry">
           <span class="telemetry-status"><span class="led-dot"></span>SYS_ONLINE</span>
-          <span class="telemetry-id">[MOD_01 // PROJ_N8N]</span>
+          <span class="telemetry-id">[MOD_01 // PROJ_MOBILE_OS]</span>
         </div>
 
         <div class="card-content">
           <div class="project-header-row">
             
-            <h2 class="project-title">Self-Hosted n8n Workflow Automation</h2>
+            <h2 class="project-title">Mobile OS (Early Stage)</h2>
           </div>
           
           <div class="project-brief">
-            <p>A secure, self-hosted n8n instance for workflow automation, accessible remotely via Cloudflare Zero Trust Tunnels.</p>
+            <p>Repurposing a Samsung Note 10+ 5G to develop a privacy-first, AI-native mobile operating system using AI-assisted driver optimization.</p>
           </div>
         </div>
 
@@ -179,7 +179,7 @@
           </div>
 
         <div class="card-actions">
-          <button class="btn-details project-toggle" type="button" aria-expanded="false" aria-controls="details-proj_n8n">
+          <button class="btn-details project-toggle" type="button" aria-expanded="false" aria-controls="details-proj_mobile_os">
             <span class="btn-led"></span>
             <span class="btn-text">View Details</span>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -189,9 +189,9 @@
         </div>
 
         
-        <div class="project-details-source" id="source-proj_n8n" hidden>
+        <div class="project-details-source" id="source-proj_mobile_os" hidden>
            <div class="project-details-content">
-            <strong>Overview:</strong> Deployed a self-hosted instance of n8n, a powerful workflow automation tool, to orchestrate custom automations and integrations without relying on third-party cloud limits.<br><br><strong>Key Components:</strong><br><ul style='margin:0.5em 0 0.5em 1.5em;'><li><strong>n8n Instance:</strong> Running in a Docker container for easy management and updates.</li><li><strong>Cloudflare Zero Trust:</strong> Implemented for secure remote access without exposing ports to the public internet.</li><li><strong>Cloudflare Tunnels (cloudflared):</strong> Used to create a secure outbound connection from the local server to the Cloudflare edge, bypassing complex firewall rules.</li><li><strong>DNS & CNAME:</strong> Configured updated namespaces and CNAME records in Cloudflare DNS to route traffic to the tunnel endpoint.</li></ul><br><strong>Why:</strong> To maintain full control over data privacy, reduce costs, and enable unlimited workflow executions while ensuring enterprise-grade security for remote access.
+            <strong>Overview:</strong> An exploratory initiative to take a legacy flagship smartphone—the Samsung Galaxy Note 10+ 5G—and transform it into a lightweight, privacy-focused mobile platform powered by an AI-centric architecture.<br><br><strong>Key Focus Areas:</strong><br><ul style='margin:0.5em 0 1em 1.5em;line-height:1.65;'><li><strong>AI-Assisted Driver Optimization:</strong> Leveraging generative AI and modern LLMs to analyze, refactor, and modernize proprietary vendor hardware drivers and kernel modules, ensuring stable hardware abstraction across the chipset, modem, display, cameras, and digitizer.</li><li><strong>Privacy by Architecture:</strong> Complete elimination of commercial tracking telemetry and unwanted vendor bloatware. Operating system services and AI capabilities prioritize on-device processing and end-to-end encrypted local workflows.</li><li><strong>AI-First Operating System Paradigm:</strong> Redesigning core mobile interactions around proactive contextual AI assistance rather than static app silos.</li><li><strong>Hardware Longevity & Sustainability:</strong> Extending the functional lifecycle of capable mobile silicon, proving that older flagship hardware can run modern intelligent workloads efficiently when unburdened by vendor bloat.</li></ul><br><strong>Target Hardware:</strong> Samsung Galaxy Note 10+ 5G (AMOLED display, S-Pen digitizer, 12GB RAM, 5G baseband).<br><br><strong>Current Status:</strong> Early research and exploratory phase: kernel source decompilation, driver telemetry mapping, and baseline environment setup.
            </div>
         </div>
       </article>
@@ -210,11 +210,11 @@
         <div class="card-content">
           <div class="project-header-row">
             
-            <h2 class="project-title">Property Management Dashboard (Under Development)</h2>
+            <h2 class="project-title">Property Management Dashboard (Final Stage)</h2>
           </div>
           
           <div class="project-brief">
-            <p>A modern dashboard for managing rental properties, tenants, and finances. Currently in development.</p>
+            <p>A modern dashboard for managing rental properties, tenants, and finances. Currently in final stage of development.</p>
           </div>
         </div>
 
@@ -388,6 +388,55 @@
         <div class="project-details-source" id="source-proj_touch" hidden>
            <div class="project-details-content">
             <strong>Overview:</strong> Developed a multi-zone capacitive touch panel for interactive control surfaces.<br><br><strong>Tools & Technologies:</strong> Arduino, custom PCB design, capacitive sensing libraries, C/C++, 3D printing for enclosure, oscilloscope for signal analysis.<br><br><strong>Architecture:</strong> Hardware: custom PCB with multiple touch pads, microcontroller for signal processing, USB interface for PC connectivity.<br>Software: firmware for real-time touch detection, debounce logic, event mapping to user actions.<br><br><strong>Features:</strong> Multi-zone touch detection, adjustable sensitivity, plug-and-play USB interface, open-source firmware.<br><br><strong>Applications:</strong> Used for custom control panels, musical instruments, and interactive installations.<br><br><strong>Video: Interactive Touch Panel Visualization Demo</strong><br><p>This demonstration showcases the real-time capabilities of the capacitive touch panel. The interface displays multiple interactive features:</p><ul style='margin:0.5em 0 0.5em 1.5em;'><li><strong>Multi-Touch Detection:</strong> The top-left corner displays a square for each detected finger (up to 4 simultaneous touches), providing immediate visual feedback on touch points.</li><li><strong>Coordinate Tracking (Blue Box):</strong> Activating the blue box enables the coordinate function, which precisely displays the X,Y coordinates of each touch point on the screen in real-time.</li><li><strong>Touch Markers (Green Box):</strong> The green box activates a marker placement mode that displays colored dots at each touch location, using consistent color coding to identify individual fingers.</li><li><strong>Line Drawing (Red Box):</strong> Similar to the marker mode, but instead of discrete dots, this mode connects touch points with lines, creating a visual trail of touch movements.</li><li><strong>Binary Data Visualization:</strong> One of the most fascinating features: this mode displays the raw binary data being read directly from the touch panel controller, allowing you to literally see the 0's and 1's being transmitted by the hardware in real-time.</li><li><strong>Multi-Finger Pattern:</strong> When five fingers are detected simultaneously, the interface displays a unique color pattern, demonstrating the panel's ability to handle extended multi-touch scenarios.</li></ul><br><div style='margin:2em 0;text-align:center'><iframe width='560' height='315' src='https://www.youtube.com/embed/u5v1vZr6F9k' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen style='border-radius:12px;max-width:100%;'></iframe><p style='font-size:0.95em;color:#666;margin-top:0.5em'>Capacitive Touch Panel Demo (2026)</p></div>
+           </div>
+        </div>
+      </article>
+    
+      <article class="project-card" data-id="proj_n8n">
+        <span class="hud-corner tl"></span>
+        <span class="hud-corner tr"></span>
+        <span class="hud-corner bl"></span>
+        <span class="hud-corner br"></span>
+
+        <div class="card-telemetry">
+          <span class="telemetry-status"><span class="led-dot"></span>SYS_ONLINE</span>
+          <span class="telemetry-id">[MOD_06 // PROJ_N8N]</span>
+        </div>
+
+        <div class="card-content">
+          <div class="project-header-row">
+            
+            <h2 class="project-title">Self-Hosted n8n Workflow Automation</h2>
+          </div>
+          
+          <div class="project-brief">
+            <p>A secure, self-hosted n8n instance for workflow automation, accessible remotely via Cloudflare Zero Trust Tunnels.</p>
+          </div>
+        </div>
+
+          
+          <div class="card-ribbon" style="display:none;">
+            <div class="ribbon-clamp top"></div>
+            <div class="ribbon-stripes">
+              <div class="ribbon-pulse"></div>
+            </div>
+            <div class="ribbon-clamp bottom"></div>
+          </div>
+
+        <div class="card-actions">
+          <button class="btn-details project-toggle" type="button" aria-expanded="false" aria-controls="details-proj_n8n">
+            <span class="btn-led"></span>
+            <span class="btn-text">View Details</span>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+        </div>
+
+        
+        <div class="project-details-source" id="source-proj_n8n" hidden>
+           <div class="project-details-content">
+            <strong>Overview:</strong> Deployed a self-hosted instance of n8n, a powerful workflow automation tool, to orchestrate custom automations and integrations without relying on third-party cloud limits.<br><br><strong>Key Components:</strong><br><ul style='margin:0.5em 0 0.5em 1.5em;'><li><strong>n8n Instance:</strong> Running in a Docker container for easy management and updates.</li><li><strong>Cloudflare Zero Trust:</strong> Implemented for secure remote access without exposing ports to the public internet.</li><li><strong>Cloudflare Tunnels (cloudflared):</strong> Used to create a secure outbound connection from the local server to the Cloudflare edge, bypassing complex firewall rules.</li><li><strong>DNS & CNAME:</strong> Configured updated namespaces and CNAME records in Cloudflare DNS to route traffic to the tunnel endpoint.</li></ul><br><strong>Why:</strong> To maintain full control over data privacy, reduce costs, and enable unlimited workflow executions while ensuring enterprise-grade security for remote access.
            </div>
         </div>
       </article>

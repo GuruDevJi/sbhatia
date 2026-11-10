@@ -60,15 +60,29 @@ body.labs {
 
 .projects-intro {
   font-family: 'Share Tech Mono', Consolas, monospace;
-  color: rgba(167, 243, 208, 0.85);
+  color: rgba(167, 243, 208, 0.95);
   font-size: 1.05rem;
-  line-height: 1.6;
+  line-height: 1.65;
   max-width: 780px;
   margin: 0 auto;
-  background: rgba(4, 12, 8, 0.2);
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.95);
+  position: relative;
+  padding: 1rem 1.6rem;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.95);
+}
+
+/* Feathered frosted glass vignette behind intro text with zero hard box edges */
+.projects-intro::before {
+  content: "";
+  position: absolute;
+  inset: -8px -16px;
+  background: radial-gradient(ellipse at center, rgba(4, 14, 9, 0.35) 0%, rgba(4, 14, 9, 0.15) 55%, transparent 100%);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  -webkit-mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 1) 35%, rgba(0, 0, 0, 0) 100%);
+  mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 1) 35%, rgba(0, 0, 0, 0) 100%);
+  border-radius: 24px;
+  z-index: -1;
+  pointer-events: none;
 }
 
 /* Standard Grid */
@@ -447,9 +461,9 @@ body.labs {
   text-shadow: 0 0 8px rgba(74, 222, 128, 0.4), 1px 1px 0 rgba(0, 25, 8, 0.9);
   margin-bottom: 0.55rem;
   line-height: 1.35;
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
+  /* Exactly 2 lines of text (2 * 1.35 = 2.7em) so descriptions align across cards */
+  min-height: 2.7em;
+  display: block;
 }
 
 /* Backlit LCD Secondary Readout Text */

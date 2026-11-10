@@ -185,7 +185,8 @@ function setupMatrixBackground() {
     pulses.push({
       trace,
       dist: randomProgress ? Math.random() * trace.totalLen : 0,
-      speed: 1.4 + Math.random() * 1.6,
+      // Calmer, slower signal pulse speed (px/frame at 60fps)
+      speed: 0.65 + Math.random() * 0.75,
       tailLen: 35 + Math.random() * 35
     });
   }
@@ -208,7 +209,17 @@ function setupMatrixBackground() {
     return pts[pts.length - 1];
   }
 
-  function draw() {
+  let lastTime = 0;
+  let animFrameId = null;
+
+  function draw(time) {
+    if (!time) time = performance.now();
+    if (!lastTime) lastTime = time;
+    // Delta-time factor normalized to 60fps (16.67ms = 1.0)
+    // Capped at 2.0 to prevent jumping after tab switching
+    const dt = Math.min((time - lastTime) / 16.67, 2.0);
+    lastTime = time;
+
     // Blit pre-rendered static circuit board in 1 call
     ctx.drawImage(staticCanvas, 0, 0);
 
@@ -223,14 +234,14 @@ function setupMatrixBackground() {
         ctx.lineWidth = 1.5;
         ctx.strokeStyle = `rgba(105, 240, 174, ${0.6 + trace.endGlow * 0.4})`;
         ctx.stroke();
-        trace.endGlow = Math.max(0, trace.endGlow - 0.03);
+        trace.endGlow = Math.max(0, trace.endGlow - 0.025 * dt);
       }
     }
 
     // Update and draw live data pulses along traces
     for (let i = 0; i < pulses.length; i++) {
       const p = pulses[i];
-      p.dist += p.speed;
+      p.dist += p.speed * dt;
 
       // Draw glowing comet tail in small steps
       const steps = 10;
@@ -259,7 +270,7 @@ function setupMatrixBackground() {
       }
 
       // Trigger end via glow when pulse arrives
-      if (p.dist >= p.trace.totalLen && p.dist - p.speed < p.trace.totalLen) {
+      if (p.dist >= p.trace.totalLen && (p.dist - p.speed * dt) < p.trace.totalLen) {
         p.trace.endGlow = 1;
       }
 
@@ -271,7 +282,7 @@ function setupMatrixBackground() {
       }
     }
 
-    requestAnimationFrame(draw);
+    animFrameId = requestAnimationFrame(draw);
   }
 
   function resize() {
@@ -284,7 +295,8 @@ function setupMatrixBackground() {
 
   window.addEventListener('resize', resize);
   buildCircuit();
-  requestAnimationFrame(draw);
+  if (animFrameId) cancelAnimationFrame(animFrameId);
+  animFrameId = requestAnimationFrame(draw);
 }
 
 document.addEventListener('DOMContentLoaded', function() {
